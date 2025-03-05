@@ -4,6 +4,7 @@
  */
 package controlador;
 
+import vistas.Login;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import utils.Slide;
@@ -48,7 +49,8 @@ public class ControlLogin implements ActionListener{
        }
        if (e.getSource() == log.getjButton1_guardar()){
            moverArribaRegistro();
-        moverDerechaInfo();
+           moverDerechaInfo();
+          
         
     }}
     

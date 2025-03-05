@@ -4,7 +4,7 @@
 
 package alphalearnproject.AlphaLearnProject;
 
-import controlador.Login;
+import vistas.Login;
 
 /**
  *

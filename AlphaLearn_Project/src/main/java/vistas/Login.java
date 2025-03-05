@@ -4,10 +4,13 @@
  */
 package vistas;
 
-import alphalearnproject.AlphaLearnProject.*;
+import controlador.ControlLogin;
+import controlador.ControlLogin;
 import controlador.ControlLogin;
 import javax.swing.JButton;
 import javax.swing.JPanel;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
 
 /**
  *
@@ -21,7 +24,7 @@ public class Login extends javax.swing.JFrame {
     ControlLogin ControlLogin;
     public Login() {
         initComponents();
-       // ControlLogin =new ControlLogin(this);
+        ControlLogin =new ControlLogin(this);
     }
 
     public JButton getjB_iniciar_sesion() {
@@ -75,6 +78,46 @@ public class Login extends javax.swing.JFrame {
     public void setJpLogin(JPanel jpLogin) {
         this.jpLogin = jpLogin;
     }
+
+    public JPasswordField getjPasswordField1() {
+        return jPasswordField1;
+    }
+
+    public void setjPasswordField1(JPasswordField jPasswordField1) {
+        this.jPasswordField1 = jPasswordField1;
+    }
+
+    public JPasswordField getjPasswordField2_Registrar() {
+        return jPasswordField2_Registrar;
+    }
+
+    public void setjPasswordField2_Registrar(JPasswordField jPasswordField2_Registrar) {
+        this.jPasswordField2_Registrar = jPasswordField2_Registrar;
+    }
+
+    public JTextField getjTextField1_Edad() {
+        return jT_Edad_Registrar;
+    }
+
+    public void setjTextField1_Edad(JTextField jTextField1_Edad) {
+        this.jT_Edad_Registrar = jTextField1_Edad;
+    }
+
+    public JTextField getjTextField1_Nom_User() {
+        return jTextField1_Nom_User_Registra;
+    }
+
+    public void setjTextField1_Nom_User(JTextField jTextField1_Nom_User) {
+        this.jTextField1_Nom_User_Registra = jTextField1_Nom_User;
+    }
+
+    public JTextField getjText_Nom_Usuario() {
+        return jText_Nom_Usuario;
+    }
+
+    public void setjText_Nom_Usuario(JTextField jText_Nom_Usuario) {
+        this.jText_Nom_Usuario = jText_Nom_Usuario;
+    }
     
 
     /**
@@ -89,21 +132,21 @@ public class Login extends javax.swing.JFrame {
         jSeparator6 = new javax.swing.JSeparator();
         jSeparator7 = new javax.swing.JSeparator();
         jLayeredPane1 = new javax.swing.JLayeredPane();
-        JP_info_regis = new javax.swing.JPanel();
-        jB_ir_Registro = new javax.swing.JButton();
-        jLabel6 = new javax.swing.JLabel();
         jPanel_Registrar = new javax.swing.JPanel();
         jButton1_guardar = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jTextField1_Nom_User = new javax.swing.JTextField();
+        jTextField1_Nom_User_Registra = new javax.swing.JTextField();
         jSeparator3 = new javax.swing.JSeparator();
         jLabel9 = new javax.swing.JLabel();
-        jTextField1_Edad = new javax.swing.JTextField();
+        jT_Edad_Registrar = new javax.swing.JTextField();
         jSeparator5 = new javax.swing.JSeparator();
         jLabel10 = new javax.swing.JLabel();
         jPasswordField2_Registrar = new javax.swing.JPasswordField();
         jSeparator8 = new javax.swing.JSeparator();
+        JP_info_regis = new javax.swing.JPanel();
+        jB_ir_Registro = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
         jpLogin = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -121,18 +164,6 @@ public class Login extends javax.swing.JFrame {
 
         jLayeredPane1.setBackground(new java.awt.Color(255, 255, 255));
         jLayeredPane1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        JP_info_regis.setBackground(new java.awt.Color(153, 153, 255));
-        JP_info_regis.setForeground(new java.awt.Color(102, 102, 255));
-        JP_info_regis.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jB_ir_Registro.setBackground(new java.awt.Color(51, 51, 255));
-        jB_ir_Registro.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jB_ir_Registro.setText("REGISTRAR");
-        JP_info_regis.add(jB_ir_Registro, new org.netbeans.lib.awtextra.AbsoluteConstraints(101, 465, 252, 51));
-
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/logo-removebg-preview (1)_1.png"))); // NOI18N
-        JP_info_regis.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 70, 279, 323));
 
         jPanel_Registrar.setBackground(new java.awt.Color(102, 102, 255));
         jPanel_Registrar.setForeground(new java.awt.Color(51, 51, 255));
@@ -156,12 +187,12 @@ public class Login extends javax.swing.JFrame {
         jLabel8.setText("Nombre de Usuario:");
         jPanel_Registrar.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 190, -1, -1));
 
-        jTextField1_Nom_User.setBackground(new java.awt.Color(102, 102, 255));
-        jTextField1_Nom_User.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jTextField1_Nom_User.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField1_Nom_User.setBorder(null);
-        jTextField1_Nom_User.setOpaque(true);
-        jPanel_Registrar.add(jTextField1_Nom_User, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 210, 230, 40));
+        jTextField1_Nom_User_Registra.setBackground(new java.awt.Color(102, 102, 255));
+        jTextField1_Nom_User_Registra.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jTextField1_Nom_User_Registra.setForeground(new java.awt.Color(0, 0, 0));
+        jTextField1_Nom_User_Registra.setBorder(null);
+        jTextField1_Nom_User_Registra.setOpaque(true);
+        jPanel_Registrar.add(jTextField1_Nom_User_Registra, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 210, 230, 40));
 
         jSeparator3.setBackground(new java.awt.Color(0, 0, 0));
         jSeparator3.setForeground(new java.awt.Color(0, 0, 0));
@@ -172,10 +203,11 @@ public class Login extends javax.swing.JFrame {
         jLabel9.setText("Edad");
         jPanel_Registrar.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 270, 40, -1));
 
-        jTextField1_Edad.setBackground(new java.awt.Color(102, 102, 255));
-        jTextField1_Edad.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jTextField1_Edad.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel_Registrar.add(jTextField1_Edad, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 290, 80, 30));
+        jT_Edad_Registrar.setBackground(new java.awt.Color(102, 102, 255));
+        jT_Edad_Registrar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jT_Edad_Registrar.setForeground(new java.awt.Color(0, 0, 0));
+        jT_Edad_Registrar.setBorder(null);
+        jPanel_Registrar.add(jT_Edad_Registrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 290, 80, 30));
 
         jSeparator5.setForeground(new java.awt.Color(0, 0, 0));
         jPanel_Registrar.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 320, 240, 30));
@@ -187,13 +219,26 @@ public class Login extends javax.swing.JFrame {
 
         jPasswordField2_Registrar.setBackground(new java.awt.Color(102, 102, 255));
         jPasswordField2_Registrar.setForeground(new java.awt.Color(0, 0, 0));
+        jPasswordField2_Registrar.setBorder(null);
         jPanel_Registrar.add(jPasswordField2_Registrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 360, 240, 40));
 
         jSeparator8.setBackground(new java.awt.Color(0, 0, 0));
         jSeparator8.setForeground(new java.awt.Color(0, 0, 0));
         jPanel_Registrar.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 400, 240, 40));
 
-        JP_info_regis.add(jPanel_Registrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -600, 490, 610));
+        jLayeredPane1.add(jPanel_Registrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -600, 480, 610));
+
+        JP_info_regis.setBackground(new java.awt.Color(153, 153, 255));
+        JP_info_regis.setForeground(new java.awt.Color(102, 102, 255));
+        JP_info_regis.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jB_ir_Registro.setBackground(new java.awt.Color(51, 51, 255));
+        jB_ir_Registro.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jB_ir_Registro.setText("REGISTRAR");
+        JP_info_regis.add(jB_ir_Registro, new org.netbeans.lib.awtextra.AbsoluteConstraints(101, 465, 252, 51));
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/logo-removebg-preview (1)_1.png"))); // NOI18N
+        JP_info_regis.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 70, 279, 323));
 
         jLayeredPane1.add(JP_info_regis, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 480, 610));
 
@@ -292,8 +337,6 @@ public class Login extends javax.swing.JFrame {
         }
         //</editor-fold>
         //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -330,8 +373,8 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator6;
     private javax.swing.JSeparator jSeparator7;
     private javax.swing.JSeparator jSeparator8;
-    private javax.swing.JTextField jTextField1_Edad;
-    private javax.swing.JTextField jTextField1_Nom_User;
+    private javax.swing.JTextField jT_Edad_Registrar;
+    private javax.swing.JTextField jTextField1_Nom_User_Registra;
     private javax.swing.JTextField jText_Nom_Usuario;
     private javax.swing.JPanel jpLogin;
     // End of variables declaration//GEN-END:variables
