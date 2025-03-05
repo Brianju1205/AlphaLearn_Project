@@ -1,16 +1,14 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package vistas;
 
 import controlador.ControlLogin;
-import controlador.ControlLogin;
-import controlador.ControlLogin;
+import java.awt.Button;
+import java.awt.Color;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
+import utils.ButtonOutLine;
 
 /**
  *
@@ -24,7 +22,17 @@ public class Login extends javax.swing.JFrame {
     ControlLogin ControlLogin;
     public Login() {
         initComponents();
+        this.setLocationRelativeTo(null);
         ControlLogin =new ControlLogin(this);
+
+    }
+
+    public JPanel getJP_info_regis() {
+        return JP_info_regis;
+    }
+
+    public void setJP_info_regis(JPanel JP_info_regis) {
+        this.JP_info_regis = JP_info_regis;
     }
 
     public JButton getjB_iniciar_sesion() {
@@ -43,14 +51,6 @@ public class Login extends javax.swing.JFrame {
         this.jB_ir_Registro = jB_ir_Registro;
     }
 
-    public JPanel getJP_info_regis() {
-        return JP_info_regis;
-    }
-
-    public void setJP_info_regis(JPanel JP_info_regis) {
-        this.JP_info_regis = JP_info_regis;
-    }
-
     public JButton getjButton1_guardar() {
         return jButton1_guardar;
     }
@@ -59,24 +59,12 @@ public class Login extends javax.swing.JFrame {
         this.jButton1_guardar = jButton1_guardar;
     }
 
-    
-
     public JPanel getjPanel_Registrar() {
         return jPanel_Registrar;
     }
 
     public void setjPanel_Registrar(JPanel jPanel_Registrar) {
         this.jPanel_Registrar = jPanel_Registrar;
-    }
-
-    
-
-    public JPanel getJpLogin() {
-        return jpLogin;
-    }
-
-    public void setJpLogin(JPanel jpLogin) {
-        this.jpLogin = jpLogin;
     }
 
     public JPasswordField getjPasswordField1() {
@@ -95,20 +83,20 @@ public class Login extends javax.swing.JFrame {
         this.jPasswordField2_Registrar = jPasswordField2_Registrar;
     }
 
-    public JTextField getjTextField1_Edad() {
+    public JTextField getjT_Edad_Registrar() {
         return jT_Edad_Registrar;
     }
 
-    public void setjTextField1_Edad(JTextField jTextField1_Edad) {
-        this.jT_Edad_Registrar = jTextField1_Edad;
+    public void setjT_Edad_Registrar(JTextField jT_Edad_Registrar) {
+        this.jT_Edad_Registrar = jT_Edad_Registrar;
     }
 
-    public JTextField getjTextField1_Nom_User() {
+    public JTextField getjTextField1_Nom_User_Registra() {
         return jTextField1_Nom_User_Registra;
     }
 
-    public void setjTextField1_Nom_User(JTextField jTextField1_Nom_User) {
-        this.jTextField1_Nom_User_Registra = jTextField1_Nom_User;
+    public void setjTextField1_Nom_User_Registra(JTextField jTextField1_Nom_User_Registra) {
+        this.jTextField1_Nom_User_Registra = jTextField1_Nom_User_Registra;
     }
 
     public JTextField getjText_Nom_Usuario() {
@@ -118,6 +106,16 @@ public class Login extends javax.swing.JFrame {
     public void setjText_Nom_Usuario(JTextField jText_Nom_Usuario) {
         this.jText_Nom_Usuario = jText_Nom_Usuario;
     }
+
+    public JPanel getJpLogin() {
+        return jpLogin;
+    }
+
+    public void setJpLogin(JPanel jpLogin) {
+        this.jpLogin = jpLogin;
+    }
+
+    
     
 
     /**

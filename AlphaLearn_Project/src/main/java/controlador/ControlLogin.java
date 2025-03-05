@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package controlador;
 
 import vistas.Login;
@@ -41,6 +38,12 @@ public class ControlLogin implements ActionListener{
     {
         slide.jPanelYArriba(0, -600, 10, 5, log.getjPanel_Registrar());
     }
+    public void limpiar(){
+        log.getjTextField1_Nom_User_Registra().setText("");
+        log.getjT_Edad_Registrar().setText("");
+        log.getjPasswordField2_Registrar().setText("");
+       
+    }
     @Override
     public void actionPerformed(ActionEvent e) {
        if (e.getSource() ==log.getjB_ir_Registro()){
@@ -50,9 +53,9 @@ public class ControlLogin implements ActionListener{
        if (e.getSource() == log.getjButton1_guardar()){
            moverArribaRegistro();
            moverDerechaInfo();
-          
-        
-    }}
+           limpiar();
+        }
+    }
     
     
 }

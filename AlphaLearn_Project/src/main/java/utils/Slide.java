@@ -10,7 +10,7 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author Luis Vidal
+ * @author
  */
 public class Slide {
     
