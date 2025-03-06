@@ -84,10 +84,10 @@ public class Menu extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel_Opciones.setBackground(new java.awt.Color(102, 102, 255));
+        jPanel_Opciones.setBackground(new java.awt.Color(102, 51, 255));
         jPanel_Opciones.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton1.setBackground(new java.awt.Color(102, 102, 255));
+        jButton1.setBackground(new java.awt.Color(102, 0, 255));
         jButton1.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
         jButton1.setForeground(new java.awt.Color(0, 0, 0));
         jButton1.setText("INICIO");
@@ -100,7 +100,7 @@ public class Menu extends javax.swing.JFrame {
         jButton1.setOpaque(true);
         jPanel_Opciones.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 230, 50));
 
-        jButton2.setBackground(new java.awt.Color(102, 102, 255));
+        jButton2.setBackground(new java.awt.Color(102, 0, 255));
         jButton2.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
         jButton2.setForeground(new java.awt.Color(0, 0, 0));
         jButton2.setText("AJUSTES");
@@ -111,23 +111,23 @@ public class Menu extends javax.swing.JFrame {
         jButton2.setOpaque(true);
         jPanel_Opciones.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 200, 230, 50));
 
-        jButton3.setBackground(new java.awt.Color(102, 102, 255));
+        jButton3.setBackground(new java.awt.Color(102, 0, 255));
         jButton3.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
         jButton3.setForeground(new java.awt.Color(0, 0, 0));
         jButton3.setText("AYUDA");
         jButton3.setBorder(null);
         jButton3.setBorderPainted(false);
         jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel_Opciones.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 260, 230, 50));
+        jPanel_Opciones.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 250, 230, 50));
 
-        jButton4.setBackground(new java.awt.Color(102, 102, 255));
+        jButton4.setBackground(new java.awt.Color(102, 0, 255));
         jButton4.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
         jButton4.setForeground(new java.awt.Color(0, 0, 0));
         jButton4.setText("PROGRESO");
         jButton4.setBorder(null);
         jButton4.setBorderPainted(false);
         jButton4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel_Opciones.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(-1, 317, 230, 50));
+        jPanel_Opciones.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 300, 230, 50));
 
         jButton5_Salir_Menu.setBackground(new java.awt.Color(51, 51, 255));
         jButton5_Salir_Menu.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
@@ -143,7 +143,7 @@ public class Menu extends javax.swing.JFrame {
 
         getContentPane().add(jPanel_Opciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 230, 690));
 
-        jPanel_Menu.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel_Menu.setBackground(new java.awt.Color(153, 153, 255));
         jPanel_Menu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton_Actividad2.setBackground(new java.awt.Color(255, 255, 255));
@@ -183,7 +183,7 @@ public class Menu extends javax.swing.JFrame {
 
         getContentPane().add(jPanel_Menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 80, 990, 610));
 
-        jPanel_Mensages.setBackground(new java.awt.Color(51, 51, 255));
+        jPanel_Mensages.setBackground(new java.awt.Color(102, 102, 255));
 
         javax.swing.GroupLayout jPanel_MensagesLayout = new javax.swing.GroupLayout(jPanel_Mensages);
         jPanel_Mensages.setLayout(jPanel_MensagesLayout);

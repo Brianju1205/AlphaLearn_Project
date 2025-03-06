@@ -55,11 +55,20 @@ public class ControlLogin implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
        if (e.getSource() == log.getjB_iniciar_sesion()){
-           Menu m = new Menu();
-           m.setVisible(true);
-           if (log != null) {   
-            log.dispose(); 
-        }
+           if(!objVerificador.validaJugador(
+                    log.getjText_Nom_Usuario().getText(),
+                    log.getjPasswordField1().getText())){
+              return;
+              
+            }
+            
+            else{
+                Menu m = new Menu();
+                m.setVisible(true);
+                    if (log != null) {   
+                        log.dispose(); 
+                    }
+           }
        }
        if (e.getSource() ==log.getjB_ir_Registro()){
            moverIzquierdaInfo();

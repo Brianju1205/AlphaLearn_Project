@@ -21,12 +21,13 @@ public class Actividad_1 extends javax.swing.JFrame {
      * Creates new form Actividad_1
      */
     ControlActividad1 objcontrolActi;
-    
+   
     public Actividad_1() {
-       
+        
         initComponents();
         objcontrolActi= new ControlActividad1(this);
         this.setLocationRelativeTo(null);
+        
     }
 
     public JButton getjButton10_J() {
@@ -184,7 +185,7 @@ public class Actividad_1 extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel_Actividad_1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel_Actividad_1.setBackground(new java.awt.Color(142, 142, 214));
         jPanel_Actividad_1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton_A.setBackground(new java.awt.Color(51, 153, 0));

@@ -34,7 +34,7 @@ public class Conexion {
             // Database connect
             // Conectamos con la base de datos
             connection = DriverManager.getConnection(
-                    "jdbc:postgresql://127.0.0.1/alphalearn","postgres", "2005");
+                    "jdbc:postgresql://127.0.0.1/alphalearn","postgres", "1234");
             
             stmt = connection.createStatement();
             
