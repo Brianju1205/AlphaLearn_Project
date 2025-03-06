@@ -5,7 +5,11 @@
 package vistas;
 
 import controlador.ControlActividad1;
+import java.awt.Graphics;
+import java.awt.Image;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JPanel;
 
 /**
  *
@@ -19,6 +23,7 @@ public class Actividad_1 extends javax.swing.JFrame {
     ControlActividad1 objcontrolActi;
     
     public Actividad_1() {
+       
         initComponents();
         objcontrolActi= new ControlActividad1(this);
         this.setLocationRelativeTo(null);
@@ -131,8 +136,12 @@ public class Actividad_1 extends javax.swing.JFrame {
     public JButton getjButton_C() {
         return jButton_C;
     }
-    
 
+    public JButton getjButton1_Salir_act_1() {
+        return jButton1_Salir_act_1;
+    }
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -170,6 +179,7 @@ public class Actividad_1 extends javax.swing.JFrame {
         jButton25_V = new javax.swing.JButton();
         jButton26_W = new javax.swing.JButton();
         jButton1_Z = new javax.swing.JButton();
+        jButton1_Salir_act_1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -365,7 +375,14 @@ public class Actividad_1 extends javax.swing.JFrame {
         jButton1_Z.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel_Actividad_1.add(jButton1_Z, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 360, 80, 80));
 
-        getContentPane().add(jPanel_Actividad_1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 1200, 700));
+        jButton1_Salir_act_1.setBackground(new java.awt.Color(255, 255, 255));
+        jButton1_Salir_act_1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/boton.salir.png"))); // NOI18N
+        jButton1_Salir_act_1.setBorder(null);
+        jButton1_Salir_act_1.setBorderPainted(false);
+        jButton1_Salir_act_1.setOpaque(true);
+        jPanel_Actividad_1.add(jButton1_Salir_act_1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 100, 60));
+
+        getContentPane().add(jPanel_Actividad_1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1210, 700));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -416,6 +433,7 @@ public class Actividad_1 extends javax.swing.JFrame {
     private javax.swing.JButton jButton17_P;
     private javax.swing.JButton jButton18_Q;
     private javax.swing.JButton jButton19_R;
+    private javax.swing.JButton jButton1_Salir_act_1;
     private javax.swing.JButton jButton1_Z;
     private javax.swing.JButton jButton20_S;
     private javax.swing.JButton jButton21_T;
@@ -435,4 +453,5 @@ public class Actividad_1 extends javax.swing.JFrame {
     private javax.swing.JButton jButton_C;
     private javax.swing.JPanel jPanel_Actividad_1;
     // End of variables declaration//GEN-END:variables
+    
 }

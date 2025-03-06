@@ -4,7 +4,10 @@ package controlador;
 import vistas.Login;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
+import modelo.Usuario;
 import utils.Slide;
+import vistas.Menu;
 
 /**
  *
@@ -13,11 +16,16 @@ import utils.Slide;
 public class ControlLogin implements ActionListener{
     Login log;
     Slide slide;
+    Verificador objVerificador; 
+    OperacionesBD objOperacionesBDUsuario;
     public ControlLogin(Login log) {
         this.log = log;
         slide= new Slide();
+        log.getjB_iniciar_sesion().addActionListener(this);
         log.getjB_ir_Registro().addActionListener(this);
         log.getjButton1_guardar().addActionListener(this);
+        objVerificador= new Verificador();
+        objOperacionesBDUsuario= new OperacionesBD();
     }
     public void moverIzquierdaInfo()
     {
@@ -46,15 +54,66 @@ public class ControlLogin implements ActionListener{
     }
     @Override
     public void actionPerformed(ActionEvent e) {
+       if (e.getSource() == log.getjB_iniciar_sesion()){
+           Menu m = new Menu();
+           m.setVisible(true);
+           if (log != null) {   
+            log.dispose(); 
+        }
+       }
        if (e.getSource() ==log.getjB_ir_Registro()){
            moverIzquierdaInfo();
            moverDerchaRegistro();
        }
        if (e.getSource() == log.getjButton1_guardar()){
+            if (!validarDatos()) {
+                return; 
+            }
+            
+            String nombreUsuario= log.getjTextField1_Nom_User_Registra().getText().trim();
+            String contraseñaUsuario= log.getjPasswordField2_Registrar().getText().trim();
+            
+            System.out.println("Nombre de usuario: " + nombreUsuario);
+            System.out.println("Contraseña: " + contraseñaUsuario);
+            System.out.println("Edad: " + log.getjT_Edad_Registrar().getText().trim());
+           
+            
+              if (objVerificador.existeUsuario(objOperacionesBDUsuario, nombreUsuario, contraseñaUsuario)) {
+                JOptionPane.showMessageDialog(null, "Ya existe un jugador con ese nombre o contraseña.");
+                return; 
+            }
+             
+          Usuario objUsuario = new Usuario();
+          
+          objUsuario.setNom(nombreUsuario);
+          objUsuario.setEdad(Integer.parseInt(log.getjT_Edad_Registrar().getText()));
+
+          objUsuario.setContraseña(contraseñaUsuario);
+          
+          
+          //aqui lo guardamos en la base de datos
+          objOperacionesBDUsuario.setObjUsuario(objUsuario);
+          objOperacionesBDUsuario.create();
+            
+          JOptionPane.showMessageDialog(null, "Usuario agregado correctamente.");
+           
+
+          
            moverArribaRegistro();
            moverDerechaInfo();
            limpiar();
         }
+     
+       
+    }
+      
+    public boolean validarDatos(){
+        boolean validNombre= objVerificador.verificaCajaTextoCadena(log.getjTextField1_Nom_User_Registra());
+        boolean validContraseña=objVerificador.verificaCajaTextoCadena(log.getjPasswordField2_Registrar());
+        boolean validEdad=objVerificador.verificaCajaTextoEntero(log.getjPasswordField1());
+        
+        return validNombre && validContraseña && validEdad;
+        
     }
     
     

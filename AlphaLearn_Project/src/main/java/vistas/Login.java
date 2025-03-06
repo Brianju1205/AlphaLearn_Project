@@ -1,14 +1,14 @@
 
 package vistas;
 
+import com.formdev.flatlaf.FlatLightLaf;
 import controlador.ControlLogin;
-import java.awt.Button;
-import java.awt.Color;
+
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
-import utils.ButtonOutLine;
+
 
 /**
  *
@@ -24,7 +24,12 @@ public class Login extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         ControlLogin =new ControlLogin(this);
-
+        initStyles();
+    }
+    private void initStyles(){
+        jButton1_guardar.putClientProperty( "JButton.buttonType", "roundRect" );
+        jB_iniciar_sesion.putClientProperty( "JButton.buttonType", "roundRect" );
+        jB_ir_Registro.putClientProperty( "JButton.buttonType", "roundRect" );
     }
 
     public JPanel getJP_info_regis() {
@@ -313,27 +318,8 @@ public class Login extends javax.swing.JFrame {
      */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
+        
+        FlatLightLaf.setup();
         //</editor-fold>
 
         /* Create and display the form */

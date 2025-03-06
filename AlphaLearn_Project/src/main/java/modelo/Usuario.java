@@ -14,7 +14,10 @@ public class Usuario {
     private int edad;
     private String nivel;
     private String contraseña;
-
+    
+    public Usuario(){
+        
+    }
     public Usuario(String idUsuario, String nom, int edad, String nivel, String contraseña) {
         this.idUsuario = idUsuario;
         this.nom = nom;

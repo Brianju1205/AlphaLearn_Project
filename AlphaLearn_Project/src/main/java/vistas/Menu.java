@@ -4,6 +4,10 @@
  */
 package vistas;
 
+import com.formdev.flatlaf.FlatLightLaf;
+import controlador.ControlMenu;
+import javax.swing.JButton;
+
 /**
  *
  * @author juare
@@ -13,13 +17,44 @@ public class Menu extends javax.swing.JFrame {
     /**
      * Creates new form Menu
      */
+    ControlMenu objControlMenu;
     public Menu() {
         initComponents();
-        setSize(1213, 700); // Ancho x Alto en píxeles
+        setSize(1213, 700); 
         setDefaultCloseOperation(Menu.EXIT_ON_CLOSE);
-        setLocationRelativeTo(null); // Centrar la ventana en la pantalla
+        setLocationRelativeTo(null); 
         setVisible(true);
+        objControlMenu = new ControlMenu(this);
     }
+
+    public JButton getjButton_Actividad1() {
+        return jButton_Actividad1;
+    }
+
+    public JButton getjButton_Actividad2() {
+        return jButton_Actividad2;
+    }
+
+    public JButton getjButton_Actividad3() {
+        return jButton_Actividad3;
+    }
+
+    public JButton getjButton_Actividad4() {
+        return jButton_Actividad4;
+    }
+
+    public JButton getjButton_Actividad5() {
+        return jButton_Actividad5;
+    }
+
+    public JButton getjButton_Actividad6() {
+        return jButton_Actividad6;
+    }
+
+    public JButton getjButton5_Salir_Menu() {
+        return jButton5_Salir_Menu;
+    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -32,6 +67,11 @@ public class Menu extends javax.swing.JFrame {
 
         jPanel_Opciones = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jButton5_Salir_Menu = new javax.swing.JButton();
+        jSeparator1 = new javax.swing.JSeparator();
         jPanel_Menu = new javax.swing.JPanel();
         jButton_Actividad2 = new javax.swing.JButton();
         jButton_Actividad3 = new javax.swing.JButton();
@@ -42,29 +82,64 @@ public class Menu extends javax.swing.JFrame {
         jPanel_Mensages = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(900, 650));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel_Opciones.setBackground(new java.awt.Color(102, 0, 255));
+        jPanel_Opciones.setBackground(new java.awt.Color(102, 102, 255));
         jPanel_Opciones.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton1.setBackground(new java.awt.Color(102, 0, 255));
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setBackground(new java.awt.Color(102, 102, 255));
+        jButton1.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(0, 0, 0));
         jButton1.setText("INICIO");
         jButton1.setBorder(null);
         jButton1.setBorderPainted(false);
         jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton1.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
-        jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
-        jButton1.setIconTextGap(10);
+        jButton1.setIconTextGap(5);
         jButton1.setMargin(new java.awt.Insets(10, 14, 3, 14));
         jButton1.setOpaque(true);
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
         jPanel_Opciones.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 230, 50));
+
+        jButton2.setBackground(new java.awt.Color(102, 102, 255));
+        jButton2.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(0, 0, 0));
+        jButton2.setText("AJUSTES");
+        jButton2.setBorder(null);
+        jButton2.setBorderPainted(false);
+        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton2.setIconTextGap(10);
+        jButton2.setOpaque(true);
+        jPanel_Opciones.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 200, 230, 50));
+
+        jButton3.setBackground(new java.awt.Color(102, 102, 255));
+        jButton3.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        jButton3.setForeground(new java.awt.Color(0, 0, 0));
+        jButton3.setText("AYUDA");
+        jButton3.setBorder(null);
+        jButton3.setBorderPainted(false);
+        jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel_Opciones.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 260, 230, 50));
+
+        jButton4.setBackground(new java.awt.Color(102, 102, 255));
+        jButton4.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        jButton4.setForeground(new java.awt.Color(0, 0, 0));
+        jButton4.setText("PROGRESO");
+        jButton4.setBorder(null);
+        jButton4.setBorderPainted(false);
+        jButton4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel_Opciones.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(-1, 317, 230, 50));
+
+        jButton5_Salir_Menu.setBackground(new java.awt.Color(51, 51, 255));
+        jButton5_Salir_Menu.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
+        jButton5_Salir_Menu.setForeground(new java.awt.Color(0, 0, 0));
+        jButton5_Salir_Menu.setText("SALIR");
+        jButton5_Salir_Menu.setBorder(null);
+        jButton5_Salir_Menu.setBorderPainted(false);
+        jButton5_Salir_Menu.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel_Opciones.add(jButton5_Salir_Menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(-1, 587, 230, 60));
+
+        jSeparator1.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel_Opciones.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 200, 10));
 
         getContentPane().add(jPanel_Opciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 230, 690));
 
@@ -84,11 +159,13 @@ public class Menu extends javax.swing.JFrame {
         jPanel_Menu.add(jButton_Actividad3, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 50, 200, 210));
 
         jButton_Actividad4.setBackground(new java.awt.Color(255, 255, 255));
+        jButton_Actividad4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/image-removebg-preview (15) 1.png"))); // NOI18N
         jButton_Actividad4.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
         jButton_Actividad4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel_Menu.add(jButton_Actividad4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 330, 200, 210));
 
         jButton_Actividad5.setBackground(new java.awt.Color(255, 255, 255));
+        jButton_Actividad5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/image-removebg-preview (16) 1.png"))); // NOI18N
         jButton_Actividad5.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
         jButton_Actividad5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel_Menu.add(jButton_Actividad5, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 330, 200, 210));
@@ -106,7 +183,7 @@ public class Menu extends javax.swing.JFrame {
 
         getContentPane().add(jPanel_Menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 80, 990, 610));
 
-        jPanel_Mensages.setBackground(new java.awt.Color(102, 102, 255));
+        jPanel_Mensages.setBackground(new java.awt.Color(51, 51, 255));
 
         javax.swing.GroupLayout jPanel_MensagesLayout = new javax.swing.GroupLayout(jPanel_Mensages);
         jPanel_Mensages.setLayout(jPanel_MensagesLayout);
@@ -124,40 +201,19 @@ public class Menu extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
-
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
+        
         /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
+        
+        FlatLightLaf.setup();
+        
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
+                
                 new Menu().setVisible(true);
             }
         });
@@ -165,6 +221,10 @@ public class Menu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5_Salir_Menu;
     private javax.swing.JButton jButton_Actividad1;
     private javax.swing.JButton jButton_Actividad2;
     private javax.swing.JButton jButton_Actividad3;
@@ -174,5 +234,6 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel_Mensages;
     private javax.swing.JPanel jPanel_Menu;
     private javax.swing.JPanel jPanel_Opciones;
+    private javax.swing.JSeparator jSeparator1;
     // End of variables declaration//GEN-END:variables
 }

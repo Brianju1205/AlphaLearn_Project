@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.net.URL;
 import javax.sound.sampled.*;
 import vistas.Actividad_1;
+import vistas.Menu;
 
 /**
  *
@@ -47,12 +48,20 @@ public class ControlActividad1 implements ActionListener {
         this.objActividad.getjButton23_X().addActionListener(this);
         this.objActividad.getjButton24_Y().addActionListener(this);
         this.objActividad.getjButton1_Z().addActionListener(this);
+        this.objActividad.getjButton1_Salir_act_1().addActionListener(this);
+        reproducirSonido("/resource/sounds/indicaciones.wav");
         
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        
+           if (e.getSource() == this.objActividad.getjButton1_Salir_act_1()){
+                Menu m = new Menu();
+                m.setVisible(true);
+                if (objActividad != null) {   
+                objActividad.dispose(); 
+                }
+            }
              if (e.getSource() == this.objActividad.getjButton_A()) {
             reproducirSonido("/resource/sounds/a.wav");
         } else if (e.getSource() == this.objActividad.getjButton_B()) {
