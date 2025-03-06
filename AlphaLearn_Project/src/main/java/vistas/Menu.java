@@ -15,6 +15,10 @@ public class Menu extends javax.swing.JFrame {
      */
     public Menu() {
         initComponents();
+        setSize(1213, 700); // Ancho x Alto en píxeles
+        setDefaultCloseOperation(Menu.EXIT_ON_CLOSE);
+        setLocationRelativeTo(null); // Centrar la ventana en la pantalla
+        setVisible(true);
     }
 
     /**
@@ -26,21 +30,103 @@ public class Menu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        jPanel_Opciones = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
+        jPanel_Menu = new javax.swing.JPanel();
+        jButton_Actividad2 = new javax.swing.JButton();
+        jButton_Actividad3 = new javax.swing.JButton();
+        jButton_Actividad4 = new javax.swing.JButton();
+        jButton_Actividad5 = new javax.swing.JButton();
+        jButton_Actividad6 = new javax.swing.JButton();
+        jButton_Actividad1 = new javax.swing.JButton();
+        jPanel_Mensages = new javax.swing.JPanel();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1014, Short.MAX_VALUE)
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(900, 650));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel_Opciones.setBackground(new java.awt.Color(102, 0, 255));
+        jPanel_Opciones.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jButton1.setBackground(new java.awt.Color(102, 0, 255));
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setText("INICIO");
+        jButton1.setBorder(null);
+        jButton1.setBorderPainted(false);
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton1.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
+        jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        jButton1.setIconTextGap(10);
+        jButton1.setMargin(new java.awt.Insets(10, 14, 3, 14));
+        jButton1.setOpaque(true);
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel_Opciones.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 230, 50));
+
+        getContentPane().add(jPanel_Opciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 230, 690));
+
+        jPanel_Menu.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel_Menu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jButton_Actividad2.setBackground(new java.awt.Color(255, 255, 255));
+        jButton_Actividad2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/buscando 2.png"))); // NOI18N
+        jButton_Actividad2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        jButton_Actividad2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel_Menu.add(jButton_Actividad2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 50, 200, 210));
+
+        jButton_Actividad3.setBackground(new java.awt.Color(255, 255, 255));
+        jButton_Actividad3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/a-b-c 1.png"))); // NOI18N
+        jButton_Actividad3.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        jButton_Actividad3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel_Menu.add(jButton_Actividad3, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 50, 200, 210));
+
+        jButton_Actividad4.setBackground(new java.awt.Color(255, 255, 255));
+        jButton_Actividad4.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        jButton_Actividad4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel_Menu.add(jButton_Actividad4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 330, 200, 210));
+
+        jButton_Actividad5.setBackground(new java.awt.Color(255, 255, 255));
+        jButton_Actividad5.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        jButton_Actividad5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel_Menu.add(jButton_Actividad5, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 330, 200, 210));
+
+        jButton_Actividad6.setBackground(new java.awt.Color(255, 255, 255));
+        jButton_Actividad6.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        jButton_Actividad6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel_Menu.add(jButton_Actividad6, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 330, 200, 210));
+
+        jButton_Actividad1.setBackground(new java.awt.Color(255, 255, 255));
+        jButton_Actividad1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/image-removebg-preview (14) 1.png"))); // NOI18N
+        jButton_Actividad1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        jButton_Actividad1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel_Menu.add(jButton_Actividad1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 50, 200, 210));
+
+        getContentPane().add(jPanel_Menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 80, 990, 610));
+
+        jPanel_Mensages.setBackground(new java.awt.Color(102, 102, 255));
+
+        javax.swing.GroupLayout jPanel_MensagesLayout = new javax.swing.GroupLayout(jPanel_Mensages);
+        jPanel_Mensages.setLayout(jPanel_MensagesLayout);
+        jPanel_MensagesLayout.setHorizontalGroup(
+            jPanel_MensagesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 990, Short.MAX_VALUE)
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 615, Short.MAX_VALUE)
+        jPanel_MensagesLayout.setVerticalGroup(
+            jPanel_MensagesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 80, Short.MAX_VALUE)
         );
+
+        getContentPane().add(jPanel_Mensages, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 0, 990, 80));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -78,5 +164,15 @@ public class Menu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton_Actividad1;
+    private javax.swing.JButton jButton_Actividad2;
+    private javax.swing.JButton jButton_Actividad3;
+    private javax.swing.JButton jButton_Actividad4;
+    private javax.swing.JButton jButton_Actividad5;
+    private javax.swing.JButton jButton_Actividad6;
+    private javax.swing.JPanel jPanel_Mensages;
+    private javax.swing.JPanel jPanel_Menu;
+    private javax.swing.JPanel jPanel_Opciones;
     // End of variables declaration//GEN-END:variables
 }
