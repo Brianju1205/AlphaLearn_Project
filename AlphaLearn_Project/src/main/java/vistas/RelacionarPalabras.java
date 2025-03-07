@@ -5,14 +5,11 @@
 package vistas;
 
 import controlador.ControlRePa;
+import java.awt.Color;
+import javax.swing.BorderFactory;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.*;
-import java.awt.datatransfer.DataFlavor;
-import java.awt.datatransfer.Transferable;
-import java.awt.dnd.*;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
+
 /**
  *
  * @author juare
@@ -26,9 +23,45 @@ public class RelacionarPalabras extends javax.swing.JFrame {
     ControlRePa control;
     public RelacionarPalabras() {
         initComponents();
+        this.setLocationRelativeTo(null);
         control = new ControlRePa(this);
+
         
     }
+
+    public JPanel getjPanel3_fondo() {
+        return jPanel3_fondo;
+    }
+
+    public void setjPanel3_fondo(JPanel jPanel3_fondo) {
+        this.jPanel3_fondo = jPanel3_fondo;
+    }
+    
+
+    public JLabel getjLabel_destino1() {
+        return jLabel_destino1;
+    }
+
+    public void setjLabel_destino1(JLabel jLabel_destino1) {
+        this.jLabel_destino1 = jLabel_destino1;
+    }
+
+    public JLabel getjLabel_destino2() {
+        return jLabel_destino2;
+    }
+
+    public void setjLabel_destino2(JLabel jLabel_destino2) {
+        this.jLabel_destino2 = jLabel_destino2;
+    }
+
+    public JLabel getjLabel_destino3() {
+        return jLabel_destino3;
+    }
+
+    public void setjLabel_destino3(JLabel jLabel_destino3) {
+        this.jLabel_destino3 = jLabel_destino3;
+    }
+    
     public JLabel getjLabel1_palabra1() {
         return jLabel1_palabra1;
     }
@@ -51,32 +84,6 @@ public class RelacionarPalabras extends javax.swing.JFrame {
 
     public void setjLabel3_palabra2(JLabel jLabel3_palabra2) {
         this.jLabel3_palabra2 = jLabel3_palabra2;
-    }
-
-    
-
-    public JPanel getjPanel1_obj1() {
-        return jPanel1_obj1;
-    }
-
-    public void setjPanel1_obj1(JPanel jPanel1_obj1) {
-        this.jPanel1_obj1 = jPanel1_obj1;
-    }
-
-    public JPanel getjPanel1_obj3() {
-        return jPanel1_obj3;
-    }
-
-    public void setjPanel1_obj3(JPanel jPanel1_obj3) {
-        this.jPanel1_obj3 = jPanel1_obj3;
-    }
-
-    public JPanel getjPanel2_obj2() {
-        return jPanel2_obj2;
-    }
-
-    public void setjPanel2_obj2(JPanel jPanel2_obj2) {
-        this.jPanel2_obj2 = jPanel2_obj2;
     }
 
     public JLabel getJlabel_image1() {
@@ -115,66 +122,20 @@ public class RelacionarPalabras extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel3_fondo = new javax.swing.JPanel();
-        jPanel1_obj1 = new javax.swing.JPanel();
-        jPanel2_obj2 = new javax.swing.JPanel();
-        jPanel1_obj3 = new javax.swing.JPanel();
         jlabel_image1 = new javax.swing.JLabel();
         jlabel_image2 = new javax.swing.JLabel();
         jlabel_image3 = new javax.swing.JLabel();
         jLabel1_palabra1 = new javax.swing.JLabel();
         jLabel2_palabra3 = new javax.swing.JLabel();
         jLabel3_palabra2 = new javax.swing.JLabel();
+        jLabel_destino1 = new javax.swing.JLabel();
+        jLabel_destino2 = new javax.swing.JLabel();
+        jLabel_destino3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1160, 650));
 
         jPanel3_fondo.setBackground(new java.awt.Color(204, 204, 255));
         jPanel3_fondo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jPanel1_obj1.setBackground(new java.awt.Color(255, 255, 255));
-
-        javax.swing.GroupLayout jPanel1_obj1Layout = new javax.swing.GroupLayout(jPanel1_obj1);
-        jPanel1_obj1.setLayout(jPanel1_obj1Layout);
-        jPanel1_obj1Layout.setHorizontalGroup(
-            jPanel1_obj1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 220, Short.MAX_VALUE)
-        );
-        jPanel1_obj1Layout.setVerticalGroup(
-            jPanel1_obj1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 80, Short.MAX_VALUE)
-        );
-
-        jPanel3_fondo.add(jPanel1_obj1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 110, 220, 80));
-
-        jPanel2_obj2.setBackground(new java.awt.Color(255, 255, 255));
-
-        javax.swing.GroupLayout jPanel2_obj2Layout = new javax.swing.GroupLayout(jPanel2_obj2);
-        jPanel2_obj2.setLayout(jPanel2_obj2Layout);
-        jPanel2_obj2Layout.setHorizontalGroup(
-            jPanel2_obj2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 220, Short.MAX_VALUE)
-        );
-        jPanel2_obj2Layout.setVerticalGroup(
-            jPanel2_obj2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 80, Short.MAX_VALUE)
-        );
-
-        jPanel3_fondo.add(jPanel2_obj2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 250, 220, 80));
-
-        jPanel1_obj3.setBackground(new java.awt.Color(255, 255, 255));
-
-        javax.swing.GroupLayout jPanel1_obj3Layout = new javax.swing.GroupLayout(jPanel1_obj3);
-        jPanel1_obj3.setLayout(jPanel1_obj3Layout);
-        jPanel1_obj3Layout.setHorizontalGroup(
-            jPanel1_obj3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 220, Short.MAX_VALUE)
-        );
-        jPanel1_obj3Layout.setVerticalGroup(
-            jPanel1_obj3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 80, Short.MAX_VALUE)
-        );
-
-        jPanel3_fondo.add(jPanel1_obj3, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 390, 220, 80));
 
         jlabel_image1.setBackground(new java.awt.Color(204, 204, 204));
         jlabel_image1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -194,15 +155,32 @@ public class RelacionarPalabras extends javax.swing.JFrame {
         jLabel1_palabra1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jLabel1_palabra1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel1_palabra1.setOpaque(true);
-        jPanel3_fondo.add(jLabel1_palabra1, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 110, 219, 80));
+        jPanel3_fondo.add(jLabel1_palabra1, new org.netbeans.lib.awtextra.AbsoluteConstraints(779, 120, 200, 70));
 
         jLabel2_palabra3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jLabel2_palabra3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel3_fondo.add(jLabel2_palabra3, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 380, 219, 80));
+        jPanel3_fondo.add(jLabel2_palabra3, new org.netbeans.lib.awtextra.AbsoluteConstraints(779, 400, 200, 60));
 
+        jLabel3_palabra2.setText("b");
         jLabel3_palabra2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jLabel3_palabra2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel3_fondo.add(jLabel3_palabra2, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 250, 219, 80));
+        jLabel3_palabra2.setOpaque(true);
+        jPanel3_fondo.add(jLabel3_palabra2, new org.netbeans.lib.awtextra.AbsoluteConstraints(779, 250, 200, 70));
+
+        jLabel_destino1.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel_destino1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jLabel_destino1.setOpaque(true);
+        jPanel3_fondo.add(jLabel_destino1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 240, 260, 90));
+
+        jLabel_destino2.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel_destino2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jLabel_destino2.setOpaque(true);
+        jPanel3_fondo.add(jLabel_destino2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 100, 260, 90));
+
+        jLabel_destino3.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel_destino3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jLabel_destino3.setOpaque(true);
+        jPanel3_fondo.add(jLabel_destino3, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 390, 250, 80));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -260,9 +238,9 @@ public class RelacionarPalabras extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1_palabra1;
     private javax.swing.JLabel jLabel2_palabra3;
     private javax.swing.JLabel jLabel3_palabra2;
-    private javax.swing.JPanel jPanel1_obj1;
-    private javax.swing.JPanel jPanel1_obj3;
-    private javax.swing.JPanel jPanel2_obj2;
+    private javax.swing.JLabel jLabel_destino1;
+    private javax.swing.JLabel jLabel_destino2;
+    private javax.swing.JLabel jLabel_destino3;
     private javax.swing.JPanel jPanel3_fondo;
     private javax.swing.JLabel jlabel_image1;
     private javax.swing.JLabel jlabel_image2;
