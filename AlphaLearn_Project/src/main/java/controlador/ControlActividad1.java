@@ -123,7 +123,7 @@ public class ControlActividad1 implements ActionListener {
         try {
             URL url = getClass().getResource(ruta);
             if (url == null) {
-                System.err.println("No se encontró el archivo: " + ruta);
+                System.err.println("No se encontro el archivo: " + ruta);
                 return;
             }
 

@@ -21,14 +21,12 @@ import modelo.Usuario;
 public class Verificador {
     private int id;
     private String nom;
-
-    Conexion objConexion;
+    private Conexion objConexion;
 
     public Verificador() {
         this.objConexion = objConexion;
-        objConexion = new Conexion();
-        objConexion.connectDatabase();
-        
+        this.objConexion = Conexion.getInstance();
+        this.objConexion.getStatement();
         PreparedStatement preparedStatement = null;
     }
     
@@ -78,7 +76,7 @@ public class Verificador {
     }
    public boolean validaJugador(String nombre, String pin){
         
-        try (PreparedStatement preparedStatement = objConexion.connection.prepareStatement("SELECT * FROM usuarios WHERE nombre = ? AND password = ?")) {
+        try (PreparedStatement preparedStatement = objConexion.getConnection().prepareStatement("SELECT * FROM usuarios WHERE nombre = ? AND password = ?")) {
             preparedStatement.setString(1, nombre);
             preparedStatement.setString(2, pin);
 

@@ -4,12 +4,10 @@
  */
 package vistas;
 
+import com.formdev.flatlaf.FlatLightLaf;
 import controlador.ControlActividad1;
-import java.awt.Graphics;
-import java.awt.Image;
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import javax.swing.JPanel;
+
 
 /**
  *
@@ -24,9 +22,13 @@ public class Actividad_1 extends javax.swing.JFrame {
    
     public Actividad_1() {
         
-        initComponents();
+        initComponents(); 
         objcontrolActi= new ControlActividad1(this);
         this.setLocationRelativeTo(null);
+        initStyles();
+    }
+    private void initStyles(){
+        jButton_Siguiente.putClientProperty( "JButton.buttonType", "roundRect" );
         
     }
 
@@ -141,6 +143,10 @@ public class Actividad_1 extends javax.swing.JFrame {
     public JButton getjButton1_Salir_act_1() {
         return jButton1_Salir_act_1;
     }
+
+    public JButton getjButton_Siguiente() {
+        return jButton_Siguiente;
+    }
     
     
     /**
@@ -181,11 +187,12 @@ public class Actividad_1 extends javax.swing.JFrame {
         jButton26_W = new javax.swing.JButton();
         jButton1_Z = new javax.swing.JButton();
         jButton1_Salir_act_1 = new javax.swing.JButton();
+        jButton_Siguiente = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel_Actividad_1.setBackground(new java.awt.Color(142, 142, 214));
+        jPanel_Actividad_1.setBackground(new java.awt.Color(204, 204, 255));
         jPanel_Actividad_1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton_A.setBackground(new java.awt.Color(51, 153, 0));
@@ -377,11 +384,17 @@ public class Actividad_1 extends javax.swing.JFrame {
         jPanel_Actividad_1.add(jButton1_Z, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 360, 80, 80));
 
         jButton1_Salir_act_1.setBackground(new java.awt.Color(255, 255, 255));
-        jButton1_Salir_act_1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/boton.salir.png"))); // NOI18N
+        jButton1_Salir_act_1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/salida 1_1.png"))); // NOI18N
         jButton1_Salir_act_1.setBorder(null);
-        jButton1_Salir_act_1.setBorderPainted(false);
-        jButton1_Salir_act_1.setOpaque(true);
-        jPanel_Actividad_1.add(jButton1_Salir_act_1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 100, 60));
+        jButton1_Salir_act_1.setContentAreaFilled(false);
+        jButton1_Salir_act_1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel_Actividad_1.add(jButton1_Salir_act_1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 0, 100, 60));
+
+        jButton_Siguiente.setBackground(new java.awt.Color(255, 0, 0));
+        jButton_Siguiente.setFont(new java.awt.Font("Gill Sans Ultra Bold", 0, 24)); // NOI18N
+        jButton_Siguiente.setForeground(new java.awt.Color(255, 255, 255));
+        jButton_Siguiente.setText("Siguiente");
+        jPanel_Actividad_1.add(jButton_Siguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 460, 180, 50));
 
         getContentPane().add(jPanel_Actividad_1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1210, 700));
 
@@ -393,27 +406,7 @@ public class Actividad_1 extends javax.swing.JFrame {
      */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Actividad_1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Actividad_1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Actividad_1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Actividad_1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
+        FlatLightLaf.setup();
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -452,6 +445,7 @@ public class Actividad_1 extends javax.swing.JFrame {
     private javax.swing.JButton jButton_A;
     private javax.swing.JButton jButton_B;
     private javax.swing.JButton jButton_C;
+    private javax.swing.JButton jButton_Siguiente;
     private javax.swing.JPanel jPanel_Actividad_1;
     // End of variables declaration//GEN-END:variables
     

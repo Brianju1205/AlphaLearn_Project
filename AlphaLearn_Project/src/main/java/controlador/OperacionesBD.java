@@ -20,79 +20,74 @@ import modelo.Usuario;
 public class OperacionesBD extends CRUD{
     
     private Usuario objUsuario;
-    Conexion objConexion;
+    private Conexion objConexion;
+    private static OperacionesBD instancia; 
 
-    public Usuario getObjUsuario() {
-        return objUsuario;
-       
+    private OperacionesBD() {
+        objConexion = Conexion.getInstance(); 
     }
     
-
-    public void setObjUsuario(Usuario objUsuario) {
-        this.objUsuario = objUsuario;
+    public static OperacionesBD getInstance() {
+        if (instancia == null) {
+            instancia = new OperacionesBD();
+        }
+        return instancia;
     }
-    
-    
 
-    public OperacionesBD() {
-        objConexion = new Conexion();
-        objConexion.connectDatabase();
-    }
-   
     @Override
     public void create() {
-        try{
-            System.out.println("Insercion correcta en base de datos");
-            
-              // Asegúrate de que la contraseña esté correctamente delimitada entre comillas simples
-            objConexion.stmt.execute("INSERT INTO usuarios (nombre, edad, password) VALUES ('"
-             + objUsuario.getNom() + "', "
-             + objUsuario.getEdad() + ", '"
-             + objUsuario.getContraseña() + "');");
+        try {
+            System.out.println("Inserción correcta en base de datos");
 
-            
-        }catch(SQLException ex){
+            objConexion.getStatement().execute("INSERT INTO usuarios (nombre, edad, password) VALUES ('"
+                + objUsuario.getNom() + "', "
+                + objUsuario.getEdad() + ", '"
+                + objUsuario.getContraseña() + "');");
+
+        } catch (SQLException ex) {
             Logger.getLogger(OperacionesBD.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-        
     }
 
     @Override
     public ArrayList read() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
     public void update() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
     public void delete() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        throw new UnsupportedOperationException("Not supported yet.");
     }
-    
-       public Usuario buscarUsuario(String nombre, String contraseña) {
+
+    public Usuario buscarUsuario(String nombre, String contraseña) {
         Usuario objUsuario = null;
         try {
-            ResultSet resultado = objConexion.stmt.executeQuery("SELECT * FROM usuarios WHERE nombre = '" + nombre + "' AND password = '" + contraseña + "';");
-            
+            ResultSet resultado = objConexion.getStatement().executeQuery("SELECT * FROM usuarios WHERE nombre = '"
+                + nombre + "' AND password = '" + contraseña + "';");
+
             if (resultado.next()) {
                 objUsuario = new Usuario();
                 objUsuario.setNom(resultado.getString("nombre"));
                 objUsuario.setEdad(resultado.getInt("edad"));
-                objUsuario.setContraseña(resultado.getString("contraseña"));
-                
+                objUsuario.setContraseña(resultado.getString("password"));
             }
         } catch (SQLException ex) {
             Logger.getLogger(OperacionesBD.class.getName()).log(Level.SEVERE, null, ex);
         }
         return objUsuario;
     }
-    
+    public Usuario getObjUsuario() {
+        return objUsuario;
+    }
+
+    public void setObjUsuario(Usuario objUsuario) {
+        this.objUsuario = objUsuario;
+    }
+}
     
   
-
-     
-}
