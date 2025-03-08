@@ -13,17 +13,17 @@ public class Usuario {
     private String nom;
     private int edad;
     private String nivel;
-    private String contraseña;
+    private String password;
     
     public Usuario(){
         
     }
-    public Usuario(String idUsuario, String nom, int edad, String nivel, String contraseña) {
+    public Usuario(String idUsuario, String nom, int edad, String nivel, String password) {
         this.idUsuario = idUsuario;
         this.nom = nom;
         this.edad = edad;
         this.nivel = nivel;
-        this.contraseña = contraseña;
+        this.password = password;
     }
 
     public String getIdUsuario() {
@@ -58,12 +58,12 @@ public class Usuario {
         this.nivel = nivel;
     }
 
-    public String getContraseña() {
-        return contraseña;
+    public String getPassword() {
+        return password;
     }
 
-    public void setContraseña(String contraseña) {
-        this.contraseña = contraseña;
+    public void setContraseña(String password) {
+        this.password = password;
     }
     
     

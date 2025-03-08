@@ -9,6 +9,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import modelo.Usuario;
 
@@ -66,6 +68,22 @@ public class Verificador {
 
    public boolean existeUsuario(OperacionesBD operacionesBD, String nombre, String contra){
         Usuario usuario = operacionesBD.buscarUsuario(nombre, contra); 
+        
+       
+        if (usuario != null) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+   public boolean existeUsuario1(UsuarioDAO usuarioDAO, String nombre, String password){
+       // Usuario usuario = UsuarioDAO.buscarUsuario(nombre, contra); 
+        Usuario usuario = null;
+        try {
+            usuario = usuarioDAO.buscarUsuario(nombre, password);
+        } catch (Exception ex) {
+            Logger.getLogger(Verificador.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
        
         if (usuario != null) {

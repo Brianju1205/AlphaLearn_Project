@@ -41,7 +41,7 @@ public class OperacionesBD extends CRUD{
             objConexion.getStatement().execute("INSERT INTO usuarios (nombre, edad, password) VALUES ('"
                 + objUsuario.getNom() + "', "
                 + objUsuario.getEdad() + ", '"
-                + objUsuario.getContraseña() + "');");
+                + objUsuario.getPassword() + "');");
 
         } catch (SQLException ex) {
             Logger.getLogger(OperacionesBD.class.getName()).log(Level.SEVERE, null, ex);

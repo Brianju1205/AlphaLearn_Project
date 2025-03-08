@@ -4,6 +4,8 @@ package controlador;
 import vistas.Login;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import modelo.Usuario;
 import utils.Slide;
@@ -18,7 +20,7 @@ public class ControlLogin implements ActionListener {
     private Slide slide;
     private Verificador objVerificador; 
     private OperacionesBD objOperacionesBDUsuario; 
-
+    private UsuarioDAO objDAOU;
     public ControlLogin(Login log) {
         this.log = log;
         slide = new Slide();
@@ -27,6 +29,7 @@ public class ControlLogin implements ActionListener {
         log.getjButton1_guardar().addActionListener(this);
         objVerificador = new Verificador();
         objOperacionesBDUsuario = OperacionesBD.getInstance(); 
+        objDAOU = UsuarioDAO.getInstance();
     }
 
     public void moverIzquierdaInfo() {
@@ -84,19 +87,28 @@ public class ControlLogin implements ActionListener {
             System.out.println("Contraseña: " + contraseñaUsuario);
             System.out.println("Edad: " + log.getjT_Edad_Registrar().getText().trim());
 
-            if (objVerificador.existeUsuario(objOperacionesBDUsuario, nombreUsuario, contraseñaUsuario)) {
+            /*if (objVerificador.existeUsuario(objOperacionesBDUsuario, nombreUsuario, contraseñaUsuario)) {
+                JOptionPane.showMessageDialog(null, "Ya existe un usuario con ese nombre o contraseña.");
+                return;
+            }*/
+            if (objVerificador.existeUsuario1(objDAOU, nombreUsuario, contraseñaUsuario)) {
                 JOptionPane.showMessageDialog(null, "Ya existe un usuario con ese nombre o contraseña.");
                 return;
             }
-
             Usuario objUsuario = new Usuario();
             objUsuario.setNom(nombreUsuario);
             objUsuario.setEdad(Integer.parseInt(log.getjT_Edad_Registrar().getText()));
             objUsuario.setContraseña(contraseñaUsuario);
 
             // Guardamos en la base de datos usando el Singleton
-            objOperacionesBDUsuario.setObjUsuario(objUsuario);
-            objOperacionesBDUsuario.create();
+            /*objOperacionesBDUsuario.setObjUsuario(objUsuario);
+            objOperacionesBDUsuario.create();*/
+            objDAOU.setObjUsuario(objUsuario);
+            try {
+                objDAOU.crearUsuario();
+            } catch (Exception ex) {
+                Logger.getLogger(ControlLogin.class.getName()).log(Level.SEVERE, null, ex);
+            }
 
             JOptionPane.showMessageDialog(null, "Usuario agregado correctamente.");
 

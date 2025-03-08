@@ -6,6 +6,8 @@ package controlador;
 
 import java.awt.*;
 import java.awt.event.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.*;
 import vistas.Actividad_5;
 import vistas.Menu;
@@ -18,6 +20,7 @@ import vistas.Menu;
 public class ControladorActividad5 implements ActionListener {
     private Actividad_5 objActividad5;
     private OperacionesBD objOperacionesBD;
+    private PalabraDAO palabrasDAO;
     private String palabraActual;
     private Point[] coordenadasEspecificas = {
         new Point(110, 90), 
@@ -32,9 +35,15 @@ public class ControladorActividad5 implements ActionListener {
 
     public ControladorActividad5(Actividad_5 objActividad5) {
         this.objActividad5 = objActividad5;
-        this.objOperacionesBD = OperacionesBD.getInstance();
-
-        palabraActual = objOperacionesBD.obtenerPalabraDesordenada();
+        //this.objOperacionesBD = OperacionesBD.getInstance();
+        this.palabrasDAO = PalabraDAO.getInstance();
+         
+        try {
+            palabraActual = palabrasDAO.obtenerPalabraDesordenada();
+        } catch (Exception ex) {
+            Logger.getLogger(ControladorActividad5.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        //palabraActual = objOperacionesBD.obtenerPalabraDesordenada();
         if (palabraActual != null && !palabraActual.isEmpty()) {
             asignarLetrasAJLabels(palabraActual);
         }
