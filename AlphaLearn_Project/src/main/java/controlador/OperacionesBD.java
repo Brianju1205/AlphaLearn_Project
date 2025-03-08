@@ -4,7 +4,6 @@
  */
 package controlador;
 
-
 import java.security.Timestamp;
 import modelo.CRUD;
 import java.sql.SQLException;
