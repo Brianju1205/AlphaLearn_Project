@@ -17,7 +17,7 @@ import java.sql.Statement;
 public class Conexion {
     private static Conexion instanciaUnica; 
     private Connection connection;
-    private Statement stmt;
+    Statement stmt;
 
     private static final String URL = "jdbc:postgresql://127.0.0.1/alphalearn";
     private static final String USER = "postgres";

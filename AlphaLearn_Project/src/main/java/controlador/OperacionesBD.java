@@ -81,6 +81,18 @@ public class OperacionesBD extends CRUD{
         }
         return objUsuario;
     }
+    public String obtenerPalabraDesordenada() {
+        String palabra = "";
+        try {
+            ResultSet resultado = objConexion.stmt.executeQuery("SELECT palabra FROM palabras ORDER BY RANDOM() LIMIT 1;");
+            if (resultado.next()) {
+                palabra = resultado.getString("palabra");
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(OperacionesBD.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return palabra;
+    }
     public Usuario getObjUsuario() {
         return objUsuario;
     }
