@@ -1,22 +1,19 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package controlador;
 
 import java.awt.*;
 import java.awt.event.*;
+import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.*;
 import vistas.Actividad_5;
 import vistas.Menu;
+import org.netbeans.lib.awtextra.AbsoluteConstraints;
 
 /**
  *
  * @author almen
  */
-
 public class ControladorActividad5 implements ActionListener {
     private Actividad_5 objActividad5;
     private OperacionesBD objOperacionesBD;
@@ -48,12 +45,13 @@ public class ControladorActividad5 implements ActionListener {
             asignarLetrasAJLabels(palabraActual);
         }
         
-        objActividad5.getjPanel1().setLayout(null);
+        objActividad5.getjPanel1().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         this.objActividad5.getjButton1_Salir_act_5().addActionListener(this);
         this.objActividad5.getjButton1_Vericicar_respuesta().addActionListener(this);
     }
 
     private void asignarLetrasAJLabels(String palabra) {
+        palabra = mezclarPalabra(palabra);
         labelsOrigen = new JLabel[]{
             objActividad5.getjLabel3(),
             objActividad5.getjLabel4(),
@@ -67,9 +65,47 @@ public class ControladorActividad5 implements ActionListener {
             if (i < labelsOrigen.length) {
                 labelsOrigen[i].setText(String.valueOf(palabra.charAt(i)));
                 labelsOrigen[i].setLocation(coordenadasEspecificas[i]); 
+
+                // Usar AbsoluteConstraints al agregar el label al panel
+                AbsoluteConstraints constraints = new AbsoluteConstraints(
+                    coordenadasEspecificas[i].x, 
+                    coordenadasEspecificas[i].y, 
+                    labelsOrigen[i].getWidth(), 
+                    labelsOrigen[i].getHeight()
+                );
+                objActividad5.getjPanel1().add(labelsOrigen[i], constraints); // Esto sirve para agregar los label al panel forzadamente con restricciones
+
+                // Se tienen que eliminar los eventos de arrastre
+                for (MouseListener listener : labelsOrigen[i].getMouseListeners()) {
+                    labelsOrigen[i].removeMouseListener(listener);
+                }
+                for (MouseMotionListener listener : labelsOrigen[i].getMouseMotionListeners()) {
+                    labelsOrigen[i].removeMouseMotionListener(listener);
+                }
+
+              
                 agregarEventosArrastre(labelsOrigen[i], coordenadasEspecificas[i]);
             }
         }
+
+       
+        objActividad5.getjPanel1().revalidate();
+        objActividad5.getjPanel1().repaint();
+    }
+    private String mezclarPalabra(String palabra) {
+        char[] letras = palabra.toCharArray(); //de string a arreglo de caracter
+        Random random = new Random();
+
+        for (int i = 0; i < letras.length; i++) {
+            int indiceAleatorio = random.nextInt(letras.length);
+
+            // Intercambio de letras
+            char temp = letras[i];
+            letras[i] = letras[indiceAleatorio];
+            letras[indiceAleatorio] = temp;
+        }
+
+        return new String(letras);
     }
 
     private void agregarEventosArrastre(JLabel label, Point coordenadaEspecifica) {
@@ -104,7 +140,6 @@ public class ControladorActividad5 implements ActionListener {
                 }
             }
         });
-
         label.addMouseMotionListener(new MouseMotionAdapter() {
             @Override
             public void mouseDragged(MouseEvent evt) {
@@ -113,6 +148,7 @@ public class ControladorActividad5 implements ActionListener {
                 label.setLocation(newX, newY);
             }
         });
+       
     }
 
     private void pegarEnDestino(JLabel label, JLabel destino) {   
@@ -132,9 +168,17 @@ public class ControladorActividad5 implements ActionListener {
             Container parent = label.getParent();
             parent.remove(label);
             
-            label.setLocation(coordenadaEspecifica); 
+            
+            label.setLocation(coordenadaEspecifica);
 
-            objActividad5.getjPanel1().add(label);
+            AbsoluteConstraints constraints = new AbsoluteConstraints(
+                coordenadaEspecifica.x, 
+                coordenadaEspecifica.y, 
+                label.getWidth(), 
+                label.getHeight()
+            );
+            objActividad5.getjPanel1().add(label, constraints);
+
             objActividad5.getjPanel1().revalidate();
             objActividad5.getjPanel1().repaint();
         }
@@ -163,15 +207,75 @@ public class ControladorActividad5 implements ActionListener {
 
         StringBuilder palabraFormada = new StringBuilder();
         for (JLabel label : labelsDestino) {
-            if (!label.getText().isEmpty()) {
-                palabraFormada.append(label.getText());
+            if (label.getComponentCount() > 0) {
+                JLabel letra = (JLabel) label.getComponent(0);
+                palabraFormada.append(letra.getText());
             }
         }
 
         if (palabraFormada.toString().equalsIgnoreCase(palabraActual)) {
-            System.out.println("¡Respuesta correcta!");
+            JOptionPane.showMessageDialog(objActividad5, "¡Respuesta correcta!", "Resultado", JOptionPane.INFORMATION_MESSAGE);
+            reiniciarActividad();
         } else {
-            System.out.println("Respuesta incorrecta. Intenta de nuevo.");
+            JOptionPane.showMessageDialog(objActividad5, "Respuesta incorrecta. Intenta de nuevo.", "Resultado", JOptionPane.ERROR_MESSAGE);
         }
+    }
+
+    private void reiniciarActividad() {
+        JLabel[] labelsDestino = {
+            objActividad5.getjLabel_detino1(),
+            objActividad5.getjLabel_destino2(),
+            objActividad5.getjLabel_destino3(),
+            objActividad5.getjLabel_destino4(),
+            objActividad5.getjLabel_destino5(),
+            objActividad5.getjLabel_destino6()
+        };
+
+        for (JLabel label : labelsDestino) {
+            label.removeAll(); 
+            label.setText("");
+            label.revalidate();
+            label.repaint();
+        }
+
+        if (labelsOrigen != null) {
+            for (int i = 0; i < labelsOrigen.length; i++) {
+                if (labelsOrigen[i] != null) {
+                    labelsOrigen[i].setText(""); 
+                    labelsOrigen[i].setLocation(coordenadasEspecificas[i]); 
+
+                    // elimina todos los listeners antiguos
+                    for (MouseListener listener : labelsOrigen[i].getMouseListeners()) {
+                        labelsOrigen[i].removeMouseListener(listener);
+                    }
+                    for (MouseMotionListener listener : labelsOrigen[i].getMouseMotionListeners()) {
+                        labelsOrigen[i].removeMouseMotionListener(listener);
+                    }
+                    //agrega los label al panel
+                    AbsoluteConstraints constraints = new AbsoluteConstraints(
+                        coordenadasEspecificas[i].x, 
+                        coordenadasEspecificas[i].y, 
+                        labelsOrigen[i].getWidth(), 
+                        labelsOrigen[i].getHeight()
+                    );
+                    objActividad5.getjPanel1().add(labelsOrigen[i], constraints);
+
+                    agregarEventosArrastre(labelsOrigen[i], coordenadasEspecificas[i]);
+                }
+            }
+        }
+
+        try {
+            palabraActual = palabrasDAO.obtenerPalabraDesordenada();
+        } catch (Exception ex) {
+            Logger.getLogger(ControladorActividad5.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        if (palabraActual != null && !palabraActual.isEmpty()) {
+            asignarLetrasAJLabels(palabraActual);
+        }
+
+        objActividad5.getjPanel1().revalidate();
+        objActividad5.getjPanel1().repaint();
     }
 }
