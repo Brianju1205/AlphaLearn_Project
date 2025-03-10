@@ -19,6 +19,8 @@ public class ControladorActividad5 implements ActionListener {
     private OperacionesBD objOperacionesBD;
     private PalabraDAO palabrasDAO;
     private String palabraActual;
+    private int respuestaCorrectas=0;
+    private int respuestasMalas=0;
     private Point[] coordenadasEspecificas = {
         new Point(110, 90), 
         new Point(240, 90),
@@ -216,9 +218,12 @@ public class ControladorActividad5 implements ActionListener {
         if (palabraFormada.toString().equalsIgnoreCase(palabraActual)) {
             JOptionPane.showMessageDialog(objActividad5, "¡Respuesta correcta!", "Resultado", JOptionPane.INFORMATION_MESSAGE);
             reiniciarActividad();
+            respuestaCorrectas++;
         } else {
             JOptionPane.showMessageDialog(objActividad5, "Respuesta incorrecta. Intenta de nuevo.", "Resultado", JOptionPane.ERROR_MESSAGE);
+            respuestasMalas++;
         }
+        GuardarHistorial();
     }
 
     private void reiniciarActividad() {
@@ -277,5 +282,17 @@ public class ControladorActividad5 implements ActionListener {
 
         objActividad5.getjPanel1().revalidate();
         objActividad5.getjPanel1().repaint();
+    }
+    private void GuardarHistorial() {
+        String word=objActividad5.getjLabel_detino1().getText()+
+                    objActividad5.getjLabel_destino2().getText()+
+                    objActividad5.getjLabel_destino3().getText()+
+                    objActividad5.getjLabel_destino4().getText()+
+                    objActividad5.getjLabel_destino5().getText()+
+                    objActividad5.getjLabel_destino6().getText() ;
+        
+        System.out.println("HISTORIAL GUARDADO: "+word);
+        System.out.println("Las palabras buenas que llevas son: "+respuestaCorrectas);
+        System.out.println("Las palabras malas que llevas son: "+respuestasMalas);
     }
 }
