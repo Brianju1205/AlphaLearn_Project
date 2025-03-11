@@ -164,6 +164,7 @@ public class Login extends javax.swing.JFrame {
         jB_iniciar_sesion = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
         jLayeredPane1.setBackground(new java.awt.Color(255, 255, 255));
         jLayeredPane1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());

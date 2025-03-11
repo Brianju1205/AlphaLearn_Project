@@ -33,7 +33,7 @@ public class Progreso extends javax.swing.JPanel {
         jLabel4 = new javax.swing.JLabel();
         jProgressBar1 = new javax.swing.JProgressBar();
 
-        jPanel_Menu.setBackground(new java.awt.Color(153, 153, 255));
+        jPanel_Menu.setBackground(new java.awt.Color(255, 255, 255));
         jPanel_Menu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 255));
@@ -54,6 +54,10 @@ public class Progreso extends javax.swing.JPanel {
         jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Actividad 1");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 110, 20));
+
+        jProgressBar1.setBackground(new java.awt.Color(255, 255, 255));
+        jProgressBar1.setMinimum(50);
+        jProgressBar1.setToolTipText("");
         jPanel1.add(jProgressBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 70, 440, 50));
 
         jPanel_Menu.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 50, 780, 510));

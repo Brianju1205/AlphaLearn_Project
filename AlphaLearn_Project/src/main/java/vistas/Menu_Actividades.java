@@ -76,39 +76,41 @@ public class Menu_Actividades extends javax.swing.JPanel {
         jPanel_Menu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton_Actividad2.setBackground(new java.awt.Color(204, 204, 255));
-        jButton_Actividad2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/buscando 2.png"))); // NOI18N
+        jButton_Actividad2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/Actividad2.png"))); // NOI18N
         jButton_Actividad2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
         jButton_Actividad2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel_Menu.add(jButton_Actividad2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 50, 200, 210));
+        jPanel_Menu.add(jButton_Actividad2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 30, 260, 250));
 
         jButton_Actividad3.setBackground(new java.awt.Color(204, 204, 255));
-        jButton_Actividad3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/a-b-c 1.png"))); // NOI18N
+        jButton_Actividad3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/Actividad3.png"))); // NOI18N
         jButton_Actividad3.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
         jButton_Actividad3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel_Menu.add(jButton_Actividad3, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 50, 200, 210));
+        jPanel_Menu.add(jButton_Actividad3, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 30, 260, 250));
 
         jButton_Actividad4.setBackground(new java.awt.Color(204, 204, 255));
-        jButton_Actividad4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/image-removebg-preview (15) 1.png"))); // NOI18N
+        jButton_Actividad4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/Frame 12.png"))); // NOI18N
         jButton_Actividad4.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
         jButton_Actividad4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel_Menu.add(jButton_Actividad4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 330, 200, 210));
+        jPanel_Menu.add(jButton_Actividad4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, 260, 250));
 
         jButton_Actividad5.setBackground(new java.awt.Color(204, 204, 255));
-        jButton_Actividad5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/image-removebg-preview (16) 1.png"))); // NOI18N
+        jButton_Actividad5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/Frame 12.png"))); // NOI18N
         jButton_Actividad5.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
         jButton_Actividad5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel_Menu.add(jButton_Actividad5, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 330, 200, 210));
+        jPanel_Menu.add(jButton_Actividad5, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 320, 260, 250));
 
         jButton_Actividad6.setBackground(new java.awt.Color(204, 204, 255));
+        jButton_Actividad6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/Frame 12.png"))); // NOI18N
         jButton_Actividad6.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
         jButton_Actividad6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel_Menu.add(jButton_Actividad6, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 330, 200, 210));
+        jPanel_Menu.add(jButton_Actividad6, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 320, 260, 250));
 
         jButton_Actividad1.setBackground(new java.awt.Color(204, 204, 255));
-        jButton_Actividad1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/image-removebg-preview (14) 1.png"))); // NOI18N
+        jButton_Actividad1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/Actividad1.png"))); // NOI18N
         jButton_Actividad1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
         jButton_Actividad1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel_Menu.add(jButton_Actividad1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 50, 200, 210));
+        jButton_Actividad1.setIconTextGap(1);
+        jPanel_Menu.add(jButton_Actividad1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 260, 250));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);

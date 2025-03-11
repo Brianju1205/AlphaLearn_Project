@@ -4,9 +4,8 @@
  */
 package vistas;
 
-import controlador.ControlRePa;
-import java.awt.Color;
-import javax.swing.BorderFactory;
+import controlador.ControlActividad3;
+import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
@@ -14,21 +13,25 @@ import javax.swing.JPanel;
  *
  * @author juare
  */
-public class RelacionarPalabras extends javax.swing.JFrame {
+public class Actividad_3 extends javax.swing.JFrame {
 
     /**
      * Creates new form RelacionarPalabras
      */
     
-    ControlRePa control;
-    public RelacionarPalabras() {
+    ControlActividad3 control;
+    public Actividad_3() {
         initComponents();
         this.setLocationRelativeTo(null);
-        control = new ControlRePa(this);
+        control = new ControlActividad3(this);
 
         
     }
 
+    public JButton getjButton1_Salir() {
+        return jButton1_Salir;
+    }
+    
     public JPanel getjPanel3_fondo() {
         return jPanel3_fondo;
     }
@@ -131,8 +134,10 @@ public class RelacionarPalabras extends javax.swing.JFrame {
         jLabel_destino1 = new javax.swing.JLabel();
         jLabel_destino2 = new javax.swing.JLabel();
         jLabel_destino3 = new javax.swing.JLabel();
+        jButton1_Salir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
         jPanel3_fondo.setBackground(new java.awt.Color(204, 204, 255));
         jPanel3_fondo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -182,13 +187,15 @@ public class RelacionarPalabras extends javax.swing.JFrame {
         jLabel_destino3.setOpaque(true);
         jPanel3_fondo.add(jLabel_destino3, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 390, 250, 80));
 
+        jButton1_Salir.setBackground(new java.awt.Color(51, 51, 255));
+        jButton1_Salir.setText("SALIR");
+        jPanel3_fondo.add(jButton1_Salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, 140, 40));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel3_fondo, javax.swing.GroupLayout.PREFERRED_SIZE, 1138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 22, Short.MAX_VALUE))
+            .addComponent(jPanel3_fondo, javax.swing.GroupLayout.DEFAULT_SIZE, 1160, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -215,26 +222,30 @@ public class RelacionarPalabras extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(RelacionarPalabras.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Actividad_3.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(RelacionarPalabras.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Actividad_3.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(RelacionarPalabras.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Actividad_3.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(RelacionarPalabras.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Actividad_3.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new RelacionarPalabras().setVisible(true);
+                new Actividad_3().setVisible(true);
             }
         });
     }
 
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1_Salir;
     private javax.swing.JLabel jLabel1_palabra1;
     private javax.swing.JLabel jLabel2_palabra3;
     private javax.swing.JLabel jLabel3_palabra2;

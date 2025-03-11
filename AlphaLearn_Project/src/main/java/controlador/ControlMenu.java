@@ -11,6 +11,8 @@ import java.awt.event.ActionListener;
 import javax.swing.JPanel;
 import javax.swing.UIManager;
 import vistas.Actividad_1;
+import vistas.Actividad_2;
+import vistas.Actividad_3;
 import vistas.Menu;
 import vistas.Menu_Actividades;
 import vistas.Ajustes;
@@ -60,16 +62,26 @@ public class ControlMenu implements ActionListener{
             }
         }
         if(e.getSource() ==  this.objMenuAc.getjButton_Actividad2()){
+            Actividad_2 a =new Actividad_2();
+            a.setVisible(true);
+            if(objMenu !=null){
+                objMenu.dispose();
+            }
             
         }
         if(e.getSource() == this.objMenuAc.getjButton_Actividad3()){
+            Actividad_3 a= new Actividad_3();
+            a.setVisible(true);
+            if(objMenu !=null){
+                objMenu.dispose();
+            }
             
         }
         if(e.getSource() == this.objMenuAc.getjButton_Actividad4()){
             
         }
         if(e.getSource() == this.objMenuAc.getjButton_Actividad5()){
-            
+                 
         }
         if(e.getSource() == this.objMenuAc.getjButton_Actividad6()){
             

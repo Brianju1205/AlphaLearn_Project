@@ -1,17 +1,17 @@
 package controlador;
 
-import vistas.RelacionarPalabras;
+import vistas.Actividad_3;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-
+import vistas.Menu;
 /**
  * Controlador para manejar el arrastre y soltar palabras en los JLabel destino.
  * 
  * @author juare
  */
-public class ControlRePa {
-    private RelacionarPalabras vista;
+public class ControlActividad3 implements ActionListener{
+    private Actividad_3 vista;
     private int poaX, poaY; 
     private Point posicionOriginal; 
     private boolean clicDerechoPresionado = false;
@@ -20,13 +20,14 @@ public class ControlRePa {
     private Point coordenadasPalabra2 = new Point(779, 250);
     private Point coordenadasPalabra3 = new Point(779, 400); 
 
-    public ControlRePa(RelacionarPalabras vista) {
+    public ControlActividad3(Actividad_3 vista) {
         this.vista = vista;
 
         agregarEventosArrastre(vista.getjLabel1_palabra1(), coordenadasPalabra1);
         agregarEventosArrastre(vista.getjLabel2_palabra3(), coordenadasPalabra2);
         agregarEventosArrastre(vista.getjLabel3_palabra2(), coordenadasPalabra3);
         vista.getjPanel3_fondo().setLayout(null);
+        this.vista.getjButton1_Salir().addActionListener(this);
     }
 
     private void agregarEventosArrastre(JLabel label, Point coordenadasEspecificas) {
@@ -96,6 +97,18 @@ public class ControlRePa {
             vista.getjPanel3_fondo().add(label);
             vista.getjPanel3_fondo().revalidate();
             vista.getjPanel3_fondo().repaint();
+        }
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if(e.getSource() == this.vista.getjButton1_Salir()){
+          
+          Menu m = new vistas.Menu();
+                m.setVisible(true);
+                if (vista != null) {   
+                vista.dispose(); 
+                }
         }
     }
 }

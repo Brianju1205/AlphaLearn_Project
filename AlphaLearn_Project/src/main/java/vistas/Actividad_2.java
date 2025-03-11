@@ -5,7 +5,8 @@
 package vistas;
 
 
-import controlador.ControladorActividad5;
+import com.formdev.flatlaf.FlatLightLaf;
+import controlador.ControlActividad2;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -14,22 +15,28 @@ import javax.swing.JPanel;
  *
  * @author almen
  */
-public class Actividad_5 extends javax.swing.JFrame {
+public class Actividad_2 extends javax.swing.JFrame {
    
     /**
      * Creates new form CompletarPalabras
      */
-   ControladorActividad5 objControl5;
-    public Actividad_5() {
+   ControlActividad2 objControl5;
+    public Actividad_2() {
         initComponents();
         this.setLocationRelativeTo(null);
-        objControl5= new ControladorActividad5(this);
-       
-        
-        
-        
+        objControl5= new ControlActividad2(this);      
+        initStyles();
+    }
+    private void initStyles(){
+        jButton1_Cambiar_Palabra.putClientProperty( "JButton.buttonType", "roundRect" );
+        jButton1_Vericicar_respuesta.putClientProperty( "JButton.buttonType", "roundRect" );
+        jButton1_Salir_act_5.putClientProperty( "JButton.buttonType", "roundRect" );
     }
 
+    public JButton getjButton1_instrucciones() {
+        return jButton1_instrucciones;
+    }
+    
     public JButton getjButton1_Salir_act_5() {
         return jButton1_Salir_act_5;
     }
@@ -38,6 +45,10 @@ public class Actividad_5 extends javax.swing.JFrame {
         return jButton1_Vericicar_respuesta;
     }
 
+    public JButton getjButton1_Cambiar_Palabra() {
+        return jButton1_Cambiar_Palabra;
+    }
+    
     public JLabel getjLabel1() {
         return jLabel1;
     }
@@ -130,26 +141,34 @@ public class Actividad_5 extends javax.swing.JFrame {
         jLabel_destino4 = new javax.swing.JLabel();
         jLabel_destino5 = new javax.swing.JLabel();
         jLabel_destino6 = new javax.swing.JLabel();
+        jButton1_Cambiar_Palabra = new javax.swing.JButton();
+        jButton1_instrucciones = new javax.swing.JButton();
 
         jLabel2.setText("jLabel2");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
         jPanel1.setBackground(new java.awt.Color(153, 153, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jButton1_Salir_act_5.setBackground(new java.awt.Color(153, 51, 255));
         jButton1_Salir_act_5.setText("Salir");
-        jPanel1.add(jButton1_Salir_act_5, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 20, -1, -1));
+        jButton1_Salir_act_5.setOpaque(true);
+        jPanel1.add(jButton1_Salir_act_5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
 
+        jLabel1.setFont(new java.awt.Font("Gill Sans Ultra Bold", 0, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel1.setText("COMPLETANTO LAS PALABRAS ");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 30, 180, -1));
+        jLabel1.setText("FORMA LAS PALABRAS");
+        jLabel1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 20, 280, 30));
 
         jLabel3.setBackground(new java.awt.Color(102, 51, 255));
         jLabel3.setFont(new java.awt.Font("Gill Sans Ultra Bold", 0, 48)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jLabel3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jLabel3.setOpaque(true);
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 90, 90, 120));
@@ -159,6 +178,7 @@ public class Actividad_5 extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jLabel4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jLabel4.setOpaque(true);
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 90, 90, 120));
@@ -168,6 +188,7 @@ public class Actividad_5 extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jLabel5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jLabel5.setOpaque(true);
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 90, 90, 120));
@@ -177,6 +198,7 @@ public class Actividad_5 extends javax.swing.JFrame {
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jLabel6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel6.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jLabel6.setOpaque(true);
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 90, 90, 120));
@@ -186,6 +208,7 @@ public class Actividad_5 extends javax.swing.JFrame {
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jLabel7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel7.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jLabel7.setOpaque(true);
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 90, 90, 120));
@@ -195,44 +218,63 @@ public class Actividad_5 extends javax.swing.JFrame {
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jLabel8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel8.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jLabel8.setOpaque(true);
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 90, 90, 120));
 
+        jButton1_Vericicar_respuesta.setBackground(new java.awt.Color(51, 51, 255));
         jButton1_Vericicar_respuesta.setText("Verificar");
-        jPanel1.add(jButton1_Vericicar_respuesta, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 450, 170, 40));
+        jButton1_Vericicar_respuesta.setOpaque(true);
+        jPanel1.add(jButton1_Vericicar_respuesta, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 450, 170, 40));
 
         jLabel_detino1.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel_detino1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel_detino1.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel_detino1.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         jLabel_detino1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jLabel_detino1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel1.add(jLabel_detino1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 280, 90, 110));
 
         jLabel_destino2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel_destino2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jLabel_destino2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel1.add(jLabel_destino2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 280, 90, 110));
 
         jLabel_destino3.setBackground(new java.awt.Color(255, 255, 255));
         jLabel_destino3.setForeground(new java.awt.Color(51, 51, 51));
         jLabel_destino3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jLabel_destino3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel1.add(jLabel_destino3, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 280, 90, 110));
 
         jLabel_destino4.setBackground(new java.awt.Color(255, 255, 255));
         jLabel_destino4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jLabel_destino4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel1.add(jLabel_destino4, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 280, 90, 110));
 
         jLabel_destino5.setBackground(new java.awt.Color(255, 255, 255));
         jLabel_destino5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jLabel_destino5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel1.add(jLabel_destino5, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 280, 90, 110));
 
         jLabel_destino6.setBackground(new java.awt.Color(255, 255, 255));
         jLabel_destino6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jLabel_destino6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel1.add(jLabel_destino6, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 280, 90, 110));
+
+        jButton1_Cambiar_Palabra.setBackground(new java.awt.Color(51, 51, 255));
+        jButton1_Cambiar_Palabra.setText("Cambiar Palabra");
+        jPanel1.add(jButton1_Cambiar_Palabra, new org.netbeans.lib.awtextra.AbsoluteConstraints(502, 447, 170, 40));
+
+        jButton1_instrucciones.setBackground(new java.awt.Color(153, 153, 255));
+        jButton1_instrucciones.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/sistemas-de-escucha-asistida.png"))); // NOI18N
+        jButton1_instrucciones.setText("jButton1");
+        jPanel1.add(jButton1_instrucciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 30, 80, 70));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1093, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1066, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -249,42 +291,21 @@ public class Actividad_5 extends javax.swing.JFrame {
      */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Actividad_5.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Actividad_5.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Actividad_5.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Actividad_5.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
+        FlatLightLaf.setup();
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Actividad_5().setVisible(true);
+                new Actividad_2().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1_Cambiar_Palabra;
     private javax.swing.JButton jButton1_Salir_act_5;
     private javax.swing.JButton jButton1_Vericicar_respuesta;
+    private javax.swing.JButton jButton1_instrucciones;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

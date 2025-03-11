@@ -35,7 +35,7 @@ public class Ajustes extends javax.swing.JPanel {
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel_Menu.setBackground(new java.awt.Color(153, 153, 255));
+        jPanel_Menu.setBackground(new java.awt.Color(255, 255, 255));
         jPanel_Menu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 255));
