@@ -9,26 +9,26 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import modelo.DAOPalabra;
 import modelo.Imagen;
 import modelo.Palabra;
+import modelo.GestorPalabras;
 
 /**
  *
  * @author juare
  */
 
-public class PalabraDAO implements DAOPalabra {
+public class ControlGestorPalabras implements GestorPalabras {
     private Conexion objConexion;
-    private static PalabraDAO instancia; 
+    private static ControlGestorPalabras instancia; 
 
-    private PalabraDAO() {
+    private ControlGestorPalabras() {
         objConexion = Conexion.getInstance(); 
     }
     
-    public static PalabraDAO getInstance() {
+    public static ControlGestorPalabras getInstance() {
         if (instancia == null) {
-            instancia = new PalabraDAO();
+            instancia = new ControlGestorPalabras();
         }
         return instancia;
     }
@@ -42,7 +42,7 @@ public class PalabraDAO implements DAOPalabra {
                 palabra = resultado.getString("palabra");
             }
         } catch (SQLException ex) {
-            Logger.getLogger(PalabraDAO.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ControlGestorPalabras.class.getName()).log(Level.SEVERE, null, ex);
             throw new Exception("Error al obtener palabra desordenada", ex);
         }
         return palabra;
@@ -70,7 +70,7 @@ public class PalabraDAO implements DAOPalabra {
 
             }
         } catch (SQLException ex) {
-            Logger.getLogger(PalabraDAO.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ControlGestorPalabras.class.getName()).log(Level.SEVERE, null, ex);
             throw new Exception("Error al obtener palabra con imagen", ex);
         }
         return palabra;

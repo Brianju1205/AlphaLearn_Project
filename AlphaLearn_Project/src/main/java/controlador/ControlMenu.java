@@ -26,14 +26,14 @@ public class ControlMenu implements ActionListener{
     
     Menu objMenu;
     Menu_Actividades objMenuAc;
-    
+    Verificador v;
     public ControlMenu(Menu objMenu,Menu_Actividades objMenuAc ) {
         FlatLightLaf.setup();
         
         this.objMenu = objMenu;
         
         this.objMenuAc = objMenuAc;
-        
+        v = Verificador.getInstancia();
         
         this.objMenuAc.getjButton_Actividad1().addActionListener(this);
         this.objMenuAc.getjButton_Actividad2().addActionListener(this);
@@ -48,7 +48,7 @@ public class ControlMenu implements ActionListener{
         this.objMenu.getjButton4_progreso().addActionListener(this);
         this.initContent();
         this.initStyles();
-        
+        this.objMenu.getjLabel2_Bienvenida().setText("Bienvenido, " + this.v.getNom());
         
     }
 

@@ -24,12 +24,19 @@ public class Verificador {
     private int id;
     private String nom;
     private Conexion objConexion;
-
-    public Verificador() {
+    private static Verificador instancia;
+    
+    private Verificador() {
         this.objConexion = objConexion;
         this.objConexion = Conexion.getInstance();
         this.objConexion.getStatement();
         PreparedStatement preparedStatement = null;
+    }
+    public static Verificador getInstancia() {
+        if (instancia == null) {
+            instancia = new Verificador();
+        }
+        return instancia;
     }
     
     public int getId() {
@@ -66,7 +73,7 @@ public class Verificador {
     return true;
 }
 
-   public boolean existeUsuario(OperacionesBD operacionesBD, String nombre, String contra){
+   /*public boolean existeUsuario(OperacionesBD operacionesBD, String nombre, String contra){
         Usuario usuario = operacionesBD.buscarUsuario(nombre, contra); 
         
        
@@ -75,7 +82,7 @@ public class Verificador {
         } else {
             return false;
         }
-    }
+    }*/
    public boolean existeUsuario1(UsuarioDAO usuarioDAO, String nombre, String password){
        // Usuario usuario = UsuarioDAO.buscarUsuario(nombre, contra); 
         Usuario usuario = null;
@@ -92,7 +99,7 @@ public class Verificador {
             return false;
         }
     }
-   public boolean validaJugador(String nombre, String pin){
+   public boolean validaUsuario(String nombre, String pin){
         
         try (PreparedStatement preparedStatement = objConexion.getConnection().prepareStatement("SELECT * FROM usuarios WHERE nombre = ? AND password = ?")) {
             preparedStatement.setString(1, nombre);

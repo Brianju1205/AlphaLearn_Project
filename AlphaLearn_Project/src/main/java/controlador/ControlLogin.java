@@ -19,7 +19,6 @@ public class ControlLogin implements ActionListener {
     private Login log;
     private Slide slide;
     private Verificador objVerificador; 
-    private OperacionesBD objOperacionesBDUsuario; 
     private UsuarioDAO objDAOU;
     public ControlLogin(Login log) {
         this.log = log;
@@ -27,8 +26,8 @@ public class ControlLogin implements ActionListener {
         log.getjB_iniciar_sesion().addActionListener(this);
         log.getjB_ir_Registro().addActionListener(this);
         log.getjButton1_guardar().addActionListener(this);
-        objVerificador = new Verificador();
-        objOperacionesBDUsuario = OperacionesBD.getInstance(); 
+        //objVerificador = new Verificador();
+        objVerificador = Verificador.getInstancia();
         objDAOU = UsuarioDAO.getInstance();
     }
 
@@ -57,7 +56,7 @@ public class ControlLogin implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == log.getjB_iniciar_sesion()) {
-            if (!objVerificador.validaJugador(
+            if (!objVerificador.validaUsuario(
                     log.getjText_Nom_Usuario().getText(),
                     log.getjPasswordField1().getText())) {
                 return;

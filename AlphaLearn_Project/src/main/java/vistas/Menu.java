@@ -8,6 +8,7 @@ import com.formdev.flatlaf.FlatLightLaf;
 import controlador.ControlMenu;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.UIManager;
 
@@ -32,6 +33,10 @@ public class Menu extends javax.swing.JFrame {
         objControlMenu = new ControlMenu(this,obj);
 
        
+    }
+
+    public JLabel getjLabel2_Bienvenida() {
+        return jLabel2_Bienvenida;
     }
     
 
@@ -82,14 +87,15 @@ public class Menu extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jPanel_Contenido = new javax.swing.JPanel();
         jPanel_Mensages = new javax.swing.JPanel();
+        jLabel2_Bienvenida = new javax.swing.JLabel();
 
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel_Opciones.setBackground(new java.awt.Color(102, 56, 255));
+        jPanel_Opciones.setBackground(new java.awt.Color(83, 167, 216));
         jPanel_Opciones.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton1_inicio.setBackground(new java.awt.Color(102, 0, 255));
+        jButton1_inicio.setBackground(new java.awt.Color(45, 130, 181));
         jButton1_inicio.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
         jButton1_inicio.setForeground(new java.awt.Color(0, 0, 0));
         jButton1_inicio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/hogar.png"))); // NOI18N
@@ -106,7 +112,7 @@ public class Menu extends javax.swing.JFrame {
         jButton1_inicio.setOpaque(true);
         jPanel_Opciones.add(jButton1_inicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 230, 50));
 
-        jButton2_ajustes.setBackground(new java.awt.Color(102, 0, 255));
+        jButton2_ajustes.setBackground(new java.awt.Color(45, 130, 181));
         jButton2_ajustes.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
         jButton2_ajustes.setForeground(new java.awt.Color(0, 0, 0));
         jButton2_ajustes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/ajustes.png"))); // NOI18N
@@ -119,7 +125,7 @@ public class Menu extends javax.swing.JFrame {
         jButton2_ajustes.setOpaque(true);
         jPanel_Opciones.add(jButton2_ajustes, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 200, 230, 50));
 
-        jButton3_ayuda.setBackground(new java.awt.Color(102, 0, 255));
+        jButton3_ayuda.setBackground(new java.awt.Color(45, 130, 181));
         jButton3_ayuda.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
         jButton3_ayuda.setForeground(new java.awt.Color(0, 0, 0));
         jButton3_ayuda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/interrogatorio.png"))); // NOI18N
@@ -133,7 +139,7 @@ public class Menu extends javax.swing.JFrame {
         jButton3_ayuda.setInheritsPopupMenu(true);
         jPanel_Opciones.add(jButton3_ayuda, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 250, 230, 50));
 
-        jButton4_progreso.setBackground(new java.awt.Color(102, 0, 255));
+        jButton4_progreso.setBackground(new java.awt.Color(45, 130, 181));
         jButton4_progreso.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
         jButton4_progreso.setForeground(new java.awt.Color(0, 0, 0));
         jButton4_progreso.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/barras-progreso (1).png"))); // NOI18N
@@ -171,6 +177,10 @@ public class Menu extends javax.swing.JFrame {
 
         jPanel_Mensages.setBackground(new java.awt.Color(102, 102, 255));
         jPanel_Mensages.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel2_Bienvenida.setFont(new java.awt.Font("Segoe UI Emoji", 1, 18)); // NOI18N
+        jPanel_Mensages.add(jLabel2_Bienvenida, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 270, 40));
+
         getContentPane().add(jPanel_Mensages, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 0, 990, 80));
 
         pack();
@@ -201,6 +211,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JButton jButton4_progreso;
     private javax.swing.JButton jButton5_Salir_Menu;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2_Bienvenida;
     private javax.swing.JPanel jPanel_Contenido;
     private javax.swing.JPanel jPanel_Mensages;
     private javax.swing.JPanel jPanel_Opciones;

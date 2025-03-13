@@ -23,11 +23,11 @@ import org.netbeans.lib.awtextra.AbsoluteConstraints;
  */
 public class ControlActividad2 implements ActionListener {
     private Actividad_2 objActividad5;
-    private OperacionesBD objOperacionesBD;
-    private PalabraDAO palabrasDAO;
+    private ControlGestorPalabras palabrasDAO;
     private String palabraActual;
     private int respuestaCorrectas=0;
     private int respuestasMalas=0;
+    private Verificador v;
     private Point[] coordenadasEspecificas = {
         new Point(110, 90), 
         new Point(240, 90),
@@ -41,8 +41,11 @@ public class ControlActividad2 implements ActionListener {
 
     public ControlActividad2(Actividad_2 objActividad5) {
         this.objActividad5 = objActividad5;
+        this.v = Verificador.getInstancia();
+        System.out.println("El id es: " + v.getId() + ", nombre es: " + v.getNom());
+
         //this.objOperacionesBD = OperacionesBD.getInstance();
-        this.palabrasDAO = PalabraDAO.getInstance();
+        this.palabrasDAO = ControlGestorPalabras.getInstance();
          
         try {
             palabraActual = palabrasDAO.obtenerPalabraDesordenada();
@@ -58,6 +61,7 @@ public class ControlActividad2 implements ActionListener {
         this.objActividad5.getjButton1_Salir_act_5().addActionListener(this);
         this.objActividad5.getjButton1_Vericicar_respuesta().addActionListener(this);
         this.objActividad5.getjButton1_Cambiar_Palabra().addActionListener(this);
+        this.objActividad5.getjButton1_instrucciones().addActionListener(this);
         reproducirSonido("/resource/sounds/intro.wav");
     }
 

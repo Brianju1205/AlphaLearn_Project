@@ -8,7 +8,7 @@ package modelo;
  *
  * @author juare
  */
-public interface DAOPalabra {
+public interface GestorPalabras {
     public String obtenerPalabraDesordenada() throws Exception;
     public Palabra obtenerPalabraConImagenAleatoria() throws Exception; 
     public void agregarPalabra(Palabra palabra) throws Exception;
