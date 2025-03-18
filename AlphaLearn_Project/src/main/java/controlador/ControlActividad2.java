@@ -22,19 +22,21 @@ import org.netbeans.lib.awtextra.AbsoluteConstraints;
  * @author almen
  */
 public class ControlActividad2 implements ActionListener {
+    private Clip clip;
     private Actividad_2 objActividad5;
     private ControlGestorPalabras palabrasDAO;
     private String palabraActual;
     private int respuestaCorrectas=0;
     private int respuestasMalas=0;
     private Verificador v;
+    private UsuarioDAO usuarioDAO;
     private Point[] coordenadasEspecificas = {
-        new Point(110, 90), 
-        new Point(240, 90),
-        new Point(370, 90),
-        new Point(500, 90), 
-        new Point(640, 90),
-        new Point(780, 90)
+        new Point(260, 190), 
+        new Point(380, 190),
+        new Point(510, 190),
+        new Point(640, 190), 
+        new Point(770, 190),
+        new Point(900, 190)
     };
     
     private JLabel[] labelsOrigen;
@@ -46,7 +48,7 @@ public class ControlActividad2 implements ActionListener {
 
         //this.objOperacionesBD = OperacionesBD.getInstance();
         this.palabrasDAO = ControlGestorPalabras.getInstance();
-         
+        this.usuarioDAO = UsuarioDAO.getInstance();
         try {
             palabraActual = palabrasDAO.obtenerPalabraDesordenada();
         } catch (Exception ex) {
@@ -62,6 +64,7 @@ public class ControlActividad2 implements ActionListener {
         this.objActividad5.getjButton1_Vericicar_respuesta().addActionListener(this);
         this.objActividad5.getjButton1_Cambiar_Palabra().addActionListener(this);
         this.objActividad5.getjButton1_instrucciones().addActionListener(this);
+        this.objActividad5.getjButton1_Repetir_PalabraAudio().addActionListener(this);
         reproducirSonido("/resource/sounds/intro.wav");
     }
 
@@ -75,7 +78,9 @@ public class ControlActividad2 implements ActionListener {
             objActividad5.getjLabel7(),
             objActividad5.getjLabel8()
         };
-
+        
+        
+        objActividad5.getjLabel9_fondo1().removeAll();
         for (int i = 0; i < palabra.length(); i++) {
             if (i < labelsOrigen.length) {
                 labelsOrigen[i].setText(String.valueOf(palabra.charAt(i)));
@@ -88,9 +93,9 @@ public class ControlActividad2 implements ActionListener {
                     labelsOrigen[i].getWidth(), 
                     labelsOrigen[i].getHeight()
                 );
-                objActividad5.getjPanel1().add(labelsOrigen[i], constraints); // Esto sirve para agregar los label al panel forzadamente con restricciones
-
-                // Se tienen que eliminar los eventos de arrastre
+                //objActividad5.getjPanel1().add(labelsOrigen[i], constraints); // Esto sirve para agregar los label al panel forzadamente con restricciones
+                objActividad5.getjPanel1().add(labelsOrigen[i], constraints);
+                objActividad5.getjPanel1().setComponentZOrder(labelsOrigen[i], 0);
                 for (MouseListener listener : labelsOrigen[i].getMouseListeners()) {
                     labelsOrigen[i].removeMouseListener(listener);
                 }
@@ -102,8 +107,8 @@ public class ControlActividad2 implements ActionListener {
                 agregarEventosArrastre(labelsOrigen[i], coordenadasEspecificas[i]);
             }
         }
-
-       
+        
+       //
         objActividad5.getjPanel1().revalidate();
         objActividad5.getjPanel1().repaint();
     }
@@ -193,7 +198,7 @@ public class ControlActividad2 implements ActionListener {
                 label.getHeight()
             );
             objActividad5.getjPanel1().add(label, constraints);
-
+            objActividad5.getjPanel1().setComponentZOrder(label, 0);
             objActividad5.getjPanel1().revalidate();
             objActividad5.getjPanel1().repaint();
         }
@@ -204,20 +209,29 @@ public class ControlActividad2 implements ActionListener {
         if (e.getSource() == this.objActividad5.getjButton1_Salir_act_5()) {
             Menu m = new Menu();
             m.setVisible(true);
+            clip.stop();
+            clip.close();
             objActividad5.dispose();
         }
         else if(e.getSource() == this.objActividad5.getjButton1_instrucciones()){  
            reproducirSonido("/resource/sounds/instrucciones.wav");
         }else if (e.getSource() == this.objActividad5.getjButton1_Vericicar_respuesta()) {
-            verificarRespuesta();
+            try {
+                verificarRespuesta();
+            } catch (Exception ex) {
+                Logger.getLogger(ControlActividad2.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }else if (e.getSource()== this.objActividad5.getjButton1_Cambiar_Palabra()){
             cambiarPalabra();
+        }else if (e.getSource() ==this.objActividad5.getjButton1_Repetir_PalabraAudio()){
+            reproducirAudioDePalabra(palabraActual);
         }
+        
         
         
     }
 
-    private void verificarRespuesta() {
+    private void verificarRespuesta() throws Exception {
         JLabel[] labelsDestino = {
             objActividad5.getjLabel_detino1(),
             objActividad5.getjLabel_destino2(),
@@ -265,6 +279,8 @@ public class ControlActividad2 implements ActionListener {
         }
 
         if (labelsOrigen != null) {
+        
+        objActividad5.getjLabel9_fondo1().removeAll();
             for (int i = 0; i < labelsOrigen.length; i++) {
                 if (labelsOrigen[i] != null) {
                     labelsOrigen[i].setText(""); 
@@ -285,10 +301,11 @@ public class ControlActividad2 implements ActionListener {
                         labelsOrigen[i].getHeight()
                     );
                     objActividad5.getjPanel1().add(labelsOrigen[i], constraints);
-
+                    objActividad5.getjPanel1().setComponentZOrder(labelsOrigen[i], 0);
                     agregarEventosArrastre(labelsOrigen[i], coordenadasEspecificas[i]);
                 }
             }
+            
         }
 
         try {
@@ -299,22 +316,43 @@ public class ControlActividad2 implements ActionListener {
 
         if (palabraActual != null && !palabraActual.isEmpty()) {
             asignarLetrasAJLabels(palabraActual);
+            reproducirAudioDePalabra(palabraActual); 
         }
 
         objActividad5.getjPanel1().revalidate();
         objActividad5.getjPanel1().repaint();
     }
-    private void GuardarHistorial() {
-        String word=objActividad5.getjLabel_detino1().getText()+
-                    objActividad5.getjLabel_destino2().getText()+
-                    objActividad5.getjLabel_destino3().getText()+
-                    objActividad5.getjLabel_destino4().getText()+
-                    objActividad5.getjLabel_destino5().getText()+
-                    objActividad5.getjLabel_destino6().getText() ;
-        
-        System.out.println("HISTORIAL GUARDADO: "+word);
-        System.out.println("Las palabras buenas que llevas son: "+respuestaCorrectas);
-        System.out.println("Las palabras malas que llevas son: "+respuestasMalas);
+    
+    private void reproducirAudioDePalabra(String palabra) {
+        String rutaAudio = "/resource/sounds/" + palabra.toLowerCase() + ".wav";
+        reproducirSonido(rutaAudio);
+    }
+    
+    
+    private void GuardarHistorial() throws Exception {
+        if(this.v.getNom()== null){
+            System.out.println("no hay usuario");
+            return;
+        }
+        else{
+        String word = objActividad5.getjLabel_detino1().getText() +
+                      objActividad5.getjLabel_destino2().getText() +
+                      objActividad5.getjLabel_destino3().getText() +
+                      objActividad5.getjLabel_destino4().getText() +
+                      objActividad5.getjLabel_destino5().getText() +
+                      objActividad5.getjLabel_destino6().getText();
+        int usuario_id = v.getId();
+        String usuario_nombre = v.getNom();
+
+
+        System.out.println("HISTORIAL GUARDADO: " + palabraActual);
+        System.out.println("El nombre del usuario es: " + usuario_nombre);
+        System.out.println("El id del usuario es: " + usuario_id);
+        System.out.println("Las palabras buenas que llevas son: " + respuestaCorrectas);
+
+
+        usuarioDAO.guardarHistorial(usuario_id, palabraActual, respuestaCorrectas);
+        }
     }
 
     private void cambiarPalabra() {
@@ -331,15 +369,21 @@ public class ControlActividad2 implements ActionListener {
        }
     }
     private void reproducirSonido(String ruta) {
+        
         try {
+            if (clip != null && clip.isRunning()) {
+                clip.stop();
+                clip.close();
+            }
             URL url = getClass().getResource(ruta);
             if (url == null) {
                 System.err.println("No se encontro el archivo: " + ruta);
                 return;
             }
-
+            
             AudioInputStream audioStream = AudioSystem.getAudioInputStream(url);
-            Clip clip = AudioSystem.getClip();
+            clip = AudioSystem.getClip();
+            
             clip.open(audioStream);
             clip.start();
         } catch (UnsupportedAudioFileException | IOException | LineUnavailableException ex) {

@@ -4,6 +4,7 @@
  */
 package controlador;
 
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -126,6 +127,28 @@ public class UsuarioDAO implements DAOUsuario{
     public void setObjUsuario(Usuario objUsuario) {
         this.objUsuario = objUsuario;
     }
+
+    @Override
+    public void guardarHistorial(int usuarioId, String palabra, int aciertos) throws Exception {
+        String sql = "INSERT INTO historial(id_usuario, palabra, aciertos) VALUES (?, ?, ?)";
+            Connection conn = Conexion.getInstance().getConnection();
+            try {
+                PreparedStatement stmt = conn.prepareStatement(sql);
+                try {
+                    stmt.setInt(1, usuarioId);         
+                    stmt.setString(2, palabra);       
+                    stmt.setInt(3, aciertos);        
+                    //stmt.setInt(4, errores);           
+                    stmt.executeUpdate();
+                } finally {
+                    stmt.close(); // Solo cerramos el statement, no la conexión
+                }
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+                throw new Exception("Error al guardar historial", ex);
+            }
+    }
+    
     
 }
     

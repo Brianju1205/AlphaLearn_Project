@@ -71,46 +71,107 @@ public class Menu_Actividades extends javax.swing.JPanel {
         jButton_Actividad5 = new javax.swing.JButton();
         jButton_Actividad6 = new javax.swing.JButton();
         jButton_Actividad1 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
 
-        jPanel_Menu.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel_Menu.setBackground(new java.awt.Color(217, 241, 254));
         jPanel_Menu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton_Actividad2.setBackground(new java.awt.Color(83, 167, 216));
-        jButton_Actividad2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/Actividad2.png"))); // NOI18N
-        jButton_Actividad2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        jButton_Actividad2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/boton.png"))); // NOI18N
+        jButton_Actividad2.setBorder(null);
+        jButton_Actividad2.setBorderPainted(false);
+        jButton_Actividad2.setContentAreaFilled(false);
         jButton_Actividad2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel_Menu.add(jButton_Actividad2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 30, 260, 250));
+        jButton_Actividad2.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/button_pressed.png"))); // NOI18N
+        jButton_Actividad2.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/button_mause.png"))); // NOI18N
+        jButton_Actividad2.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/button_mause.png"))); // NOI18N
+        jPanel_Menu.add(jButton_Actividad2, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 250, 190, 40));
 
         jButton_Actividad3.setBackground(new java.awt.Color(83, 167, 216));
-        jButton_Actividad3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/Actividad3.png"))); // NOI18N
+        jButton_Actividad3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/boton.png"))); // NOI18N
         jButton_Actividad3.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        jButton_Actividad3.setBorderPainted(false);
+        jButton_Actividad3.setContentAreaFilled(false);
         jButton_Actividad3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel_Menu.add(jButton_Actividad3, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 30, 260, 250));
+        jButton_Actividad3.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/button_pressed.png"))); // NOI18N
+        jButton_Actividad3.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/button_mause.png"))); // NOI18N
+        jPanel_Menu.add(jButton_Actividad3, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 230, 190, 60));
 
         jButton_Actividad4.setBackground(new java.awt.Color(83, 167, 216));
-        jButton_Actividad4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/Frame 12.png"))); // NOI18N
+        jButton_Actividad4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/boton.png"))); // NOI18N
         jButton_Actividad4.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        jButton_Actividad4.setBorderPainted(false);
+        jButton_Actividad4.setContentAreaFilled(false);
         jButton_Actividad4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel_Menu.add(jButton_Actividad4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, 260, 250));
+        jButton_Actividad4.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/button_pressed.png"))); // NOI18N
+        jButton_Actividad4.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/button_mause.png"))); // NOI18N
+        jPanel_Menu.add(jButton_Actividad4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 520, 190, 60));
 
         jButton_Actividad5.setBackground(new java.awt.Color(83, 167, 216));
-        jButton_Actividad5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/Frame 12.png"))); // NOI18N
+        jButton_Actividad5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/boton.png"))); // NOI18N
         jButton_Actividad5.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        jButton_Actividad5.setBorderPainted(false);
+        jButton_Actividad5.setContentAreaFilled(false);
         jButton_Actividad5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel_Menu.add(jButton_Actividad5, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 320, 260, 250));
+        jButton_Actividad5.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/button_pressed.png"))); // NOI18N
+        jButton_Actividad5.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/button_mause.png"))); // NOI18N
+        jPanel_Menu.add(jButton_Actividad5, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 520, 190, 60));
 
         jButton_Actividad6.setBackground(new java.awt.Color(83, 167, 216));
-        jButton_Actividad6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/Frame 12.png"))); // NOI18N
+        jButton_Actividad6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/boton.png"))); // NOI18N
         jButton_Actividad6.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        jButton_Actividad6.setBorderPainted(false);
+        jButton_Actividad6.setContentAreaFilled(false);
         jButton_Actividad6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel_Menu.add(jButton_Actividad6, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 320, 260, 250));
+        jButton_Actividad6.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/button_pressed.png"))); // NOI18N
+        jButton_Actividad6.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/button_mause.png"))); // NOI18N
+        jPanel_Menu.add(jButton_Actividad6, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 510, 190, 70));
 
         jButton_Actividad1.setBackground(new java.awt.Color(83, 167, 216));
-        jButton_Actividad1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/Actividad1.png"))); // NOI18N
+        jButton_Actividad1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/boton.png"))); // NOI18N
         jButton_Actividad1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        jButton_Actividad1.setBorderPainted(false);
+        jButton_Actividad1.setContentAreaFilled(false);
         jButton_Actividad1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton_Actividad1.setIconTextGap(1);
-        jPanel_Menu.add(jButton_Actividad1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 260, 250));
+        jButton_Actividad1.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/button_pressed.png"))); // NOI18N
+        jButton_Actividad1.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/button_mause.png"))); // NOI18N
+        jButton_Actividad1.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/button_mause.png"))); // NOI18N
+        jPanel_Menu.add(jButton_Actividad1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 240, 190, 60));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/Modulo_Aprendizaje.png"))); // NOI18N
+        jLabel1.setText("Modulos de aprendizaje");
+        jPanel_Menu.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 400, 50));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/Actividad1_frame.png"))); // NOI18N
+        jLabel2.setText("jLabel2");
+        jPanel_Menu.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 290, 280));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/Actividad2_frame.png"))); // NOI18N
+        jLabel3.setText("jLabel3");
+        jPanel_Menu.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 40, 290, 280));
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/Actividad3_frame.png"))); // NOI18N
+        jLabel4.setText("jLabel4");
+        jPanel_Menu.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 40, 290, 270));
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/Actividad4_frame.png"))); // NOI18N
+        jLabel5.setText("jLabel5");
+        jPanel_Menu.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 320, 290, 280));
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/Actividad5_frame.png"))); // NOI18N
+        jLabel6.setText("jLabel6");
+        jPanel_Menu.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 320, 290, 270));
+
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/Actividad6_frame.png"))); // NOI18N
+        jLabel7.setText("jLabel7");
+        jPanel_Menu.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 320, 290, 270));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -142,6 +203,13 @@ public class Menu_Actividades extends javax.swing.JPanel {
     private javax.swing.JButton jButton_Actividad4;
     private javax.swing.JButton jButton_Actividad5;
     private javax.swing.JButton jButton_Actividad6;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel_Menu;
     // End of variables declaration//GEN-END:variables
 }

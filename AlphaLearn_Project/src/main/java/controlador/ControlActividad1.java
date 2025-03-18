@@ -4,11 +4,15 @@
  */
 package controlador;
 
+import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.net.URL;
 import javax.sound.sampled.*;
+import javax.swing.JButton;
+import javax.swing.JPanel;
+import vistas.Abecedario;
 import vistas.Actividad_1;
 import vistas.Menu;
 
@@ -18,10 +22,12 @@ import vistas.Menu;
  */
 public class ControlActividad1 implements ActionListener {
     Actividad_1 objActividad;
-
-    public ControlActividad1(Actividad_1 objActividad) {
+    Abecedario objAbc;
+    Clip clip;
+    public ControlActividad1(Actividad_1 objActividad,Abecedario objAbc) {
         this.objActividad = objActividad;
-        this.objActividad.getjButton_A().addActionListener(this);
+        this.objAbc = objAbc;
+        /*this.objActividad.getjButton_A().addActionListener(this);
         this.objActividad.getjButton_B().addActionListener(this);
         this.objActividad.getjButton_C().addActionListener(this);
         this.objActividad.getjButton4_D().addActionListener(this);
@@ -48,21 +54,50 @@ public class ControlActividad1 implements ActionListener {
         this.objActividad.getjButton23_X().addActionListener(this);
         this.objActividad.getjButton24_Y().addActionListener(this);
         this.objActividad.getjButton1_Z().addActionListener(this);
-        this.objActividad.getjButton1_Salir_act_1().addActionListener(this);
+        this.objActividad.getjButton1_Salir_act_1().addActionListener(this);*/
+        colocarEscuchadores();
+        colocarEscuchadores2();
         reproducirSonido("/resource/sounds/indicaciones.wav");
+        initContent();
         
     }
-
+    
+   private void colocarEscuchadores(){
+       // = this.objActividad.jPanel_Actividad_1.getComponents();
+       for(Object obj: this.objActividad.jPanel_Actividad_1.getComponents()){
+           if(obj instanceof JButton bt){
+               bt.addActionListener(this);
+           }
+       }
+   }
+    private void colocarEscuchadores2(){
+       // = this.objActividad.jPanel_Actividad_1.getComponents();
+       for(Object obj: objAbc.getComponents()){
+           if(obj instanceof JButton bt){
+               bt.addActionListener(this);
+           }
+       }
+   }
     @Override
     public void actionPerformed(ActionEvent e) {
            if (e.getSource() == this.objActividad.getjButton1_Salir_act_1()){
                 Menu m = new Menu();
                 m.setVisible(true);
+                clip.stop();
                 if (objActividad != null) {   
                 objActividad.dispose(); 
                 }
             }
-             if (e.getSource() == this.objActividad.getjButton_A()) {
+           JButton bt = (JButton)e.getSource();
+           if(bt.getName().equals("siguiente") || bt.getName().equals("salir")){
+               return;
+           }
+           
+           String ruta = "/resource/sounds/"+bt.getName()+".wav";
+           reproducirSonido(ruta);
+           
+           
+            /* if (e.getSource() == this.objActividad.getjButton_A()) {
             reproducirSonido("/resource/sounds/a.wav");
         } else if (e.getSource() == this.objActividad.getjButton_B()) {
             reproducirSonido("/resource/sounds/b.wav");
@@ -116,24 +151,43 @@ public class ControlActividad1 implements ActionListener {
             reproducirSonido("/resource/sounds/y.wav");
         } else if (e.getSource() == this.objActividad.getjButton1_Z()) {
             reproducirSonido("/resource/sounds/z.wav");
-        }
+        }*/
         
     }
     private void reproducirSonido(String ruta) {
+        
         try {
+            if (clip != null && clip.isRunning()) {
+                clip.stop();
+                clip.close();
+            }
             URL url = getClass().getResource(ruta);
             if (url == null) {
                 System.err.println("No se encontro el archivo: " + ruta);
                 return;
             }
-
+            
             AudioInputStream audioStream = AudioSystem.getAudioInputStream(url);
-            Clip clip = AudioSystem.getClip();
+            clip = AudioSystem.getClip();
+            
             clip.open(audioStream);
             clip.start();
         } catch (UnsupportedAudioFileException | IOException | LineUnavailableException ex) {
             ex.printStackTrace();
         }
     }
+    private void initContent(){
+        panel(objAbc);
+    }
+    private void panel(JPanel p){
+        
+        p.setSize( 807, 470);
+        p.setLocation(0, 0);
+        objActividad.getjPanel1_Abecedario().removeAll();
+        objActividad.getjPanel1_Abecedario().add(p, BorderLayout.CENTER);
+        objActividad.getjPanel1_Abecedario().revalidate();
+        objActividad.getjPanel1_Abecedario().repaint();
+    }
+    
     
 }

@@ -14,4 +14,5 @@ public interface DAOUsuario {
    public void actualizarUsuario(Usuario usuario) throws Exception;
    public void eliminarUsuario(String idUsuario) throws Exception;
    public void obtenerTodos() throws Exception;
+   public void guardarHistorial(int usuarioId, String palabra, int aciertos) throws Exception;
 }

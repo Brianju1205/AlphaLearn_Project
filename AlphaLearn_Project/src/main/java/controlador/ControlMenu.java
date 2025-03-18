@@ -45,7 +45,6 @@ public class ControlMenu implements ActionListener{
         this.objMenu.getjButton1_inicio().addActionListener(this);
         this.objMenu.getjButton2_ajustes().addActionListener(this);
         this.objMenu.getjButton3_ayuda().addActionListener(this);
-        this.objMenu.getjButton4_progreso().addActionListener(this);
         this.initContent();
         this.initStyles();
         this.objMenu.getjLabel2_Bienvenida().setText("Bienvenido, " + this.v.getNom());
@@ -98,9 +97,7 @@ public class ControlMenu implements ActionListener{
         if (e.getSource() == this.objMenu.getjButton2_ajustes()) {
             panel(new Ajustes());
         }
-        if (e.getSource() == this.objMenu.getjButton4_progreso()){
-            panel(new Progreso());
-        }
+        
 
     }
     private void initContent(){
