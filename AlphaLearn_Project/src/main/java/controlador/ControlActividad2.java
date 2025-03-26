@@ -23,6 +23,7 @@ import org.netbeans.lib.awtextra.AbsoluteConstraints;
  */
 public class ControlActividad2 implements ActionListener {
     private Clip clip;
+    private int poaX, poaY; 
     private Actividad_2 objActividad5;
     private ControlGestorPalabras palabrasDAO;
     private String palabraActual;
@@ -30,6 +31,7 @@ public class ControlActividad2 implements ActionListener {
     private int respuestasMalas=0;
     private Verificador v;
     private UsuarioDAO usuarioDAO;
+    private Point posicionOriginal;
     private Point[] coordenadasEspecificas = {
         new Point(260, 190), 
         new Point(380, 190),
@@ -132,7 +134,10 @@ public class ControlActividad2 implements ActionListener {
         label.addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent evt) {
-                label.getParent().setComponentZOrder(label, 0);
+                /*label.getParent().setComponentZOrder(label, 0);*/
+                poaX = evt.getX();
+                poaY = evt.getY();
+                posicionOriginal = label.getLocation();
             }
 
             @Override
@@ -163,9 +168,18 @@ public class ControlActividad2 implements ActionListener {
         label.addMouseMotionListener(new MouseMotionAdapter() {
             @Override
             public void mouseDragged(MouseEvent evt) {
-                int newX = label.getX() + evt.getX() - label.getWidth() / 2;
+               /* int newX = label.getX() + evt.getX() - label.getWidth() / 2;
                 int newY = label.getY() + evt.getY() - label.getHeight() / 2;
-                label.setLocation(newX, newY);
+                label.setLocation(newX, newY);*/
+               int newX = label.getX() + (evt.getX() - poaX);
+                int newY = label.getY() + (evt.getY() - poaY);
+
+                if (newX < 0 || newY < 0 || newX + label.getWidth() > objActividad5.getjPanel1().getWidth() ||
+                    newY + label.getHeight() > objActividad5.getjPanel1().getHeight()) {
+                    liberarDelDestino(label, coordenadaEspecifica);
+                } else {
+                    label.setLocation(newX, newY);
+                }
             }
         });
        

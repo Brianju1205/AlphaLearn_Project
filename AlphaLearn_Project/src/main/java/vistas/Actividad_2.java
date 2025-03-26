@@ -293,8 +293,11 @@ public class Actividad_2 extends javax.swing.JFrame {
         jButton1_instrucciones.setContentAreaFilled(false);
         jPanel1.add(jButton1_instrucciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 100, 80, 70));
 
-        jButton1_Repetir_PalabraAudio.setText("jButton1");
-        jPanel1.add(jButton1_Repetir_PalabraAudio, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 100, -1, 70));
+        jButton1_Repetir_PalabraAudio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/deshacer (2).png"))); // NOI18N
+        jButton1_Repetir_PalabraAudio.setBorderPainted(false);
+        jButton1_Repetir_PalabraAudio.setContentAreaFilled(false);
+        jButton1_Repetir_PalabraAudio.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/deshacer.png"))); // NOI18N
+        jPanel1.add(jButton1_Repetir_PalabraAudio, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 100, -1, 70));
 
         jLabel9_fondo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/panel1.png"))); // NOI18N
         jLabel9_fondo1.setToolTipText("");

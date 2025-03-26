@@ -28,12 +28,12 @@
     <Container class="javax.swing.JPanel" name="jPanel_Opciones">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+          <Color blue="fd" green="0" red="59" type="rgb"/>
         </Property>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="0" y="0" width="230" height="690"/>
+          <AbsoluteConstraints x="0" y="0" width="230" height="700"/>
         </Constraint>
       </Constraints>
 
@@ -53,7 +53,7 @@
               <Color blue="0" green="0" red="0" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/resource/inicio1.png"/>
+              <Image iconType="3" name="/resource/Frame 33.png"/>
             </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">
@@ -74,7 +74,7 @@
               <Insets value="[10, 14, 3, 14]"/>
             </Property>
             <Property name="pressedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/resource/inicio3.png"/>
+              <Image iconType="3" name="/resource/Frame 31.jpg"/>
             </Property>
             <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/resource/inicio2.png"/>
@@ -98,7 +98,7 @@
               <Color blue="0" green="0" red="0" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/resource/ajustes1.png"/>
+              <Image iconType="3" name="/resource/Frame 34.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="AJUSTES"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -114,7 +114,7 @@
             <Property name="horizontalAlignment" type="int" value="2"/>
             <Property name="iconTextGap" type="int" value="15"/>
             <Property name="pressedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/resource/ajustes3.png"/>
+              <Image iconType="3" name="/resource/Frame 30.png"/>
             </Property>
             <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/resource/ajustes2.png"/>
@@ -138,7 +138,7 @@
               <Color blue="0" green="0" red="0" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/resource/perfil1.png"/>
+              <Image iconType="3" name="/resource/Frame 35.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="AYUDA"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -156,7 +156,7 @@
             <Property name="iconTextGap" type="int" value="15"/>
             <Property name="inheritsPopupMenu" type="boolean" value="true"/>
             <Property name="pressedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/resource/perfil3.png"/>
+              <Image iconType="3" name="/resource/Frame 31.png"/>
             </Property>
             <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/resource/perfil2.png"/>
@@ -171,7 +171,7 @@
         <Component class="javax.swing.JButton" name="jButton5_Salir_Menu">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="33" red="33" type="rgb"/>
+              <Color blue="bd" green="0" red="3" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI Black" size="18" style="0"/>
@@ -230,12 +230,12 @@
     <Container class="javax.swing.JPanel" name="jPanel_Contenido">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="ff" red="d4" type="rgb"/>
+          <Color blue="e8" green="e8" red="e8" type="rgb"/>
         </Property>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="230" y="80" width="990" height="610"/>
+          <AbsoluteConstraints x="230" y="80" width="990" height="620"/>
         </Constraint>
       </Constraints>
 
@@ -244,7 +244,7 @@
     <Container class="javax.swing.JPanel" name="jPanel_Mensages">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="f6" green="f6" red="ff" type="rgb"/>
+          <Color blue="e8" green="e8" red="e8" type="rgb"/>
         </Property>
       </Properties>
       <Constraints>
@@ -275,12 +275,12 @@
         <Component class="javax.swing.JLabel" name="jLabel2">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/resource/linea.png"/>
+              <Image iconType="3" name="/resource/lina2.png"/>
             </Property>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="-10" y="0" width="990" height="70"/>
+              <AbsoluteConstraints x="0" y="0" width="990" height="70"/>
             </Constraint>
           </Constraints>
         </Component>

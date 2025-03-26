@@ -7,6 +7,8 @@ package controlador;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import modelo.Imagen;
@@ -47,34 +49,37 @@ public class ControlGestorPalabras implements GestorPalabras {
         }
         return palabra;
     }
-
     @Override
-    public Palabra obtenerPalabraConImagenAleatoria() throws Exception {
-        Palabra palabra = null;
-        try {
-            String sql = "SELECT p.id AS palabra_id, p.palabra, i.id AS imagen_id, i.ruta " +
-                         "FROM palabras p " +
-                         "JOIN imagenes i ON p.id = i.palabra_id " +
-                         "ORDER BY RANDOM() LIMIT 1;";
+    public ArrayList<Palabra> obtenerTresPalabrasConImagen() throws Exception {
+        ArrayList<Palabra> palabras = new ArrayList<>();
+        try {  
+            String sql = "SELECT p.idp AS palabra_id, p.palabrai, i.id AS imagen_id, i.ruta " +
+                         "FROM palabrasi p " +
+                         "JOIN imagenes i ON p.idp = i.palabra_id " +
+                         "ORDER BY RANDOM() LIMIT 3;";
+
             ResultSet resultado = objConexion.getStatement().executeQuery(sql);
 
-            if (resultado.next()) {
-                palabra = new Palabra();
-                palabra.setId(resultado.getInt("palabra_id"));
-                palabra.setPalabra(resultado.getString("palabra"));
+        while (resultado.next()) {
+            Palabra palabra = new Palabra();
+            palabra.setId(resultado.getInt("palabra_id"));
+            palabra.setPalabra(resultado.getString("palabrai"));
 
-                Imagen imagen = new Imagen();
-                imagen.setId(resultado.getInt("imagen_id"));
-                imagen.setRuta(resultado.getString("ruta"));
-                imagen.setPalabraId(resultado.getInt("palabra_id"));
+            Imagen imagen = new Imagen();
+            imagen.setId(resultado.getInt("imagen_id"));
+            imagen.setRuta(resultado.getString("ruta"));
+            imagen.setPalabraId(resultado.getInt("palabra_id"));
 
-            }
-        } catch (SQLException ex) {
-            Logger.getLogger(ControlGestorPalabras.class.getName()).log(Level.SEVERE, null, ex);
-            throw new Exception("Error al obtener palabra con imagen", ex);
+            palabra.setImagen(imagen); // Asignamos la imagen a la palabra
+            palabras.add(palabra);
         }
-        return palabra;
+            } catch (SQLException ex) {
+                Logger.getLogger(ControlGestorPalabras.class.getName()).log(Level.SEVERE, null, ex);
+                throw new Exception("Error al obtener palabras con imágenes", ex);
+            }
+        return palabras;
     }
+
 
     @Override
     public void agregarPalabra(Palabra palabra) throws Exception {

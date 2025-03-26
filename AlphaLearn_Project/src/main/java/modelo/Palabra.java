@@ -11,7 +11,7 @@ package modelo;
 public class Palabra {
     private int id;
     private String palabra;
-
+    private Imagen imagen;
     
     public Palabra() {}
 
@@ -35,4 +35,13 @@ public class Palabra {
     public void setPalabra(String palabra) {
         this.palabra = palabra;
     }
+
+    public Imagen getImagen() {
+        return imagen;
+    }
+
+    public void setImagen(Imagen imagen) {
+        this.imagen = imagen;
+    }
+    
 }

@@ -71,15 +71,16 @@ public class Menu_Actividades extends javax.swing.JPanel {
         jButton_Actividad5 = new javax.swing.JButton();
         jButton_Actividad6 = new javax.swing.JButton();
         jButton_Actividad1 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
 
-        jPanel_Menu.setBackground(new java.awt.Color(217, 241, 254));
+        jPanel_Menu.setBackground(new java.awt.Color(232, 232, 232));
         jPanel_Menu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton_Actividad2.setBackground(new java.awt.Color(83, 167, 216));
@@ -145,13 +146,18 @@ public class Menu_Actividades extends javax.swing.JPanel {
         jButton_Actividad1.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/button_mause.png"))); // NOI18N
         jPanel_Menu.add(jButton_Actividad1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 240, 190, 60));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/Modulo_Aprendizaje.png"))); // NOI18N
-        jLabel1.setText("Modulos de aprendizaje");
-        jPanel_Menu.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 400, 50));
-
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/Actividad1_frame.png"))); // NOI18N
         jLabel2.setText("jLabel2");
         jPanel_Menu.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 290, 280));
+
+        jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel8.setText("Modulos de aprendizaje");
+        jPanel_Menu.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 190, 20));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/Modulo_Aprendizaje.png"))); // NOI18N
+        jLabel1.setText("Modulos de aprendizaje");
+        jPanel_Menu.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 50));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/Actividad2_frame.png"))); // NOI18N
         jLabel3.setText("jLabel3");
@@ -210,6 +216,7 @@ public class Menu_Actividades extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel_Menu;
     // End of variables declaration//GEN-END:variables
 }
