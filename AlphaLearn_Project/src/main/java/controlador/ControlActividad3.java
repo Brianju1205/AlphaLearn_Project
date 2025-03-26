@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import modelo.Imagen;
 import modelo.Palabra;
 import vistas.Menu;
+import vistas.prueba;
 
 /**
  * Controlador para manejar el arrastre y soltar palabras en los JLabel destino.
@@ -17,6 +18,7 @@ import vistas.Menu;
  */
 public class ControlActividad3 implements ActionListener {
     private Actividad_3 vista;
+    
     private int poaX, poaY;
     private Point posicionOriginal;
     private boolean clicDerechoPresionado = false;
@@ -29,17 +31,20 @@ public class ControlActividad3 implements ActionListener {
 
     public ControlActividad3(Actividad_3 vista) {
         this.vista = vista;
+        
         this.gestospa = ControlGestorPalabras.getInstance();
 
         vista.getjPanel3_fondo().setLayout(null);
-        configurarPosicionesLabelsImagen();
-        cargarPalabrasEnLabels();
+        
         agregarEventosArrastre(vista.getjLabel1_palabra1(), coordenadasPalabra1);
         agregarEventosArrastre(vista.getjLabel2_palabra3(), coordenadasPalabra2);
         agregarEventosArrastre(vista.getjLabel3_palabra2(), coordenadasPalabra3);
 
         this.vista.getjButton1_Salir().addActionListener(this);
-
+        this.vista.getjButton_verificar().addActionListener(this);
+        this.vista.getjButton_cambiar().addActionListener(this);
+        //nfigurarPosicionesLabelsImagen();
+        cargarPalabrasEnLabels();
         
     }
 
@@ -49,77 +54,44 @@ public class ControlActividad3 implements ActionListener {
 
             if (palabras.size() >= 3) {
                 vista.getjLabel1_palabra1().setText(palabras.get(0).getPalabra());
-                String url1 = "/resource/imagenes/Gato.png"; 
-                URL imageUrl1 = getClass().getResource(url1);
-                if (imageUrl1 != null) {
-                    JLabel label = vista.getJlabel_image1();
-                    int labelWidth = label.getWidth();
-                    int labelHeight = label.getHeight();
-                    ImageIcon iconoOriginal = new ImageIcon(imageUrl1.getPath());
-                    Image imgEscalada = iconoOriginal.getImage().getScaledInstance(labelWidth, labelHeight, Image.SCALE_SMOOTH);
-                    ImageIcon iconoEscalado = new ImageIcon(imgEscalada);
-                    label.setIcon(iconoEscalado);
-                    label.revalidate();
-                    label.repaint();
-                } else {
-                    System.out.println("Imagen no encontrada en: " + url1);
-                }
-
+                this.asignarImagen(vista.getJlabel_image2(),palabras.get(0).getImagen().getRuta());
+                vista.getJlabel_image2().setText(palabras.get(0).getPalabra());
+                
                 vista.getjLabel2_palabra3().setText(palabras.get(1).getPalabra());
-                String url2 = "/resource/imagenes/" + palabras.get(1).getPalabra() + ".png";
-                URL imageUrl2 = getClass().getResource(url2);
-                if (imageUrl2 != null) {
-                    JLabel label = vista.getJlabel_image2();
-                    int labelWidth = label.getWidth();
-                    int labelHeight = label.getHeight();
-                    ImageIcon iconoOriginal = new ImageIcon(imageUrl2.getPath());
-                    Image imgEscalada = iconoOriginal.getImage().getScaledInstance(labelWidth, labelHeight, Image.SCALE_SMOOTH);
-                    ImageIcon iconoEscalado = new ImageIcon(imgEscalada);
-                    label.setIcon(iconoEscalado);
-                    label.revalidate();
-                    label.repaint();
-                } else {
-                    System.out.println("Imagen no encontrada en: " + url2);
-                }
-
+                this.asignarImagen(vista.getJlabel_image3(),palabras.get(1).getImagen().getRuta());
+                
+                vista.getJlabel_image3().setText(palabras.get(1).getPalabra());
                 vista.getjLabel3_palabra2().setText(palabras.get(2).getPalabra());
-                String url3 = "/resource/imagenes/" + palabras.get(2).getPalabra() + ".png";
-                URL imageUrl3 = getClass().getResource(url3);
-                if (imageUrl3 != null) {
-                    JLabel label = vista.getJlabel_image3();
-                    int labelWidth = label.getWidth();
-                    int labelHeight = label.getHeight();
-                    ImageIcon iconoOriginal = new ImageIcon(imageUrl3.getPath());
-                    Image imgEscalada = iconoOriginal.getImage().getScaledInstance(labelWidth, labelHeight, Image.SCALE_SMOOTH);
-                    ImageIcon iconoEscalado = new ImageIcon(imgEscalada);
-                    label.setIcon(iconoEscalado);
-                    label.revalidate();
-                    label.repaint();
-                } else {
-                    System.out.println("Imagen no encontrada en: " + url3);
-                }
+                
+                this.asignarImagen(vista.getJlabel_image1(),palabras.get(2).getImagen().getRuta());
+                vista.getJlabel_image1().setText(palabras.get(2).getPalabra());
             }
         } catch (Exception e) {
             e.printStackTrace();
             JOptionPane.showMessageDialog(vista, "Error al cargar palabras con imágenes.");
         }
     }
+    
+    private void compararPalabras() {
+    
+}
+
+
 
     private void asignarImagen(JLabel label, String rutaImagen) {
-        if (rutaImagen == null) return;
-
-        ImageIcon icono = new ImageIcon(rutaImagen);
-
-        int labelWidth = label.getWidth();
-        int labelHeight = label.getHeight();
-        if (labelWidth > 0 && labelHeight > 0) {
-            Image imagen = icono.getImage().getScaledInstance(labelWidth, labelHeight, Image.SCALE_SMOOTH);
-            icono = new ImageIcon(imagen);
+        try {
+         
+            URL imgURL = getClass().getResource(rutaImagen);
+            if (imgURL != null) {
+                ImageIcon icono = new ImageIcon(imgURL);
+                Image imgEscalada = icono.getImage().getScaledInstance(label.getWidth(), label.getHeight(), Image.SCALE_SMOOTH);
+                label.setIcon(new ImageIcon(imgEscalada));
+            } else {
+                System.out.println("No se encontro la imagen en: " + rutaImagen);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-        label.setIcon(icono);
-
-        label.revalidate();
-        label.repaint();
     }
 
     private void agregarEventosArrastre(JLabel label, Point coordenadasEspecificas) {
@@ -169,8 +141,9 @@ public class ControlActividad3 implements ActionListener {
 
     private void pegarEnDestino(JLabel label, JLabel destino) {
         destino.setLayout(new BorderLayout());
+        destino.setText(label.getText());
         destino.setText("");
-
+        
         label.setSize(destino.getSize());
         label.setLocation(0, 0);
 
@@ -200,6 +173,10 @@ public class ControlActividad3 implements ActionListener {
             if (vista != null) {
                 vista.dispose();
             }
+        }else if(e.getSource() == this.vista.getjButton_verificar()){
+            this.compararPalabras();
+        }else if(e.getSource() == this.vista.getjButton_cambiar()){
+            
         }
     }
     

@@ -20,14 +20,22 @@ public class Actividad_3 extends javax.swing.JFrame {
      */
     
     ControlActividad3 control;
+  
     public Actividad_3() {
         initComponents();
         this.setLocationRelativeTo(null);
-        control = new ControlActividad3(this);
-
-        
+        control = new ControlActividad3(this);   
     }
 
+    public JButton getjButton_cambiar() {
+        return jButton_cambiar;
+    }
+
+    public JButton getjButton_verificar() {
+        return jButton_verificar;
+    }
+
+    
     public JButton getjButton1_Salir() {
         return jButton1_Salir;
     }
@@ -139,8 +147,8 @@ public class Actividad_3 extends javax.swing.JFrame {
         jLabel_destino2 = new javax.swing.JLabel();
         jLabel_destino3 = new javax.swing.JLabel();
         jButton1_Salir = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        jButton_verificar = new javax.swing.JButton();
+        jButton_cambiar = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
@@ -207,19 +215,19 @@ public class Actividad_3 extends javax.swing.JFrame {
         jButton1_Salir.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/Frame 104.png"))); // NOI18N
         jPanel3_fondo.add(jButton1_Salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(1180, 0, 100, 70));
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/Verificar1.png"))); // NOI18N
-        jButton1.setBorderPainted(false);
-        jButton1.setContentAreaFilled(false);
-        jButton1.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/Verificar3.png"))); // NOI18N
-        jButton1.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/Verificar2.png"))); // NOI18N
-        jPanel3_fondo.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 200, -1, -1));
+        jButton_verificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/Verificar1.png"))); // NOI18N
+        jButton_verificar.setBorderPainted(false);
+        jButton_verificar.setContentAreaFilled(false);
+        jButton_verificar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/Verificar3.png"))); // NOI18N
+        jButton_verificar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/Verificar2.png"))); // NOI18N
+        jPanel3_fondo.add(jButton_verificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 200, -1, -1));
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/Cambiar1.png"))); // NOI18N
-        jButton2.setBorderPainted(false);
-        jButton2.setContentAreaFilled(false);
-        jButton2.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/Cambiar3.png"))); // NOI18N
-        jButton2.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/Cambiar2.png"))); // NOI18N
-        jPanel3_fondo.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 310, -1, -1));
+        jButton_cambiar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/Cambiar1.png"))); // NOI18N
+        jButton_cambiar.setBorderPainted(false);
+        jButton_cambiar.setContentAreaFilled(false);
+        jButton_cambiar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/Cambiar3.png"))); // NOI18N
+        jButton_cambiar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/Cambiar2.png"))); // NOI18N
+        jPanel3_fondo.add(jButton_cambiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 310, -1, -1));
 
         jLabel2.setText("jLabel2");
         jPanel3_fondo.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 426, 250, 150));
@@ -283,9 +291,9 @@ public class Actividad_3 extends javax.swing.JFrame {
 
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton1_Salir;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton_cambiar;
+    private javax.swing.JButton jButton_verificar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel1_palabra1;
     private javax.swing.JLabel jLabel2;
