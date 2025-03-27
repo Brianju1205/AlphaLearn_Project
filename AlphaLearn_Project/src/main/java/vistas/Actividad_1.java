@@ -63,6 +63,7 @@ public class Actividad_1 extends javax.swing.JFrame {
         jPanel1_Abecedario = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        jButton2_instruccion_siguiente = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1220, 690));
@@ -112,6 +113,11 @@ public class Actividad_1 extends javax.swing.JFrame {
         jButton1.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/abecedario/button_regresarfill.png"))); // NOI18N
         jPanel_Actividad_1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 300, -1, -1));
 
+        jButton2_instruccion_siguiente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/sistemas-de-escucha-asistida.png"))); // NOI18N
+        jButton2_instruccion_siguiente.setBorderPainted(false);
+        jButton2_instruccion_siguiente.setContentAreaFilled(false);
+        jPanel_Actividad_1.add(jButton2_instruccion_siguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(1140, 170, -1, -1));
+
         getContentPane().add(jPanel_Actividad_1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1220, 690));
 
         pack();
@@ -135,6 +141,7 @@ public class Actividad_1 extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton1_Salir_act_1;
+    private javax.swing.JButton jButton2_instruccion_siguiente;
     private javax.swing.JButton jButton_Siguiente;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1_Abecedario;

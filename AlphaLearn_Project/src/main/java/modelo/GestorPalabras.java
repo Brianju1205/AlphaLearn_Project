@@ -13,6 +13,7 @@ import java.util.List;
  */
 public interface GestorPalabras {
     public String obtenerPalabraDesordenada() throws Exception;
+    public String obtenerWord() throws Exception;
     public ArrayList<Palabra> obtenerTresPalabrasConImagen() throws Exception;
     public void agregarPalabra(Palabra palabra) throws Exception;
     public void eliminarPalabra(int id) throws Exception;

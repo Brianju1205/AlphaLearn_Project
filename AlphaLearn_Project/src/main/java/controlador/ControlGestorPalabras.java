@@ -106,4 +106,19 @@ public class ControlGestorPalabras implements GestorPalabras {
             throw new Exception("Error al eliminar palabra", ex);
         }
     }
+
+    @Override
+    public String obtenerWord() throws Exception {
+        String word = "";
+        try {
+            ResultSet resultado = objConexion.getStatement().executeQuery("SELECT palabra FROM word ORDER BY RANDOM() LIMIT 1;");
+            if (resultado.next()) {
+                word = resultado.getString("palabra");
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(ControlGestorPalabras.class.getName()).log(Level.SEVERE, null, ex);
+            throw new Exception("Error al obtener palabra desordenada", ex);
+        }
+        return word;
+    }
 }
