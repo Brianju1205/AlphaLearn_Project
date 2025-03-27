@@ -21,7 +21,7 @@ import modelo.Usuario;
  */
 
 public class Verificador {
-    private int id;
+    private int id,edad;
     private String nom;
     private Conexion objConexion;
     private static Verificador instancia;
@@ -55,6 +55,14 @@ public class Verificador {
 
     public void setNom(String nom) {
         this.nom = nom;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
     }
     
     public boolean verificaCajaTextoCadena(javax.swing.JTextField cajaTexto){
@@ -109,6 +117,7 @@ public class Verificador {
             if (resultado.next() && resultado.getInt(1) > 0) {
                 this.id = resultado.getInt("id_usuario");
                 this.nom=resultado.getString("nombre");
+                this.edad=resultado.getInt("edad");
                 return true;
             } else {
                 JOptionPane.showMessageDialog(null, "Usuario o PIN incorrecto");

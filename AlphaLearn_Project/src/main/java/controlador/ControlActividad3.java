@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import modelo.Imagen;
 import modelo.Palabra;
 import vistas.Menu;
-import vistas.prueba;
 
 /**
  * Controlador para manejar el arrastre y soltar palabras en los JLabel destino.
@@ -74,7 +73,7 @@ public class ControlActividad3 implements ActionListener {
     
     private void compararPalabras() {
     
-}
+    }
 
 
 
@@ -180,14 +179,4 @@ public class ControlActividad3 implements ActionListener {
         }
     }
     
-    private void configurarPosicionesLabelsImagen() {
-        JLabel label1 = vista.getJlabel_image1();
-        label1.setBounds(50, 119, 170, 160);
-
-        JLabel label2 = vista.getJlabel_image2();
-        label2.setBounds(50, 290, 170, 160);
-
-        JLabel label3 = vista.getJlabel_image3();
-        label3.setBounds(50, 470, 170, 160);
-    }
 }

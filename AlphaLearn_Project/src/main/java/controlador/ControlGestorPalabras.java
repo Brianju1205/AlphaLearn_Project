@@ -70,7 +70,7 @@ public class ControlGestorPalabras implements GestorPalabras {
             imagen.setRuta(resultado.getString("ruta"));
             imagen.setPalabraId(resultado.getInt("palabra_id"));
 
-            palabra.setImagen(imagen); // Asignamos la imagen a la palabra
+            palabra.setImagen(imagen); 
             palabras.add(palabra);
         }
             } catch (SQLException ex) {

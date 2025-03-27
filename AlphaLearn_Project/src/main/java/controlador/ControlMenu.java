@@ -16,7 +16,7 @@ import vistas.Actividad_3;
 import vistas.Menu;
 import vistas.Menu_Actividades;
 import vistas.Ajustes;
-import vistas.Progreso;
+import vistas.Perfil;
 
 /**
  *
@@ -46,7 +46,7 @@ public class ControlMenu implements ActionListener{
         this.objMenu.getjButton2_ajustes().addActionListener(this);
         this.objMenu.getjButton3_ayuda().addActionListener(this);
         this.initContent();
-        this.initStyles();
+        
         this.objMenu.getjLabel2_Bienvenida().setText("Bienvenido, " + this.v.getNom());
         
     }
@@ -97,6 +97,9 @@ public class ControlMenu implements ActionListener{
         if (e.getSource() == this.objMenu.getjButton2_ajustes()) {
             panel(new Ajustes());
         }
+        if (e.getSource() == this.objMenu.getjButton3_ayuda()) {
+            panel(new Perfil());
+        }
         
 
     }
@@ -112,16 +115,6 @@ public class ControlMenu implements ActionListener{
         objMenu.getjPanel_Contenido().add(p, BorderLayout.CENTER);
         objMenu.getjPanel_Contenido().revalidate();
         objMenu.getjPanel_Contenido().repaint();
-    }
-    private void initStyles(){
-        
-        objMenuAc.getjButton_Actividad1().putClientProperty( "JButton.buttonType", "roundRect" );
-        objMenuAc.getjButton_Actividad2().putClientProperty( "JButton.buttonType", "roundRect" );
-        objMenuAc.getjButton_Actividad3().putClientProperty( "JButton.buttonType", "roundRect" );
-        objMenuAc.getjButton_Actividad4().putClientProperty( "JButton.buttonType", "roundRect" );
-        objMenuAc.getjButton_Actividad5().putClientProperty( "JButton.buttonType", "roundRect" );
-        objMenuAc.getjButton_Actividad6().putClientProperty( "JButton.buttonType", "roundRect" );
-        
     }
    
 

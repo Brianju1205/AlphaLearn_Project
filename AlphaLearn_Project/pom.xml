@@ -50,6 +50,11 @@
         <artifactId>javafx-media</artifactId>
         <version>17</version> <!-- Cambia por la versión que estás usando -->
     </dependency>
+    <dependency>
+        <groupId>org.jfree</groupId>
+        <artifactId>jfreechart</artifactId>
+        <version>1.5.3</version>
+    </dependency>
     </dependencies>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

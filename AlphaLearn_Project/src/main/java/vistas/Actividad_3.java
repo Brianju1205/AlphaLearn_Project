@@ -120,12 +120,7 @@ public class Actividad_3 extends javax.swing.JFrame {
     public void setJlabel_image3(JLabel jlabel_image3) {
         this.jlabel_image3 = jlabel_image3;
     }
-
-    public JLabel getjLabel2() {
-        return jLabel2;
-    }
    
-
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -149,7 +144,6 @@ public class Actividad_3 extends javax.swing.JFrame {
         jButton1_Salir = new javax.swing.JButton();
         jButton_verificar = new javax.swing.JButton();
         jButton_cambiar = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -171,22 +165,27 @@ public class Actividad_3 extends javax.swing.JFrame {
         jPanel3_fondo.add(jlabel_image1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, 170, 160));
 
         jLabel1_palabra1.setBackground(new java.awt.Color(217, 217, 217));
-        jLabel1_palabra1.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        jLabel1_palabra1.setFont(new java.awt.Font("Segoe UI Black", 0, 36)); // NOI18N
         jLabel1_palabra1.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel1_palabra1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1_palabra1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jLabel1_palabra1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel1_palabra1.setOpaque(true);
         jPanel3_fondo.add(jLabel1_palabra1, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 140, 235, 100));
 
         jLabel2_palabra3.setBackground(new java.awt.Color(217, 217, 217));
+        jLabel2_palabra3.setFont(new java.awt.Font("Segoe UI Black", 0, 36)); // NOI18N
         jLabel2_palabra3.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel2_palabra3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2_palabra3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jLabel2_palabra3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel2_palabra3.setOpaque(true);
         jPanel3_fondo.add(jLabel2_palabra3, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 500, 235, 100));
 
         jLabel3_palabra2.setBackground(new java.awt.Color(217, 217, 217));
+        jLabel3_palabra2.setFont(new java.awt.Font("Segoe UI Black", 0, 36)); // NOI18N
         jLabel3_palabra2.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel3_palabra2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3_palabra2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jLabel3_palabra2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel3_palabra2.setOpaque(true);
@@ -194,16 +193,19 @@ public class Actividad_3 extends javax.swing.JFrame {
 
         jLabel_destino1.setBackground(new java.awt.Color(217, 217, 217));
         jLabel_destino1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, new java.awt.Color(153, 153, 153), new java.awt.Color(153, 153, 153)));
+        jLabel_destino1.setName("2"); // NOI18N
         jLabel_destino1.setOpaque(true);
         jPanel3_fondo.add(jLabel_destino1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 320, 235, 100));
 
         jLabel_destino2.setBackground(new java.awt.Color(217, 217, 217));
         jLabel_destino2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, null, new java.awt.Color(153, 153, 153)));
+        jLabel_destino2.setName("1"); // NOI18N
         jLabel_destino2.setOpaque(true);
         jPanel3_fondo.add(jLabel_destino2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 140, 235, 100));
 
         jLabel_destino3.setBackground(new java.awt.Color(217, 217, 217));
         jLabel_destino3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, null, new java.awt.Color(102, 102, 102)));
+        jLabel_destino3.setName("3"); // NOI18N
         jLabel_destino3.setOpaque(true);
         jPanel3_fondo.add(jLabel_destino3, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 500, 235, 100));
 
@@ -228,9 +230,6 @@ public class Actividad_3 extends javax.swing.JFrame {
         jButton_cambiar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/Cambiar3.png"))); // NOI18N
         jButton_cambiar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/Cambiar2.png"))); // NOI18N
         jPanel3_fondo.add(jButton_cambiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 310, -1, -1));
-
-        jLabel2.setText("jLabel2");
-        jPanel3_fondo.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 426, 250, 150));
 
         jLabel1.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 48)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
@@ -296,7 +295,6 @@ public class Actividad_3 extends javax.swing.JFrame {
     private javax.swing.JButton jButton_verificar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel1_palabra1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel2_palabra3;
     private javax.swing.JLabel jLabel3_palabra2;
     private javax.swing.JLabel jLabel_destino1;

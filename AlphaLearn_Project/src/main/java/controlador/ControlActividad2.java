@@ -264,11 +264,17 @@ public class ControlActividad2 implements ActionListener {
         }
 
         if (palabraFormada.toString().equalsIgnoreCase(palabraActual)) {
-            JOptionPane.showMessageDialog(objActividad5, "¡Respuesta correcta!", "Resultado", JOptionPane.INFORMATION_MESSAGE);
+            reproducirSonido("/resource/sounds/muy_bien.wav");
+            
+          //  JOptionPane.showMessageDialog(objActividad5, "¡Respuesta correcta!", "Resultado", JOptionPane.INFORMATION_MESSAGE);
             reiniciarActividad();
+            Comprobar("/resource/imagenes/bienhecho.png"); 
             respuestaCorrectas++;
         } else {
-            JOptionPane.showMessageDialog(objActividad5, "Respuesta incorrecta. Intenta de nuevo.", "Resultado", JOptionPane.ERROR_MESSAGE);
+            reproducirSonido("/resource/sounds/error.wav");
+            reproducirSonido("/resource/sounds/Incorrecto.wav");
+            Comprobar("/resource/imagenes/X.png"); 
+            //JOptionPane.showMessageDialog(objActividad5, "Respuesta incorrecta. Intenta de nuevo.", "Resultado", JOptionPane.ERROR_MESSAGE);
             
             respuestasMalas++;
         }
@@ -404,4 +410,30 @@ public class ControlActividad2 implements ActionListener {
             ex.printStackTrace();
         }
     }
+
+   private void Comprobar(String mensaje) {
+        objActividad5.getjPanel1().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        JLabel labelError = new JLabel(new ImageIcon(getClass().getResource(mensaje))); 
+        labelError.setSize(420, 460); 
+
+        objActividad5.getjPanel1().add(labelError, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 70, 420, 460));
+
+        objActividad5.getjPanel1().setComponentZOrder(labelError, 0);  // 0 significa capa superior
+        objActividad5.getjPanel1().revalidate();
+        objActividad5.getjPanel1().repaint();
+
+
+        Timer timer = new Timer(2000, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                objActividad5.getjPanel1().remove(labelError);
+                objActividad5.getjPanel1().revalidate();
+                objActividad5.getjPanel1().repaint();
+            }
+        });
+        timer.setRepeats(false);
+        timer.start();
+    }
+
 }

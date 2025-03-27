@@ -27,48 +27,40 @@ public class Ajustes extends javax.swing.JPanel {
     private void initComponents() {
 
         jPanel_Menu = new javax.swing.JPanel();
-        jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         jSlider1 = new javax.swing.JSlider();
+        jLabel2 = new javax.swing.JLabel();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel_Menu.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel_Menu.setBackground(new java.awt.Color(232, 232, 232));
         jPanel_Menu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jPanel1.setBackground(new java.awt.Color(204, 204, 255));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setBackground(new java.awt.Color(0, 0, 0));
         jLabel1.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("AJUSTES");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 0, 127, 34));
+        jPanel_Menu.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 40, 110, 34));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Configuracion de sonido");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 240, 20));
+        jPanel_Menu.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 100, 240, 20));
+        jPanel_Menu.add(jSlider1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 140, 360, 50));
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel4.setText("Volumen");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 90, 20));
-        jPanel1.add(jSlider1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 80, 250, 50));
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/Ajustes frame.png"))); // NOI18N
+        jLabel2.setText("jLabel2");
+        jPanel_Menu.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 10, 470, 560));
 
-        jPanel_Menu.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 50, 410, 500));
-
-        add(jPanel_Menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 990, 610));
+        add(jPanel_Menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 990, 590));
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel_Menu;
     private javax.swing.JSlider jSlider1;
     // End of variables declaration//GEN-END:variables

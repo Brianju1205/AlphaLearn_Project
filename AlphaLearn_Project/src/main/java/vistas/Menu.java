@@ -169,8 +169,9 @@ public class Menu extends javax.swing.JFrame {
         jPanel_Mensages.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2_Bienvenida.setBackground(new java.awt.Color(0, 204, 255));
-        jLabel2_Bienvenida.setFont(new java.awt.Font("Segoe UI Emoji", 1, 24)); // NOI18N
-        jPanel_Mensages.add(jLabel2_Bienvenida, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 270, 30));
+        jLabel2_Bienvenida.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
+        jLabel2_Bienvenida.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel_Mensages.add(jLabel2_Bienvenida, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, 370, 30));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/lina2.png"))); // NOI18N
         jPanel_Mensages.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 990, 70));
