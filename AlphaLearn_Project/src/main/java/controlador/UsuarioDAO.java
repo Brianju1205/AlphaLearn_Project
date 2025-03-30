@@ -120,13 +120,7 @@ public class UsuarioDAO implements DAOUsuario{
             throw new Exception("Error al obtener todos los usuarios", ex);
         }
     }
-    public Usuario getObjUsuario() {
-        return objUsuario;
-    }
-
-    public void setObjUsuario(Usuario objUsuario) {
-        this.objUsuario = objUsuario;
-    }
+   
 
     @Override
     public void guardarHistorial(int usuarioId, String palabra, int aciertos) throws Exception {
@@ -148,7 +142,13 @@ public class UsuarioDAO implements DAOUsuario{
                 throw new Exception("Error al guardar historial", ex);
             }
     }
-    
+     public Usuario getObjUsuario() {
+        return objUsuario;
+    }
+
+    public void setObjUsuario(Usuario objUsuario) {
+        this.objUsuario = objUsuario;
+    }
     
 }
     

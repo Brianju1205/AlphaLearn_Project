@@ -9,7 +9,6 @@ import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JPanel;
-import javax.swing.UIManager;
 import vistas.Actividad_1;
 import vistas.Actividad_2;
 import vistas.Actividad_3;
@@ -35,6 +34,8 @@ public class ControlMenu implements ActionListener{
         
         this.objMenuAc = objMenuAc;
         v = Verificador.getInstancia();
+        ControlGestorTiempo.getInstancia();
+        TiempoActivo.getInstancia().iniciarContador();
         
         this.objMenuAc.getjButton_Actividad1().addActionListener(this);
         this.objMenuAc.getjButton_Actividad2().addActionListener(this);
@@ -55,9 +56,11 @@ public class ControlMenu implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == this.objMenuAc.getjButton_Actividad1()){
+            
             Actividad_1 a = new Actividad_1();
             a.setVisible(true);
-            if (objMenu != null) {   
+            if (objMenu != null) {
+            
             objMenu.dispose(); 
             }
         }
@@ -92,7 +95,10 @@ public class ControlMenu implements ActionListener{
             
         }
         if(e.getSource() == this.objMenu.getjButton5_Salir_Menu()){
-            if (objMenu != null) {   
+            if (objMenu != null) {  
+            int tiempoTotal = (int) TiempoActivo.getInstancia().getTiempoActivo();
+            ControlGestorTiempo.getInstancia().guardarTiempo(tiempoTotal);
+            System.out.println("Tiempo total activo: " + tiempoTotal + " segundos");
             objMenu.dispose(); 
             }
         }

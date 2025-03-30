@@ -2,16 +2,10 @@ package controlador;
 
 import java.awt.*;
 import java.awt.event.*;
-import java.io.IOException;
-import java.net.URL;
 import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.sound.sampled.AudioInputStream;
-import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
-import javax.sound.sampled.LineUnavailableException;
-import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.*;
 import vistas.Actividad_2;
 import vistas.Menu;
@@ -21,7 +15,7 @@ import org.netbeans.lib.awtextra.AbsoluteConstraints;
  *
  * @author almen
  */
-public class ControlActividad2 implements ActionListener {
+public class ControlActividad2 extends AbstractSonido implements ActionListener {
     private Clip clip;
     private int poaX, poaY; 
     private Actividad_2 objActividad5;
@@ -264,14 +258,14 @@ public class ControlActividad2 implements ActionListener {
         }
 
         if (palabraFormada.toString().equalsIgnoreCase(palabraActual)) {
-            reproducirSonido("/resource/sounds/muy_bien.wav");
+            reproducirSonido("/resource/sounds/correct-6.wav");
             
           //  JOptionPane.showMessageDialog(objActividad5, "¡Respuesta correcta!", "Resultado", JOptionPane.INFORMATION_MESSAGE);
             reiniciarActividad();
             Comprobar("/resource/imagenes/bienhecho.png"); 
             respuestaCorrectas++;
         } else {
-            reproducirSonido("/resource/sounds/error.wav");
+           //reproducirSonido("/resource/sounds/failed-2.wav");
             reproducirSonido("/resource/sounds/Incorrecto.wav");
             Comprobar("/resource/imagenes/X.png"); 
             //JOptionPane.showMessageDialog(objActividad5, "Respuesta incorrecta. Intenta de nuevo.", "Resultado", JOptionPane.ERROR_MESSAGE);
@@ -388,28 +382,6 @@ public class ControlActividad2 implements ActionListener {
            
        }
     }
-    private void reproducirSonido(String ruta) {
-        
-        try {
-            if (clip != null && clip.isRunning()) {
-                clip.stop();
-                clip.close();
-            }
-            URL url = getClass().getResource(ruta);
-            if (url == null) {
-                System.err.println("No se encontro el archivo: " + ruta);
-                return;
-            }
-            
-            AudioInputStream audioStream = AudioSystem.getAudioInputStream(url);
-            clip = AudioSystem.getClip();
-            
-            clip.open(audioStream);
-            clip.start();
-        } catch (UnsupportedAudioFileException | IOException | LineUnavailableException ex) {
-            ex.printStackTrace();
-        }
-    }
 
    private void Comprobar(String mensaje) {
         objActividad5.getjPanel1().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -419,7 +391,7 @@ public class ControlActividad2 implements ActionListener {
 
         objActividad5.getjPanel1().add(labelError, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 70, 420, 460));
 
-        objActividad5.getjPanel1().setComponentZOrder(labelError, 0);  // 0 significa capa superior
+        objActividad5.getjPanel1().setComponentZOrder(labelError, 0); 
         objActividad5.getjPanel1().revalidate();
         objActividad5.getjPanel1().repaint();
 

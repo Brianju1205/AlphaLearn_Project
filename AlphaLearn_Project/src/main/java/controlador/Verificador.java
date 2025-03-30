@@ -38,32 +38,7 @@ public class Verificador {
         }
         return instancia;
     }
-    
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    
-
-    public String getNom() {
-        return nom;
-    }
-
-    public void setNom(String nom) {
-        this.nom = nom;
-    }
-
-    public int getEdad() {
-        return edad;
-    }
-
-    public void setEdad(int edad) {
-        this.edad = edad;
-    }
+  
     
     public boolean verificaCajaTextoCadena(javax.swing.JTextField cajaTexto){
        if(cajaTexto.getText().isBlank()){
@@ -129,6 +104,32 @@ public class Verificador {
             return false;
         }
        
+    }
+     
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    
+
+    public String getNom() {
+        return nom;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
     }
     
 }

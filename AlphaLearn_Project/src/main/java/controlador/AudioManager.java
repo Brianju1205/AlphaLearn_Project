@@ -13,16 +13,14 @@ import javafx.scene.media.MediaPlayer;
  * @author juare
  */
 
-
-
 public class AudioManager {
 
     private static AudioManager instance;
     private MediaPlayer musicPlayer;
-    private double musicVolume = 1.0;  // Volumen de música
-    private double effectsVolume = 1.0;  // Volumen de efectos de sonido
+    private double musicVolume = 1.0;  
+    private double effectsVolume = 1.0; 
 
-    // Obtener la instancia única de AudioManager
+   
     public static AudioManager getInstance() {
         if (instance == null) {
             instance = new AudioManager();
@@ -30,33 +28,29 @@ public class AudioManager {
         return instance;
     }
 
-    // Reproducir música de fondo
     public void playMusic(String musicFilePath) {
         if (musicPlayer != null) {
-            musicPlayer.stop(); // Detener música si ya está reproduciéndose
+            musicPlayer.stop(); 
         }
         Media music = new Media(getClass().getResource("/resources/sounds/" + musicFilePath).toString());
         musicPlayer = new MediaPlayer(music);
-        musicPlayer.setCycleCount(MediaPlayer.INDEFINITE);  // Reproducir en bucle
-        musicPlayer.setVolume(musicVolume);  // Establecer volumen
-        musicPlayer.play();  // Iniciar la música
+        musicPlayer.setCycleCount(MediaPlayer.INDEFINITE); 
+        musicPlayer.setVolume(musicVolume);  
+        musicPlayer.play(); 
     }
 
-    // Detener la música
     public void stopMusic() {
         if (musicPlayer != null) {
             musicPlayer.stop();
         }
     }
 
-    // Reproducir un efecto de sonido
     public void playEffect(String soundFilePath) {
         AudioClip sound = new AudioClip(getClass().getResource("/resources/sounds/" + soundFilePath).toString());
-        sound.setVolume(effectsVolume);  // Establecer volumen
-        sound.play();  // Reproducir el sonido
+        sound.setVolume(effectsVolume); 
+        sound.play();  
     }
 
-    // Configurar el volumen de la música
     public void setMusicVolume(double volume) {
         musicVolume = volume;
         if (musicPlayer != null) {
@@ -64,7 +58,6 @@ public class AudioManager {
         }
     }
 
-    // Configurar el volumen de los efectos
     public void setEffectsVolume(double volume) {
         effectsVolume = volume;
     }

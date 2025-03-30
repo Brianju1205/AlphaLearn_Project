@@ -6,6 +6,9 @@ package controlador;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.time.DayOfWeek;
+import java.time.LocalDate;
+import java.util.Map;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
@@ -20,9 +23,9 @@ import vistas.Perfil;
  */
 public class ControlPerfil {
     
-    Perfil objPerfil;
-    Verificador v;
-
+    private Perfil objPerfil;
+    private Verificador v;
+    private Map<String, Integer> datos;
     public ControlPerfil(Perfil objPerfil) {
         this.objPerfil = objPerfil;
         v = Verificador.getInstancia();
@@ -44,24 +47,32 @@ public class ControlPerfil {
         
         objPerfil.getjPanel1_grafica().setLayout(new BorderLayout());  
 
-      objPerfil.getjPanel1_grafica().add(chartPanel, BorderLayout.CENTER);  
+        objPerfil.getjPanel1_grafica().add(chartPanel, BorderLayout.CENTER);  
         
     }
     
     private CategoryDataset crearDataset() {
-        DefaultCategoryDataset dataset = new DefaultCategoryDataset();
-        
-        dataset.addValue(120, "Tiempo Activo", "Lunes");
-        dataset.addValue(20, "Tiempo Activo", "Martes");
-        dataset.addValue(150, "Tiempo Activo", "Miércoles");
-        dataset.addValue(180, "Tiempo Activo", "Jueves");
-        dataset.addValue(200, "Tiempo Activo", "Viernes");
-        dataset.addValue(220, "Tiempo Activo", "Sábado");
-        dataset.addValue(130, "Tiempo Activo", "Domingo");
-        
-        return dataset;
-    }
-    
-    
-    
+            DefaultCategoryDataset dataset = new DefaultCategoryDataset();
+
+            datos = ControlGestorTiempo.getInstancia().obtenerTiempoPorSemana();
+
+            String[] diasSemana = {"Lu", "Ma", "Mie", "Jue", "Vie", "Sa", "Dom"};
+
+            for (String dia : diasSemana) {
+                dataset.addValue(0, "Tiempo Activo", dia);
+            }
+
+            for (Map.Entry<String, Integer> entry : datos.entrySet()) {
+                String diaSemana = obtenerDiaSemana(entry.getKey()); 
+                dataset.addValue(entry.getValue(), "Tiempo Activo", diaSemana);
+            }
+
+            return dataset;
+        }
+
+        private String obtenerDiaSemana(String fecha) {
+            LocalDate date = LocalDate.parse(fecha); 
+            DayOfWeek dayOfWeek = date.getDayOfWeek();
+            return dayOfWeek.name(); 
+        } 
 }

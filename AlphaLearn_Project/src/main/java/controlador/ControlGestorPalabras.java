@@ -109,7 +109,7 @@ public class ControlGestorPalabras implements GestorPalabras {
 
     @Override
     public String obtenerWord() throws Exception {
-        String word = "";
+         String word = "";
         try {
             ResultSet resultado = objConexion.getStatement().executeQuery("SELECT palabra FROM word ORDER BY RANDOM() LIMIT 1;");
             if (resultado.next()) {
@@ -120,5 +120,8 @@ public class ControlGestorPalabras implements GestorPalabras {
             throw new Exception("Error al obtener palabra desordenada", ex);
         }
         return word;
+       
     }
+    
+   
 }

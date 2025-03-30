@@ -58,7 +58,6 @@ Actividad_4 objActividad4;
                 
             };
 
-            // Asignar cada palabra al que le pertenece
             for (int i = 0; i < labels.length; i++) {
                 if (i < palabras.length) {
                     labels[i].setText(palabras[i]); 

@@ -55,26 +55,15 @@ public class Actividad_4 extends javax.swing.JFrame {
         return jLabel_word3;
     }
 
-    public JButton getjButton1_cambiar_audio() {
-        return jButton1_cambiar_audio;
+    public JButton getjButton1_Cambiar_Palabra() {
+        return jButton1_Cambiar_Palabra;
     }
-     
-    
-    
-    
-    
-  
 
-  
 
     public JPanel getjPanel1() {
         return jPanel1;
     }
 
-   
-  
-    
-    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -93,15 +82,16 @@ public class Actividad_4 extends javax.swing.JFrame {
         jLabel_word2 = new javax.swing.JLabel();
         jLabel_word3 = new javax.swing.JLabel();
         jButton1_audio_palabra = new javax.swing.JButton();
-        jButton1_cambiar_audio = new javax.swing.JButton();
-        jLabel9_fondo1 = new javax.swing.JLabel();
+        jButton1_Cambiar_Palabra = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
 
         jLabel2.setText("jLabel2");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
 
-        jPanel1.setBackground(new java.awt.Color(76, 127, 155));
+        jPanel1.setBackground(new java.awt.Color(204, 204, 255));
+        jPanel1.setPreferredSize(new java.awt.Dimension(1280, 690));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton1_Salir_act_5.setBackground(new java.awt.Color(153, 51, 255));
@@ -111,13 +101,13 @@ public class Actividad_4 extends javax.swing.JFrame {
         jButton1_Salir_act_5.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButton1_Salir_act_5.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/Frame 106.png"))); // NOI18N
         jButton1_Salir_act_5.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/Frame 104.png"))); // NOI18N
-        jPanel1.add(jButton1_Salir_act_5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1180, 0, -1, -1));
+        jPanel1.add(jButton1_Salir_act_5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 0, -1, -1));
 
         jLabel1.setFont(new java.awt.Font("Gill Sans Ultra Bold", 0, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel1.setText("Escucha la palabra correcta");
+        jLabel1.setText("Selecciona");
         jLabel1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 130, 630, 30));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 40, 630, 30));
 
         jButton1_Vericicar_palabra_correcta.setBackground(new java.awt.Color(51, 51, 255));
         jButton1_Vericicar_palabra_correcta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/Verificar1.png"))); // NOI18N
@@ -127,7 +117,7 @@ public class Actividad_4 extends javax.swing.JFrame {
         jButton1_Vericicar_palabra_correcta.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton1_Vericicar_palabra_correcta.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/Verificar3.png"))); // NOI18N
         jButton1_Vericicar_palabra_correcta.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/Verificar2.png"))); // NOI18N
-        jPanel1.add(jButton1_Vericicar_palabra_correcta, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 540, 210, 90));
+        jPanel1.add(jButton1_Vericicar_palabra_correcta, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 520, 210, 90));
 
         jLabel_word1.setBackground(new java.awt.Color(102, 51, 255));
         jLabel_word1.setFont(new java.awt.Font("Segoe UI Black", 0, 36)); // NOI18N
@@ -136,7 +126,7 @@ public class Actividad_4 extends javax.swing.JFrame {
         jLabel_word1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jLabel_word1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel_word1.setOpaque(true);
-        jPanel1.add(jLabel_word1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 440, 180, 50));
+        jPanel1.add(jLabel_word1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 380, 210, 70));
 
         jLabel_word2.setBackground(new java.awt.Color(102, 51, 255));
         jLabel_word2.setFont(new java.awt.Font("Segoe UI Black", 0, 36)); // NOI18N
@@ -145,7 +135,7 @@ public class Actividad_4 extends javax.swing.JFrame {
         jLabel_word2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jLabel_word2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel_word2.setOpaque(true);
-        jPanel1.add(jLabel_word2, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 440, 170, 50));
+        jPanel1.add(jLabel_word2, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 380, 210, 70));
 
         jLabel_word3.setBackground(new java.awt.Color(102, 51, 255));
         jLabel_word3.setFont(new java.awt.Font("Segoe UI Black", 0, 36)); // NOI18N
@@ -154,21 +144,33 @@ public class Actividad_4 extends javax.swing.JFrame {
         jLabel_word3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jLabel_word3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel_word3.setOpaque(true);
-        jPanel1.add(jLabel_word3, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 440, 170, 50));
+        jPanel1.add(jLabel_word3, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 380, 220, 70));
 
         jButton1_audio_palabra.setBackground(new java.awt.Color(153, 153, 255));
         jButton1_audio_palabra.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/sistemas-de-escucha-asistida.png"))); // NOI18N
         jButton1_audio_palabra.setText("jButton1");
         jButton1_audio_palabra.setBorderPainted(false);
         jButton1_audio_palabra.setContentAreaFilled(false);
-        jPanel1.add(jButton1_audio_palabra, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 240, 80, 70));
+        jButton1_audio_palabra.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1_audio_palabraActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton1_audio_palabra, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 60, 80, 70));
 
-        jButton1_cambiar_audio.setText("CAMBIAR_AUDIO");
-        jPanel1.add(jButton1_cambiar_audio, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 240, -1, -1));
+        jButton1_Cambiar_Palabra.setBackground(new java.awt.Color(51, 51, 255));
+        jButton1_Cambiar_Palabra.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/Cambiar1.png"))); // NOI18N
+        jButton1_Cambiar_Palabra.setText("Cambiar Palabra");
+        jButton1_Cambiar_Palabra.setBorderPainted(false);
+        jButton1_Cambiar_Palabra.setContentAreaFilled(false);
+        jButton1_Cambiar_Palabra.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/Cambiar3.png"))); // NOI18N
+        jButton1_Cambiar_Palabra.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/Cambiar2.png"))); // NOI18N
+        jPanel1.add(jButton1_Cambiar_Palabra, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 520, 210, 90));
 
-        jLabel9_fondo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/panel1.png"))); // NOI18N
-        jLabel9_fondo1.setToolTipText("");
-        jPanel1.add(jLabel9_fondo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 68, 870, 590));
+        jLabel3.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("jLabel3");
+        jLabel3.setOpaque(true);
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 100, 210, 200));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -178,11 +180,17 @@ public class Actividad_4 extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 690, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1_audio_palabraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1_audio_palabraActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1_audio_palabraActionPerformed
 
     /**
      * @param args the command line arguments
@@ -200,13 +208,13 @@ public class Actividad_4 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1_Cambiar_Palabra;
     private javax.swing.JButton jButton1_Salir_act_5;
     private javax.swing.JButton jButton1_Vericicar_palabra_correcta;
     private javax.swing.JButton jButton1_audio_palabra;
-    private javax.swing.JButton jButton1_cambiar_audio;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel9_fondo1;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel_word1;
     private javax.swing.JLabel jLabel_word2;
     private javax.swing.JLabel jLabel_word3;
