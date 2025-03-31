@@ -54,7 +54,7 @@ public class ControlPerfil {
     private CategoryDataset crearDataset() {
             DefaultCategoryDataset dataset = new DefaultCategoryDataset();
 
-            datos = ControlGestorTiempo.getInstancia().obtenerTiempoPorSemana();
+            datos = ControlGestorTiempo.getInstancia().obtenerTiempoPorSemana(v.getId());
 
             String[] diasSemana = {"Lu", "Ma", "Mie", "Jue", "Vie", "Sa", "Dom"};
 

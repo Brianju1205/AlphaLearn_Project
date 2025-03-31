@@ -41,7 +41,8 @@ public class ControlActividad2 extends AbstractSonido implements ActionListener 
         this.objActividad5 = objActividad5;
         this.v = Verificador.getInstancia();
         System.out.println("El id es: " + v.getId() + ", nombre es: " + v.getNom());
-
+        ControlGestorTiempo.getInstancia();
+        TiempoActivo.getInstancia().iniciarContador();
         //this.objOperacionesBD = OperacionesBD.getInstance();
         this.palabrasDAO = ControlGestorPalabras.getInstance();
         this.usuarioDAO = UsuarioDAO.getInstance();
@@ -61,7 +62,9 @@ public class ControlActividad2 extends AbstractSonido implements ActionListener 
         this.objActividad5.getjButton1_Cambiar_Palabra().addActionListener(this);
         this.objActividad5.getjButton1_instrucciones().addActionListener(this);
         this.objActividad5.getjButton1_Repetir_PalabraAudio().addActionListener(this);
-        reproducirSonido("/resource/sounds/intro.wav");
+        //reproducirSonido("/resource/sounds/intro.wav");
+        this.mostrarInstruccion(objActividad5.getjPanel1(), "/resource/imagenes/personaje.png");
+        reproducirSonido("/resource/sounds/modulo2.wav");
     }
 
     private void asignarLetrasAJLabels(String palabra) {
@@ -217,9 +220,21 @@ public class ControlActividad2 extends AbstractSonido implements ActionListener 
         if (e.getSource() == this.objActividad5.getjButton1_Salir_act_5()) {
             Menu m = new Menu();
             m.setVisible(true);
-           
-            objActividad5.dispose();
+            stopSonido();
+            if (objActividad5 != null) {   
+                objActividad5.dispose(); 
+            }
+            if(this.v.getNom()== null){
+            System.out.println("no hay usuario");
+            return;
         }
+        else{
+            int tiempoTotal = (int) TiempoActivo.getInstancia().getTiempoActivo();
+            ControlGestorTiempo.getInstancia().guardarTiempo(v.getId(),tiempoTotal);
+            
+            }
+        }
+        
         else if(e.getSource() == this.objActividad5.getjButton1_instrucciones()){  
            reproducirSonido("/resource/sounds/instrucciones.wav");
         }else if (e.getSource() == this.objActividad5.getjButton1_Vericicar_respuesta()) {

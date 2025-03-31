@@ -18,8 +18,8 @@ import modelo.DAOTiempo;
  */
 public class ControlGestorTiempo implements DAOTiempo {
 
- private static ControlGestorTiempo instancia; 
-     private Conexion objConexion;
+    private static ControlGestorTiempo instancia; 
+    private Conexion objConexion;
 
     private ControlGestorTiempo() {
         objConexion = Conexion.getInstance();
@@ -32,14 +32,14 @@ public class ControlGestorTiempo implements DAOTiempo {
         return instancia;
     }
 
-
     @Override
-    public void guardarTiempo(int tiempo) {
-        String sql = "INSERT INTO tiempo_activo (fecha, tiempo) VALUES (?, ?)";
+    public void guardarTiempo(int idUsuario, int tiempo) {
+        String sql = "INSERT INTO tiempo_activo (id_usuario, fecha, tiempo) VALUES (?, ?, ?)";
 
-        try (PreparedStatement ps = objConexion.getConnection().prepareStatement(sql);) {
-            ps.setDate(1, java.sql.Date.valueOf(LocalDate.now())); 
-            ps.setInt(2, tiempo);
+        try (PreparedStatement ps = objConexion.getConnection().prepareStatement(sql)) {
+            ps.setInt(1, idUsuario); 
+            ps.setDate(2, java.sql.Date.valueOf(LocalDate.now())); 
+            ps.setInt(3, tiempo);
             ps.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -47,20 +47,24 @@ public class ControlGestorTiempo implements DAOTiempo {
     }
 
     @Override
-    public Map<String, Integer> obtenerTiempoPorSemana() {
+    public Map<String, Integer> obtenerTiempoPorSemana(int idUsuario) {
         Map<String, Integer> datos = new HashMap<>();
         String sql = "SELECT fecha, SUM(tiempo) AS tiempo \n" +
-                    "FROM tiempo_activo \n" +
-                    "WHERE fecha >= CURRENT_DATE - EXTRACT(DOW FROM CURRENT_DATE) * INTERVAL '1 day' \n" +
-                    "  AND fecha < CURRENT_DATE - EXTRACT(DOW FROM CURRENT_DATE) * INTERVAL '1 day' + INTERVAL '7 days'\n" +
-                    "GROUP BY fecha;";
+                     "FROM tiempo_activo \n" +
+                     "WHERE id_usuario = ? \n" +
+                     "  AND fecha >= CURRENT_DATE - (EXTRACT(DOW FROM CURRENT_DATE) || ' days')::INTERVAL \n" +
+                     "  AND fecha < CURRENT_DATE - (EXTRACT(DOW FROM CURRENT_DATE) || ' days')::INTERVAL + INTERVAL '7 days'\n" +
+                     "GROUP BY fecha \n" +
+                     "ORDER BY fecha;";
 
-        try (ResultSet resultado = objConexion.getStatement().executeQuery(sql);) {
-
-            while (resultado.next()) {
-                String fecha = resultado.getDate("fecha").toString();
-                int tiempo = resultado.getInt("tiempo");
-                datos.put(fecha, tiempo);
+        try (PreparedStatement ps = objConexion.getConnection().prepareStatement(sql)) {
+            ps.setInt(1, idUsuario); 
+            try (ResultSet resultado = ps.executeQuery()) {
+                while (resultado.next()) {
+                    String fecha = resultado.getDate("fecha").toString();
+                    int tiempo = resultado.getInt("tiempo");
+                    datos.put(fecha, tiempo);
+                }
             }
         } catch (SQLException e) {
             e.printStackTrace();

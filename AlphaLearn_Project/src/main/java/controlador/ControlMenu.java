@@ -96,10 +96,16 @@ public class ControlMenu implements ActionListener{
         }
         if(e.getSource() == this.objMenu.getjButton5_Salir_Menu()){
             if (objMenu != null) {  
-            int tiempoTotal = (int) TiempoActivo.getInstancia().getTiempoActivo();
-            ControlGestorTiempo.getInstancia().guardarTiempo(tiempoTotal);
-            System.out.println("Tiempo total activo: " + tiempoTotal + " segundos");
+            
             objMenu.dispose(); 
+            }
+            if(this.v.getNom()== null){
+                System.out.println("no hay usuario");
+                return;
+            }
+            else{
+                int tiempoTotal = (int) TiempoActivo.getInstancia().getTiempoActivo();
+                ControlGestorTiempo.getInstancia().guardarTiempo(v.getId(),tiempoTotal);
             }
         }
         if (e.getSource() == this.objMenu.getjButton1_inicio()){

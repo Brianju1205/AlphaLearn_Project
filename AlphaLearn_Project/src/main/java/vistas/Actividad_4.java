@@ -25,10 +25,11 @@ public class Actividad_4 extends javax.swing.JFrame {
    ControlActividad2 objControl5;
     public Actividad_4() {
         initComponents();
+       
         objControladorActividad4 = new controladorActividad4(this);
         this.setLocationRelativeTo(null);
-                
     }
+
 
     public JButton getjButton1_opcionUno() {
         return jButton1_opcionUno;
@@ -135,7 +136,7 @@ public class Actividad_4 extends javax.swing.JFrame {
         jLabel_word1.setFont(new java.awt.Font("Segoe UI Black", 0, 36)); // NOI18N
         jLabel_word1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel_word1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel_word1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jLabel_word1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(102, 102, 255)));
         jLabel_word1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel_word1.setOpaque(true);
         jPanel1.add(jLabel_word1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 350, 210, 70));

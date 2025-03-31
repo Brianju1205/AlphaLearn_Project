@@ -18,6 +18,7 @@ import javax.swing.JOptionPane;
 
 public class controladorActividad4 extends AbstractSonido implements ActionListener  {
     private Actividad_4 objActividad4;
+    private Verificador v;
     private ControlGestorPalabras palabrasDAO;
     private String[]palabras; 
     private String palabraCorrecta;
@@ -26,7 +27,7 @@ public class controladorActividad4 extends AbstractSonido implements ActionListe
 
     public controladorActividad4(Actividad_4 objActividad4) {
         this.objActividad4 = objActividad4;
-        
+        initStyles();
         this.objActividad4.getjButton1_Salir_act_5().addActionListener(this);
         this.objActividad4.getjButton1_Vericicar_palabra_correcta().addActionListener(this);
         this.objActividad4.getjButton1_audio_palabra().addActionListener(this);
@@ -35,22 +36,33 @@ public class controladorActividad4 extends AbstractSonido implements ActionListe
         this.objActividad4.getjButton2_opcionDos().addActionListener(this);
         this.objActividad4.getjButton3_opcionTres().addActionListener(this);
         this.objActividad4.getjButton1_Cambiar_audio_palabra().addActionListener(this);
-        
+        v = Verificador.getInstancia();
+        ControlGestorTiempo.getInstancia();
+        TiempoActivo.getInstancia().iniciarContador();
         this.palabrasDAO = ControlGestorPalabras.getInstance();
         
         asignarPalabraAJLabels();
         seleccionarPalabraCorrecta();
-         
+        
     }
       
     @Override
     public void actionPerformed(ActionEvent e) {
        if(e.getSource() == this.objActividad4.getjButton1_Salir_act_5()){
-              Menu m = new Menu();
-              m.setVisible(true);
-              if (objActividad4 != null) {   
+            Menu m = new Menu();
+            m.setVisible(true);
+            stopSonido();
+            if (objActividad4 != null) {   
                 objActividad4.dispose(); 
-              }
+            }
+            if(this.v.getNom()== null){
+                System.out.println("no hay usuario");
+                return;
+                }
+            else{
+                int tiempoTotal = (int) TiempoActivo.getInstancia().getTiempoActivo();
+                ControlGestorTiempo.getInstancia().guardarTiempo(v.getId(),tiempoTotal);
+            }
        }else if (e.getSource() ==this.objActividad4.getjButton1_audio_palabra()){
            reproducirAudio(palabraCorrecta);
            audioReproducido= true;
@@ -142,4 +154,17 @@ public class controladorActividad4 extends AbstractSonido implements ActionListe
         }
         return seleccionUsuario;
     }
+        private void initStyles(){
+        System.out.println("entrando al flta flat");
+        objActividad4.getjLabel_word1().putClientProperty("JComponent.arc", 20);
+        objActividad4.getjLabel_word1().putClientProperty("JComponent.roundRect", true);
+        
+        objActividad4.getjLabel_word2().putClientProperty("JComponent.roundRect", true);
+        objActividad4.getjLabel_word2().putClientProperty("JComponent.arc", 20);
+
+        objActividad4.getjLabel_word3().putClientProperty("JComponent.roundRect", true);
+        objActividad4.getjLabel_word3().putClientProperty("JComponent.arc", 20);
+
+    
+}
 }

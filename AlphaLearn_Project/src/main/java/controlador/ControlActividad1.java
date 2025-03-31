@@ -25,6 +25,7 @@ import vistas.Vocal_U;
 public class ControlActividad1 extends AbstractSonido implements ActionListener {
     private Actividad_1 objActividad;
     private Abecedario objAbc;
+    private Verificador v;
     private Vocal_A va;
     private Vocal_E ve;
     private Vocal_I vi;
@@ -32,6 +33,7 @@ public class ControlActividad1 extends AbstractSonido implements ActionListener 
     private Vocal_U vu;
     private JPanel paneles[];
     private int indicador=0;
+    
     public ControlActividad1(Actividad_1 objActividad,Abecedario objAbc,Vocal_A va,Vocal_E ve,Vocal_I vi,Vocal_O vo,Vocal_U vu) {
         this.objActividad = objActividad;
         this.objAbc = objAbc;
@@ -41,6 +43,8 @@ public class ControlActividad1 extends AbstractSonido implements ActionListener 
         this.vo=vo;
         this.vu=vu;
         this.paneles = new JPanel[]{objAbc, va, ve, vi, vo, vu};
+        v = Verificador.getInstancia();
+        ControlGestorTiempo.getInstancia();
         TiempoActivo.getInstancia().iniciarContador();
         colocarEscuchadores();
         colocarEscuchadores2();
@@ -97,12 +101,20 @@ public class ControlActividad1 extends AbstractSonido implements ActionListener 
            if (e.getSource() == this.objActividad.getjButton1_Salir_act_1()){
                 Menu m = new Menu();
                 m.setVisible(true);
-                 long tiempoTotal = TiempoActivo.getInstancia().getTiempoActivo();
-                System.out.println("Tiempo total activo: " + tiempoTotal + " segundos");
+                
                 stopSonido();
                 if (objActividad != null) {
                
                 objActividad.dispose(); 
+                }
+                if(this.v.getNom()== null){
+                System.out.println("no hay usuario");
+                return;
+                }
+                else{
+                int tiempoTotal = (int) TiempoActivo.getInstancia().getTiempoActivo();
+                ControlGestorTiempo.getInstancia().guardarTiempo(v.getId(),tiempoTotal);
+
                 }
             }
            else if(e.getSource() == this.objActividad.getjButton_REGRESAR()){

@@ -16,8 +16,9 @@ import vistas.Menu;
  * 
  * @author juare
  */
-public class ControlActividad3 implements ActionListener {
+public class ControlActividad3 extends AbstractSonido implements ActionListener {
     private Actividad_3 vista;
+    private Verificador v;
     private int poaX, poaY;
     private Point posicionOriginal;
     private boolean clicDerechoPresionado = false;
@@ -34,11 +35,14 @@ public class ControlActividad3 implements ActionListener {
     private Imagen imRuta;
     private Palabra p;
     private JLabel[] labelsOrigen;
+    
     public ControlActividad3(Actividad_3 vista) {
         this.vista = vista;
         
         this.gestospa = ControlGestorPalabras.getInstance();
-
+        v = Verificador.getInstancia();
+        ControlGestorTiempo.getInstancia();
+        TiempoActivo.getInstancia().iniciarContador();
         vista.getjPanel3_fondo().setLayout(null);
       
         agregarEventosArrastre(vista.getjLabel1_palabra1(), coordenadasPalabra1);
@@ -50,6 +54,8 @@ public class ControlActividad3 implements ActionListener {
         this.vista.getjButton_cambiar().addActionListener(this);
         //nfigurarPosicionesLabelsImagen();
         cargarPalabrasEnLabels();
+        this.mostrarInstruccion(vista.getjPanel3_fondo(), "/resource/imagenes/personaje.png");
+        reproducirSonido("/resource/sounds/modulo3.wav");
         
     }
     private void cargarPalabrasEnLabels() {
@@ -307,8 +313,17 @@ public class ControlActividad3 implements ActionListener {
         if (e.getSource() == this.vista.getjButton1_Salir()) {
             Menu m = new vistas.Menu();
             m.setVisible(true);
+            stopSonido();
             if (vista != null) {
                 vista.dispose();
+            }
+            if(this.v.getNom()== null){
+            System.out.println("no hay usuario");
+            return;
+            }
+            else{
+            int tiempoTotal = (int) TiempoActivo.getInstancia().getTiempoActivo();
+            ControlGestorTiempo.getInstancia().guardarTiempo(v.getId(),tiempoTotal);
             }
         }else if(e.getSource() == this.vista.getjButton_verificar()){
             this.compararPalabras();

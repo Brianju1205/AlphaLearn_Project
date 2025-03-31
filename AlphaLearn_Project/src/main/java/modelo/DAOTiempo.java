@@ -12,6 +12,6 @@ import java.util.Map;
  */
 public interface DAOTiempo {
 
-    void guardarTiempo(int tiempo);
-    Map<String, Integer> obtenerTiempoPorSemana();
+    void guardarTiempo(int idUsuario, int tiempo);
+    Map<String, Integer> obtenerTiempoPorSemana(int idUsuario);
 }
