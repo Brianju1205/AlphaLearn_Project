@@ -12,23 +12,42 @@ import javax.swing.JPanel;
 import vistas.Abecedario;
 import vistas.Actividad_1;
 import vistas.Menu;
+import vistas.Vocal_A;
+import vistas.Vocal_E;
+import vistas.Vocal_I;
+import vistas.Vocal_O;
+import vistas.Vocal_U;
 
 /**
  *
  * @author juare
  */
 public class ControlActividad1 extends AbstractSonido implements ActionListener {
-    Actividad_1 objActividad;
-    Abecedario objAbc;
-    
-    public ControlActividad1(Actividad_1 objActividad,Abecedario objAbc) {
+    private Actividad_1 objActividad;
+    private Abecedario objAbc;
+    private Vocal_A va;
+    private Vocal_E ve;
+    private Vocal_I vi;
+    private Vocal_O vo;
+    private Vocal_U vu;
+    private JPanel paneles[];
+    private int indicador=0;
+    public ControlActividad1(Actividad_1 objActividad,Abecedario objAbc,Vocal_A va,Vocal_E ve,Vocal_I vi,Vocal_O vo,Vocal_U vu) {
         this.objActividad = objActividad;
         this.objAbc = objAbc;
+        this.va=va;
+        this.ve=ve;
+        this.vi=vi;
+        this.vo=vo;
+        this.vu=vu;
+        this.paneles = new JPanel[]{objAbc, va, ve, vi, vo, vu};
         TiempoActivo.getInstancia().iniciarContador();
         colocarEscuchadores();
         colocarEscuchadores2();
-        reproducirSonido("/resource/sounds/indicaciones.wav");
         initContent();
+        this.mostrarInstruccion(objActividad.jPanel_Actividad_1, "/resource/imagenes/personaje.png");
+        reproducirSonido("/resource/sounds/modulo1.1.wav");
+        
         
     }
     
@@ -47,6 +66,31 @@ public class ControlActividad1 extends AbstractSonido implements ActionListener 
                bt.addActionListener(this);
            }
        }
+       for(Object obj: va.getComponents()){
+           if(obj instanceof JButton bt){
+               bt.addActionListener(this);
+           }
+       }
+       for(Object obj: ve.getComponents()){
+           if(obj instanceof JButton bt){
+               bt.addActionListener(this);
+           }
+       }
+       for(Object obj: vi.getComponents()){
+           if(obj instanceof JButton bt){
+               bt.addActionListener(this);
+           }
+       }
+       for(Object obj: vo.getComponents()){
+           if(obj instanceof JButton bt){
+               bt.addActionListener(this);
+           }
+       }
+       for(Object obj: vu.getComponents()){
+           if(obj instanceof JButton bt){
+               bt.addActionListener(this);
+           }
+       }
    }
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -61,8 +105,20 @@ public class ControlActividad1 extends AbstractSonido implements ActionListener 
                 objActividad.dispose(); 
                 }
             }
+           else if(e.getSource() == this.objActividad.getjButton_REGRESAR()){
+               if (indicador > 0) {
+                indicador--;
+                panel(paneles[indicador]);
+            }
+           }else if(e.getSource() == this.objActividad.getjButton_Siguiente()){
+               
+            if (indicador < paneles.length - 1) {
+                indicador++;
+                panel(paneles[indicador]);
+            }
+           }
            JButton bt = (JButton)e.getSource();
-           if(bt.getName().equals("siguiente") || bt.getName().equals("salir")){
+           if(bt.getName().equals("siguiente") || bt.getName().equals("salir")||bt.getName().equals("regresar") ){
                return;
            }
            
@@ -72,7 +128,7 @@ public class ControlActividad1 extends AbstractSonido implements ActionListener 
     }
 
     private void initContent(){
-        panel(objAbc);
+        panel(paneles[indicador]);
     }
     private void panel(JPanel p){
         
@@ -83,6 +139,4 @@ public class ControlActividad1 extends AbstractSonido implements ActionListener 
         objActividad.getjPanel1_Abecedario().revalidate();
         objActividad.getjPanel1_Abecedario().repaint();
     }
-    
-    
 }

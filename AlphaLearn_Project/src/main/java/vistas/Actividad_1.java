@@ -21,11 +21,21 @@ public class Actividad_1 extends javax.swing.JFrame {
      */
     ControlActividad1 objcontrolActi;
     Abecedario objAbc;
+    Vocal_A va;
+    Vocal_E ve;
+    Vocal_I vi;
+    Vocal_O vo;
+    Vocal_U vu;
     public Actividad_1() {
         
         initComponents(); 
         objAbc= new Abecedario();
-        objcontrolActi= new ControlActividad1(this,objAbc);
+        va= new Vocal_A();
+        ve= new Vocal_E();
+        vi= new Vocal_I();
+        vo= new Vocal_O();
+        vu= new Vocal_U();
+        objcontrolActi= new ControlActividad1(this,objAbc,va,ve,vi,vo,vu);
         this.setLocationRelativeTo(null);
         initStyles();
     }
@@ -46,6 +56,11 @@ public class Actividad_1 extends javax.swing.JFrame {
     public JButton getjButton_Siguiente() {
         return jButton_Siguiente;
     }
+
+    public JButton getjButton_REGRESAR() {
+        return jButton_REGRESAR;
+    }
+    
     
     
     /**
@@ -62,7 +77,7 @@ public class Actividad_1 extends javax.swing.JFrame {
         jButton_Siguiente = new javax.swing.JButton();
         jPanel1_Abecedario = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        jButton_REGRESAR = new javax.swing.JButton();
         jButton2_instruccion_siguiente = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -104,14 +119,14 @@ public class Actividad_1 extends javax.swing.JFrame {
         jLabel1.setText("¿CÓMO SE ESCUCHA?");
         jPanel_Actividad_1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 10, 470, 80));
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/abecedario/button_regresar.png"))); // NOI18N
-        jButton1.setBorderPainted(false);
-        jButton1.setContentAreaFilled(false);
-        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton1.setName("regresar"); // NOI18N
-        jButton1.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/abecedario/button_regresarPressed.png"))); // NOI18N
-        jButton1.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/abecedario/button_regresarfill.png"))); // NOI18N
-        jPanel_Actividad_1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 300, -1, -1));
+        jButton_REGRESAR.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/abecedario/button_regresar.png"))); // NOI18N
+        jButton_REGRESAR.setBorderPainted(false);
+        jButton_REGRESAR.setContentAreaFilled(false);
+        jButton_REGRESAR.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton_REGRESAR.setName("regresar"); // NOI18N
+        jButton_REGRESAR.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/abecedario/button_regresarPressed.png"))); // NOI18N
+        jButton_REGRESAR.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/abecedario/button_regresarfill.png"))); // NOI18N
+        jPanel_Actividad_1.add(jButton_REGRESAR, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 300, -1, -1));
 
         jButton2_instruccion_siguiente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/sistemas-de-escucha-asistida.png"))); // NOI18N
         jButton2_instruccion_siguiente.setBorderPainted(false);
@@ -139,9 +154,9 @@ public class Actividad_1 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton1_Salir_act_1;
     private javax.swing.JButton jButton2_instruccion_siguiente;
+    private javax.swing.JButton jButton_REGRESAR;
     private javax.swing.JButton jButton_Siguiente;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1_Abecedario;

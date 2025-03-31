@@ -217,8 +217,7 @@ public class ControlActividad2 extends AbstractSonido implements ActionListener 
         if (e.getSource() == this.objActividad5.getjButton1_Salir_act_5()) {
             Menu m = new Menu();
             m.setVisible(true);
-            clip.stop();
-            clip.close();
+           
             objActividad5.dispose();
         }
         else if(e.getSource() == this.objActividad5.getjButton1_instrucciones()){  
@@ -307,7 +306,6 @@ public class ControlActividad2 extends AbstractSonido implements ActionListener 
                     for (MouseMotionListener listener : labelsOrigen[i].getMouseMotionListeners()) {
                         labelsOrigen[i].removeMouseMotionListener(listener);
                     }
-                    //agrega los label al panel
                     AbsoluteConstraints constraints = new AbsoluteConstraints(
                         coordenadasEspecificas[i].x, 
                         coordenadasEspecificas[i].y, 
