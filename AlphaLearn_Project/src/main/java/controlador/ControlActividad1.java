@@ -49,7 +49,7 @@ public class ControlActividad1 extends AbstractSonido implements ActionListener 
         colocarEscuchadores();
         colocarEscuchadores2();
         initContent();
-        this.mostrarInstruccion(objActividad.jPanel_Actividad_1, "/resource/imagenes/personaje.png");
+        this.mostrarInstruccion(objActividad.jPanel_Actividad_1, "/resource/imagenes/presentador.png");
         reproducirSonido("/resource/sounds/modulo1.1.wav");
         
         

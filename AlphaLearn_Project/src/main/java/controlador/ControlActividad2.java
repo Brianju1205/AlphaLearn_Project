@@ -63,7 +63,7 @@ public class ControlActividad2 extends AbstractSonido implements ActionListener 
         this.objActividad5.getjButton1_instrucciones().addActionListener(this);
         this.objActividad5.getjButton1_Repetir_PalabraAudio().addActionListener(this);
         //reproducirSonido("/resource/sounds/intro.wav");
-        this.mostrarInstruccion(objActividad5.getjPanel1(), "/resource/imagenes/personaje.png");
+        this.mostrarInstruccion(objActividad5.getjPanel1(), "/resource/imagenes/presentador.png");
         reproducirSonido("/resource/sounds/modulo2.wav");
     }
 

@@ -7,7 +7,7 @@ package vistas;
 
 import com.formdev.flatlaf.FlatLightLaf;
 import controlador.ControlActividad2;
-import controlador.controladorActividad4;
+import controlador.ControlActividad4;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -17,7 +17,7 @@ import javax.swing.JPanel;
  * @author almen
  */
 public class Actividad_4 extends javax.swing.JFrame {
-    controladorActividad4 objControladorActividad4;
+    ControlActividad4 objControladorActividad4;
    
     /**
      * Creates new form CompletarPalabras
@@ -26,7 +26,7 @@ public class Actividad_4 extends javax.swing.JFrame {
     public Actividad_4() {
         initComponents();
        
-        objControladorActividad4 = new controladorActividad4(this);
+        objControladorActividad4 = new ControlActividad4(this);
         this.setLocationRelativeTo(null);
     }
 

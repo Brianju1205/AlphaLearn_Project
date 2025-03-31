@@ -54,7 +54,7 @@ public class ControlActividad3 extends AbstractSonido implements ActionListener 
         this.vista.getjButton_cambiar().addActionListener(this);
         //nfigurarPosicionesLabelsImagen();
         cargarPalabrasEnLabels();
-        this.mostrarInstruccion(vista.getjPanel3_fondo(), "/resource/imagenes/personaje.png");
+        this.mostrarInstruccion(vista.getjPanel3_fondo(), "/resource/imagenes/presentador.png");
         reproducirSonido("/resource/sounds/modulo3.wav");
         
     }
