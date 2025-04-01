@@ -43,7 +43,7 @@ public class Vocal_U extends javax.swing.JPanel {
         jButton_A.setBorderPainted(false);
         jButton_A.setContentAreaFilled(false);
         jButton_A.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton_A.setName("vocal_u"); // NOI18N
+        jButton_A.setName("vocalu"); // NOI18N
         jButton_A.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/vocales/vocal_u2.png"))); // NOI18N
         jButton_A.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/vocales/vocal_U3.png"))); // NOI18N
         add(jButton_A, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 0, 150, 150));

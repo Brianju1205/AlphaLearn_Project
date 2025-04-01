@@ -124,9 +124,13 @@ public class ControlActividad1 extends AbstractSonido implements ActionListener 
             }
            }else if(e.getSource() == this.objActividad.getjButton_Siguiente()){
                
-            if (indicador < paneles.length - 1) {
+            if (indicador < paneles.length - 1) {         
                 indicador++;
                 panel(paneles[indicador]);
+            }
+            if(indicador==1){
+                this.mostrarInstruccion(objActividad.jPanel_Actividad_1, "/resource/imagenes/presentador.png");
+        reproducirSonido("/resource/sounds/submodulo1_1.wav");
             }
            }
            JButton bt = (JButton)e.getSource();

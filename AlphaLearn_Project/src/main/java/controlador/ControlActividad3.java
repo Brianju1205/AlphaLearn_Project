@@ -328,7 +328,7 @@ public class ControlActividad3 extends AbstractSonido implements ActionListener 
         }else if(e.getSource() == this.vista.getjButton_verificar()){
             this.compararPalabras();
         }else if(e.getSource() == this.vista.getjButton_cambiar()){
-            
+            this.cargarPalabrasEnLabels();
         }
     }
     private void Comprobar(int num, String mensaje) {
