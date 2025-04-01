@@ -26,10 +26,10 @@ public class ControlActividad4 extends AbstractSonido implements ActionListener 
     private String seleccionUsuario =null;
     public ControlActividad4(Actividad_4 objActividad4) {
         this.objActividad4 = objActividad4;
-        initStyles();
         this.objActividad4.getjButton1_Salir_act_5().addActionListener(this);
         this.objActividad4.getjButton1_Vericicar_palabra_correcta().addActionListener(this);
         this.objActividad4.getjButton1_audio_palabra().addActionListener(this);
+        
         
         this.objActividad4.getjButton1_opcionUno().addActionListener(this);
         this.objActividad4.getjButton2_opcionDos().addActionListener(this);
@@ -46,6 +46,7 @@ public class ControlActividad4 extends AbstractSonido implements ActionListener 
         System.out.println("af");
         
     }
+    
       
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -123,7 +124,7 @@ public class ControlActividad4 extends AbstractSonido implements ActionListener 
     }
     
     private void reproducirAudio(String palabraCorrecta) {
-        String rutaAudio = "/resource/sounds/" + palabraCorrecta + ".wav"; // Ruta del audio
+        String rutaAudio = "/resource/sounds/" + palabraCorrecta + ".wav"; 
         reproducirSonido(rutaAudio);
     }
 
@@ -155,15 +156,5 @@ public class ControlActividad4 extends AbstractSonido implements ActionListener 
         }
         return seleccionUsuario;
     }
-        private void initStyles(){
-            System.out.println("entrando al flta flat");
-            objActividad4.getjLabel_word1().putClientProperty("JComponent.arc", 20);
-            objActividad4.getjLabel_word1().putClientProperty("JComponent.roundRect", true);
 
-            objActividad4.getjLabel_word2().putClientProperty("JComponent.roundRect", true);
-            objActividad4.getjLabel_word2().putClientProperty("JComponent.arc", 20);
-
-            objActividad4.getjLabel_word3().putClientProperty("JComponent.roundRect", true);
-            objActividad4.getjLabel_word3().putClientProperty("JComponent.arc", 20);  
-        }
 }
