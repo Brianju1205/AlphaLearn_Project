@@ -16,7 +16,6 @@ public class Vocal_I extends javax.swing.JPanel {
     public Vocal_I() {
         initComponents();
     }
-    int i;
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -44,7 +43,7 @@ public class Vocal_I extends javax.swing.JPanel {
         jButton_A.setBorderPainted(false);
         jButton_A.setContentAreaFilled(false);
         jButton_A.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton_A.setName("a"); // NOI18N
+        jButton_A.setName("vocali"); // NOI18N
         jButton_A.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/vocales/vocal_i2.png"))); // NOI18N
         jButton_A.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/vocales/vocal_i3.png"))); // NOI18N
         add(jButton_A, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 0, 150, 150));
