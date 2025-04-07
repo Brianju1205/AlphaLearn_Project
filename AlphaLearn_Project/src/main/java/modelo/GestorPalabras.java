@@ -17,5 +17,5 @@ public interface GestorPalabras {
     public ArrayList<Palabra> obtenerTresPalabrasConImagen() throws Exception;
     public void agregarPalabra(Palabra palabra) throws Exception;
     public void eliminarPalabra(int id) throws Exception;
-
+    public  String[] obtenerOracionBase() throws Exception;
 }

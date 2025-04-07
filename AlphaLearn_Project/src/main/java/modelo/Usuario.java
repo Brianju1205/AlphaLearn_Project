@@ -11,17 +11,16 @@ package modelo;
 public class Usuario {
     private String idUsuario;
     private String nom;
-    private int edad;
     private String nivel;
     private String password;
     
     public Usuario(){
         
     }
-    public Usuario(String idUsuario, String nom, int edad, String nivel, String password) {
+    public Usuario(String idUsuario, String nom, String nivel, String password) {
         this.idUsuario = idUsuario;
         this.nom = nom;
-        this.edad = edad;
+        
         this.nivel = nivel;
         this.password = password;
     }
@@ -42,13 +41,6 @@ public class Usuario {
         this.nom = nom;
     }
 
-    public int getEdad() {
-        return edad;
-    }
-
-    public void setEdad(int edad) {
-        this.edad = edad;
-    }
 
     public String getNivel() {
         return nivel;

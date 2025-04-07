@@ -13,6 +13,7 @@ import vistas.Actividad_1;
 import vistas.Actividad_2;
 import vistas.Actividad_3;
 import vistas.Actividad_4;
+import vistas.Actividad_5;
 import vistas.Menu;
 import vistas.Menu_Actividades;
 import vistas.Ajustes;
@@ -89,7 +90,11 @@ public class ControlMenu implements ActionListener{
             
         }
         if(e.getSource() == this.objMenuAc.getjButton_Actividad5()){
-                 
+            Actividad_5 a=new Actividad_5();
+            a.setVisible(true);
+            if(objMenu !=null){
+                objMenu.dispose();
+            }     
         }
         if(e.getSource() == this.objMenuAc.getjButton_Actividad6()){
             

@@ -122,6 +122,27 @@ public class ControlGestorPalabras implements GestorPalabras {
         return word;
        
     }
+
+    @Override
+    public String[] obtenerOracionBase() throws Exception {
+        String[] oracionConOpciones = new String[5]; 
+        try {
+            String sql = "SELECT oraciones, opcion1, opcion2, opcion3, opcion_correcta FROM Oracion ORDER BY RANDOM() LIMIT 1;";
+            ResultSet resultado = objConexion.getStatement().executeQuery(sql);
+
+            if (resultado.next()) {
+                oracionConOpciones[0] = resultado.getString("oraciones");
+                oracionConOpciones[1] = resultado.getString("opcion1");
+                oracionConOpciones[2] = resultado.getString("opcion2");
+                oracionConOpciones[3] = resultado.getString("opcion3");
+                oracionConOpciones[4] = resultado.getString("opcion_correcta");
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(ControlGestorPalabras.class.getName()).log(Level.SEVERE, null, ex);
+            throw new Exception("Error al obtener la oraciones y opciones", ex);
+        }
+        return oracionConOpciones;
+    }
     
    
 }

@@ -9,6 +9,7 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import modelo.Usuario;
 import utils.Slide;
+import vistas.Login_inclusivo;
 import vistas.Menu;
 
 /**
@@ -21,7 +22,7 @@ public class ControlLogin implements ActionListener {
     private Verificador objVerificador; 
     private UsuarioDAO objDAOU;
     public ControlLogin(Login log) {
-        this.log = log;
+        this.log = log; 
         slide = new Slide();
         log.getjB_iniciar_sesion().addActionListener(this);
         log.getjB_ir_Registro().addActionListener(this);
@@ -96,7 +97,7 @@ public class ControlLogin implements ActionListener {
             }
             Usuario objUsuario = new Usuario();
             objUsuario.setNom(nombreUsuario);
-            objUsuario.setEdad(Integer.parseInt(log.getjT_Edad_Registrar().getText()));
+           // objUsuario.setEdad(Integer.parseInt(log.getjT_Edad_Registrar().getText()));
             objUsuario.setContraseña(contraseñaUsuario);
 
             // Guardamos en la base de datos usando el Singleton

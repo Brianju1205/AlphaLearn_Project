@@ -39,9 +39,8 @@ public class UsuarioDAO implements DAOUsuario{
         try {
             System.out.println("Insercion correcta en base de datos");
 
-            objConexion.getStatement().execute("INSERT INTO usuarios (nombre, edad, password) VALUES ('"
-                + objUsuario.getNom() + "', "
-                + objUsuario.getEdad() + ", '"
+            objConexion.getStatement().execute("INSERT INTO usuarios (nombre, password) VALUES ('"
+                + objUsuario.getNom() + "', '"
                 + objUsuario.getPassword() + "');");
 
          } catch (SQLException ex) {
@@ -54,18 +53,18 @@ public class UsuarioDAO implements DAOUsuario{
     public Usuario buscarUsuario(String nombre, String password) throws Exception {
         
          Usuario objUsuario = null;
-    try {
-        String sql = "SELECT * FROM usuarios WHERE nombre = ? AND password = ?";
-        PreparedStatement stmt = objConexion.getConnection().prepareStatement(sql);
-        stmt.setString(1, nombre);
-        stmt.setString(2, password);
+        try {
+            String sql = "SELECT * FROM usuarios WHERE nombre = ? AND password = ?";
+            PreparedStatement stmt = objConexion.getConnection().prepareStatement(sql);
+            stmt.setString(1, nombre);
+            stmt.setString(2, password);
 
-        ResultSet resultado = stmt.executeQuery();
+            ResultSet resultado = stmt.executeQuery();
 
         if (resultado.next()) {
             objUsuario = new Usuario();
             objUsuario.setNom(resultado.getString("nombre"));
-            objUsuario.setEdad(resultado.getInt("edad"));
+            //objUsuario.setEdad(resultado.getInt("edad"));
             objUsuario.setContraseña(resultado.getString("password"));
         }
     } catch (SQLException ex) {
@@ -79,7 +78,7 @@ public class UsuarioDAO implements DAOUsuario{
         String sql = "UPDATE usuarios SET nombre=?, edad=?, nivel=?, password=? WHERE idUsuario=?";
         try (PreparedStatement stmt = objConexion.getConnection().prepareStatement(sql)) {
             stmt.setString(1, usuario.getNom());
-            stmt.setInt(2, usuario.getEdad());
+            //stmt.setInt(2, usuario.getEdad());
             stmt.setString(3, usuario.getNivel());
             stmt.setString(4, usuario.getPassword());
             stmt.setString(5, usuario.getIdUsuario());

@@ -94,7 +94,7 @@ public class Menu extends javax.swing.JFrame {
         jButton1_inicio.setBackground(new java.awt.Color(45, 130, 181));
         jButton1_inicio.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
         jButton1_inicio.setForeground(new java.awt.Color(0, 0, 0));
-        jButton1_inicio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/Frame 33.png"))); // NOI18N
+        jButton1_inicio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/ini1.png"))); // NOI18N
         jButton1_inicio.setBorder(new javax.swing.border.MatteBorder(null));
         jButton1_inicio.setBorderPainted(false);
         jButton1_inicio.setContentAreaFilled(false);
@@ -105,14 +105,14 @@ public class Menu extends javax.swing.JFrame {
         jButton1_inicio.setIconTextGap(0);
         jButton1_inicio.setInheritsPopupMenu(true);
         jButton1_inicio.setMargin(new java.awt.Insets(10, 14, 3, 14));
-        jButton1_inicio.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/Frame 31.jpg"))); // NOI18N
-        jButton1_inicio.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/inicio2.png"))); // NOI18N
+        jButton1_inicio.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/ini2.png"))); // NOI18N
+        jButton1_inicio.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/ini3.png"))); // NOI18N
         jPanel_Opciones.add(jButton1_inicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 230, 40));
 
         jButton2_ajustes.setBackground(new java.awt.Color(45, 130, 181));
         jButton2_ajustes.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
         jButton2_ajustes.setForeground(new java.awt.Color(0, 0, 0));
-        jButton2_ajustes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/Frame 34.png"))); // NOI18N
+        jButton2_ajustes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/aju1.png"))); // NOI18N
         jButton2_ajustes.setText("AJUSTES");
         jButton2_ajustes.setBorder(new javax.swing.border.MatteBorder(null));
         jButton2_ajustes.setBorderPainted(false);
@@ -120,14 +120,14 @@ public class Menu extends javax.swing.JFrame {
         jButton2_ajustes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton2_ajustes.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jButton2_ajustes.setIconTextGap(15);
-        jButton2_ajustes.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/Frame 30.png"))); // NOI18N
-        jButton2_ajustes.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/ajustes2.png"))); // NOI18N
+        jButton2_ajustes.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/aju2.png"))); // NOI18N
+        jButton2_ajustes.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/aju3.png"))); // NOI18N
         jPanel_Opciones.add(jButton2_ajustes, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 230, 40));
 
         jButton3_ayuda.setBackground(new java.awt.Color(45, 130, 181));
         jButton3_ayuda.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
         jButton3_ayuda.setForeground(new java.awt.Color(0, 0, 0));
-        jButton3_ayuda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/Frame 35.png"))); // NOI18N
+        jButton3_ayuda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/perf1.png"))); // NOI18N
         jButton3_ayuda.setText("AYUDA");
         jButton3_ayuda.setBorder(new javax.swing.border.MatteBorder(null));
         jButton3_ayuda.setBorderPainted(false);
@@ -137,27 +137,27 @@ public class Menu extends javax.swing.JFrame {
         jButton3_ayuda.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         jButton3_ayuda.setIconTextGap(15);
         jButton3_ayuda.setInheritsPopupMenu(true);
-        jButton3_ayuda.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/Frame 31.png"))); // NOI18N
-        jButton3_ayuda.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/perfil2.png"))); // NOI18N
+        jButton3_ayuda.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/perf2.png"))); // NOI18N
+        jButton3_ayuda.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/perf3.png"))); // NOI18N
         jPanel_Opciones.add(jButton3_ayuda, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 230, 230, 40));
 
         jButton5_Salir_Menu.setBackground(new java.awt.Color(3, 0, 189));
         jButton5_Salir_Menu.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
-        jButton5_Salir_Menu.setForeground(new java.awt.Color(0, 0, 0));
-        jButton5_Salir_Menu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/salir-alternativa.png"))); // NOI18N
+        jButton5_Salir_Menu.setForeground(new java.awt.Color(255, 255, 255));
+        jButton5_Salir_Menu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/salirexit.png"))); // NOI18N
         jButton5_Salir_Menu.setText("SALIR");
         jButton5_Salir_Menu.setBorder(null);
         jButton5_Salir_Menu.setBorderPainted(false);
         jButton5_Salir_Menu.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel_Opciones.add(jButton5_Salir_Menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(-1, 587, 230, 60));
 
-        jSeparator1.setBackground(new java.awt.Color(0, 0, 0));
-        jSeparator1.setForeground(new java.awt.Color(0, 0, 0));
+        jSeparator1.setBackground(new java.awt.Color(255, 255, 255));
+        jSeparator1.setForeground(new java.awt.Color(255, 255, 255));
         jSeparator1.setOpaque(true);
         jPanel_Opciones.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 200, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/libros (1).png"))); // NOI18N
-        jPanel_Opciones.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 30, 70, 80));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/libroo.png"))); // NOI18N
+        jPanel_Opciones.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 30, 90, 80));
 
         getContentPane().add(jPanel_Opciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 230, 700));
 

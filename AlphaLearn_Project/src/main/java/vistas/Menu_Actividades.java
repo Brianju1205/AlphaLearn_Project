@@ -146,7 +146,7 @@ public class Menu_Actividades extends javax.swing.JPanel {
         jButton_Actividad1.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/button_mause.png"))); // NOI18N
         jPanel_Menu.add(jButton_Actividad1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 240, 190, 60));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/Actividad1_frame.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/modulo1.png"))); // NOI18N
         jLabel2.setText("jLabel2");
         jPanel_Menu.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 290, 280));
 
@@ -159,23 +159,22 @@ public class Menu_Actividades extends javax.swing.JPanel {
         jLabel1.setText("Modulos de aprendizaje");
         jPanel_Menu.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 50));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/Actividad2_frame.png"))); // NOI18N
-        jLabel3.setText("jLabel3");
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/modulo2.png"))); // NOI18N
         jPanel_Menu.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 40, 290, 280));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/Actividad3_frame.png"))); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/modulo3.png"))); // NOI18N
         jLabel4.setText("jLabel4");
         jPanel_Menu.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 40, 290, 270));
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/Actividad4_frame.png"))); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/modulo4.png"))); // NOI18N
         jLabel5.setText("jLabel5");
         jPanel_Menu.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 320, 290, 280));
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/Actividad5_frame.png"))); // NOI18N
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/modulo5.png"))); // NOI18N
         jLabel6.setText("jLabel6");
         jPanel_Menu.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 320, 290, 270));
 
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/Actividad6_frame.png"))); // NOI18N
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/modulo6.png"))); // NOI18N
         jLabel7.setText("jLabel7");
         jPanel_Menu.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 320, 290, 270));
 

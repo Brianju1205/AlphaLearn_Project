@@ -58,9 +58,9 @@ public class ControlPerfil {
 
             String[] diasSemana = {"Lu", "Ma", "Mie", "Jue", "Vie", "Sa", "Dom"};
 
-            for (String dia : diasSemana) {
+            /*for (String dia : diasSemana) {
                 dataset.addValue(0, "Tiempo Activo", dia);
-            }
+            }*/
 
             for (Map.Entry<String, Integer> entry : datos.entrySet()) {
                 String diaSemana = obtenerDiaSemana(entry.getKey()); 
@@ -73,6 +73,7 @@ public class ControlPerfil {
         private String obtenerDiaSemana(String fecha) {
             LocalDate date = LocalDate.parse(fecha); 
             DayOfWeek dayOfWeek = date.getDayOfWeek();
+            System.out.println(" "+dayOfWeek.name());
             return dayOfWeek.name(); 
         } 
 }
