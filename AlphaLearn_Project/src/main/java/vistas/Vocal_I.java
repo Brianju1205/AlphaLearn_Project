@@ -16,6 +16,7 @@ public class Vocal_I extends javax.swing.JPanel {
     public Vocal_I() {
         initComponents();
     }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
