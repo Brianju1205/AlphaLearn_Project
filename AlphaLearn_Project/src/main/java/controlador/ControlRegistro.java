@@ -49,7 +49,7 @@ public class ControlRegistro implements ActionListener {
                 String textoBoton = bt.getText();
                 String comandoBoton = bt.getActionCommand();
 
-                if (!textoBoton.equals("Guardar") && !textoBoton.equals("Borrar")) {
+                if (!textoBoton.equals("Guardar") && !textoBoton.equals("Salir")) {
                     bt.addActionListener(this);
                     bt.setActionCommand("index"+index);
 
@@ -62,15 +62,38 @@ public class ControlRegistro implements ActionListener {
                     index++;
                 }
             }
-            if (comp instanceof JToggleButton tg) {
+            /*if (comp instanceof JToggleButton tg) {
                 tg.addActionListener(this);
                 formasSeleccionadas.add(tg);
                 IndexR++;
                 tg.putClientProperty("index", IndexR);
                 // tg.setActionCommand("formaRegistro_" + IndexR);
-            }
+            }*/
+            if (comp instanceof JToggleButton tg) {
+                IndexR++;
+                tg.putClientProperty("index", IndexR);
 
+                tg.addItemListener(e -> {
+                    if (e.getStateChange() == java.awt.event.ItemEvent.SELECTED) {
+                        if (formasSeleccionadas.size() >= 4) {
+                            JToggleButton removida = formasSeleccionadas.remove(0);
+                            removida.setSelected(false);
+                            removida.setOpaque(false);
+                            removida.setContentAreaFilled(false);
+                        }
+                        formasSeleccionadas.add(tg);
+                        tg.setOpaque(true);
+                        tg.setContentAreaFilled(true);
+                        //System.out.println("Seleccionada forma en registro: " + tg.getClientProperty("index"));
+                    } else {
+                        formasSeleccionadas.remove(tg);
+                        tg.setOpaque(false);
+                        tg.setContentAreaFilled(false);
+                    }
+                });
+            }
         }
+        r.getjButton1_Salir1().addActionListener(this);
         r.getjButton1_guardar().addActionListener(this);
     }
 
@@ -86,49 +109,33 @@ public class ControlRegistro implements ActionListener {
                 icono.setBorder(BorderFactory.createLineBorder(Color.WHITE, 3));
                 iconoSeleccionadoRegistro = icono;
                 
-                System.out.println("Índice del icono: " + icono.getActionCommand());
+                //System.out.println("Índice del icono: " + icono.getActionCommand());
                 // System.out.println("Seleccionado icono de registro: " + icono.getActionCommand());
                 return;
 
             }
         }
-        if (source instanceof JToggleButton forma) {
-            int indiceForma = (int) forma.getClientProperty("index");
-
-            if (formasSeleccionadas.contains(forma)) {
-                
-                formasSeleccionadas.remove(forma);
-                forma.setSelected(false);
-                forma.setOpaque(false);
-                forma.setContentAreaFilled(false);
-            } else {
-                
-                if (formasSeleccionadas.size() >= 4) {
-                   
-                    JToggleButton removida = formasSeleccionadas.remove(0);
-                    removida.setSelected(false);
-                    removida.setOpaque(false);
-                    removida.setContentAreaFilled(false);
-                }
-
-               
-                formasSeleccionadas.add(forma);
-                forma.setSelected(true);
-                forma.setOpaque(true);
-                forma.setContentAreaFilled(true);
-            }
-
-            System.out.println("Seleccionada forma en registro: " + indiceForma);
-        }
 
         if (source == r.getjButton1_guardar()) {
+             
+             if (iconoSeleccionadoRegistro == null) {
+                javax.swing.JOptionPane.showMessageDialog(r, "Por favor, selecciona un ícono de perfil antes de continuar.");
+                return;
+            }
+            if (formasSeleccionadas.size() != 4) {
+                javax.swing.JOptionPane.showMessageDialog(r, "Debes seleccionar exactamente 4 formas para tu contraseña.");
+                return;
+            }
             String iconoPerfilSeleccionado = obtenerIconoPerfilSeleccionado();
             //int iconoPerfil = obtenerIndiceIcono();
             String password = obtenerPasswordFinal();
 
-            System.out.println("Índice del icono: " + iconoPerfilSeleccionado);
-            System.out.println("Contraseña: " + password);
-            
+            /*System.out.println("icono de perfil: " + iconoPerfilSeleccionado);
+            System.out.println("Contraseña: " + password);*/
+            if(objVerificador.existeUsuario1(objDAOU, iconoPerfilSeleccionado, password)){
+               javax.swing.JOptionPane.showMessageDialog(r, "Usuario y contraseña ya existe ");
+            return;
+            }
             Usuario objUsuario = new Usuario();
             objUsuario.setNom(iconoPerfilSeleccionado);
             objUsuario.setContraseña(password);
@@ -138,20 +145,7 @@ public class ControlRegistro implements ActionListener {
             } catch (Exception ex) {
                 Logger.getLogger(ControlRegistro.class.getName()).log(Level.SEVERE, null, ex);
             }
-         
-            
-            if (iconoSeleccionadoRegistro != null) {
-                iconoSeleccionadoRegistro.setBorder(null);
-                iconoSeleccionadoRegistro = null;
-            }
 
-            
-            for (JToggleButton forma : formasSeleccionadas) {
-                forma.setSelected(false);
-                forma.setOpaque(false);
-                forma.setContentAreaFilled(false);
-            }
-            formasSeleccionadas.clear();
 
             Login_inclusivo l = new Login_inclusivo();
             /*l.setVisible(true);
@@ -159,10 +153,17 @@ public class ControlRegistro implements ActionListener {
                 r.dispose();
             }*/
         }
+        if(source == r.getjButton1_Salir1()){
+            Login_inclusivo L = new Login_inclusivo();
+            L.setVisible(true);
+            if (r != null) {
+                r.dispose();
+            }
+        }
     }
     private String obtenerIconoPerfilSeleccionado() {
         if (iconoSeleccionadoRegistro != null) {
-            return iconoSeleccionadoRegistro.getActionCommand(); // Ejemplo: iconoRegistro_2
+            return iconoSeleccionadoRegistro.getActionCommand();
         }
         return ""; // o null si prefieres
     }
@@ -181,6 +182,6 @@ public class ControlRegistro implements ActionListener {
                 password.append((int) indexObj);
             }
         }
-        return password.toString(); // ejemplo: "1234"
+        return password.toString();
     }
 }

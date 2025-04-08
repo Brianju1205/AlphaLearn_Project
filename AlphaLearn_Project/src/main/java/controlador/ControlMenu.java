@@ -50,7 +50,7 @@ public class ControlMenu implements ActionListener{
         this.objMenu.getjButton3_ayuda().addActionListener(this);
         this.initContent();
         
-        this.objMenu.getjLabel2_Bienvenida().setText("Bienvenido, " + this.v.getNom());
+        this.objMenu.getjLabel2_Bienvenida().setText("Bienvenido ");
         
     }
 

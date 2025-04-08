@@ -29,26 +29,9 @@ public class Actividad_4 extends javax.swing.JFrame {
         objControladorActividad4 = new ControlActividad4(this);
         this.setLocationRelativeTo(null);
     }
-
-
-    public JButton getjButton1_opcionUno() {
-        return jButton1_opcionUno;
-    }
-
-    public JButton getjButton2_opcionDos() {
-        return jButton3_opcionDos;
-    }
-
-    public JButton getjButton3_opcionTres() {
-        return jButton3_opcionTres;
-    }
     
     public JButton getjButton1_Salir_act_5() {
         return jButton1_Salir_act_5;
-    }
-
-    public JButton getjButton1_Vericicar_palabra_correcta() {
-        return jButton1_Vericicar_palabra_correcta;
     }
 
     public JButton getjButton1_audio_palabra() {
@@ -88,15 +71,15 @@ public class Actividad_4 extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jButton1_Salir_act_5 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jButton1_Vericicar_palabra_correcta = new javax.swing.JButton();
         jLabel_word1 = new javax.swing.JLabel();
         jLabel_word2 = new javax.swing.JLabel();
         jLabel_word3 = new javax.swing.JLabel();
         jButton1_audio_palabra = new javax.swing.JButton();
         jButton1_Cambiar_audio_palabra = new javax.swing.JButton();
-        jButton1_opcionUno = new javax.swing.JButton();
-        jButton3_opcionDos = new javax.swing.JButton();
-        jButton3_opcionTres = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         jLabel2.setText("jLabel2");
 
@@ -114,54 +97,37 @@ public class Actividad_4 extends javax.swing.JFrame {
         jButton1_Salir_act_5.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButton1_Salir_act_5.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/Frame 106.png"))); // NOI18N
         jButton1_Salir_act_5.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/Frame 104.png"))); // NOI18N
-        jPanel1.add(jButton1_Salir_act_5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 0, -1, -1));
+        jPanel1.add(jButton1_Salir_act_5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 0, -1, -1));
 
         jLabel1.setFont(new java.awt.Font("Gill Sans Ultra Bold", 0, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Selecciona lo que escuchas");
         jLabel1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 50, 620, 30));
-
-        jButton1_Vericicar_palabra_correcta.setBackground(new java.awt.Color(51, 51, 255));
-        jButton1_Vericicar_palabra_correcta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/Verificar1.png"))); // NOI18N
-        jButton1_Vericicar_palabra_correcta.setText("Verificar");
-        jButton1_Vericicar_palabra_correcta.setBorderPainted(false);
-        jButton1_Vericicar_palabra_correcta.setContentAreaFilled(false);
-        jButton1_Vericicar_palabra_correcta.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton1_Vericicar_palabra_correcta.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/Verificar3.png"))); // NOI18N
-        jButton1_Vericicar_palabra_correcta.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/Verificar2.png"))); // NOI18N
-        jPanel1.add(jButton1_Vericicar_palabra_correcta, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 540, 210, 90));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 40, 620, 30));
 
         jLabel_word1.setBackground(new java.awt.Color(102, 51, 255));
         jLabel_word1.setFont(new java.awt.Font("Segoe UI Black", 0, 36)); // NOI18N
         jLabel_word1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel_word1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel_word1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(102, 102, 255)));
         jLabel_word1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabel_word1.setOpaque(true);
-        jPanel1.add(jLabel_word1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 350, 210, 70));
+        jPanel1.add(jLabel_word1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 340, 210, 70));
 
         jLabel_word2.setBackground(new java.awt.Color(102, 51, 255));
         jLabel_word2.setFont(new java.awt.Font("Segoe UI Black", 0, 36)); // NOI18N
         jLabel_word2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel_word2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel_word2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jLabel_word2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabel_word2.setOpaque(true);
-        jPanel1.add(jLabel_word2, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 350, 210, 70));
+        jPanel1.add(jLabel_word2, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 340, 210, 70));
 
         jLabel_word3.setBackground(new java.awt.Color(102, 51, 255));
         jLabel_word3.setFont(new java.awt.Font("Segoe UI Black", 0, 36)); // NOI18N
         jLabel_word3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel_word3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel_word3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jLabel_word3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabel_word3.setOpaque(true);
-        jPanel1.add(jLabel_word3, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 350, 220, 70));
+        jPanel1.add(jLabel_word3, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 340, 220, 70));
 
         jButton1_audio_palabra.setBackground(new java.awt.Color(153, 153, 255));
         jButton1_audio_palabra.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/sistemas-de-escucha-asistida.png"))); // NOI18N
-        jButton1_audio_palabra.setText("jButton1");
         jButton1_audio_palabra.setBorderPainted(false);
         jButton1_audio_palabra.setContentAreaFilled(false);
         jPanel1.add(jButton1_audio_palabra, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 130, 140, 120));
@@ -173,28 +139,29 @@ public class Actividad_4 extends javax.swing.JFrame {
         jButton1_Cambiar_audio_palabra.setContentAreaFilled(false);
         jButton1_Cambiar_audio_palabra.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/Cambiar3.png"))); // NOI18N
         jButton1_Cambiar_audio_palabra.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/Cambiar2.png"))); // NOI18N
-        jPanel1.add(jButton1_Cambiar_audio_palabra, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 540, 210, 90));
+        jPanel1.add(jButton1_Cambiar_audio_palabra, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 480, 210, 90));
 
-        jButton1_opcionUno.setText("opcionUno");
-        jPanel1.add(jButton1_opcionUno, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 440, -1, -1));
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/op.png"))); // NOI18N
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 340, -1, -1));
 
-        jButton3_opcionDos.setText("opcionDos");
-        jPanel1.add(jButton3_opcionDos, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 440, -1, -1));
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/op.png"))); // NOI18N
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 340, -1, -1));
 
-        jButton3_opcionTres.setText("opcionTres");
-        jPanel1.add(jButton3_opcionTres, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 440, -1, -1));
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/op.png"))); // NOI18N
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 340, -1, -1));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/fondoo.png"))); // NOI18N
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1220, 620));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1220, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 690, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 611, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -218,13 +185,13 @@ public class Actividad_4 extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1_Cambiar_audio_palabra;
     private javax.swing.JButton jButton1_Salir_act_5;
-    private javax.swing.JButton jButton1_Vericicar_palabra_correcta;
     private javax.swing.JButton jButton1_audio_palabra;
-    private javax.swing.JButton jButton1_opcionUno;
-    private javax.swing.JButton jButton3_opcionDos;
-    private javax.swing.JButton jButton3_opcionTres;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel_word1;
     private javax.swing.JLabel jLabel_word2;
     private javax.swing.JLabel jLabel_word3;

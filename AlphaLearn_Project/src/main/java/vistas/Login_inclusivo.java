@@ -2,13 +2,9 @@
 package vistas;
 
 import com.formdev.flatlaf.FlatLightLaf;
-import controlador.ControlLogin;
 import controlador.ControlLoginInclusivo;
-
 import javax.swing.JButton;
 import javax.swing.JPanel;
-import javax.swing.JPasswordField;
-import javax.swing.JTextField;
 import javax.swing.JToggleButton;
 
 
@@ -486,8 +482,8 @@ public class Login_inclusivo extends javax.swing.JFrame {
         jB_ir_Registro.setName("registrar"); // NOI18N
         JP_info_regis.add(jB_ir_Registro, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 520, 252, 51));
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/logo-removebg-preview (1)_1.png"))); // NOI18N
-        JP_info_regis.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 70, 279, 323));
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/librason.png"))); // NOI18N
+        JP_info_regis.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 180, 280, 210));
 
         jLayeredPane1.add(JP_info_regis, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 480, 610));
 
@@ -510,11 +506,13 @@ public class Login_inclusivo extends javax.swing.JFrame {
         jToggleButton_forma12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/pin12.png"))); // NOI18N
         jToggleButton_forma12.setBorderPainted(false);
         jToggleButton_forma12.setContentAreaFilled(false);
+        jToggleButton_forma12.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/index12.png"))); // NOI18N
         jpLogin.add(jToggleButton_forma12, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 420, 63, 63));
 
         jToggleButton_forma1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/pin1.png"))); // NOI18N
         jToggleButton_forma1.setBorderPainted(false);
         jToggleButton_forma1.setContentAreaFilled(false);
+        jToggleButton_forma1.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/keys1.png"))); // NOI18N
         jToggleButton_forma1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jToggleButton_forma1ActionPerformed(evt);
@@ -525,48 +523,57 @@ public class Login_inclusivo extends javax.swing.JFrame {
         jToggleButton_forma2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/pin2.png"))); // NOI18N
         jToggleButton_forma2.setBorderPainted(false);
         jToggleButton_forma2.setContentAreaFilled(false);
+        jToggleButton_forma2.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/key3.png"))); // NOI18N
         jpLogin.add(jToggleButton_forma2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 280, 63, 63));
 
         jToggleButton_forma3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/pin3.png"))); // NOI18N
         jToggleButton_forma3.setBorderPainted(false);
         jToggleButton_forma3.setContentAreaFilled(false);
+        jToggleButton_forma3.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/key2.png"))); // NOI18N
         jpLogin.add(jToggleButton_forma3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 280, 63, 63));
 
         jToggleButton_forma4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/pin4.png"))); // NOI18N
         jToggleButton_forma4.setText("jToggleButton1");
         jToggleButton_forma4.setBorderPainted(false);
         jToggleButton_forma4.setContentAreaFilled(false);
+        jToggleButton_forma4.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/key4.png"))); // NOI18N
         jpLogin.add(jToggleButton_forma4, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 280, 63, 63));
 
         jToggleButton_forma5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/pin5.png"))); // NOI18N
         jToggleButton_forma5.setBorderPainted(false);
         jToggleButton_forma5.setContentAreaFilled(false);
+        jToggleButton_forma5.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/key5.png"))); // NOI18N
         jpLogin.add(jToggleButton_forma5, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 350, 63, 63));
 
         jToggleButton_forma6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/pin6.png"))); // NOI18N
         jToggleButton_forma6.setBorderPainted(false);
         jToggleButton_forma6.setContentAreaFilled(false);
+        jToggleButton_forma6.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/key6.png"))); // NOI18N
         jpLogin.add(jToggleButton_forma6, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 350, 63, 63));
 
         jToggleButton_forma7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/pin7.png"))); // NOI18N
         jToggleButton_forma7.setBorderPainted(false);
         jToggleButton_forma7.setContentAreaFilled(false);
+        jToggleButton_forma7.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/key7.png"))); // NOI18N
         jpLogin.add(jToggleButton_forma7, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 350, 63, 63));
 
         jToggleButton_forma8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/pin8.png"))); // NOI18N
         jToggleButton_forma8.setText("jToggleButton1");
         jToggleButton_forma8.setBorderPainted(false);
         jToggleButton_forma8.setContentAreaFilled(false);
+        jToggleButton_forma8.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/key8.png"))); // NOI18N
         jpLogin.add(jToggleButton_forma8, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 350, 63, 63));
 
         jToggleButton_forma9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/pin9.png"))); // NOI18N
         jToggleButton_forma9.setBorderPainted(false);
         jToggleButton_forma9.setContentAreaFilled(false);
+        jToggleButton_forma9.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/key9.png"))); // NOI18N
         jpLogin.add(jToggleButton_forma9, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 420, 63, 63));
 
         jToggleButton_forma10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/pin10.png"))); // NOI18N
         jToggleButton_forma10.setBorderPainted(false);
         jToggleButton_forma10.setContentAreaFilled(false);
+        jToggleButton_forma10.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/key10.png"))); // NOI18N
         jToggleButton_forma10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jToggleButton_forma10ActionPerformed(evt);
@@ -577,6 +584,7 @@ public class Login_inclusivo extends javax.swing.JFrame {
         jToggleButton_forma11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/pin11.png"))); // NOI18N
         jToggleButton_forma11.setBorderPainted(false);
         jToggleButton_forma11.setContentAreaFilled(false);
+        jToggleButton_forma11.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/index11.png"))); // NOI18N
         jpLogin.add(jToggleButton_forma11, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 420, 63, 63));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/panel_azul.png"))); // NOI18N
@@ -585,42 +593,42 @@ public class Login_inclusivo extends javax.swing.JFrame {
         jButton1_icono8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/perfil_hombre3.png"))); // NOI18N
         jButton1_icono8.setBorderPainted(false);
         jButton1_icono8.setContentAreaFilled(false);
-        jpLogin.add(jButton1_icono8, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 130, -1, 70));
+        jpLogin.add(jButton1_icono8, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 130, 70, 70));
 
         jButton2_icono1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/icno_niña.png"))); // NOI18N
         jButton2_icono1.setBorderPainted(false);
         jButton2_icono1.setContentAreaFilled(false);
-        jpLogin.add(jButton2_icono1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 50, -1, 70));
+        jpLogin.add(jButton2_icono1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 50, 70, 70));
 
         jButton_icono2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/icono_hombre 2.png"))); // NOI18N
         jButton_icono2.setBorderPainted(false);
         jButton_icono2.setContentAreaFilled(false);
-        jpLogin.add(jButton_icono2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 50, -1, 70));
+        jpLogin.add(jButton_icono2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 50, 70, 70));
 
         jButton4_icono3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/icono_hombre.png"))); // NOI18N
         jButton4_icono3.setBorderPainted(false);
         jButton4_icono3.setContentAreaFilled(false);
-        jpLogin.add(jButton4_icono3, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 50, -1, 70));
+        jpLogin.add(jButton4_icono3, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 50, 70, 70));
 
         jButton5_icono4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/icono_mujer1.png"))); // NOI18N
         jButton5_icono4.setBorderPainted(false);
         jButton5_icono4.setContentAreaFilled(false);
-        jpLogin.add(jButton5_icono4, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 50, -1, 70));
+        jpLogin.add(jButton5_icono4, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 50, 70, 70));
 
         jButton6_icono5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/icono_mujer2.png"))); // NOI18N
         jButton6_icono5.setBorderPainted(false);
         jButton6_icono5.setContentAreaFilled(false);
-        jpLogin.add(jButton6_icono5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, -1, 70));
+        jpLogin.add(jButton6_icono5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, 70, 70));
 
         jButton7_icono6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/icono_mujer3.png"))); // NOI18N
         jButton7_icono6.setBorderPainted(false);
         jButton7_icono6.setContentAreaFilled(false);
-        jpLogin.add(jButton7_icono6, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 130, -1, 70));
+        jpLogin.add(jButton7_icono6, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 130, 70, 70));
 
         jButton8_icono7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/icono_señor.png"))); // NOI18N
         jButton8_icono7.setBorderPainted(false);
         jButton8_icono7.setContentAreaFilled(false);
-        jpLogin.add(jButton8_icono7, new org.netbeans.lib.awtextra.AbsoluteConstraints(243, 130, 90, 70));
+        jpLogin.add(jButton8_icono7, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 130, 70, 70));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));

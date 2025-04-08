@@ -20,6 +20,7 @@ public class Registro extends javax.swing.JFrame {
      * Creates new form Registro
      */
     ControlRegistro cR;
+    
     public Registro() {
         initComponents();
         this.setLocationRelativeTo(null);
@@ -30,8 +31,8 @@ public class Registro extends javax.swing.JFrame {
         return jButton1_guardar;
     }
 
-    public JButton getjButton1_guardar1() {
-        return jButton1_guardar1;
+    public JButton getjButton1_Salir1() {
+        return jButton1_Salir1;
     }
 
     public JButton getjButton_iconoregistro1() {
@@ -169,12 +170,15 @@ public class Registro extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jButton1_guardar = new javax.swing.JButton();
-        jButton1_guardar1 = new javax.swing.JButton();
+        jButton1_Salir1 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(204, 204, 255));
-        setPreferredSize(new java.awt.Dimension(1000, 610));
+        setUndecorated(true);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel_Registrar.setBackground(new java.awt.Color(102, 102, 255));
         jPanel_Registrar.setForeground(new java.awt.Color(51, 51, 255));
@@ -185,6 +189,7 @@ public class Registro extends javax.swing.JFrame {
         jToggleButtonRforma12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/pin12.png"))); // NOI18N
         jToggleButtonRforma12.setBorderPainted(false);
         jToggleButtonRforma12.setContentAreaFilled(false);
+        jToggleButtonRforma12.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/index12.png"))); // NOI18N
         jPanel_Registrar.add(jToggleButtonRforma12, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 420, 63, 63));
 
         jToggleButtonRforma1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/pin1.png"))); // NOI18N
@@ -201,53 +206,63 @@ public class Registro extends javax.swing.JFrame {
         jToggleButtonRforma2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/pin2.png"))); // NOI18N
         jToggleButtonRforma2.setBorderPainted(false);
         jToggleButtonRforma2.setContentAreaFilled(false);
+        jToggleButtonRforma2.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/index3.png"))); // NOI18N
         jPanel_Registrar.add(jToggleButtonRforma2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 280, 63, 63));
 
         jToggleButtonRforma3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/pin3.png"))); // NOI18N
         jToggleButtonRforma3.setBorderPainted(false);
         jToggleButtonRforma3.setContentAreaFilled(false);
+        jToggleButtonRforma3.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/index2.png"))); // NOI18N
         jPanel_Registrar.add(jToggleButtonRforma3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 280, 63, 63));
 
         jToggleButtonRforma4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/pin4.png"))); // NOI18N
         jToggleButtonRforma4.setText("jToggleButton1");
         jToggleButtonRforma4.setBorderPainted(false);
         jToggleButtonRforma4.setContentAreaFilled(false);
+        jToggleButtonRforma4.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/index4.png"))); // NOI18N
         jPanel_Registrar.add(jToggleButtonRforma4, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 280, 63, 63));
 
         jToggleButtonRforma5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/pin5.png"))); // NOI18N
         jToggleButtonRforma5.setBorderPainted(false);
         jToggleButtonRforma5.setContentAreaFilled(false);
+        jToggleButtonRforma5.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/index5.png"))); // NOI18N
         jPanel_Registrar.add(jToggleButtonRforma5, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 350, 63, 63));
 
         jToggleButtonRforma6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/pin6.png"))); // NOI18N
         jToggleButtonRforma6.setBorderPainted(false);
         jToggleButtonRforma6.setContentAreaFilled(false);
+        jToggleButtonRforma6.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/index6.png"))); // NOI18N
         jPanel_Registrar.add(jToggleButtonRforma6, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 350, 63, 63));
 
         jToggleButtonRforma7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/pin7.png"))); // NOI18N
         jToggleButtonRforma7.setBorderPainted(false);
         jToggleButtonRforma7.setContentAreaFilled(false);
+        jToggleButtonRforma7.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/index7.png"))); // NOI18N
         jPanel_Registrar.add(jToggleButtonRforma7, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 350, 63, 63));
 
         jToggleButtonRforma8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/pin8.png"))); // NOI18N
         jToggleButtonRforma8.setText("jToggleButton1");
         jToggleButtonRforma8.setBorderPainted(false);
         jToggleButtonRforma8.setContentAreaFilled(false);
+        jToggleButtonRforma8.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/index8.png"))); // NOI18N
         jPanel_Registrar.add(jToggleButtonRforma8, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 350, 63, 63));
 
         jToggleButtonRforma9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/pin9.png"))); // NOI18N
         jToggleButtonRforma9.setBorderPainted(false);
         jToggleButtonRforma9.setContentAreaFilled(false);
+        jToggleButtonRforma9.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/index9.png"))); // NOI18N
         jPanel_Registrar.add(jToggleButtonRforma9, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 420, 63, 63));
 
         jToggleButtonRforma10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/pin10.png"))); // NOI18N
         jToggleButtonRforma10.setBorderPainted(false);
         jToggleButtonRforma10.setContentAreaFilled(false);
+        jToggleButtonRforma10.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/index10.png"))); // NOI18N
         jPanel_Registrar.add(jToggleButtonRforma10, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 420, 63, 63));
 
         jToggleButtonRforma11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/pin11.png"))); // NOI18N
         jToggleButtonRforma11.setBorderPainted(false);
         jToggleButtonRforma11.setContentAreaFilled(false);
+        jToggleButtonRforma11.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/index11.png"))); // NOI18N
         jPanel_Registrar.add(jToggleButtonRforma11, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 420, 63, 63));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/panel_azul.png"))); // NOI18N
@@ -256,43 +271,43 @@ public class Registro extends javax.swing.JFrame {
         jButton_iconoregistro8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/perfil_hombre3.png"))); // NOI18N
         jButton_iconoregistro8.setBorderPainted(false);
         jButton_iconoregistro8.setContentAreaFilled(false);
-        jPanel_Registrar.add(jButton_iconoregistro8, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 130, -1, 70));
+        jPanel_Registrar.add(jButton_iconoregistro8, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 130, 70, 70));
 
         jButton_iconoregistro1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/icno_niña.png"))); // NOI18N
         jButton_iconoregistro1.setBorderPainted(false);
         jButton_iconoregistro1.setContentAreaFilled(false);
         jButton_iconoregistro1.setName(""); // NOI18N
-        jPanel_Registrar.add(jButton_iconoregistro1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 50, -1, 70));
+        jPanel_Registrar.add(jButton_iconoregistro1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 50, 70, 70));
 
         jButton_iconoregistro2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/icono_hombre 2.png"))); // NOI18N
         jButton_iconoregistro2.setBorderPainted(false);
         jButton_iconoregistro2.setContentAreaFilled(false);
-        jPanel_Registrar.add(jButton_iconoregistro2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 50, -1, 70));
+        jPanel_Registrar.add(jButton_iconoregistro2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 50, 70, 70));
 
         jButton_iconoregistro3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/icono_hombre.png"))); // NOI18N
         jButton_iconoregistro3.setBorderPainted(false);
         jButton_iconoregistro3.setContentAreaFilled(false);
-        jPanel_Registrar.add(jButton_iconoregistro3, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 50, -1, 70));
+        jPanel_Registrar.add(jButton_iconoregistro3, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 50, 70, 70));
 
         jButton_iconoregistro4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/icono_mujer1.png"))); // NOI18N
         jButton_iconoregistro4.setBorderPainted(false);
         jButton_iconoregistro4.setContentAreaFilled(false);
-        jPanel_Registrar.add(jButton_iconoregistro4, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 50, -1, 70));
+        jPanel_Registrar.add(jButton_iconoregistro4, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 50, 70, 70));
 
         jButton_iconoregistro5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/icono_mujer2.png"))); // NOI18N
         jButton_iconoregistro5.setBorderPainted(false);
         jButton_iconoregistro5.setContentAreaFilled(false);
-        jPanel_Registrar.add(jButton_iconoregistro5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, -1, 70));
+        jPanel_Registrar.add(jButton_iconoregistro5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, 70, 70));
 
         jButton_iconoregistro6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/icono_mujer3.png"))); // NOI18N
         jButton_iconoregistro6.setBorderPainted(false);
         jButton_iconoregistro6.setContentAreaFilled(false);
-        jPanel_Registrar.add(jButton_iconoregistro6, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 130, -1, 70));
+        jPanel_Registrar.add(jButton_iconoregistro6, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 130, 70, 70));
 
         jButton_iconoregistro7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/icono_señor.png"))); // NOI18N
         jButton_iconoregistro7.setBorderPainted(false);
         jButton_iconoregistro7.setContentAreaFilled(false);
-        jPanel_Registrar.add(jButton_iconoregistro7, new org.netbeans.lib.awtextra.AbsoluteConstraints(243, 130, 90, 70));
+        jPanel_Registrar.add(jButton_iconoregistro7, new org.netbeans.lib.awtextra.AbsoluteConstraints(243, 130, 70, 70));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(0, 0, 0));
@@ -315,37 +330,49 @@ public class Registro extends javax.swing.JFrame {
         });
         jPanel_Registrar.add(jButton1_guardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 510, 178, -1));
 
-        jButton1_guardar1.setBackground(new java.awt.Color(0, 0, 255));
-        jButton1_guardar1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jButton1_guardar1.setText("Borrrar");
-        jButton1_guardar1.setName("borrar"); // NOI18N
-        jButton1_guardar1.addActionListener(new java.awt.event.ActionListener() {
+        jButton1_Salir1.setBackground(new java.awt.Color(0, 0, 255));
+        jButton1_Salir1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jButton1_Salir1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/salirexit.png"))); // NOI18N
+        jButton1_Salir1.setText("Salir");
+        jButton1_Salir1.setName("borrar"); // NOI18N
+        jButton1_Salir1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1_guardar1ActionPerformed(evt);
+                jButton1_Salir1ActionPerformed(evt);
             }
         });
-        jPanel_Registrar.add(jButton1_guardar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 510, 178, -1));
+        jPanel_Registrar.add(jButton1_Salir1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 510, 178, -1));
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         jPanel_Registrar.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-260, 0, 260, 270));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jPanel_Registrar, javax.swing.GroupLayout.PREFERRED_SIZE, 480, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+        getContentPane().add(jPanel_Registrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 0, 480, -1));
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 260, Short.MAX_VALUE)
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jPanel_Registrar, javax.swing.GroupLayout.PREFERRED_SIZE, 610, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 610, Short.MAX_VALUE)
         );
+
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 260, 610));
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 340, Short.MAX_VALUE)
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 610, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 0, 340, 610));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -358,9 +385,9 @@ public class Registro extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1_guardarActionPerformed
 
-    private void jButton1_guardar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1_guardar1ActionPerformed
+    private void jButton1_Salir1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1_Salir1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1_guardar1ActionPerformed
+    }//GEN-LAST:event_jButton1_Salir1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -398,8 +425,8 @@ public class Registro extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1_Salir1;
     private javax.swing.JButton jButton1_guardar;
-    private javax.swing.JButton jButton1_guardar1;
     private javax.swing.JButton jButton_iconoregistro1;
     private javax.swing.JButton jButton_iconoregistro2;
     private javax.swing.JButton jButton_iconoregistro3;
@@ -412,6 +439,8 @@ public class Registro extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel_Registrar;
     private javax.swing.JToggleButton jToggleButtonRforma1;
     private javax.swing.JToggleButton jToggleButtonRforma10;

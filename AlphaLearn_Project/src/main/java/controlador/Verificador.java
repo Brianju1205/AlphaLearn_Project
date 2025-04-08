@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package controlador;
-// del text
+
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -46,15 +46,15 @@ public class Verificador {
             return false;
         }
        return true;
-   }
-    public boolean verificaCajaTextoEntero(javax.swing.JTextField cajaTexto){
-    if(cajaTexto.getText().isBlank()){
-        JOptionPane.showMessageDialog(null, "Campo requerido");
-        return false;
     }
-   
-    return true;
-}
+    public boolean verificaCajaTextoEntero(javax.swing.JTextField cajaTexto){
+        if(cajaTexto.getText().isBlank()){
+            JOptionPane.showMessageDialog(null, "Campo requerido");
+            return false;
+        }
+
+        return true;
+    }
 
    /*public boolean existeUsuario(OperacionesBD operacionesBD, String nombre, String contra){
         Usuario usuario = operacionesBD.buscarUsuario(nombre, contra); 
@@ -66,7 +66,7 @@ public class Verificador {
             return false;
         }
     }*/
-   public boolean existeUsuario1(UsuarioDAO usuarioDAO, String nombre, String password){
+    public boolean existeUsuario1(UsuarioDAO usuarioDAO, String nombre, String password){
        // Usuario usuario = UsuarioDAO.buscarUsuario(nombre, contra); 
         Usuario usuario = null;
         try {
@@ -82,7 +82,7 @@ public class Verificador {
             return false;
         }
     }
-   public boolean validaUsuario(String nombre, String pin){
+    public boolean validaUsuario(String nombre, String pin){
         
         try (PreparedStatement preparedStatement = objConexion.getConnection().prepareStatement("SELECT * FROM usuarios WHERE nombre = ? AND password = ?")) {
             preparedStatement.setString(1, nombre);
@@ -92,7 +92,6 @@ public class Verificador {
             if (resultado.next() && resultado.getInt(1) > 0) {
                 this.id = resultado.getInt("id_usuario");
                 this.nom=resultado.getString("nombre");
-                this.edad=resultado.getInt("edad");
                 return true;
             } else {
                 JOptionPane.showMessageDialog(null, "Usuario o PIN incorrecto");
@@ -105,7 +104,21 @@ public class Verificador {
         }
        
     }
-     
+    public boolean validaUsuarioExistente(String nombre, String pin){
+        
+        try (PreparedStatement preparedStatement = objConexion.getConnection().prepareStatement("SELECT * FROM usuarios WHERE nombre = ? AND password = ?")) {
+            preparedStatement.setString(1, nombre);
+            preparedStatement.setString(2, pin);
+
+            ResultSet resultado = preparedStatement.executeQuery();
+            if (resultado.next() && resultado.getInt(1) > 0) {
+                return true;
+            }
+        }   catch (SQLException ex) {
+                Logger.getLogger(Verificador.class.getName()).log(Level.SEVERE, null, ex);
+            }
+    return true;
+    }
     public int getId() {
         return id;
     }
