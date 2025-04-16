@@ -12,10 +12,10 @@ import java.util.ArrayList;
  * @author juare
  */
 public interface GestorPalabras {
-    public String obtenerPalabraDesordenada() throws Exception;
-    public String obtenerWord() throws Exception;
-    public ArrayList<Palabra> obtenerTresPalabrasConImagen() throws Exception;
-    public void agregarPalabra(Palabra palabra) throws Exception;
-    public void eliminarPalabra(int id) throws Exception;
-    public  String[] obtenerOracionBase() throws Exception;
+    public String obtenerPalabraDesordenada();
+    public String obtenerWord();
+    public ArrayList<Palabra> obtenerTresPalabrasConImagen();
+    public void agregarPalabra(Palabra palabra);
+    public void eliminarPalabra(int id);
+    public  String[] obtenerOracionBase();
 }

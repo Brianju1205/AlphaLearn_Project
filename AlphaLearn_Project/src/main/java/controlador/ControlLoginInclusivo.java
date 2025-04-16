@@ -23,7 +23,7 @@ import vistas.Registro;
  * @author juare
  */
 
-public class ControlLoginInclusivo implements ActionListener {
+public class ControlLoginInclusivo extends AbstractSonido implements ActionListener {
     private Login_inclusivo logi;
     private Slide slide;
     private UsuarioDAO objDAOU;
@@ -32,7 +32,7 @@ public class ControlLoginInclusivo implements ActionListener {
     private ArrayList<JToggleButton> formasSeleccionadasLogin = new ArrayList<>();
     private JButton iconoSeleccionadoRegistro = null;
     private JButton iconoSeleccionadoLogin = null;
-
+    private int intentos;
     public ControlLoginInclusivo(Login_inclusivo logi) {
         this.logi = logi;
         slide = new Slide();
@@ -101,11 +101,10 @@ public class ControlLoginInclusivo implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        Object source = e.getSource();
 
         for (JButton icono : iconosPerfilLogin) {
             
-            if (source == icono) {
+            if (e.getSource() == icono) {
                 if (iconoSeleccionadoLogin != null) {
                     iconoSeleccionadoLogin.setBorder(null);
                 }
@@ -116,11 +115,11 @@ public class ControlLoginInclusivo implements ActionListener {
             }
         }
     
-        if (source == logi.getjB_iniciar_sesion()) {
+        if (e.getSource() == logi.getjB_iniciar_sesion()) {
             iniciarSesion();
         }
 
-        if (source == logi.getjB_ir_Registro()) {
+        if (e.getSource() == logi.getjB_ir_Registro()) {
            Registro r = new Registro();
            r.setVisible(true);
            if(logi!= null){
@@ -131,23 +130,26 @@ public class ControlLoginInclusivo implements ActionListener {
 
     private void iniciarSesion() {
         if (iconoSeleccionadoLogin == null) {
-            JOptionPane.showMessageDialog(null, "Debe seleccionar su icono.");
+           // JOptionPane.showMessageDialog(null, "Debe seleccionar su icono.");
             return;  
         }
 
         if (formasSeleccionadasLogin.size() != 4) {
-            JOptionPane.showMessageDialog(null, "Debe seleccionar 4 formas para su contraseña.");
+           // JOptionPane.showMessageDialog(null, "Debe seleccionar 4 formas para su contraseña.");
             return;  
         }
         String iconoPerfilSeleccionado = obtenerIconoPerfilSeleccionado();
         String password = obtenerPasswordFinal();
         /*System.out.println("icono de perfil: " + iconoPerfilSeleccionado);
         System.out.println("Contraseña: " + password);*/
-        if (!objVerificador.validaUsuario(
-                    iconoPerfilSeleccionado,
-                    password)) {
-                return;
-            } else {
+        if(intentos==3){
+            reproducirSonido("/resource/sounds/instruccioniniciosesion.wav");
+            mostrarInstruccion(this.logi.getJpLogin(),"/resource/imagenes/instructoramujer.png",180,290);
+        }
+        if (!objVerificador.validaUsuario(iconoPerfilSeleccionado,password)) {
+            intentos++;
+            return;
+        } else {
                 Menu m = new Menu();
                 m.setVisible(true);
                 if (logi != null) {

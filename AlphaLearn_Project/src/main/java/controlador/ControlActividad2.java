@@ -67,7 +67,7 @@ public class ControlActividad2 extends AbstractSonido implements ActionListener 
         this.objActividad5.getjButton1_instrucciones().addActionListener(this);
         this.objActividad5.getjButton1_Repetir_PalabraAudio().addActionListener(this);
         //reproducirSonido("/resource/sounds/intro.wav");
-        this.mostrarInstruccion(objActividad5.getjPanel1(), "/resource/imagenes/presentador.png");
+        this.mostrarInstruccion(objActividad5.getjPanel1(), "/resource/imagenes/presentador.png",870,470);
         reproducirSonido("/resource/sounds/modulo2.wav");
     }
 
@@ -139,6 +139,7 @@ public class ControlActividad2 extends AbstractSonido implements ActionListener 
                 poaX = evt.getX();
                 poaY = evt.getY();
                 posicionOriginal = label.getLocation();
+                reproducirSonido("/resource/sounds/mover.wav");
             }
 
             @Override
@@ -222,6 +223,7 @@ public class ControlActividad2 extends AbstractSonido implements ActionListener 
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == this.objActividad5.getjButton1_Salir_act_5()) {
+            reproducirSonido("/resource/sounds/burbuja.wav");
             Menu m = new Menu();
             m.setVisible(true);
             stopSonido();
@@ -239,15 +241,17 @@ public class ControlActividad2 extends AbstractSonido implements ActionListener 
             }
         }
         
-        else if(e.getSource() == this.objActividad5.getjButton1_instrucciones()){  
+        else if(e.getSource() == this.objActividad5.getjButton1_instrucciones()){ 
            reproducirSonido("/resource/sounds/instrucciones.wav");
         }else if (e.getSource() == this.objActividad5.getjButton1_Vericicar_respuesta()) {
+            reproducirSonido("/resource/sounds/burbuja.wav");
             try {
                 verificarRespuesta();
             } catch (Exception ex) {
                 Logger.getLogger(ControlActividad2.class.getName()).log(Level.SEVERE, null, ex);
             }
         }else if (e.getSource()== this.objActividad5.getjButton1_Cambiar_Palabra()){
+            reproducirSonido("/resource/sounds/burbuja.wav");
             cambiarPalabra();
         }else if (e.getSource() ==this.objActividad5.getjButton1_Repetir_PalabraAudio()){
             reproducirAudioDePalabra(palabraActual);
@@ -284,7 +288,7 @@ public class ControlActividad2 extends AbstractSonido implements ActionListener 
             respuestaCorrectas++;
         } else {
            //reproducirSonido("/resource/sounds/failed-2.wav");
-            reproducirSonido("/resource/sounds/Incorrecto.wav");
+            reproducirSonido("/resource/sounds/errorr.wav");
             Comprobar("/resource/imagenes/X.png"); 
             //JOptionPane.showMessageDialog(objActividad5, "Respuesta incorrecta. Intenta de nuevo.", "Resultado", JOptionPane.ERROR_MESSAGE);
             

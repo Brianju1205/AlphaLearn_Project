@@ -38,30 +38,33 @@ public class ControlActividad5 extends AbstractSonido implements ActionListener 
         this.objActividad5.getjButton1_Cambiar_oracion().addActionListener(this);
       
         
-      this.objActividad5.getjLabel_opcionUno().addMouseListener(new MouseAdapter(){
-          @Override
-          public void mouseClicked (MouseEvent e){
-              seleccionUsuario = objActividad5.getjLabel_opcionUno().getText();
-              verificarRespuesta();
-          }
-          
-      });
-       this.objActividad5.getjLabel_palabraOpcionDos().addMouseListener(new MouseAdapter(){
-          @Override
-          public void mouseClicked (MouseEvent e){
-              seleccionUsuario = objActividad5.getjLabel_palabraOpcionDos().getText();
-              verificarRespuesta();
-          }
-          
-      });
+        this.objActividad5.getjLabel_opcionUno().addMouseListener(new MouseAdapter(){
+            @Override
+            public void mouseClicked (MouseEvent e){
+                reproducirSonido("/resource/sounds/burbuja.wav");
+                seleccionUsuario = objActividad5.getjLabel_opcionUno().getText();
+                verificarRespuesta();
+            }
+
+        });
+         this.objActividad5.getjLabel_palabraOpcionDos().addMouseListener(new MouseAdapter(){
+            @Override
+            public void mouseClicked (MouseEvent e){
+                reproducirSonido("/resource/sounds/burbuja.wav");
+                seleccionUsuario = objActividad5.getjLabel_palabraOpcionDos().getText();
+                verificarRespuesta();
+            }
+
+        });
         this.objActividad5.getjLabel_palabraOpcionTres().addMouseListener(new MouseAdapter(){
           @Override
           public void mouseClicked (MouseEvent e){
+              reproducirSonido("/resource/sounds/burbuja.wav");
               seleccionUsuario = objActividad5.getjLabel_palabraOpcionTres().getText();
               verificarRespuesta();
           }
           
-      });
+        });
       
         cargarNuevaOracion();
     }
@@ -103,14 +106,15 @@ public class ControlActividad5 extends AbstractSonido implements ActionListener 
             return;
         }
         
-        
         if (seleccionUsuario.equals(opcionCorrecta)) {
+            reproducirSonido("/resource/sounds/correct.wav");
            // reproducirSonido("acierto.wav"); por si ponemos audios 
            verificado = true;
             objActividad5.getjLabel3_oracion().setBackground(new Color(204, 255, 204)); // color verde
            // JOptionPane.showMessageDialog(objActividad5, "Correcto, La respuesta es verdadera");
             cargarNuevaOracion();
         } else {
+             reproducirSonido("/resource/sounds/errorr.wav");
              objActividad5.getjLabel3_oracion().setBackground(new Color(255, 204, 204)); // color rojo
             //JOptionPane.showMessageDialog(objActividad5, "Incorrecto. Intenta nuevamente");
            
@@ -120,11 +124,13 @@ public class ControlActividad5 extends AbstractSonido implements ActionListener 
     @Override
     public void actionPerformed(ActionEvent e) {
          if (e.getSource() == objActividad5.getjButton1_Salir_act_5()) {
+            reproducirSonido("/resource/sounds/burbuja.wav");
             Menu m = new Menu();
             m.setVisible(true);
             objActividad5.dispose(); 
         } 
          else if (e.getSource() == objActividad5.getjButton1_Cambiar_oracion()) {
+            reproducirSonido("/resource/sounds/burbuja.wav");
             cargarNuevaOracion();
         } 
     }

@@ -58,7 +58,7 @@ public class ControlActividad3 extends AbstractSonido implements ActionListener 
         this.vista.getjButton_cambiar().addActionListener(this);
         //nfigurarPosicionesLabelsImagen();
         cargarPalabrasEnLabels();
-        this.mostrarInstruccion(vista.getjPanel3_fondo(), "/resource/imagenes/presentador.png");
+        this.mostrarInstruccion(vista.getjPanel3_fondo(), "/resource/imagenes/presentador.png",870,470);
         reproducirSonido("/resource/sounds/modulo3.wav");
         
     }
@@ -218,6 +218,7 @@ public class ControlActividad3 extends AbstractSonido implements ActionListener 
                 poaX = evt.getX();
                 poaY = evt.getY();
                 posicionOriginal = label.getLocation();
+                reproducirSonido("/resource/sounds/mover.wav");
             }
 
             @Override
@@ -225,7 +226,7 @@ public class ControlActividad3 extends AbstractSonido implements ActionListener 
                 JLabel destino1 = vista.getjLabel_destino1();
                 JLabel destino2 = vista.getjLabel_destino2();
                 JLabel destino3 = vista.getjLabel_destino3();
-
+                
                 Point puntoGlobal = SwingUtilities.convertPoint(label, evt.getPoint(), vista.getjPanel3_fondo());
  
                 
@@ -315,6 +316,7 @@ public class ControlActividad3 extends AbstractSonido implements ActionListener 
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == this.vista.getjButton1_Salir()) {
+            reproducirSonido("/resource/sounds/burbuja.wav");
             Menu m = new vistas.Menu();
             m.setVisible(true);
             stopSonido();
@@ -330,8 +332,10 @@ public class ControlActividad3 extends AbstractSonido implements ActionListener 
             ControlGestorTiempo.getInstancia().guardarTiempo(v.getId(),tiempoTotal);
             }
         }else if(e.getSource() == this.vista.getjButton_verificar()){
+            reproducirSonido("/resource/sounds/burbuja.wav");
             this.compararPalabras();
         }else if(e.getSource() == this.vista.getjButton_cambiar()){
+            reproducirSonido("/resource/sounds/burbuja.wav");
             this.cargarPalabrasEnLabels();
         }
     }

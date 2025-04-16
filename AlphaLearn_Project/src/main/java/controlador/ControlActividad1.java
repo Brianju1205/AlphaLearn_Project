@@ -49,7 +49,7 @@ public class ControlActividad1 extends AbstractSonido implements ActionListener 
         colocarEscuchadores();
         colocarEscuchadores2();
         initContent();
-        this.mostrarInstruccion(objActividad.jPanel_Actividad_1, "/resource/imagenes/presentador.png");
+        this.mostrarInstruccion(objActividad.jPanel_Actividad_1, "/resource/imagenes/presentador.png",870,470);
         reproducirSonido("/resource/sounds/modulo1.1.wav");
         
         
@@ -99,6 +99,7 @@ public class ControlActividad1 extends AbstractSonido implements ActionListener 
     @Override
     public void actionPerformed(ActionEvent e) {
            if (e.getSource() == this.objActividad.getjButton1_Salir_act_1()){
+                reproducirSonido("/resource/sounds/burbuja.wav");
                 Menu m = new Menu();
                 m.setVisible(true);
                 
@@ -118,20 +119,23 @@ public class ControlActividad1 extends AbstractSonido implements ActionListener 
                 }
             }
            else if(e.getSource() == this.objActividad.getjButton_REGRESAR()){
+               reproducirSonido("/resource/sounds/burbuja.wav");
                if (indicador > 0) {
                 indicador--;
                 panel(paneles[indicador]);
+                
             }
            }else if(e.getSource() == this.objActividad.getjButton_Siguiente()){
+               reproducirSonido("/resource/sounds/burbuja.wav");
                
-            if (indicador < paneles.length - 1) {         
-                indicador++;
-                panel(paneles[indicador]);
-            }
-            if(indicador==1){
-                this.mostrarInstruccion(objActividad.jPanel_Actividad_1, "/resource/imagenes/presentador.png");
-        reproducirSonido("/resource/sounds/submodulo1_1.wav");
-            }
+                if (indicador < paneles.length - 1) {         
+                    indicador++;
+                    panel(paneles[indicador]);
+                }
+                if(indicador==1){
+                    this.mostrarInstruccion(objActividad.jPanel_Actividad_1, "/resource/imagenes/presentador.png",870,470);
+                    reproducirSonido("/resource/sounds/submodulo1_1.wav");
+                }
            }
            JButton bt = (JButton)e.getSource();
            if(bt.getName().equals("siguiente") || bt.getName().equals("salir")||bt.getName().equals("regresar") ){

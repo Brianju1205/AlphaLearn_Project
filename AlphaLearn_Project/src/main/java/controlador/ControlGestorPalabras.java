@@ -36,7 +36,7 @@ public class ControlGestorPalabras implements GestorPalabras {
     }
 
     @Override
-    public String obtenerPalabraDesordenada() throws Exception {
+    public String obtenerPalabraDesordenada() {
         String palabra = "";
         try {
             ResultSet resultado = objConexion.getStatement().executeQuery("SELECT palabra FROM palabras ORDER BY RANDOM() LIMIT 1;");
@@ -45,12 +45,16 @@ public class ControlGestorPalabras implements GestorPalabras {
             }
         } catch (SQLException ex) {
             Logger.getLogger(ControlGestorPalabras.class.getName()).log(Level.SEVERE, null, ex);
-            throw new Exception("Error al obtener palabra desordenada", ex);
+            try {
+                throw new Exception("Error al obtener palabra desordenada", ex);
+            } catch (Exception ex1) {
+                Logger.getLogger(ControlGestorPalabras.class.getName()).log(Level.SEVERE, null, ex1);
+            }
         }
         return palabra;
     }
     @Override
-    public ArrayList<Palabra> obtenerTresPalabrasConImagen() throws Exception {
+    public ArrayList<Palabra> obtenerTresPalabrasConImagen(){
         ArrayList<Palabra> palabras = new ArrayList<>();
         try {  
             String sql = "SELECT p.idp AS palabra_id, p.palabrai, i.id AS imagen_id, i.ruta " +
@@ -75,14 +79,18 @@ public class ControlGestorPalabras implements GestorPalabras {
         }
             } catch (SQLException ex) {
                 Logger.getLogger(ControlGestorPalabras.class.getName()).log(Level.SEVERE, null, ex);
+            try {
                 throw new Exception("Error al obtener palabras con imágenes", ex);
+            } catch (Exception ex1) {
+                Logger.getLogger(ControlGestorPalabras.class.getName()).log(Level.SEVERE, null, ex1);
+            }
             }
         return palabras;
     }
 
 
     @Override
-    public void agregarPalabra(Palabra palabra) throws Exception {
+    public void agregarPalabra(Palabra palabra) {
         try {
             String sql = "INSERT INTO palabras (palabra) VALUES (?);";
             PreparedStatement stmt = objConexion.getConnection().prepareStatement(sql);
@@ -90,12 +98,16 @@ public class ControlGestorPalabras implements GestorPalabras {
             stmt.executeUpdate();
             System.out.println("Palabra agregada correctamente.");
         } catch (SQLException ex) {
-            throw new Exception("Error al agregar palabra", ex);
+            try {
+                throw new Exception("Error al agregar palabra", ex);
+            } catch (Exception ex1) {
+                Logger.getLogger(ControlGestorPalabras.class.getName()).log(Level.SEVERE, null, ex1);
+            }
         }
     }
 
     @Override
-    public void eliminarPalabra(int id) throws Exception {
+    public void eliminarPalabra(int id)  {
         try {
             String sql = "DELETE FROM palabras WHERE id = ?;";
             PreparedStatement stmt = objConexion.getConnection().prepareStatement(sql);
@@ -103,12 +115,16 @@ public class ControlGestorPalabras implements GestorPalabras {
             stmt.executeUpdate();
             System.out.println("Palabra eliminada correctamente.");
         } catch (SQLException ex) {
-            throw new Exception("Error al eliminar palabra", ex);
+            try {
+                throw new Exception("Error al eliminar palabra", ex);
+            } catch (Exception ex1) {
+                Logger.getLogger(ControlGestorPalabras.class.getName()).log(Level.SEVERE, null, ex1);
+            }
         }
     }
 
     @Override
-    public String obtenerWord() throws Exception {
+    public String obtenerWord()  {
          String word = "";
         try {
             ResultSet resultado = objConexion.getStatement().executeQuery("SELECT palabra FROM word ORDER BY RANDOM() LIMIT 1;");
@@ -117,14 +133,18 @@ public class ControlGestorPalabras implements GestorPalabras {
             }
         } catch (SQLException ex) {
             Logger.getLogger(ControlGestorPalabras.class.getName()).log(Level.SEVERE, null, ex);
-            throw new Exception("Error al obtener palabra desordenada", ex);
+             try {
+                 throw new Exception("Error al obtener palabra desordenada", ex);
+             } catch (Exception ex1) {
+                 Logger.getLogger(ControlGestorPalabras.class.getName()).log(Level.SEVERE, null, ex1);
+             }
         }
         return word;
        
     }
 
     @Override
-    public String[] obtenerOracionBase() throws Exception {
+    public String[] obtenerOracionBase() {
         String[] oracionConOpciones = new String[5]; 
         try {
             String sql = "SELECT oraciones, opcion1, opcion2, opcion3, opcion_correcta FROM Oracion ORDER BY RANDOM() LIMIT 1;";
@@ -139,7 +159,11 @@ public class ControlGestorPalabras implements GestorPalabras {
             }
         } catch (SQLException ex) {
             Logger.getLogger(ControlGestorPalabras.class.getName()).log(Level.SEVERE, null, ex);
-            throw new Exception("Error al obtener la oraciones y opciones", ex);
+            try {
+                throw new Exception("Error al obtener la oraciones y opciones", ex);
+            } catch (Exception ex1) {
+                Logger.getLogger(ControlGestorPalabras.class.getName()).log(Level.SEVERE, null, ex1);
+            }
         }
         return oracionConOpciones;
     }

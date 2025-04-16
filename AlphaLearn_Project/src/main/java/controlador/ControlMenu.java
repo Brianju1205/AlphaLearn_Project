@@ -14,6 +14,7 @@ import vistas.Actividad_2;
 import vistas.Actividad_3;
 import vistas.Actividad_4;
 import vistas.Actividad_5;
+import vistas.Actividad_6;
 import vistas.Menu;
 import vistas.Menu_Actividades;
 import vistas.Ajustes;
@@ -23,7 +24,7 @@ import vistas.Perfil;
  *
  * @author juare
  */
-public class ControlMenu implements ActionListener{
+public class ControlMenu extends AbstractSonido implements ActionListener{
     
     Menu objMenu;
     Menu_Actividades objMenuAc;
@@ -57,7 +58,7 @@ public class ControlMenu implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == this.objMenuAc.getjButton_Actividad1()){
-            
+            reproducirSonido("/resource/sounds/burbuja.wav");
             Actividad_1 a = new Actividad_1();
             a.setVisible(true);
             if (objMenu != null) {
@@ -66,6 +67,7 @@ public class ControlMenu implements ActionListener{
             }
         }
         if(e.getSource() ==  this.objMenuAc.getjButton_Actividad2()){
+            reproducirSonido("/resource/sounds/burbuja.wav");
             Actividad_2 a =new Actividad_2();
             a.setVisible(true);
             if(objMenu !=null){
@@ -74,6 +76,7 @@ public class ControlMenu implements ActionListener{
             
         }
         if(e.getSource() == this.objMenuAc.getjButton_Actividad3()){
+            reproducirSonido("/resource/sounds/burbuja.wav");
             Actividad_3 a= new Actividad_3();
             a.setVisible(true);
             if(objMenu !=null){
@@ -82,6 +85,7 @@ public class ControlMenu implements ActionListener{
             
         }
         if(e.getSource() == this.objMenuAc.getjButton_Actividad4()){
+            reproducirSonido("/resource/sounds/burbuja.wav");
             Actividad_4 a=new Actividad_4();
             a.setVisible(true);
             if(objMenu !=null){
@@ -90,6 +94,7 @@ public class ControlMenu implements ActionListener{
             
         }
         if(e.getSource() == this.objMenuAc.getjButton_Actividad5()){
+            reproducirSonido("/resource/sounds/burbuja.wav");
             Actividad_5 a=new Actividad_5();
             a.setVisible(true);
             if(objMenu !=null){
@@ -97,9 +102,15 @@ public class ControlMenu implements ActionListener{
             }     
         }
         if(e.getSource() == this.objMenuAc.getjButton_Actividad6()){
-            
+            reproducirSonido("/resource/sounds/burbuja.wav");
+            Actividad_6 a=new Actividad_6();
+            a.setVisible(true);
+            if(objMenu !=null){
+                objMenu.dispose();
+            }  
         }
         if(e.getSource() == this.objMenu.getjButton5_Salir_Menu()){
+            reproducirSonido("/resource/sounds/burbuja.wav");
             if (objMenu != null) {  
             
             objMenu.dispose(); 
@@ -114,13 +125,16 @@ public class ControlMenu implements ActionListener{
             }
         }
         if (e.getSource() == this.objMenu.getjButton1_inicio()){
+            reproducirSonido("/resource/sounds/burbuja.wav");
             panel(objMenuAc);
             
         }
         if (e.getSource() == this.objMenu.getjButton2_ajustes()) {
+            reproducirSonido("/resource/sounds/burbuja.wav");
             panel(new Ajustes());
         }
         if (e.getSource() == this.objMenu.getjButton3_ayuda()) {
+            reproducirSonido("/resource/sounds/burbuja.wav");
             panel(new Perfil());
         }
         

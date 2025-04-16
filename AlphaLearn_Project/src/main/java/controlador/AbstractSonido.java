@@ -54,15 +54,15 @@ public abstract class AbstractSonido {
     public void stopSonido(){
         clip.stop();
     }
-    public void mostrarInstruccion(JPanel panel, String rutaImagen) {
+    public void mostrarInstruccion(JPanel panel, String rutaImagen, int x, int y) {
         if (panel == null || rutaImagen == null) return;
 
         this.panel = panel; 
 
         labelInstruccion = new JLabel(new ImageIcon(getClass().getResource(rutaImagen)));
         labelInstruccion.setSize(400, 400);
-        panel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        panel.add(labelInstruccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 410, 400, 400));
+        panel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());//870, 470
+        panel.add(labelInstruccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(x, y, 400, 400));
         panel.setComponentZOrder(labelInstruccion, 0);
         panel.revalidate();
         panel.repaint();
@@ -73,7 +73,7 @@ public abstract class AbstractSonido {
             panel.remove(labelInstruccion);
             panel.revalidate();
             panel.repaint();
-            labelInstruccion = null; 
+            labelInstruccion = null;
         }
     }
 }

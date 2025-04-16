@@ -23,7 +23,7 @@ import vistas.Registro;
  *
  * @author juare
  */
-public class ControlRegistro implements ActionListener {
+public class ControlRegistro extends AbstractSonido implements ActionListener {
     private Registro r;
     private Verificador objVerificador; 
     private UsuarioDAO objDAOU;
@@ -36,6 +36,8 @@ public class ControlRegistro implements ActionListener {
         colocarEscuchadores();
         objVerificador = Verificador.getInstancia();
         objDAOU = UsuarioDAO.getInstance();
+        reproducirSonido("/resource/sounds/instruccionregistrologin.wav");
+        mostrarInstruccion(this.r.getjPanel_Registrar(),"/resource/imagenes/instructoramujer.png",180,290);
     }
 
     private void colocarEscuchadores() {
@@ -154,6 +156,7 @@ public class ControlRegistro implements ActionListener {
             }*/
         }
         if(source == r.getjButton1_Salir1()){
+            stopSonido();
             Login_inclusivo L = new Login_inclusivo();
             L.setVisible(true);
             if (r != null) {
@@ -165,7 +168,7 @@ public class ControlRegistro implements ActionListener {
         if (iconoSeleccionadoRegistro != null) {
             return iconoSeleccionadoRegistro.getActionCommand();
         }
-        return ""; // o null si prefieres
+        return ""; 
     }
     private int obtenerIndiceIcono() {
         if (iconoSeleccionadoRegistro != null) {
