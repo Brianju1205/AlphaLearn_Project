@@ -10,7 +10,7 @@ import java.util.Map;
  *
  * @author juare
  */
-public interface DAOTiempo {
+public interface GestorTiempo {
 
     void guardarTiempo(int idUsuario, int tiempo);
     Map<String, Integer> obtenerTiempoPorSemana(int idUsuario);

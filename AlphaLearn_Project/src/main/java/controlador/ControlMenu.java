@@ -6,9 +6,23 @@ package controlador;
 
 import com.formdev.flatlaf.FlatLightLaf;
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.time.DayOfWeek;
+import java.time.LocalDate;
+import java.util.Map;
 import javax.swing.JPanel;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
+import modelo.AjustesM;
+import org.jfree.chart.ChartFactory;
+import org.jfree.chart.ChartPanel;
+import org.jfree.chart.JFreeChart;
+import org.jfree.chart.plot.CategoryPlot;
+import org.jfree.data.category.CategoryDataset;
+import org.jfree.data.category.DefaultCategoryDataset;
+import utils.ControlVolumen;
 import vistas.Actividad_1;
 import vistas.Actividad_2;
 import vistas.Actividad_3;
@@ -24,16 +38,20 @@ import vistas.Perfil;
  *
  * @author juare
  */
-public class ControlMenu extends AbstractSonido implements ActionListener{
+public class ControlMenu extends AbstractSonido implements ActionListener,ChangeListener{
+    private Ajustes objAjustes;
+    private Perfil objPerfil;
+    private Map<String, Integer> datos;
+    private Menu objMenu;
+    private Menu_Actividades objMenuAc;
+    private Verificador v;
     
-    Menu objMenu;
-    Menu_Actividades objMenuAc;
-    Verificador v;
-    public ControlMenu(Menu objMenu,Menu_Actividades objMenuAc ) {
+    public ControlMenu(Menu objMenu,Menu_Actividades objMenuAc, Ajustes objAjustes,Perfil objPerfil) {
         FlatLightLaf.setup();
         
         this.objMenu = objMenu;
-        
+        this.objAjustes = objAjustes;
+        this.objPerfil = objPerfil;
         this.objMenuAc = objMenuAc;
         v = Verificador.getInstancia();
         ControlGestorTiempo.getInstancia();
@@ -49,10 +67,24 @@ public class ControlMenu extends AbstractSonido implements ActionListener{
         this.objMenu.getjButton1_inicio().addActionListener(this);
         this.objMenu.getjButton2_ajustes().addActionListener(this);
         this.objMenu.getjButton3_ayuda().addActionListener(this);
+        objAjustes.getjButton_cambiar_contraseña().addActionListener(this);
+        objAjustes.getjButton_guardarCambios().addActionListener(this);
+        objAjustes.getjCheckBox1_sonido().addActionListener(this);
+        objAjustes.getjCheckBox2_instrucciones().addActionListener(this);
+        objAjustes.getjSlider1_volumen().addChangeListener(this);
+        
         this.initContent();
         
         this.objMenu.getjLabel2_Bienvenida().setText("Bienvenido ");
         
+    }
+    @Override
+    public void stateChanged(ChangeEvent e) {
+        if(e.getSource() == this.objAjustes.getjSlider1_volumen()){
+           int valorSlider = objAjustes.getjSlider1_volumen().getValue();
+           objAjustes.getjLabel7_numero_de_volumen().setText(valorSlider + " %");
+           
+        }
     }
 
     @Override
@@ -131,15 +163,36 @@ public class ControlMenu extends AbstractSonido implements ActionListener{
         }
         if (e.getSource() == this.objMenu.getjButton2_ajustes()) {
             reproducirSonido("/resource/sounds/burbuja.wav");
-            panel(new Ajustes());
+            panel(objAjustes);
+            inicializarAjustes();
         }
         if (e.getSource() == this.objMenu.getjButton3_ayuda()) {
             reproducirSonido("/resource/sounds/burbuja.wav");
-            panel(new Perfil());
+            panel(objPerfil);
+            initPerfil();
         }
+        if (e.getSource() == objAjustes.getjButton_guardarCambios()) {
+            int volumenPorcentaje = (int) (objAjustes.getjSlider1_volumen().getValue() * 100.0);
+            float volumenDecimal = volumenPorcentaje / 100f;
+            ControlVolumen.setVolumen((int) volumenDecimal);
+            boolean sonidoActivo = objAjustes.getjCheckBox1_sonido().isSelected(); 
+            boolean instruccionesActivas = objAjustes.getjCheckBox2_instrucciones().isSelected();
+            
+            AjustesM ajustes = new AjustesM();
+            ajustes.setIdUsuario(v.getId());  
+            ajustes.setVolumen(volumenDecimal);
+            ajustes.setSonidoActivo(sonidoActivo);
+            ajustes.setInstruccionesActivas(instruccionesActivas);
+
+            ControlGestorAjustes.getInstance().guardarAjustes(ajustes);
+
+            System.out.println("Ajustes guardados correctamente.");
+        }
+        
         
 
     }
+    
     private void initContent(){
         panel(objMenuAc);
     }
@@ -153,6 +206,73 @@ public class ControlMenu extends AbstractSonido implements ActionListener{
         objMenu.getjPanel_Contenido().revalidate();
         objMenu.getjPanel_Contenido().repaint();
     }
-   
+    
+    private void initPerfil(){
+        objPerfil.getjLabel3_Name().setText(" "+v.getNom());
+        objPerfil.getjLabel3_Edad().setText(" "+v.getEdad());
+        
+        JFreeChart chart = ChartFactory.createBarChart(
+                "Tiempo Activo por Día",
+                "Día de la Semana",
+                "Minutos Activo",
+                crearDataset()
+        );
+        CategoryPlot plot = (CategoryPlot) chart.getPlot();
+        plot.getRenderer().setSeriesPaint(0, Color.BLUE); 
+        plot.setBackgroundPaint(Color.WHITE);
+        ChartPanel chartPanel = new ChartPanel(chart);
+
+        
+        objPerfil.getjPanel1_grafica().setLayout(new BorderLayout());  
+
+        objPerfil.getjPanel1_grafica().add(chartPanel, BorderLayout.CENTER); 
+    }
+    private CategoryDataset crearDataset() {
+            DefaultCategoryDataset dataset = new DefaultCategoryDataset();
+
+            datos = ControlGestorTiempo.getInstancia().obtenerTiempoPorSemana(v.getId());
+
+            String[] diasSemana = {"Lu", "Ma", "Mie", "Jue", "Vie", "Sa", "Dom"};
+
+            /*for (String dia : diasSemana) {
+                dataset.addValue(0, "Tiempo Activo", dia);
+            }*/
+
+            for (Map.Entry<String, Integer> entry : datos.entrySet()) {
+                String diaSemana = obtenerDiaSemana(entry.getKey()); 
+                dataset.addValue(entry.getValue(), "Tiempo Activo", diaSemana);
+            }
+
+            return dataset;
+    }
+
+    private String obtenerDiaSemana(String fecha) {
+        LocalDate date = LocalDate.parse(fecha); 
+        DayOfWeek dayOfWeek = date.getDayOfWeek();
+        System.out.println(" "+dayOfWeek.name());
+        return dayOfWeek.name(); 
+    } 
+        
+    private void inicializarAjustes() {
+        
+        AjustesM ajustes = ControlGestorAjustes.getInstance().obtenerAjustes(v.getId());
+        
+        if (ajustes != null) {
+            //int volumenPorcentaje = (int) (objAjustes.getjSlider1_volumen().getValue() * 100.0);
+            objAjustes.getjSlider1_volumen().setValue((int) ajustes.getVolumen());
+            int volumenPorcentaje = (int) ajustes.getVolumen();
+            //float volumenDecimal = volumenPorcentaje / 100f;
+            ControlVolumen.setVolumen(volumenPorcentaje);
+
+            
+            objAjustes.getjCheckBox1_sonido().setSelected(ajustes.isSonidoActivo());
+            objAjustes.getjCheckBox2_instrucciones().setSelected(ajustes.isInstruccionesActivas());
+            if(ajustes.isSonidoActivo()==false){
+                ControlVolumen.setVolumen(0);
+            }
+        }
+    }
+
+    
 
 }

@@ -11,6 +11,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import javax.swing.JPanel;
+import modelo.AjustesM;
 import modelo.CuentoPregunta;
 import vistas.Actividad_6;
 import vistas.Menu;
@@ -23,24 +24,36 @@ public class ControlActividad6 extends AbstractSonido implements ActionListener{
     private Actividad_6 acti6;
     private CuentoPregunta conCuentos;
     private String seleccionUsuario;
-    
+    private Verificador v;
     public ControlActividad6(Actividad_6 acti6) {
         this.acti6 = acti6;
+        v = Verificador.getInstancia();
         acti6.getjButton1_Salir_act_5().addActionListener(this);
         acti6.getjButton1_cambiartexto().addActionListener(this);
         acti6.getjButton_audio_pregunta().addActionListener(this);
         
-        this.mostrarInstruccion(acti6.getjPanel1_fondo(), "/resource/imagenes/presentador.png",410,260);
-        reproducirSonido("/resource/sounds/instruccion actividad6.wav");    
+        mostrarInstruccion();
         comenzarActividad();  
     }
-    
+    private void mostrarInstruccion(){
+       AjustesM ajustes = ControlGestorAjustes.getInstance().obtenerAjustes(v.getId());
+        if(ajustes.isInstruccionesActivas()){
+           this.mostrarInstruccion(acti6.getjPanel1_fondo(), "/resource/imagenes/presentador.png",410,260);
+           reproducirSonido("/resource/sounds/instruccion actividad6.wav");
+        }
+        else{
+            escuchadoresLabel();
+            asignarCuento(); 
+            System.out.println("instrucciones desactivadas");
+        }
+    }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         
         if(e.getSource() == acti6.getjButton1_Salir_act_5() ){
             reproducirSonido("/resource/sounds/burbuja.wav");
+            stopSonido();
             Menu m = new Menu();
             m.setVisible(true);
             acti6.dispose(); 

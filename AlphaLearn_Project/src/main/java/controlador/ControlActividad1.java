@@ -9,8 +9,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JPanel;
+import modelo.AjustesM;
 import vistas.Abecedario;
 import vistas.Actividad_1;
+import vistas.Ajustes;
 import vistas.Menu;
 import vistas.Vocal_A;
 import vistas.Vocal_E;
@@ -33,7 +35,7 @@ public class ControlActividad1 extends AbstractSonido implements ActionListener 
     private Vocal_U vu;
     private JPanel paneles[];
     private int indicador=0;
-    
+    private AjustesM ajustes;
     public ControlActividad1(Actividad_1 objActividad,Abecedario objAbc,Vocal_A va,Vocal_E ve,Vocal_I vi,Vocal_O vo,Vocal_U vu) {
         this.objActividad = objActividad;
         this.objAbc = objAbc;
@@ -49,12 +51,22 @@ public class ControlActividad1 extends AbstractSonido implements ActionListener 
         colocarEscuchadores();
         colocarEscuchadores2();
         initContent();
-        this.mostrarInstruccion(objActividad.jPanel_Actividad_1, "/resource/imagenes/presentador.png",870,470);
-        reproducirSonido("/resource/sounds/modulo1.1.wav");
-        
+        //this.mostrarInstruccion(objActividad.jPanel_Actividad_1, "/resource/imagenes/presentador.png",870,470);
+        //reproducirSonido("/resource/sounds/modulo1.1.wav");
+        mostrarInstruccion();
         
     }
     
+   private void mostrarInstruccion(){
+       AjustesM ajustes = ControlGestorAjustes.getInstance().obtenerAjustes(v.getId());
+        if(ajustes.isInstruccionesActivas()){
+           this.mostrarInstruccion(objActividad.jPanel_Actividad_1, "/resource/imagenes/presentador.png",870,470);
+           reproducirSonido("/resource/sounds/modulo1.1.wav"); 
+        }
+        else{
+            System.out.println("instrucciones desactivadas");
+        }
+   }
    private void colocarEscuchadores(){
        // = this.objActividad.jPanel_Actividad_1.getComponents();
        for(Object obj: this.objActividad.jPanel_Actividad_1.getComponents()){
@@ -103,9 +115,9 @@ public class ControlActividad1 extends AbstractSonido implements ActionListener 
                 Menu m = new Menu();
                 m.setVisible(true);
                 
-                stopSonido();
+                
                 if (objActividad != null) {
-               
+                stopSonido();
                 objActividad.dispose(); 
                 }
                 if(this.v.getNom()== null){

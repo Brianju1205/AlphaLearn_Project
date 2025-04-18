@@ -23,6 +23,8 @@ public class Menu extends javax.swing.JFrame {
      */
     ControlMenu objControlMenu;
     Menu_Actividades obj;
+    Perfil p;
+    Ajustes a;
     public Menu() {
         initComponents();
         setSize(1213, 700); 
@@ -30,9 +32,10 @@ public class Menu extends javax.swing.JFrame {
         setLocationRelativeTo(null); 
         setVisible(true);
         obj = new Menu_Actividades(objControlMenu);
-        objControlMenu = new ControlMenu(this,obj);
-
-       
+        p = new Perfil();
+        a = new Ajustes();
+        objControlMenu = new ControlMenu(this,obj,a,p);
+        
     }
 
     public JLabel getjLabel2_Bienvenida() {

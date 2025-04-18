@@ -10,13 +10,13 @@ import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.Map;
-import modelo.DAOTiempo;
+import modelo.GestorTiempo;
 
 /**
  *
  * @author juare
  */
-public class ControlGestorTiempo implements DAOTiempo {
+public class ControlGestorTiempo implements GestorTiempo {
 
     private static ControlGestorTiempo instancia; 
     private Conexion objConexion;

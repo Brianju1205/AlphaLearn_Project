@@ -34,7 +34,7 @@ public class TiempoActivo {
     }
 
     public long getTiempoActivo() {
-        return tiempoAcumulado + (System.currentTimeMillis() - tiempoInicio) / 1000;
+        return tiempoAcumulado + (System.currentTimeMillis() - tiempoInicio) / 1000/60;
     }
 
     public void reiniciarContador() {

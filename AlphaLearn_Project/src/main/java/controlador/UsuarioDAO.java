@@ -10,14 +10,14 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import modelo.DAOUsuario;
 import modelo.Usuario;
+import modelo.GestorUsuario;
 
 /**
  *
  * @author juare
  */
-public class UsuarioDAO implements DAOUsuario{
+public class UsuarioDAO implements GestorUsuario{
     
     private Usuario objUsuario;
     private Conexion objConexion;

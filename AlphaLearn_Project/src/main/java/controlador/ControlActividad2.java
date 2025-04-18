@@ -11,6 +11,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.sound.sampled.Clip;
 import javax.swing.*;
+import modelo.AjustesM;
 import vistas.Actividad_2;
 import vistas.Menu;
 import org.netbeans.lib.awtextra.AbsoluteConstraints;
@@ -67,10 +68,20 @@ public class ControlActividad2 extends AbstractSonido implements ActionListener 
         this.objActividad5.getjButton1_instrucciones().addActionListener(this);
         this.objActividad5.getjButton1_Repetir_PalabraAudio().addActionListener(this);
         //reproducirSonido("/resource/sounds/intro.wav");
-        this.mostrarInstruccion(objActividad5.getjPanel1(), "/resource/imagenes/presentador.png",870,470);
-        reproducirSonido("/resource/sounds/modulo2.wav");
+        mostrarInstruccion();
+        
     }
-
+    
+    private void mostrarInstruccion(){
+       AjustesM ajustes = ControlGestorAjustes.getInstance().obtenerAjustes(v.getId());
+        if(ajustes.isInstruccionesActivas()){
+           this.mostrarInstruccion(objActividad5.getjPanel1(), "/resource/imagenes/presentador.png",870,470);
+           reproducirSonido("/resource/sounds/modulo2.wav");
+        }
+        else{
+            System.out.println("instrucciones desactivadas");
+        }
+    }
     private void asignarLetrasAJLabels(String palabra) {
         palabra = mezclarPalabra(palabra);
         labelsOrigen = new JLabel[]{

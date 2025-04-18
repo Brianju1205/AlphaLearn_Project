@@ -9,6 +9,7 @@ import java.net.URL;
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
+import javax.sound.sampled.FloatControl;
 import javax.sound.sampled.LineEvent;
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
@@ -41,6 +42,8 @@ public abstract class AbstractSonido {
             clip = AudioSystem.getClip();
             
             clip.open(audioStream);
+            FloatControl gainControl = (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
+            gainControl.setValue(utils.ControlVolumen.getVolumenEnDecibeles());
             clip.start();
              clip.addLineListener(event -> {
                 if (event.getType() == LineEvent.Type.STOP) {

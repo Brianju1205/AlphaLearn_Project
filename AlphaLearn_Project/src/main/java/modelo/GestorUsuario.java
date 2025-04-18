@@ -8,7 +8,7 @@ package modelo;
  *
  * @author juare
  */
-public interface DAOUsuario {
+public interface GestorUsuario {
    public void crearUsuario() throws Exception;
    public Usuario buscarUsuario(String nombre, String password) throws Exception;
    public void actualizarUsuario(Usuario usuario) throws Exception;
