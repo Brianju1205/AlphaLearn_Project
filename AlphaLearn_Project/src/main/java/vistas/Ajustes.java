@@ -64,7 +64,10 @@ public class Ajustes extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
         jLabel7_numero_de_volumen = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jCheckBox1_sonido = new javax.swing.JCheckBox();
@@ -96,10 +99,19 @@ public class Ajustes extends javax.swing.JPanel {
         jLabel5.setText("Sonido");
         jPanel_Menu.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 180, -1, -1));
 
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/sonido (1).png"))); // NOI18N
+        jPanel_Menu.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 160, -1, 50));
+
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/alto-volumen (1).png"))); // NOI18N
+        jPanel_Menu.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 130, -1, -1));
+
         jLabel7_numero_de_volumen.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel7_numero_de_volumen.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7_numero_de_volumen.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jPanel_Menu.add(jLabel7_numero_de_volumen, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 110, 50, 20));
+
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/persona (1).png"))); // NOI18N
+        jPanel_Menu.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 220, -1, 40));
 
         jLabel6.setFont(new java.awt.Font("Dubai Medium", 0, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(0, 0, 0));
@@ -128,6 +140,7 @@ public class Ajustes extends javax.swing.JPanel {
 
         jButton_guardarCambios.setBackground(new java.awt.Color(51, 51, 255));
         jButton_guardarCambios.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jButton_guardarCambios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/documento.png"))); // NOI18N
         jButton_guardarCambios.setText("Guardar");
         jPanel_Menu.add(jButton_guardarCambios, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 440, 360, 60));
 
@@ -156,7 +169,10 @@ public class Ajustes extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel7_numero_de_volumen;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel_Menu;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSlider jSlider1_volumen;

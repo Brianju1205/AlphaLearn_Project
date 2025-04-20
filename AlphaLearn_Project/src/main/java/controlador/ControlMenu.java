@@ -74,7 +74,7 @@ public class ControlMenu extends AbstractSonido implements ActionListener,Change
         objAjustes.getjSlider1_volumen().addChangeListener(this);
         
         this.initContent();
-        
+        inicializarAjustes();
         this.objMenu.getjLabel2_Bienvenida().setText("Bienvenido ");
         
     }
@@ -164,7 +164,7 @@ public class ControlMenu extends AbstractSonido implements ActionListener,Change
         if (e.getSource() == this.objMenu.getjButton2_ajustes()) {
             reproducirSonido("/resource/sounds/burbuja.wav");
             panel(objAjustes);
-            inicializarAjustes();
+            //inicializarAjustes();
         }
         if (e.getSource() == this.objMenu.getjButton3_ayuda()) {
             reproducirSonido("/resource/sounds/burbuja.wav");
@@ -256,7 +256,7 @@ public class ControlMenu extends AbstractSonido implements ActionListener,Change
     private void inicializarAjustes() {
         
         AjustesM ajustes = ControlGestorAjustes.getInstance().obtenerAjustes(v.getId());
-        
+
         if (ajustes != null) {
             //int volumenPorcentaje = (int) (objAjustes.getjSlider1_volumen().getValue() * 100.0);
             objAjustes.getjSlider1_volumen().setValue((int) ajustes.getVolumen());
@@ -271,8 +271,14 @@ public class ControlMenu extends AbstractSonido implements ActionListener,Change
                 ControlVolumen.setVolumen(0);
             }
         }
+        if(ajustes == null){
+            ajustes = new AjustesM();
+            ajustes.setIdUsuario(v.getId());  
+            ajustes.setVolumen(100);
+            ajustes.setSonidoActivo(true);
+            ajustes.setInstruccionesActivas(true);
+
+            ControlGestorAjustes.getInstance().guardarAjustes(ajustes);
+        }
     }
-
-    
-
 }

@@ -127,8 +127,8 @@ public class Actividad_4 extends javax.swing.JFrame {
         jPanel1.add(jLabel_word3, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 340, 220, 70));
 
         jButton1_audio_palabra.setBackground(new java.awt.Color(153, 153, 255));
-        jButton1_audio_palabra.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/sistemas-de-escucha-asistida.png"))); // NOI18N
-        jButton1_audio_palabra.setBorderPainted(false);
+        jButton1_audio_palabra.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/terapia-musical.png"))); // NOI18N
+        jButton1_audio_palabra.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(102, 0, 204), new java.awt.Color(51, 0, 204), new java.awt.Color(0, 51, 153), new java.awt.Color(51, 0, 153)));
         jButton1_audio_palabra.setContentAreaFilled(false);
         jPanel1.add(jButton1_audio_palabra, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 130, 140, 120));
 

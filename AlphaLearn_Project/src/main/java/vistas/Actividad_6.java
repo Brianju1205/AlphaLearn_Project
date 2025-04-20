@@ -26,6 +26,10 @@ public class Actividad_6 extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
     }
 
+    public JButton getjButton1_repetir_cuento() {
+        return jButton1_repetir_cuento;
+    }
+    
     public JLabel getjLabel_pregunta() {
         return jLabel_pregunta;
     }
@@ -84,6 +88,7 @@ public class Actividad_6 extends javax.swing.JFrame {
         jLabelTitulo = new javax.swing.JLabel();
         jLabel_texto = new javax.swing.JLabel();
         jLabel_pregunta = new javax.swing.JLabel();
+        jButton1_repetir_cuento = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -118,14 +123,15 @@ public class Actividad_6 extends javax.swing.JFrame {
         jLabel_respuesta3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jPanel1_fondo.add(jLabel_respuesta3, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 490, 310, 50));
 
-        jButton_audio_pregunta.setText("jButton1");
-        jPanel1_fondo.add(jButton_audio_pregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 400, -1, -1));
+        jButton_audio_pregunta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/terapia-musical.png"))); // NOI18N
+        jButton_audio_pregunta.setBorderPainted(false);
+        jButton_audio_pregunta.setContentAreaFilled(false);
+        jPanel1_fondo.add(jButton_audio_pregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 380, -1, -1));
 
         jLabelTitulo.setBackground(new java.awt.Color(51, 51, 255));
         jLabelTitulo.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabelTitulo.setForeground(new java.awt.Color(255, 255, 255));
         jLabelTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabelTitulo.setText("k");
         jLabelTitulo.setOpaque(true);
         jPanel1_fondo.add(jLabelTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 120, 540, -1));
 
@@ -139,6 +145,11 @@ public class Actividad_6 extends javax.swing.JFrame {
         jLabel_pregunta.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel_pregunta.setToolTipText("");
         jPanel1_fondo.add(jLabel_pregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 360, 650, 30));
+
+        jButton1_repetir_cuento.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/historia.png"))); // NOI18N
+        jButton1_repetir_cuento.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(0, 0, 255), new java.awt.Color(0, 0, 153)));
+        jButton1_repetir_cuento.setContentAreaFilled(false);
+        jPanel1_fondo.add(jButton1_repetir_cuento, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 200, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/panel de texto.png"))); // NOI18N
         jPanel1_fondo.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 130, 960, 300));
@@ -220,6 +231,7 @@ public class Actividad_6 extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1_Salir_act_5;
     private javax.swing.JButton jButton1_cambiartexto;
+    private javax.swing.JButton jButton1_repetir_cuento;
     private javax.swing.JButton jButton_audio_pregunta;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

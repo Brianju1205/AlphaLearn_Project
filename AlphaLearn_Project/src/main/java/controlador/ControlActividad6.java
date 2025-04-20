@@ -31,7 +31,7 @@ public class ControlActividad6 extends AbstractSonido implements ActionListener{
         acti6.getjButton1_Salir_act_5().addActionListener(this);
         acti6.getjButton1_cambiartexto().addActionListener(this);
         acti6.getjButton_audio_pregunta().addActionListener(this);
-        
+        acti6.getjButton1_repetir_cuento().addActionListener(this);
         mostrarInstruccion();
         comenzarActividad();  
     }
@@ -64,6 +64,10 @@ public class ControlActividad6 extends AbstractSonido implements ActionListener{
         }
         if(e.getSource() == acti6.getjButton_audio_pregunta()){
             String ruta = conCuentos.getPregunta().getRutaAudiop();
+            reproducirSonido(ruta);
+        }
+        if(e.getSource() == acti6.getjButton1_repetir_cuento()){
+            String ruta = conCuentos.getCuento().getRutaAudio();
             reproducirSonido(ruta);
         }
         
