@@ -11,6 +11,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
+import java.util.HashMap;
 import java.util.Map;
 import javax.swing.JPanel;
 import javax.swing.event.ChangeEvent;
@@ -232,26 +233,39 @@ public class ControlMenu extends AbstractSonido implements ActionListener,Change
 
             datos = ControlGestorTiempo.getInstancia().obtenerTiempoPorSemana(v.getId());
 
-            String[] diasSemana = {"Lu", "Ma", "Mie", "Jue", "Vie", "Sa", "Dom"};
+            String[] diasSemana = {"Lu", "Ma", "Mi", "Ju", "Vi", "Sa", "Do"};
+            Map<String, Integer> acumuladoPorDia = new HashMap<>();
 
-            /*for (String dia : diasSemana) {
-                dataset.addValue(0, "Tiempo Activo", dia);
-            }*/
+            for (int i = 1; i <= 7; i++) {
+                String diaTexto = diasSemana[i - 1];
+                acumuladoPorDia.put(diaTexto, 0);
+            }
 
             for (Map.Entry<String, Integer> entry : datos.entrySet()) {
-                String diaSemana = obtenerDiaSemana(entry.getKey()); 
-                dataset.addValue(entry.getValue(), "Tiempo Activo", diaSemana);
+                String fecha = entry.getKey();
+                int valor = entry.getValue();
+
+                int numDia = obtenerDiaSemana(fecha);
+                String diaTexto = diasSemana[numDia - 1];
+
+                
+                acumuladoPorDia.put(diaTexto, acumuladoPorDia.get(diaTexto) + valor);
+            }
+
+            for (String dia : diasSemana) {
+                dataset.addValue(acumuladoPorDia.get(dia), "Tiempo Activo", dia);
             }
 
             return dataset;
+
     }
 
-    private String obtenerDiaSemana(String fecha) {
+    private int obtenerDiaSemana(String fecha) {
         LocalDate date = LocalDate.parse(fecha); 
         DayOfWeek dayOfWeek = date.getDayOfWeek();
-        System.out.println(" "+dayOfWeek.name());
-        return dayOfWeek.name(); 
-    } 
+        return dayOfWeek.getValue(); 
+}
+
         
     private void inicializarAjustes() {
         
