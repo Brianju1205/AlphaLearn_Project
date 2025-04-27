@@ -3,7 +3,7 @@
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
   <Properties>
     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-      <Color blue="b7" green="9f" red="74" type="rgb"/>
+      <Color blue="ff" green="33" red="66" type="rgb"/>
     </Property>
   </Properties>
   <AuxValues>
@@ -170,19 +170,19 @@
     <Component class="javax.swing.JButton" name="jButton_G">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/resource/vocales/Camino1.png"/>
+          <Image iconType="3" name="/resource/vocales/abeja1.png"/>
         </Property>
         <Property name="borderPainted" type="boolean" value="false"/>
         <Property name="contentAreaFilled" type="boolean" value="false"/>
         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
           <Color id="Hand Cursor"/>
         </Property>
-        <Property name="name" type="java.lang.String" value="camino" noResource="true"/>
+        <Property name="name" type="java.lang.String" value="abeja" noResource="true"/>
         <Property name="pressedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/resource/vocales/Camino2.png"/>
+          <Image iconType="3" name="/resource/vocales/abeja2.png"/>
         </Property>
         <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/resource/vocales/Camino3.png"/>
+          <Image iconType="3" name="/resource/vocales/abeja3.png"/>
         </Property>
       </Properties>
       <Constraints>

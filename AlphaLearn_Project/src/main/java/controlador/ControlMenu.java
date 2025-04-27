@@ -24,6 +24,7 @@ import org.jfree.chart.plot.CategoryPlot;
 import org.jfree.data.category.CategoryDataset;
 import org.jfree.data.category.DefaultCategoryDataset;
 import utils.ControlVolumen;
+import utils.UtilidadesUI;
 import vistas.Actividad_1;
 import vistas.Actividad_2;
 import vistas.Actividad_3;
@@ -76,6 +77,7 @@ public class ControlMenu extends AbstractSonido implements ActionListener,Change
         
         this.initContent();
         inicializarAjustes();
+        
         this.objMenu.getjLabel2_Bienvenida().setText("Bienvenido ");
         
     }
@@ -209,9 +211,8 @@ public class ControlMenu extends AbstractSonido implements ActionListener,Change
     }
     
     private void initPerfil(){
-        objPerfil.getjLabel3_Name().setText(" "+v.getNom());
-        objPerfil.getjLabel3_Edad().setText(" "+v.getEdad());
-        
+        objPerfil.getjLabel3_Name().setText("USUARIO: "+v.getId());
+       
         JFreeChart chart = ChartFactory.createBarChart(
                 "Tiempo Activo por Día",
                 "Día de la Semana",

@@ -52,7 +52,7 @@ public class ControlActividad6 extends AbstractSonido implements ActionListener{
 
         } else {
             escuchadoresLabel();
-            asignarCuento(); // solo se llama directamente si las instrucciones están desactivadas
+            asignarCuento(); 
             System.out.println("instrucciones desactivadas");
         }
     }

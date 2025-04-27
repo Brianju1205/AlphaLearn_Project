@@ -38,6 +38,10 @@ public class Menu extends javax.swing.JFrame {
         
     }
 
+    public JLabel getjLabel_mensajes() {
+        return jLabel2;
+    }
+    
     public JLabel getjLabel2_Bienvenida() {
         return jLabel2_Bienvenida;
     }

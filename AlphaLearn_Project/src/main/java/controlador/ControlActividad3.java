@@ -17,7 +17,7 @@ import org.netbeans.lib.awtextra.AbsoluteConstraints;
 import vistas.Menu;
 
 /**
- * Controlador para manejar el arrastre y soltar palabras en los JLabel destino.
+ * Controlador para manejar el arrastre y soltar palabras en los JLabel destino
  * 
  * @author juare
  */
@@ -66,7 +66,7 @@ public class ControlActividad3 extends AbstractSonido implements ActionListener 
     private void mostrarInstruccion(){
        AjustesM ajustes = ControlGestorAjustes.getInstance().obtenerAjustes(v.getId());
         if(ajustes.isInstruccionesActivas()){
-           this.mostrarInstruccion(vista.getjPanel3_fondo(), "/resource/imagenes/presentador.png",870,470);
+           this.mostrarInstruccion(vista.getjPanel3_fondo(), "/resource/imagenes/presentador.png",870,380);
            reproducirSonido("/resource/sounds/modulo3.wav");
         }
         else{

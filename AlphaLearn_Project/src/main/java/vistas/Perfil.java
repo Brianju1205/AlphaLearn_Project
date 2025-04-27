@@ -156,7 +156,7 @@ public class Perfil extends javax.swing.JPanel {
 
         jLabel3_Name.setBackground(new java.awt.Color(0, 0, 0));
         jLabel3_Name.setFont(new java.awt.Font("Segoe UI Black", 0, 36)); // NOI18N
-        jPanel_Menu.add(jLabel3_Name, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 70, 110, 40));
+        jPanel_Menu.add(jLabel3_Name, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 110, 280, 50));
 
         jLabel3_Edad.setFont(new java.awt.Font("Segoe UI Black", 0, 36)); // NOI18N
         jPanel_Menu.add(jLabel3_Edad, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 170, 80, 50));

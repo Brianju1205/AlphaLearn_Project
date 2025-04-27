@@ -94,7 +94,7 @@ public class Verificador {
                 this.nom=resultado.getString("nombre");
                 return true;
             } else {
-                JOptionPane.showMessageDialog(null, "Usuario o PIN incorrecto");
+                //JOptionPane.showMessageDialog(null, "Usuario o PIN incorrecto");
                 return false; 
             }
         } catch (SQLException ex) {

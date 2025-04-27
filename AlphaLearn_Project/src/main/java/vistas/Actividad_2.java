@@ -156,7 +156,7 @@ public class Actividad_2 extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
 
-        jPanel1.setBackground(new java.awt.Color(76, 127, 155));
+        jPanel1.setBackground(new java.awt.Color(102, 0, 204));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton1_Salir_act_5.setBackground(new java.awt.Color(153, 51, 255));
@@ -287,8 +287,6 @@ public class Actividad_2 extends javax.swing.JFrame {
         jPanel1.add(jButton1_Cambiar_Palabra, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 520, 210, 90));
 
         jButton1_instrucciones.setBackground(new java.awt.Color(153, 153, 255));
-        jButton1_instrucciones.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/sistemas-de-escucha-asistida.png"))); // NOI18N
-        jButton1_instrucciones.setText("jButton1");
         jButton1_instrucciones.setBorderPainted(false);
         jButton1_instrucciones.setContentAreaFilled(false);
         jPanel1.add(jButton1_instrucciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 100, 80, 70));

@@ -22,6 +22,7 @@ import javax.swing.JToggleButton;
 import javax.swing.SwingUtilities;
 import modelo.Usuario;
 import utils.PanelPatronConLineas;
+import utils.UtilidadesUI;
 import vistas.Login_inclusivo;
 import vistas.Login_inclusivo_patron;
 import vistas.Registro;
@@ -36,19 +37,20 @@ public class ControlRegistroPatron extends AbstractSonido implements ActionListe
     private Verificador objVerificador; 
     private UsuarioDAO objDAOU;
     private ArrayList<JButton> iconosPerfilRegistro = new ArrayList<>();
-    private ArrayList<JToggleButton> formasSeleccionadas = new ArrayList<>();
     private ArrayList<JButton> PatronSeleccionadasRegistro = new ArrayList<>();
     private JButton iconoSeleccionadoRegistro = null;
     private ArrayList<JButton> botonesSeleccionados = new ArrayList<>();
     private ArrayList<Point> puntos = new ArrayList<>();
     private boolean estaDibujando = false;
+    boolean mostrandoInstruccion = false;
+    boolean usuarioGuardado = false;
     public ControlRegistroPatron(Registro_patron r) {
         this.r = r;
         colocarEscuchadores();
         objVerificador = Verificador.getInstancia();
         objDAOU = UsuarioDAO.getInstance();
-        reproducirSonido("/resource/sounds/instruccionregistrologin.wav");
-        mostrarInstruccion(this.r.getjPanel_Registrar(),"/resource/imagenes/instructoramujer.png",180,290);
+        
+        UtilidadesUI.escalarYAsignar(r.getjButton10_intruccion(), "/resource/informacion.png");
     }
 
     private void colocarEscuchadores() {
@@ -81,8 +83,12 @@ public class ControlRegistroPatron extends AbstractSonido implements ActionListe
                     @Override
                     public void mouseReleased(MouseEvent e) {
                         estaDibujando = false;
-                        guardarRegistro();
-                        reiniciarPatron();
+                        if(!usuarioGuardado){
+                            //guardarRegistro();
+                            reiniciarPatron();
+                            usuarioGuardado = false;
+                        }
+                        
                     }
                 });
             
@@ -95,7 +101,7 @@ public class ControlRegistroPatron extends AbstractSonido implements ActionListe
                 String textoBoton = bt.getText();
                 String comandoBoton = bt.getActionCommand();
 
-                if (!textoBoton.equals("Guardar") && !textoBoton.equals("Salir")) {
+                if (!textoBoton.equals("Guardar") && !textoBoton.equals("Salir")&& !textoBoton.equals("instruccion")) {
                     bt.addActionListener(this);
                     bt.setActionCommand("index"+index);
 
@@ -109,6 +115,7 @@ public class ControlRegistroPatron extends AbstractSonido implements ActionListe
                 }
             }
         }
+        r.getjButton10_intruccion().addActionListener(this);
         r.getjButton1_Salir1().addActionListener(this);
         r.getjButton1_guardar().addActionListener(this);
     }
@@ -129,14 +136,15 @@ public class ControlRegistroPatron extends AbstractSonido implements ActionListe
     }
     public void reiniciarPatron() {
         for (JButton boton : botonesSeleccionados) {
-            boton.setIcon(new ImageIcon(getClass().getResource("/resource/boton1.png"))); // Ícono original
+            boton.setIcon(new ImageIcon(getClass().getResource("/resource/boton1.png"))); 
         }
-        botonesSeleccionados.clear(); // Vacía la lista de botones seleccionados
-        puntos.clear(); // Borra los puntos del patrón
-        ((PanelPatronConLineas) r.getjPanel_patronR()).reiniciarLineas(); // Este método lo deberías tener en tu panel para limpiar las líneas
+        botonesSeleccionados.clear();
+        puntos.clear();
+        ((PanelPatronConLineas) r.getjPanel_patronR()).reiniciarLineas(); 
     }
     @Override
     public void actionPerformed(ActionEvent e) {
+        int vecesTocadas=0;
         Object source = e.getSource();
         for (JButton icono : iconosPerfilRegistro) {
 
@@ -144,7 +152,7 @@ public class ControlRegistroPatron extends AbstractSonido implements ActionListe
                 if (iconoSeleccionadoRegistro != null) {
                     iconoSeleccionadoRegistro.setBorder(null);
                 }
-                icono.setBorder(BorderFactory.createLineBorder(Color.WHITE, 3));
+                icono.setBorder(BorderFactory.createLineBorder(Color.WHITE, 5));
                 iconoSeleccionadoRegistro = icono;
                 
                 System.out.println("Índice del icono: " + icono.getActionCommand());
@@ -155,25 +163,46 @@ public class ControlRegistroPatron extends AbstractSonido implements ActionListe
         }
 
         if (source == r.getjButton1_guardar()) {
-
+            guardarRegistro();
+            usuarioGuardado = true;
         }
         if(source == r.getjButton1_Salir1()){
-            stopSonido();
+            
             Login_inclusivo_patron L = new Login_inclusivo_patron();
             L.setVisible(true);
             if (r != null) {
+                stopSonido();
                 r.dispose();
             }
         }
+      
+
+        if (source == r.getjButton10_intruccion()) {
+            if (!mostrandoInstruccion) {
+                reproducirSonido("/resource/sounds/paraRegistrarte.wav");
+                mostrarInstruccion(this.r.getjPanel_panelDerecha(), "/resource/imagenes/instructoramujer.png", -50, 240);
+                mostrandoInstruccion = true;
+            } else {
+                stopSonido();
+                
+                mostrandoInstruccion = false;
+            }
+        }
+
+
     }
     private void guardarRegistro(){
                      
              if (iconoSeleccionadoRegistro == null) {
-                javax.swing.JOptionPane.showMessageDialog(r, "Por favor, selecciona un ícono de perfil antes de continuar.");
+                 reproducirSonido("/resource/sounds/debeElegir.wav");
+                 mostrarInstruccion(this.r.getjPanel_panelDerecha(), "/resource/imagenes/instructoramujer.png", -50, 240);
+                //javax.swing.JOptionPane.showMessageDialog(r, "Por favor, selecciona un ícono de perfil antes de continuar.");
                 return;
             }
-            if (botonesSeleccionados.size() < 3) {
-                javax.swing.JOptionPane.showMessageDialog(r, "Debes seleccionar al menos 3 botones para tu contraseña.");
+            if (botonesSeleccionados.size() < 2) {
+                 reproducirSonido("/resource/sounds/debeTener.wav");
+                 mostrarInstruccion(this.r.getjPanel_panelDerecha(), "/resource/imagenes/instructoramujer.png", -50, 240);
+                //javax.swing.JOptionPane.showMessageDialog(r, "Debes seleccionar al menos 3 botones para tu contraseña.");
                 return;
             }
 
@@ -198,11 +227,12 @@ public class ControlRegistroPatron extends AbstractSonido implements ActionListe
             }
 
 
-            Login_inclusivo l = new Login_inclusivo();
-            /*l.setVisible(true);
+            Login_inclusivo_patron L = new Login_inclusivo_patron();
+            L.setVisible(true);
             if (r != null) {
+                stopSonido();
                 r.dispose();
-            }*/
+            }
     }
     private String obtenerIconoPerfilSeleccionado() {
         if (iconoSeleccionadoRegistro != null) {

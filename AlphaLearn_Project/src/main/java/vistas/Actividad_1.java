@@ -85,11 +85,11 @@ public class Actividad_1 extends javax.swing.JFrame {
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel_Actividad_1.setBackground(new java.awt.Color(116, 159, 183));
+        jPanel_Actividad_1.setBackground(new java.awt.Color(102, 51, 255));
         jPanel_Actividad_1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton1_Salir_act_1.setBackground(new java.awt.Color(255, 255, 255));
-        jButton1_Salir_act_1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/Frame 105.png"))); // NOI18N
+        jButton1_Salir_act_1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/salirrr.png"))); // NOI18N
         jButton1_Salir_act_1.setBorder(null);
         jButton1_Salir_act_1.setContentAreaFilled(false);
         jButton1_Salir_act_1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));

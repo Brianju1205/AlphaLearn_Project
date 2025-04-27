@@ -36,7 +36,7 @@ public class Vocal_E extends javax.swing.JPanel {
         jButton_H = new javax.swing.JButton();
         jButton_I = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(116, 159, 183));
+        setBackground(new java.awt.Color(102, 51, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton_A.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/vocales/vocal_E1.png"))); // NOI18N
@@ -75,31 +75,31 @@ public class Vocal_E extends javax.swing.JPanel {
         jButton_D.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/vocales/Estrella3.png"))); // NOI18N
         add(jButton_D, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 320, 170, 120));
 
-        jButton_E.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/vocales/Mesa1.png"))); // NOI18N
+        jButton_E.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/vocales/elote1.png"))); // NOI18N
         jButton_E.setBorderPainted(false);
         jButton_E.setContentAreaFilled(false);
         jButton_E.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton_E.setName("mesa"); // NOI18N
-        jButton_E.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/vocales/Mesa2.png"))); // NOI18N
-        jButton_E.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/vocales/Mesa3.png"))); // NOI18N
+        jButton_E.setName("elote"); // NOI18N
+        jButton_E.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/vocales/elote2.png"))); // NOI18N
+        jButton_E.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/vocales/elote3.png"))); // NOI18N
         add(jButton_E, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 160, 190, 120));
 
-        jButton_F.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/vocales/Leon1.png"))); // NOI18N
+        jButton_F.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/vocales/elegante1.png"))); // NOI18N
         jButton_F.setBorderPainted(false);
         jButton_F.setContentAreaFilled(false);
         jButton_F.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton_F.setName("leon"); // NOI18N
-        jButton_F.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/vocales/Leon2.png"))); // NOI18N
-        jButton_F.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/vocales/Leon3.png"))); // NOI18N
+        jButton_F.setName("elegante"); // NOI18N
+        jButton_F.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/vocales/elegante2.png"))); // NOI18N
+        jButton_F.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/vocales/elegante3.png"))); // NOI18N
         add(jButton_F, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 320, 180, 120));
 
-        jButton_G.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/vocales/Cereza1.png"))); // NOI18N
+        jButton_G.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/vocales/estela1.png"))); // NOI18N
         jButton_G.setBorderPainted(false);
         jButton_G.setContentAreaFilled(false);
         jButton_G.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton_G.setName("cereza"); // NOI18N
-        jButton_G.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/vocales/Cereza2.png"))); // NOI18N
-        jButton_G.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/vocales/Cereza3.png"))); // NOI18N
+        jButton_G.setName("estela"); // NOI18N
+        jButton_G.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/vocales/estela2.png"))); // NOI18N
+        jButton_G.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/vocales/estela3.png"))); // NOI18N
         add(jButton_G, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 330, 180, 110));
 
         jButton_H.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/vocales/Entender1.png"))); // NOI18N

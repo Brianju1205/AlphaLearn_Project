@@ -28,6 +28,15 @@ public class Registro_patron extends javax.swing.JFrame {
         cR= new ControlRegistroPatron(this);
     }
 
+    public JButton getjButton10_intruccion() {
+        return jButton10_intruccion;
+    }
+
+    public JPanel getjPanel_panelDerecha() {
+        return jPanel_panelDerecha;
+    }
+    
+    
     public JPanel getjPanel_patronR() {
         return jPanel_patronR;
     }
@@ -123,15 +132,16 @@ public class Registro_patron extends javax.swing.JFrame {
         jButton8 = new javax.swing.JButton();
         jButton9 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
+        jButton10_intruccion = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
+        jPanel_panelDerecha = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(204, 204, 255));
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel_Registrar.setBackground(new java.awt.Color(102, 102, 255));
+        jPanel_Registrar.setBackground(new java.awt.Color(89, 0, 253));
         jPanel_Registrar.setForeground(new java.awt.Color(51, 51, 255));
         jPanel_Registrar.setMinimumSize(new java.awt.Dimension(1000, 610));
         jPanel_Registrar.setPreferredSize(new java.awt.Dimension(1000, 610));
@@ -319,33 +329,32 @@ public class Registro_patron extends javax.swing.JFrame {
 
         jPanel_Registrar.add(jPanel_patronR, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 270, 360, 250));
 
-        getContentPane().add(jPanel_Registrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 0, 480, -1));
+        jButton10_intruccion.setText("instruccion");
+        jButton10_intruccion.setBorderPainted(false);
+        jButton10_intruccion.setContentAreaFilled(false);
+        jButton10_intruccion.setName("instruccion"); // NOI18N
+        jPanel_Registrar.add(jButton10_intruccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 10, 50, 50));
+
+        getContentPane().add(jPanel_Registrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 0, 480, -1));
+
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 260, Short.MAX_VALUE)
+            .addGap(0, 280, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 610, Short.MAX_VALUE)
         );
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 260, 610));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 280, 610));
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 340, Short.MAX_VALUE)
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 610, Short.MAX_VALUE)
-        );
-
-        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 0, 340, 610));
+        jPanel_panelDerecha.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel_panelDerecha.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().add(jPanel_panelDerecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 0, 320, 610));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -432,6 +441,7 @@ public class Registro_patron extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton10_intruccion;
     private javax.swing.JButton jButton1_Salir1;
     private javax.swing.JButton jButton1_guardar;
     private javax.swing.JButton jButton2;
@@ -454,8 +464,8 @@ public class Registro_patron extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel_Registrar;
+    private javax.swing.JPanel jPanel_panelDerecha;
     private utils.PanelPatronConLineas jPanel_patronR;
     // End of variables declaration//GEN-END:variables
 }

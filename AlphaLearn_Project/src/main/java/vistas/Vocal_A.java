@@ -36,7 +36,7 @@ public class Vocal_A extends javax.swing.JPanel {
         jButton_H = new javax.swing.JButton();
         jButton_I = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(116, 159, 183));
+        setBackground(new java.awt.Color(102, 51, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton_A.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/vocales/vocal_A1.png"))); // NOI18N
@@ -93,13 +93,13 @@ public class Vocal_A extends javax.swing.JPanel {
         jButton_F.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/vocales/Arbol3.png"))); // NOI18N
         add(jButton_F, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 320, 180, 120));
 
-        jButton_G.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/vocales/Camino1.png"))); // NOI18N
+        jButton_G.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/vocales/abeja1.png"))); // NOI18N
         jButton_G.setBorderPainted(false);
         jButton_G.setContentAreaFilled(false);
         jButton_G.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton_G.setName("camino"); // NOI18N
-        jButton_G.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/vocales/Camino2.png"))); // NOI18N
-        jButton_G.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/vocales/Camino3.png"))); // NOI18N
+        jButton_G.setName("abeja"); // NOI18N
+        jButton_G.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/vocales/abeja2.png"))); // NOI18N
+        jButton_G.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/vocales/abeja3.png"))); // NOI18N
         add(jButton_G, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 330, 180, 110));
 
         jButton_H.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/vocales/Amigo1.png"))); // NOI18N

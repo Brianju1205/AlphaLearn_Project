@@ -55,7 +55,11 @@ public abstract class AbstractSonido {
         }
     }
     public void stopSonido(){
-        clip.stop();
+        //clip.stop();
+        if (clip != null && clip.isRunning()) {
+            clip.stop();
+        }
+        ocultarImagen();
     }
     public void mostrarInstruccion(JPanel panel, String rutaImagen, int x, int y) {
         if (panel == null || rutaImagen == null) return;

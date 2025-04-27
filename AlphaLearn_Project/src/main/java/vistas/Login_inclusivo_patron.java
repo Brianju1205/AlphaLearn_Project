@@ -438,7 +438,7 @@ public class Login_inclusivo_patron extends javax.swing.JFrame {
         JP_info_regis.add(jB_ir_Registro, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 520, 252, 51));
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/librason.png"))); // NOI18N
-        JP_info_regis.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 270, 280, 210));
+        JP_info_regis.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 70, 280, 210));
 
         jLayeredPane1.add(JP_info_regis, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 480, 610));
 

@@ -3,7 +3,7 @@
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
   <Properties>
     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-      <Color blue="b7" green="9f" red="74" type="rgb"/>
+      <Color blue="ff" green="33" red="66" type="rgb"/>
     </Property>
   </Properties>
   <AuxValues>
@@ -33,7 +33,7 @@
         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
           <Color id="Hand Cursor"/>
         </Property>
-        <Property name="name" type="java.lang.String" value="a" noResource="true"/>
+        <Property name="name" type="java.lang.String" value="a-" noResource="true"/>
         <Property name="pressedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/resource/abecedario/a2.png"/>
         </Property>
@@ -57,7 +57,7 @@
         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
           <Color id="Hand Cursor"/>
         </Property>
-        <Property name="name" type="java.lang.String" value="b" noResource="true"/>
+        <Property name="name" type="java.lang.String" value="b-" noResource="true"/>
         <Property name="pressedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/resource/abecedario/b2.png"/>
         </Property>
@@ -81,7 +81,7 @@
         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
           <Color id="Hand Cursor"/>
         </Property>
-        <Property name="name" type="java.lang.String" value="c" noResource="true"/>
+        <Property name="name" type="java.lang.String" value="c-" noResource="true"/>
         <Property name="pressedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/resource/abecedario/c3.png"/>
         </Property>
@@ -105,7 +105,7 @@
         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
           <Color id="Hand Cursor"/>
         </Property>
-        <Property name="name" type="java.lang.String" value="d" noResource="true"/>
+        <Property name="name" type="java.lang.String" value="d-" noResource="true"/>
         <Property name="pressedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/resource/abecedario/d2.png"/>
         </Property>
@@ -129,7 +129,7 @@
         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
           <Color id="Hand Cursor"/>
         </Property>
-        <Property name="name" type="java.lang.String" value="e" noResource="true"/>
+        <Property name="name" type="java.lang.String" value="e-" noResource="true"/>
         <Property name="pressedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/resource/abecedario/e2.png"/>
         </Property>
@@ -153,7 +153,7 @@
         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
           <Color id="Hand Cursor"/>
         </Property>
-        <Property name="name" type="java.lang.String" value="f" noResource="true"/>
+        <Property name="name" type="java.lang.String" value="f-" noResource="true"/>
         <Property name="pressedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/resource/abecedario/f2.png"/>
         </Property>
@@ -177,7 +177,7 @@
         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
           <Color id="Hand Cursor"/>
         </Property>
-        <Property name="name" type="java.lang.String" value="g" noResource="true"/>
+        <Property name="name" type="java.lang.String" value="g-" noResource="true"/>
         <Property name="pressedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/resource/abecedario/g2.png"/>
         </Property>
@@ -201,7 +201,7 @@
         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
           <Color id="Hand Cursor"/>
         </Property>
-        <Property name="name" type="java.lang.String" value="h" noResource="true"/>
+        <Property name="name" type="java.lang.String" value="h-" noResource="true"/>
         <Property name="pressedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/resource/abecedario/h2.png"/>
         </Property>
@@ -225,7 +225,7 @@
         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
           <Color id="Hand Cursor"/>
         </Property>
-        <Property name="name" type="java.lang.String" value="i" noResource="true"/>
+        <Property name="name" type="java.lang.String" value="i-" noResource="true"/>
         <Property name="pressedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/resource/abecedario/i2.png"/>
         </Property>
@@ -249,7 +249,7 @@
         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
           <Color id="Hand Cursor"/>
         </Property>
-        <Property name="name" type="java.lang.String" value="j" noResource="true"/>
+        <Property name="name" type="java.lang.String" value="j-" noResource="true"/>
         <Property name="pressedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/resource/abecedario/j2.png"/>
         </Property>
@@ -273,7 +273,7 @@
         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
           <Color id="Hand Cursor"/>
         </Property>
-        <Property name="name" type="java.lang.String" value="k" noResource="true"/>
+        <Property name="name" type="java.lang.String" value="k-" noResource="true"/>
         <Property name="pressedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/resource/abecedario/k2.png"/>
         </Property>
@@ -297,7 +297,7 @@
         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
           <Color id="Hand Cursor"/>
         </Property>
-        <Property name="name" type="java.lang.String" value="l" noResource="true"/>
+        <Property name="name" type="java.lang.String" value="L-" noResource="true"/>
         <Property name="pressedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/resource/abecedario/L2.png"/>
         </Property>
@@ -321,7 +321,7 @@
         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
           <Color id="Hand Cursor"/>
         </Property>
-        <Property name="name" type="java.lang.String" value="m" noResource="true"/>
+        <Property name="name" type="java.lang.String" value="m-" noResource="true"/>
         <Property name="pressedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/resource/abecedario/m2.png"/>
         </Property>
@@ -345,7 +345,7 @@
         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
           <Color id="Hand Cursor"/>
         </Property>
-        <Property name="name" type="java.lang.String" value="n" noResource="true"/>
+        <Property name="name" type="java.lang.String" value="n-" noResource="true"/>
         <Property name="pressedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/resource/abecedario/n2.png"/>
         </Property>
@@ -369,7 +369,7 @@
         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
           <Color id="Hand Cursor"/>
         </Property>
-        <Property name="name" type="java.lang.String" value="&#xf1;" noResource="true"/>
+        <Property name="name" type="java.lang.String" value="&#xf1;-" noResource="true"/>
         <Property name="pressedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/resource/abecedario/&#xf1;2.png"/>
         </Property>
@@ -393,7 +393,7 @@
         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
           <Color id="Hand Cursor"/>
         </Property>
-        <Property name="name" type="java.lang.String" value="u" noResource="true"/>
+        <Property name="name" type="java.lang.String" value="u-" noResource="true"/>
         <Property name="pressedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/resource/abecedario/u2.png"/>
         </Property>
@@ -417,7 +417,7 @@
         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
           <Color id="Hand Cursor"/>
         </Property>
-        <Property name="name" type="java.lang.String" value="o" noResource="true"/>
+        <Property name="name" type="java.lang.String" value="o-" noResource="true"/>
         <Property name="pressedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/resource/abecedario/o2.png"/>
         </Property>
@@ -441,7 +441,7 @@
         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
           <Color id="Hand Cursor"/>
         </Property>
-        <Property name="name" type="java.lang.String" value="p" noResource="true"/>
+        <Property name="name" type="java.lang.String" value="p-" noResource="true"/>
         <Property name="pressedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/resource/abecedario/p2.png"/>
         </Property>
@@ -465,7 +465,7 @@
         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
           <Color id="Hand Cursor"/>
         </Property>
-        <Property name="name" type="java.lang.String" value="q" noResource="true"/>
+        <Property name="name" type="java.lang.String" value="q-" noResource="true"/>
         <Property name="pressedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/resource/abecedario/q2.png"/>
         </Property>
@@ -489,7 +489,7 @@
         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
           <Color id="Hand Cursor"/>
         </Property>
-        <Property name="name" type="java.lang.String" value="r" noResource="true"/>
+        <Property name="name" type="java.lang.String" value="r-" noResource="true"/>
         <Property name="pressedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/resource/abecedario/r2.png"/>
         </Property>
@@ -513,7 +513,7 @@
         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
           <Color id="Hand Cursor"/>
         </Property>
-        <Property name="name" type="java.lang.String" value="s" noResource="true"/>
+        <Property name="name" type="java.lang.String" value="s-" noResource="true"/>
         <Property name="pressedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/resource/abecedario/S1.png"/>
         </Property>
@@ -538,7 +538,7 @@
         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
           <Color id="Hand Cursor"/>
         </Property>
-        <Property name="name" type="java.lang.String" value="t" noResource="true"/>
+        <Property name="name" type="java.lang.String" value="t-" noResource="true"/>
         <Property name="pressedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/resource/abecedario/t2.png"/>
         </Property>
@@ -562,7 +562,7 @@
         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
           <Color id="Hand Cursor"/>
         </Property>
-        <Property name="name" type="java.lang.String" value="v" noResource="true"/>
+        <Property name="name" type="java.lang.String" value="v-" noResource="true"/>
         <Property name="pressedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/resource/abecedario/v2.png"/>
         </Property>
@@ -586,7 +586,7 @@
         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
           <Color id="Hand Cursor"/>
         </Property>
-        <Property name="name" type="java.lang.String" value="w" noResource="true"/>
+        <Property name="name" type="java.lang.String" value="w-" noResource="true"/>
         <Property name="pressedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/resource/abecedario/w2.png"/>
         </Property>
@@ -610,7 +610,7 @@
         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
           <Color id="Hand Cursor"/>
         </Property>
-        <Property name="name" type="java.lang.String" value="x" noResource="true"/>
+        <Property name="name" type="java.lang.String" value="x-" noResource="true"/>
         <Property name="pressedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/resource/abecedario/x2.png"/>
         </Property>
@@ -634,7 +634,7 @@
         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
           <Color id="Hand Cursor"/>
         </Property>
-        <Property name="name" type="java.lang.String" value="y" noResource="true"/>
+        <Property name="name" type="java.lang.String" value="y-" noResource="true"/>
         <Property name="pressedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/resource/abecedario/y2.png"/>
         </Property>
@@ -658,7 +658,7 @@
         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
           <Color id="Hand Cursor"/>
         </Property>
-        <Property name="name" type="java.lang.String" value="z" noResource="true"/>
+        <Property name="name" type="java.lang.String" value="z-" noResource="true"/>
         <Property name="pressedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/resource/abecedario/z.png"/>
         </Property>

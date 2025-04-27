@@ -15,6 +15,7 @@ import modelo.AjustesM;
 import vistas.Actividad_2;
 import vistas.Menu;
 import org.netbeans.lib.awtextra.AbsoluteConstraints;
+import utils.UtilidadesUI;
 
 /**
  *
@@ -68,6 +69,7 @@ public class ControlActividad2 extends AbstractSonido implements ActionListener 
         this.objActividad5.getjButton1_instrucciones().addActionListener(this);
         this.objActividad5.getjButton1_Repetir_PalabraAudio().addActionListener(this);
         //reproducirSonido("/resource/sounds/intro.wav");
+        UtilidadesUI.escalarYAsignar(this.objActividad5.getjButton1_Repetir_PalabraAudio(), "/resource/ltavoz.png");
         mostrarInstruccion();
         
     }
@@ -75,7 +77,7 @@ public class ControlActividad2 extends AbstractSonido implements ActionListener 
     private void mostrarInstruccion(){
        AjustesM ajustes = ControlGestorAjustes.getInstance().obtenerAjustes(v.getId());
         if(ajustes.isInstruccionesActivas()){
-           this.mostrarInstruccion(objActividad5.getjPanel1(), "/resource/imagenes/presentador.png",870,470);
+           this.mostrarInstruccion(objActividad5.getjPanel1(), "/resource/imagenes/presentador.png",870,380);
            reproducirSonido("/resource/sounds/modulo2.wav");
         }
         else{

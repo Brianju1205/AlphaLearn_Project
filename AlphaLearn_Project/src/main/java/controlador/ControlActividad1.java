@@ -36,6 +36,7 @@ public class ControlActividad1 extends AbstractSonido implements ActionListener 
     private JPanel paneles[];
     private int indicador=0;
     private AjustesM ajustes;
+    
     public ControlActividad1(Actividad_1 objActividad,Abecedario objAbc,Vocal_A va,Vocal_E ve,Vocal_I vi,Vocal_O vo,Vocal_U vu) {
         this.objActividad = objActividad;
         this.objAbc = objAbc;
@@ -60,7 +61,7 @@ public class ControlActividad1 extends AbstractSonido implements ActionListener 
    private void mostrarInstruccion(){
        AjustesM ajustes = ControlGestorAjustes.getInstance().obtenerAjustes(v.getId());
         if(ajustes.isInstruccionesActivas()){
-           this.mostrarInstruccion(objActividad.jPanel_Actividad_1, "/resource/imagenes/presentador.png",870,470);
+           this.mostrarInstruccion(objActividad.jPanel_Actividad_1, "/resource/imagenes/presentador.png",870,380);
            reproducirSonido("/resource/sounds/modulo1.1.wav"); 
         }
         else{

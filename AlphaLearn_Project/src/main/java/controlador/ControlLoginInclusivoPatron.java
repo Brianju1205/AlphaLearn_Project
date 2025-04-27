@@ -132,11 +132,11 @@ public class ControlLoginInclusivoPatron extends AbstractSonido implements Actio
 
     public void reiniciarPatron() {
         for (JButton boton : botonesSeleccionados) {
-            boton.setIcon(new ImageIcon(getClass().getResource("/resource/boton1.png"))); // Ícono original
+            boton.setIcon(new ImageIcon(getClass().getResource("/resource/boton1.png"))); 
         }
-        botonesSeleccionados.clear(); // Vacía la lista de botones seleccionados
-        puntos.clear(); // Borra los puntos del patrón
-        ((PanelPatronConLineas) logi.getJpanel_Patron()).reiniciarLineas(); // Este método lo deberías tener en tu panel para limpiar las líneas
+        botonesSeleccionados.clear(); 
+        puntos.clear(); 
+        ((PanelPatronConLineas) logi.getJpanel_Patron()).reiniciarLineas();
     }
 
     
@@ -150,7 +150,7 @@ public class ControlLoginInclusivoPatron extends AbstractSonido implements Actio
                 if (iconoSeleccionadoLogin != null) {
                     iconoSeleccionadoLogin.setBorder(null);
                 }
-                icono.setBorder(BorderFactory.createLineBorder(Color.GREEN, 3));
+                icono.setBorder(BorderFactory.createLineBorder(Color.GREEN, 8));
                 iconoSeleccionadoLogin = icono;
                 //System.out.println("Seleccionado icono de login: " + icono.getActionCommand());
                 return;
@@ -187,6 +187,8 @@ public class ControlLoginInclusivoPatron extends AbstractSonido implements Actio
 
     private void iniciarSesion() {
         if (iconoSeleccionadoLogin == null) {
+             reproducirSonido("/resource/sounds/debeElegir.wav");
+             mostrarInstruccion(this.logi.getJpLogin(), "/resource/imagenes/instructoramujer.png", -50, 240);
            // JOptionPane.showMessageDialog(null, "Debe seleccionar su icono.");
             return;  
         }
@@ -199,14 +201,23 @@ public class ControlLoginInclusivoPatron extends AbstractSonido implements Actio
         String password = obtenerPasswordFinal();
         System.out.println("icono de perfil: " + iconoPerfilSeleccionado);
         System.out.println("Contraseña: " + password);
-        if(intentos==3){
-            reproducirSonido("/resource/sounds/instruccioniniciosesion.wav");
-            mostrarInstruccion(this.logi.getJpLogin(),"/resource/imagenes/instructoramujer.png",180,290);
-        }
+        
         if (!objVerificador.validaUsuario(iconoPerfilSeleccionado,password)) {
             intentos++;
+
+            if(intentos == 3){
+                reproducirSonido("/resource/sounds/NoRegistro.wav");
+               // mostrarInstruccion(this.logi.getJpLogin(), "/resource/imagenes/instructoramujer.png",180, 290);
+                mostrarInstruccion(this.logi.getJP_info_regis(), "/resource/flecha.gif",40,250);
+            } else {
+                reproducirSonido("/resource/sounds/perfilOpatron.wav");
+                mostrarInstruccion(this.logi.getJpLogin(), "/resource/imagenes/instructoramujer.png",180, 290);
+                
+            }
+
             return;
-        } else {
+        }//
+         else {
                 Menu m = new Menu();
                 m.setVisible(true);
                 if (logi != null) {

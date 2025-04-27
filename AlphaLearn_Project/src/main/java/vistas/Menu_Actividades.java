@@ -6,6 +6,7 @@ package vistas;
 
 import controlador.ControlMenu;
 import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 /**
@@ -53,8 +54,32 @@ public class Menu_Actividades extends javax.swing.JPanel {
     public JPanel getjPanel_Menu() {
         return jPanel_Menu;
     }
-    
 
+    public JLabel getjLabel_Acti1() {
+        return jLabel_Acti1;
+    }
+
+    public JLabel getjLabel_Acti2() {
+        return jLabel_Acti2;
+    }
+
+    public JLabel getjLabel_Acti3() {
+        return jLabel_Acti3;
+    }
+
+    public JLabel getjLabel_Acti4() {
+        return jLabel_Acti4;
+    }
+
+    public JLabel getjLabel_Acti5() {
+        return jLabel_Acti5;
+    }
+
+    public JLabel getjLabel_Acti6() {
+        return jLabel_Acti6;
+    }
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -71,14 +96,14 @@ public class Menu_Actividades extends javax.swing.JPanel {
         jButton_Actividad5 = new javax.swing.JButton();
         jButton_Actividad6 = new javax.swing.JButton();
         jButton_Actividad1 = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
+        jLabel_Acti1 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
+        jLabel_Acti2 = new javax.swing.JLabel();
+        jLabel_Acti3 = new javax.swing.JLabel();
+        jLabel_Acti4 = new javax.swing.JLabel();
+        jLabel_Acti5 = new javax.swing.JLabel();
+        jLabel_Acti6 = new javax.swing.JLabel();
 
         jPanel_Menu.setBackground(new java.awt.Color(232, 232, 232));
         jPanel_Menu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -92,7 +117,7 @@ public class Menu_Actividades extends javax.swing.JPanel {
         jButton_Actividad2.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/button_pressed.png"))); // NOI18N
         jButton_Actividad2.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/button_mause.png"))); // NOI18N
         jButton_Actividad2.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/button_mause.png"))); // NOI18N
-        jPanel_Menu.add(jButton_Actividad2, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 250, 190, 40));
+        jPanel_Menu.add(jButton_Actividad2, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 520, 190, 50));
 
         jButton_Actividad3.setBackground(new java.awt.Color(83, 167, 216));
         jButton_Actividad3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/boton.png"))); // NOI18N
@@ -122,7 +147,7 @@ public class Menu_Actividades extends javax.swing.JPanel {
         jButton_Actividad5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton_Actividad5.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/button_pressed.png"))); // NOI18N
         jButton_Actividad5.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/button_mause.png"))); // NOI18N
-        jPanel_Menu.add(jButton_Actividad5, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 520, 190, 60));
+        jPanel_Menu.add(jButton_Actividad5, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 240, 190, 70));
 
         jButton_Actividad6.setBackground(new java.awt.Color(83, 167, 216));
         jButton_Actividad6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/boton.png"))); // NOI18N
@@ -146,9 +171,9 @@ public class Menu_Actividades extends javax.swing.JPanel {
         jButton_Actividad1.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/button_mause.png"))); // NOI18N
         jPanel_Menu.add(jButton_Actividad1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 240, 190, 60));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/modulo1.png"))); // NOI18N
-        jLabel2.setText("jLabel2");
-        jPanel_Menu.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 290, 280));
+        jLabel_Acti1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/modulo1.png"))); // NOI18N
+        jLabel_Acti1.setText("jLabel2");
+        jPanel_Menu.add(jLabel_Acti1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 290, 280));
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(0, 0, 0));
@@ -159,24 +184,24 @@ public class Menu_Actividades extends javax.swing.JPanel {
         jLabel1.setText("Modulos de aprendizaje");
         jPanel_Menu.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 50));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/modulo2.png"))); // NOI18N
-        jPanel_Menu.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 40, 290, 280));
+        jLabel_Acti2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/modulo5.png"))); // NOI18N
+        jPanel_Menu.add(jLabel_Acti2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 40, 290, 280));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/modulo3.png"))); // NOI18N
-        jLabel4.setText("jLabel4");
-        jPanel_Menu.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 40, 290, 270));
+        jLabel_Acti3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/modulo3.png"))); // NOI18N
+        jLabel_Acti3.setText("jLabel4");
+        jPanel_Menu.add(jLabel_Acti3, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 40, 290, 270));
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/modulo4.png"))); // NOI18N
-        jLabel5.setText("jLabel5");
-        jPanel_Menu.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 320, 290, 280));
+        jLabel_Acti4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/modulo4.png"))); // NOI18N
+        jLabel_Acti4.setText("jLabel5");
+        jPanel_Menu.add(jLabel_Acti4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 320, 290, 280));
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/modulo5.png"))); // NOI18N
-        jLabel6.setText("jLabel6");
-        jPanel_Menu.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 320, 290, 270));
+        jLabel_Acti5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/modulo2.png"))); // NOI18N
+        jLabel_Acti5.setText("jLabel6");
+        jPanel_Menu.add(jLabel_Acti5, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 320, 290, 270));
 
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/modulo6.png"))); // NOI18N
-        jLabel7.setText("jLabel7");
-        jPanel_Menu.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 320, 290, 270));
+        jLabel_Acti6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/modulo6.png"))); // NOI18N
+        jLabel_Acti6.setText("jLabel7");
+        jPanel_Menu.add(jLabel_Acti6, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 320, 290, 270));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -209,13 +234,13 @@ public class Menu_Actividades extends javax.swing.JPanel {
     private javax.swing.JButton jButton_Actividad5;
     private javax.swing.JButton jButton_Actividad6;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel_Acti1;
+    private javax.swing.JLabel jLabel_Acti2;
+    private javax.swing.JLabel jLabel_Acti3;
+    private javax.swing.JLabel jLabel_Acti4;
+    private javax.swing.JLabel jLabel_Acti5;
+    private javax.swing.JLabel jLabel_Acti6;
     private javax.swing.JPanel jPanel_Menu;
     // End of variables declaration//GEN-END:variables
 }

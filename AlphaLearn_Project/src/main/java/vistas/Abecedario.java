@@ -54,14 +54,14 @@ public class Abecedario extends javax.swing.JPanel {
         jButton_Y = new javax.swing.JButton();
         jButton_Z = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(116, 159, 183));
+        setBackground(new java.awt.Color(102, 51, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton_A.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/abecedario/Aa.png"))); // NOI18N
         jButton_A.setBorderPainted(false);
         jButton_A.setContentAreaFilled(false);
         jButton_A.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton_A.setName("a"); // NOI18N
+        jButton_A.setName("a-"); // NOI18N
         jButton_A.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/abecedario/a2.png"))); // NOI18N
         jButton_A.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/abecedario/a1.png"))); // NOI18N
         add(jButton_A, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 110, 110));
@@ -70,7 +70,7 @@ public class Abecedario extends javax.swing.JPanel {
         jButton_B.setBorderPainted(false);
         jButton_B.setContentAreaFilled(false);
         jButton_B.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton_B.setName("b"); // NOI18N
+        jButton_B.setName("b-"); // NOI18N
         jButton_B.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/abecedario/b2.png"))); // NOI18N
         jButton_B.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/abecedario/b1.png"))); // NOI18N
         add(jButton_B, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 0, 110, 110));
@@ -79,7 +79,7 @@ public class Abecedario extends javax.swing.JPanel {
         jButton_C.setBorderPainted(false);
         jButton_C.setContentAreaFilled(false);
         jButton_C.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton_C.setName("c"); // NOI18N
+        jButton_C.setName("c-"); // NOI18N
         jButton_C.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/abecedario/c3.png"))); // NOI18N
         jButton_C.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/abecedario/c1.png"))); // NOI18N
         add(jButton_C, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 0, 110, 110));
@@ -88,7 +88,7 @@ public class Abecedario extends javax.swing.JPanel {
         jButton_D.setBorderPainted(false);
         jButton_D.setContentAreaFilled(false);
         jButton_D.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton_D.setName("d"); // NOI18N
+        jButton_D.setName("d-"); // NOI18N
         jButton_D.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/abecedario/d2.png"))); // NOI18N
         jButton_D.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/abecedario/d1.png"))); // NOI18N
         add(jButton_D, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 0, 110, 110));
@@ -97,7 +97,7 @@ public class Abecedario extends javax.swing.JPanel {
         jButton_E.setBorderPainted(false);
         jButton_E.setContentAreaFilled(false);
         jButton_E.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton_E.setName("e"); // NOI18N
+        jButton_E.setName("e-"); // NOI18N
         jButton_E.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/abecedario/e2.png"))); // NOI18N
         jButton_E.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/abecedario/e1.png"))); // NOI18N
         add(jButton_E, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 0, 110, 110));
@@ -106,7 +106,7 @@ public class Abecedario extends javax.swing.JPanel {
         jButton_F.setBorderPainted(false);
         jButton_F.setContentAreaFilled(false);
         jButton_F.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton_F.setName("f"); // NOI18N
+        jButton_F.setName("f-"); // NOI18N
         jButton_F.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/abecedario/f2.png"))); // NOI18N
         jButton_F.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/abecedario/f1.png"))); // NOI18N
         add(jButton_F, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 0, 110, 110));
@@ -115,7 +115,7 @@ public class Abecedario extends javax.swing.JPanel {
         jButton_G.setBorderPainted(false);
         jButton_G.setContentAreaFilled(false);
         jButton_G.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton_G.setName("g"); // NOI18N
+        jButton_G.setName("g-"); // NOI18N
         jButton_G.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/abecedario/g2.png"))); // NOI18N
         jButton_G.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/abecedario/g1.png"))); // NOI18N
         add(jButton_G, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 0, 110, 110));
@@ -124,7 +124,7 @@ public class Abecedario extends javax.swing.JPanel {
         jButton_H.setBorderPainted(false);
         jButton_H.setContentAreaFilled(false);
         jButton_H.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton_H.setName("h"); // NOI18N
+        jButton_H.setName("h-"); // NOI18N
         jButton_H.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/abecedario/h2.png"))); // NOI18N
         jButton_H.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/abecedario/h1.png"))); // NOI18N
         add(jButton_H, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 110, 110));
@@ -133,7 +133,7 @@ public class Abecedario extends javax.swing.JPanel {
         jButton_I.setBorderPainted(false);
         jButton_I.setContentAreaFilled(false);
         jButton_I.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton_I.setName("i"); // NOI18N
+        jButton_I.setName("i-"); // NOI18N
         jButton_I.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/abecedario/i2.png"))); // NOI18N
         jButton_I.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/abecedario/11.png"))); // NOI18N
         add(jButton_I, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 120, 110, 110));
@@ -142,7 +142,7 @@ public class Abecedario extends javax.swing.JPanel {
         jButton_J.setBorderPainted(false);
         jButton_J.setContentAreaFilled(false);
         jButton_J.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton_J.setName("j"); // NOI18N
+        jButton_J.setName("j-"); // NOI18N
         jButton_J.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/abecedario/j2.png"))); // NOI18N
         jButton_J.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/abecedario/j1.png"))); // NOI18N
         add(jButton_J, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 120, 110, 110));
@@ -151,7 +151,7 @@ public class Abecedario extends javax.swing.JPanel {
         jButton_K.setBorderPainted(false);
         jButton_K.setContentAreaFilled(false);
         jButton_K.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton_K.setName("k"); // NOI18N
+        jButton_K.setName("k-"); // NOI18N
         jButton_K.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/abecedario/k2.png"))); // NOI18N
         jButton_K.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/abecedario/k1.png"))); // NOI18N
         add(jButton_K, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 120, 110, 110));
@@ -160,7 +160,7 @@ public class Abecedario extends javax.swing.JPanel {
         jButton_L.setBorderPainted(false);
         jButton_L.setContentAreaFilled(false);
         jButton_L.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton_L.setName("l"); // NOI18N
+        jButton_L.setName("L-"); // NOI18N
         jButton_L.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/abecedario/L2.png"))); // NOI18N
         jButton_L.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/abecedario/L1.png"))); // NOI18N
         add(jButton_L, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 120, 110, 110));
@@ -169,7 +169,7 @@ public class Abecedario extends javax.swing.JPanel {
         jButton_M.setBorderPainted(false);
         jButton_M.setContentAreaFilled(false);
         jButton_M.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton_M.setName("m"); // NOI18N
+        jButton_M.setName("m-"); // NOI18N
         jButton_M.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/abecedario/m2.png"))); // NOI18N
         jButton_M.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/abecedario/m1.png"))); // NOI18N
         add(jButton_M, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 120, 110, 110));
@@ -178,7 +178,7 @@ public class Abecedario extends javax.swing.JPanel {
         jButton_N.setBorderPainted(false);
         jButton_N.setContentAreaFilled(false);
         jButton_N.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton_N.setName("n"); // NOI18N
+        jButton_N.setName("n-"); // NOI18N
         jButton_N.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/abecedario/n2.png"))); // NOI18N
         jButton_N.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/abecedario/n1.png"))); // NOI18N
         add(jButton_N, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 120, 110, 110));
@@ -187,7 +187,7 @@ public class Abecedario extends javax.swing.JPanel {
         jButton_Ñ.setBorderPainted(false);
         jButton_Ñ.setContentAreaFilled(false);
         jButton_Ñ.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton_Ñ.setName("ñ"); // NOI18N
+        jButton_Ñ.setName("ñ-"); // NOI18N
         jButton_Ñ.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/abecedario/ñ2.png"))); // NOI18N
         jButton_Ñ.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/abecedario/ñ1.png"))); // NOI18N
         add(jButton_Ñ, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 230, 110, 120));
@@ -196,7 +196,7 @@ public class Abecedario extends javax.swing.JPanel {
         jButton_U.setBorderPainted(false);
         jButton_U.setContentAreaFilled(false);
         jButton_U.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton_U.setName("u"); // NOI18N
+        jButton_U.setName("u-"); // NOI18N
         jButton_U.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/abecedario/u2.png"))); // NOI18N
         jButton_U.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/abecedario/u1.png"))); // NOI18N
         add(jButton_U, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 350, 110, 120));
@@ -205,7 +205,7 @@ public class Abecedario extends javax.swing.JPanel {
         jButton_O.setBorderPainted(false);
         jButton_O.setContentAreaFilled(false);
         jButton_O.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton_O.setName("o"); // NOI18N
+        jButton_O.setName("o-"); // NOI18N
         jButton_O.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/abecedario/o2.png"))); // NOI18N
         jButton_O.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/abecedario/o1.png"))); // NOI18N
         add(jButton_O, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 230, 110, 120));
@@ -214,7 +214,7 @@ public class Abecedario extends javax.swing.JPanel {
         jButton_P.setBorderPainted(false);
         jButton_P.setContentAreaFilled(false);
         jButton_P.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton_P.setName("p"); // NOI18N
+        jButton_P.setName("p-"); // NOI18N
         jButton_P.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/abecedario/p2.png"))); // NOI18N
         jButton_P.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/abecedario/p1.png"))); // NOI18N
         add(jButton_P, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 240, 110, 100));
@@ -223,7 +223,7 @@ public class Abecedario extends javax.swing.JPanel {
         jButton_Q.setBorderPainted(false);
         jButton_Q.setContentAreaFilled(false);
         jButton_Q.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton_Q.setName("q"); // NOI18N
+        jButton_Q.setName("q-"); // NOI18N
         jButton_Q.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/abecedario/q2.png"))); // NOI18N
         jButton_Q.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/abecedario/q1.png"))); // NOI18N
         add(jButton_Q, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 240, 110, 100));
@@ -232,7 +232,7 @@ public class Abecedario extends javax.swing.JPanel {
         jButton_R.setBorderPainted(false);
         jButton_R.setContentAreaFilled(false);
         jButton_R.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton_R.setName("r"); // NOI18N
+        jButton_R.setName("r-"); // NOI18N
         jButton_R.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/abecedario/r2.png"))); // NOI18N
         jButton_R.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/abecedario/r1.png"))); // NOI18N
         add(jButton_R, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 240, 110, 100));
@@ -241,7 +241,7 @@ public class Abecedario extends javax.swing.JPanel {
         jButton_S.setBorderPainted(false);
         jButton_S.setContentAreaFilled(false);
         jButton_S.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton_S.setName("s"); // NOI18N
+        jButton_S.setName("s-"); // NOI18N
         jButton_S.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/abecedario/S1.png"))); // NOI18N
         jButton_S.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/abecedario/S2.png"))); // NOI18N
         add(jButton_S, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 240, 110, 100));
@@ -251,7 +251,7 @@ public class Abecedario extends javax.swing.JPanel {
         jButton_T.setBorderPainted(false);
         jButton_T.setContentAreaFilled(false);
         jButton_T.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton_T.setName("t"); // NOI18N
+        jButton_T.setName("t-"); // NOI18N
         jButton_T.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/abecedario/t2.png"))); // NOI18N
         jButton_T.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/abecedario/t1.png"))); // NOI18N
         add(jButton_T, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 240, 120, 100));
@@ -260,7 +260,7 @@ public class Abecedario extends javax.swing.JPanel {
         jButton_V.setBorderPainted(false);
         jButton_V.setContentAreaFilled(false);
         jButton_V.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton_V.setName("v"); // NOI18N
+        jButton_V.setName("v-"); // NOI18N
         jButton_V.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/abecedario/v2.png"))); // NOI18N
         jButton_V.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/abecedario/v1.png"))); // NOI18N
         add(jButton_V, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 350, 110, 120));
@@ -269,7 +269,7 @@ public class Abecedario extends javax.swing.JPanel {
         jButton_W.setBorderPainted(false);
         jButton_W.setContentAreaFilled(false);
         jButton_W.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton_W.setName("w"); // NOI18N
+        jButton_W.setName("w-"); // NOI18N
         jButton_W.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/abecedario/w2.png"))); // NOI18N
         jButton_W.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/abecedario/w1.png"))); // NOI18N
         add(jButton_W, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 350, 110, 120));
@@ -278,7 +278,7 @@ public class Abecedario extends javax.swing.JPanel {
         jButton_X.setBorderPainted(false);
         jButton_X.setContentAreaFilled(false);
         jButton_X.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton_X.setName("x"); // NOI18N
+        jButton_X.setName("x-"); // NOI18N
         jButton_X.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/abecedario/x2.png"))); // NOI18N
         jButton_X.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/abecedario/x1.png"))); // NOI18N
         add(jButton_X, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 350, 110, 120));
@@ -287,7 +287,7 @@ public class Abecedario extends javax.swing.JPanel {
         jButton_Y.setBorderPainted(false);
         jButton_Y.setContentAreaFilled(false);
         jButton_Y.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton_Y.setName("y"); // NOI18N
+        jButton_Y.setName("y-"); // NOI18N
         jButton_Y.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/abecedario/y2.png"))); // NOI18N
         jButton_Y.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/abecedario/y1.png"))); // NOI18N
         add(jButton_Y, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 350, 110, 120));
@@ -296,7 +296,7 @@ public class Abecedario extends javax.swing.JPanel {
         jButton_Z.setBorderPainted(false);
         jButton_Z.setContentAreaFilled(false);
         jButton_Z.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton_Z.setName("z"); // NOI18N
+        jButton_Z.setName("z-"); // NOI18N
         jButton_Z.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/abecedario/z.png"))); // NOI18N
         jButton_Z.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/abecedario/z1.png"))); // NOI18N
         add(jButton_Z, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 350, 110, 120));
