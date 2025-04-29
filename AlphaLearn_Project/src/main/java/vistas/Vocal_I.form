@@ -3,7 +3,7 @@
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
   <Properties>
     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-      <Color blue="b7" green="9f" red="74" type="rgb"/>
+      <Color blue="ff" green="33" red="66" type="rgb"/>
     </Property>
   </Properties>
   <AuxValues>
@@ -74,21 +74,24 @@
     <Component class="javax.swing.JButton" name="jButton_C">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/resource/vocales/Mismo1.png"/>
+          <Image iconType="3" name="/resource/vocales/iglu1.png"/>
         </Property>
         <Property name="borderPainted" type="boolean" value="false"/>
         <Property name="contentAreaFilled" type="boolean" value="false"/>
         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
           <Color id="Hand Cursor"/>
         </Property>
-        <Property name="name" type="java.lang.String" value="mismo" noResource="true"/>
+        <Property name="name" type="java.lang.String" value="iglu" noResource="true"/>
         <Property name="pressedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/resource/vocales/Mismo2.png"/>
+          <Image iconType="3" name="/resource/vocales/iglu2.png"/>
         </Property>
         <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/resource/vocales/Mismo3.png"/>
+          <Image iconType="3" name="/resource/vocales/iglu3.png"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton_CActionPerformed"/>
+      </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="600" y="160" width="180" height="130"/>
@@ -98,19 +101,19 @@
     <Component class="javax.swing.JButton" name="jButton_D">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/resource/vocales/Cielo1.png"/>
+          <Image iconType="3" name="/resource/vocales/imagen1.png"/>
         </Property>
         <Property name="borderPainted" type="boolean" value="false"/>
         <Property name="contentAreaFilled" type="boolean" value="false"/>
         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
           <Color id="Hand Cursor"/>
         </Property>
-        <Property name="name" type="java.lang.String" value="cielo" noResource="true"/>
+        <Property name="name" type="java.lang.String" value="imagen_3" noResource="true"/>
         <Property name="pressedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/resource/vocales/Cielo2.png"/>
+          <Image iconType="3" name="/resource/vocales/imagen2.png"/>
         </Property>
         <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/resource/vocales/Cielo3.png"/>
+          <Image iconType="3" name="/resource/vocales/imagen3.png"/>
         </Property>
       </Properties>
       <Constraints>
@@ -122,19 +125,19 @@
     <Component class="javax.swing.JButton" name="jButton_E">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/resource/vocales/Pino1.png"/>
+          <Image iconType="3" name="/resource/vocales/iglesia1.png"/>
         </Property>
         <Property name="borderPainted" type="boolean" value="false"/>
         <Property name="contentAreaFilled" type="boolean" value="false"/>
         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
           <Color id="Hand Cursor"/>
         </Property>
-        <Property name="name" type="java.lang.String" value="pino" noResource="true"/>
+        <Property name="name" type="java.lang.String" value="iglesia" noResource="true"/>
         <Property name="pressedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/resource/vocales/Pino2.png"/>
+          <Image iconType="3" name="/resource/vocales/iglesia2.png"/>
         </Property>
         <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/resource/vocales/Pino3.png"/>
+          <Image iconType="3" name="/resource/vocales/iglesia3.png"/>
         </Property>
       </Properties>
       <Constraints>
@@ -146,19 +149,19 @@
     <Component class="javax.swing.JButton" name="jButton_F">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/resource/vocales/Tinta1.png"/>
+          <Image iconType="3" name="/resource/vocales/indio1.png"/>
         </Property>
         <Property name="borderPainted" type="boolean" value="false"/>
         <Property name="contentAreaFilled" type="boolean" value="false"/>
         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
           <Color id="Hand Cursor"/>
         </Property>
-        <Property name="name" type="java.lang.String" value="tinta" noResource="true"/>
+        <Property name="name" type="java.lang.String" value="indio" noResource="true"/>
         <Property name="pressedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/resource/vocales/Tinta2.png"/>
+          <Image iconType="3" name="/resource/vocales/indio2.png"/>
         </Property>
         <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/resource/vocales/Tinta3.png"/>
+          <Image iconType="3" name="/resource/vocales/indio3.png"/>
         </Property>
       </Properties>
       <Constraints>
@@ -170,19 +173,19 @@
     <Component class="javax.swing.JButton" name="jButton_G">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/resource/vocales/Bisiesto1.png"/>
+          <Image iconType="3" name="/resource/vocales/invierno1.png"/>
         </Property>
         <Property name="borderPainted" type="boolean" value="false"/>
         <Property name="contentAreaFilled" type="boolean" value="false"/>
         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
           <Color id="Hand Cursor"/>
         </Property>
-        <Property name="name" type="java.lang.String" value="bisiesto" noResource="true"/>
+        <Property name="name" type="java.lang.String" value="invierno" noResource="true"/>
         <Property name="pressedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/resource/vocales/Bisiesto2.png"/>
+          <Image iconType="3" name="/resource/vocales/invierno2.png"/>
         </Property>
         <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/resource/vocales/Bisiesto3.png"/>
+          <Image iconType="3" name="/resource/vocales/invierno3.png"/>
         </Property>
       </Properties>
       <Constraints>
@@ -194,19 +197,19 @@
     <Component class="javax.swing.JButton" name="jButton_H">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/resource/vocales/Libro1.png"/>
+          <Image iconType="3" name="/resource/vocales/idea1.png"/>
         </Property>
         <Property name="borderPainted" type="boolean" value="false"/>
         <Property name="contentAreaFilled" type="boolean" value="false"/>
         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
           <Color id="Hand Cursor"/>
         </Property>
-        <Property name="name" type="java.lang.String" value="libro" noResource="true"/>
+        <Property name="name" type="java.lang.String" value="idea" noResource="true"/>
         <Property name="pressedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/resource/vocales/Libro2.png"/>
+          <Image iconType="3" name="/resource/vocales/idea2.png"/>
         </Property>
         <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/resource/vocales/Libro3.png"/>
+          <Image iconType="3" name="/resource/vocales/idea3.png"/>
         </Property>
       </Properties>
       <Constraints>
@@ -218,19 +221,19 @@
     <Component class="javax.swing.JButton" name="jButton_I">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/resource/vocales/Vino1.png"/>
+          <Image iconType="3" name="/resource/vocales/iguana1.png"/>
         </Property>
         <Property name="borderPainted" type="boolean" value="false"/>
         <Property name="contentAreaFilled" type="boolean" value="false"/>
         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
           <Color id="Hand Cursor"/>
         </Property>
-        <Property name="name" type="java.lang.String" value="vino" noResource="true"/>
+        <Property name="name" type="java.lang.String" value="iguana" noResource="true"/>
         <Property name="pressedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/resource/vocales/Vino2.png"/>
+          <Image iconType="3" name="/resource/vocales/iguana2.png"/>
         </Property>
         <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/resource/vocales/VIno3.png"/>
+          <Image iconType="3" name="/resource/vocales/iguana3.png"/>
         </Property>
       </Properties>
       <Constraints>

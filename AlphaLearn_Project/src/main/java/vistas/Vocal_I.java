@@ -37,7 +37,7 @@ public class Vocal_I extends javax.swing.JPanel {
         jButton_H = new javax.swing.JButton();
         jButton_I = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(116, 159, 183));
+        setBackground(new java.awt.Color(102, 51, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton_A.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/vocales/vocal_i1.png"))); // NOI18N
@@ -58,69 +58,78 @@ public class Vocal_I extends javax.swing.JPanel {
         jButton_B.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/vocales/Isla3.png"))); // NOI18N
         add(jButton_B, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 170, 120));
 
-        jButton_C.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/vocales/Mismo1.png"))); // NOI18N
+        jButton_C.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/vocales/iglu1.png"))); // NOI18N
         jButton_C.setBorderPainted(false);
         jButton_C.setContentAreaFilled(false);
         jButton_C.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton_C.setName("mismo"); // NOI18N
-        jButton_C.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/vocales/Mismo2.png"))); // NOI18N
-        jButton_C.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/vocales/Mismo3.png"))); // NOI18N
+        jButton_C.setName("iglu"); // NOI18N
+        jButton_C.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/vocales/iglu2.png"))); // NOI18N
+        jButton_C.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/vocales/iglu3.png"))); // NOI18N
+        jButton_C.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_CActionPerformed(evt);
+            }
+        });
         add(jButton_C, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 160, 180, 130));
 
-        jButton_D.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/vocales/Cielo1.png"))); // NOI18N
+        jButton_D.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/vocales/imagen1.png"))); // NOI18N
         jButton_D.setBorderPainted(false);
         jButton_D.setContentAreaFilled(false);
         jButton_D.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton_D.setName("cielo"); // NOI18N
-        jButton_D.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/vocales/Cielo2.png"))); // NOI18N
-        jButton_D.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/vocales/Cielo3.png"))); // NOI18N
+        jButton_D.setName("imagen_3"); // NOI18N
+        jButton_D.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/vocales/imagen2.png"))); // NOI18N
+        jButton_D.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/vocales/imagen3.png"))); // NOI18N
         add(jButton_D, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 320, 170, 120));
 
-        jButton_E.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/vocales/Pino1.png"))); // NOI18N
+        jButton_E.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/vocales/iglesia1.png"))); // NOI18N
         jButton_E.setBorderPainted(false);
         jButton_E.setContentAreaFilled(false);
         jButton_E.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton_E.setName("pino"); // NOI18N
-        jButton_E.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/vocales/Pino2.png"))); // NOI18N
-        jButton_E.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/vocales/Pino3.png"))); // NOI18N
+        jButton_E.setName("iglesia"); // NOI18N
+        jButton_E.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/vocales/iglesia2.png"))); // NOI18N
+        jButton_E.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/vocales/iglesia3.png"))); // NOI18N
         add(jButton_E, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 160, 190, 120));
 
-        jButton_F.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/vocales/Tinta1.png"))); // NOI18N
+        jButton_F.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/vocales/indio1.png"))); // NOI18N
         jButton_F.setBorderPainted(false);
         jButton_F.setContentAreaFilled(false);
         jButton_F.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton_F.setName("tinta"); // NOI18N
-        jButton_F.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/vocales/Tinta2.png"))); // NOI18N
-        jButton_F.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/vocales/Tinta3.png"))); // NOI18N
+        jButton_F.setName("indio"); // NOI18N
+        jButton_F.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/vocales/indio2.png"))); // NOI18N
+        jButton_F.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/vocales/indio3.png"))); // NOI18N
         add(jButton_F, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 320, 180, 120));
 
-        jButton_G.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/vocales/Bisiesto1.png"))); // NOI18N
+        jButton_G.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/vocales/invierno1.png"))); // NOI18N
         jButton_G.setBorderPainted(false);
         jButton_G.setContentAreaFilled(false);
         jButton_G.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton_G.setName("bisiesto"); // NOI18N
-        jButton_G.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/vocales/Bisiesto2.png"))); // NOI18N
-        jButton_G.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/vocales/Bisiesto3.png"))); // NOI18N
+        jButton_G.setName("invierno"); // NOI18N
+        jButton_G.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/vocales/invierno2.png"))); // NOI18N
+        jButton_G.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/vocales/invierno3.png"))); // NOI18N
         add(jButton_G, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 330, 180, 110));
 
-        jButton_H.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/vocales/Libro1.png"))); // NOI18N
+        jButton_H.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/vocales/idea1.png"))); // NOI18N
         jButton_H.setBorderPainted(false);
         jButton_H.setContentAreaFilled(false);
         jButton_H.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton_H.setName("libro"); // NOI18N
-        jButton_H.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/vocales/Libro2.png"))); // NOI18N
-        jButton_H.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/vocales/Libro3.png"))); // NOI18N
+        jButton_H.setName("idea"); // NOI18N
+        jButton_H.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/vocales/idea2.png"))); // NOI18N
+        jButton_H.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/vocales/idea3.png"))); // NOI18N
         add(jButton_H, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 160, 160, 120));
 
-        jButton_I.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/vocales/Vino1.png"))); // NOI18N
+        jButton_I.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/vocales/iguana1.png"))); // NOI18N
         jButton_I.setBorderPainted(false);
         jButton_I.setContentAreaFilled(false);
         jButton_I.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton_I.setName("vino"); // NOI18N
-        jButton_I.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/vocales/Vino2.png"))); // NOI18N
-        jButton_I.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/vocales/VIno3.png"))); // NOI18N
+        jButton_I.setName("iguana"); // NOI18N
+        jButton_I.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/vocales/iguana2.png"))); // NOI18N
+        jButton_I.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/vocales/iguana3.png"))); // NOI18N
         add(jButton_I, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, 160, 100));
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton_CActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_CActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton_CActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
