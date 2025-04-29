@@ -2,7 +2,6 @@
 package vistas;
 
 import com.formdev.flatlaf.FlatLightLaf;
-import controlador.ControlLoginInclusivo;
 import controlador.ControlLoginInclusivoPatron;
 import javax.swing.JButton;
 import javax.swing.JPanel;

@@ -31,15 +31,15 @@ public abstract class AbstractSonido {
     private JPanel panel; // Panel donde se mostrará la imagen de instrucción
 
     /**
-     * Reproduce un sonido a partir de la ruta.
-     * Si ya hay un sonido reproduciéndose, lo detiene primero.
+     * Reproduce un sonido a partir de la ruta
+     * Si ya hay un sonido reproduciéndose, lo detiene primero
      *
-     * @param ruta Ruta del archivo de audio dentro del proyecto.
+     * @param ruta Ruta del archivo de audio dentro del proyecto
      */
     public void reproducirSonido(String ruta) {
         try {
             /** Si hay un clip reproduciendo, detenerlo y cerrarlo
-             *  Esto nos sirve para evitar sobre cargar el metodo.
+             *  Esto nos sirve para evitar sobre cargar el metodo
              */
             if (clip != null && clip.isRunning()) {
                 clip.stop();
@@ -78,7 +78,7 @@ public abstract class AbstractSonido {
 
     /**
      * Detiene la reproducción de sonido, si hay uno activo,
-     * y oculta cualquier imagen de instrucción mostrada.
+     * y oculta cualquier imagen de instrucción mostrada
      */
     public void stopSonido() {
         if (clip != null && clip.isRunning()) {
@@ -88,12 +88,12 @@ public abstract class AbstractSonido {
     }
 
     /**
-     * Muestra una imagen de instrucción sobre un panel en una posición específica.
+     * Muestra una imagen de instrucción sobre un panel en una posición específica
      * 
-     * @param panel Panel donde se colocará la imagen.
-     * @param rutaImagen Ruta del archivo de la imagen.
-     * @param x Coordenada X donde se colocará la imagen en el panel.
-     * @param y Coordenada Y donde se colocará la imagen en el panel.
+     * @param panel Panel donde se colocará la imagen
+     * @param rutaImagen Ruta del archivo de la imagen
+     * @param x Coordenada X donde se colocará la imagen en el panel
+     * @param y Coordenada Y donde se colocará la imagen en el panel
      */
     public void mostrarInstruccion(JPanel panel, String rutaImagen, int x, int y) {
         if (panel == null || rutaImagen == null) return;
@@ -119,7 +119,7 @@ public abstract class AbstractSonido {
     }
 
     /**
-     * Oculta y elimina del panel la imagen de instrucción mostrada, si existe.
+     * Oculta y elimina del panel la imagen de instrucción mostrada, si existe
      */
     public void ocultarImagen() {
         if (panel != null && labelInstruccion != null) {

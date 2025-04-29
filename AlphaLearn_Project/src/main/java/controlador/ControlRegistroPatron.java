@@ -23,9 +23,7 @@ import javax.swing.SwingUtilities;
 import modelo.Usuario;
 import utils.PanelPatronConLineas;
 import utils.UtilidadesUI;
-import vistas.Login_inclusivo;
 import vistas.Login_inclusivo_patron;
-import vistas.Registro;
 import vistas.Registro_patron;
 
 /**

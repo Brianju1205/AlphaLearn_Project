@@ -4,7 +4,7 @@
 
 package main;
 
-import vistas.Login;
+import vistas.Login_inclusivo_patron;
 
 /**
  *
@@ -15,7 +15,7 @@ public class AlphaLearn_Project {
     public static void main(String[] args) {
         System.out.println("Hello World!");
         System.out.println("commit");
-        Login log= new Login();
+        Login_inclusivo_patron L = new Login_inclusivo_patron();
         
     }
    

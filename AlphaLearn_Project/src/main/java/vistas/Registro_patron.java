@@ -4,7 +4,6 @@
  */
 package vistas;
 
-import controlador.ControlRegistro;
 import controlador.ControlRegistroPatron;
 import javax.swing.JButton;
 import javax.swing.JLabel;

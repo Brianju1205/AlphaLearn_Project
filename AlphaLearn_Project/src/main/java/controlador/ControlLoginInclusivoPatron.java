@@ -20,10 +20,8 @@ import javax.swing.JToggleButton;
 import javax.swing.SwingUtilities;
 import utils.PanelPatronConLineas;
 import utils.Slide;
-import vistas.Login_inclusivo;
 import vistas.Login_inclusivo_patron;
 import vistas.Menu;
-import vistas.Registro;
 import vistas.Registro_patron;
 
 /**
