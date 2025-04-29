@@ -14,19 +14,27 @@ import vistas.Actividad_4;
 import vistas.Menu;
 
 /**
- *
+ * Permite que el usuario escuche un audio y seleccione la palabra correcta entre tres opciones mostradas
+ * 
+ * Hereda de: AbstractSonido para reproducir los audios
+ * Implementa: ActionListener para manejar acciones de botones
+ * 
  * @author almen
  */
 
 public class ControlActividad4 extends AbstractSonido implements ActionListener {
-    private Actividad_4 objActividad4;
-    private Verificador v;
-    private ControlGestorPalabras palabrasDAO;
-    private String[] palabras; 
-    private String palabraCorrecta;
-    private boolean audioReproducido = false;
-    private String seleccionUsuario = null;
-
+    private Actividad_4 objActividad4;              // referencia de la vista actividad 4
+    private Verificador v;                          // objeto referenciada al verificador
+    private ControlGestorPalabras palabrasDAO;      // Manejar el gestor palabras 
+    private String[] palabras;                      // arreglo para almacenar las palabras asignadas a los Jlabel
+    private String palabraCorrecta;                 // palabra correcta que el usuario debe de seleccionar
+    private boolean audioReproducido = false;       // banderas para indicar si ya se reproducio el audio
+    private String seleccionUsuario = null;         // palabra que selecciono el usuario
+    
+    /**
+     * objeto de la vista actividad 4
+     * @param objActividad4 
+     */
     public ControlActividad4(Actividad_4 objActividad4) {
         this.objActividad4 = objActividad4;
 
@@ -34,7 +42,7 @@ public class ControlActividad4 extends AbstractSonido implements ActionListener 
         this.objActividad4.getjButton1_Cambiar_audio_palabra().addActionListener(this);
         this.objActividad4.getjButton1_Salir_act_5().addActionListener(this);
 
-       
+        // Adaptador de mouse para manejar eventos de pasar el mouse y clic en etiquetas
         MouseAdapter mouseHoverAdapter = new MouseAdapter() {
             @Override
             public void mouseEntered(MouseEvent e) {
@@ -53,7 +61,7 @@ public class ControlActividad4 extends AbstractSonido implements ActionListener 
             }
         };
 
-       
+         // Asignar mouse listener a las etiquetas de palabras
         this.objActividad4.getjLabel_word1().addMouseListener(mouseHoverAdapter);
         this.objActividad4.getjLabel_word2().addMouseListener(mouseHoverAdapter);
         this.objActividad4.getjLabel_word3().addMouseListener(mouseHoverAdapter);
@@ -70,6 +78,7 @@ public class ControlActividad4 extends AbstractSonido implements ActionListener 
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == this.objActividad4.getjButton1_Salir_act_5()) {
+            reproducirSonido("/resource/sounds/burbuja.wav");
             Menu m = new Menu();
             m.setVisible(true);
             if (objActividad4 != null) {
@@ -86,6 +95,7 @@ public class ControlActividad4 extends AbstractSonido implements ActionListener 
             reproducirAudio(palabraCorrecta);
             audioReproducido = true;
         } else if (e.getSource() == this.objActividad4.getjButton1_Cambiar_audio_palabra()) {
+            reproducirSonido("/resource/sounds/burbuja.wav");
             asignarPalabraAJLabels();
             seleccionarPalabraCorrecta();
             reproducirAudio(palabraCorrecta);
@@ -93,6 +103,9 @@ public class ControlActividad4 extends AbstractSonido implements ActionListener 
         }
     }
 
+    /**
+     * Asigna palabras aleatorias a los 3 Jlabel de la vista.
+     */
     private void asignarPalabraAJLabels() {
         try {
             palabras = new String[3];
@@ -117,34 +130,48 @@ public class ControlActividad4 extends AbstractSonido implements ActionListener 
             System.err.println("Error al obtener las palabras: " + ex.getMessage());
         }
     }
-
+    
+    /**
+     * Selecciona aleatoriamente cuál palabra será la correcta entre las tres asignadas.
+     */
     private void seleccionarPalabraCorrecta() {
         int indiceAleatorio = (int) (Math.random() * palabras.length);
         palabraCorrecta = palabras[indiceAleatorio];
         System.out.println("palabra correcta: " + palabraCorrecta);
     }
 
+    /**
+     * Reproduce el audio correspondiente a una palabra
+     *
+     * @param palabra La palabra cuyo audio se reproducirá
+     */
     private void reproducirAudio(String palabra) {
         String rutaAudio = "/resource/sounds/" + palabra + ".wav";
         reproducirSonido(rutaAudio);
     }
 
+    /**
+     * Verifica si la selección del usuario coincide con la palabra correcta
+     * 
+     * Si es correcta, reproduce un sonido de acierto y cambia las palabras
+     * Si es incorrecta, reproduce un sonido de error
+     */
     private void verificarSeleccion() {
         if (!audioReproducido || seleccionUsuario == null) {
             reproducirSonido("/resource/sounds/audioUno.wav");
-            JOptionPane.showMessageDialog(null, "Escucha el audio antes de seleccionar");
+            //JOptionPane.showMessageDialog(null, "Escucha el audio antes de seleccionar");
             return;
         }
 
         if (seleccionUsuario.equals(palabraCorrecta)) {
-            reproducirSonido("/resource/sounds/muy_bien.wav");
-            JOptionPane.showMessageDialog(null, "Correcto. La palabra era: " + palabraCorrecta);
+            reproducirSonido("/resource/sounds/correct.wav");
+            //JOptionPane.showMessageDialog(null, "Correcto. La palabra era: " + palabraCorrecta);
             asignarPalabraAJLabels();
             seleccionarPalabraCorrecta();
             reproducirAudio(palabraCorrecta);
         } else {
-            reproducirSonido("/resource/sounds/incorrecto.wav");
-            JOptionPane.showMessageDialog(null, "Incorrecto. La palabra correcta era: " + palabraCorrecta);
+            reproducirSonido("/resource/sounds/errorr.wav");
+            //JOptionPane.showMessageDialog(null, "Incorrecto. La palabra correcta era: " + palabraCorrecta);
         }
     }
 }
