@@ -5,7 +5,11 @@
 package modelo;
 
 /**
- *
+ * Clase modelo que representa los ajustes personalizados de un usuario
+ * 
+ * Esta clase almacena la configuración individual de un usuario relacionada
+ * con el sonido, la visualización de instrucciones y el volumen
+ * 
  * @author juare
  */
 public class AjustesM {
@@ -14,9 +18,21 @@ public class AjustesM {
     private boolean instruccionesActivas;
     private float volumen;
 
+    /**
+     * Constructor vacío. 
+     * por si se necesita crear nuevos objetos
+     */
     public AjustesM() {
     }
 
+    /**
+     * Constructor con parámetros para inicializar todos los atributos
+     * 
+     * @param idUsuario Identificador del usuario
+     * @param sonidoActivo Estado del sonido (activo o no)
+     * @param instruccionesActivas Estado de las instrucciones (activas o no)
+     * @param volumen Valor del volumen configurado
+     */
     public AjustesM(int idUsuario, boolean sonidoActivo, boolean instruccionesActivas, float volumen) {
         this.idUsuario = idUsuario;
         this.sonidoActivo = sonidoActivo;

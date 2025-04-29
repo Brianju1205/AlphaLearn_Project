@@ -5,6 +5,8 @@
 package modelo;
 
 /**
+ * Representa una pregunta asociada a un cuento, con sus respectivas opciones de respuesta
+ * y la respuesta correcta y contiene la ruta del audio de la pregunta
  *
  * @author juare
  */
@@ -18,6 +20,19 @@ public class Pregunta {
     private String opcion3;
     private String respuestaCorrecta;
     private String rutaAudiop;
+    
+    /**
+     * Constructor para crear una nueva instancia de Pregunta 
+     * 
+     * @param id el identificador único de la pregunta
+     * @param idCuento el identificador del cuento relacionado
+     * @param pregunta el texto de la pregunta
+     * @param opcion1 la primera opción de respuesta
+     * @param opcion2 la segunda opción de respuesta
+     * @param opcion3 la tercera opción de respuesta
+     * @param respuestaCorrecta la respuesta correcta de la pregunta
+     * @param rutaAudiop la ruta del archivo de audio asociado a la pregunta
+     */
     public Pregunta(int id, int idCuento, String pregunta, String opcion1, String opcion2, String opcion3, String respuestaCorrecta, String rutaAudiop) {
         this.id = id;
         this.idCuento = idCuento;

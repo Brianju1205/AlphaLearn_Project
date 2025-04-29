@@ -16,18 +16,30 @@ import modelo.Palabra;
 import modelo.GestorPalabras;
 
 /**
- *
+ * Controlador para la gestión de palabras y oraciones en la base de datos
+ * Implementa la interfaz GestorPalabras
+ * 
  * @author juare
  */
 
 public class ControlGestorPalabras implements GestorPalabras {
-    private Conexion objConexion;
-    private static ControlGestorPalabras instancia; 
+    private Conexion objConexion;  // Conexión a la base de datos
+    private static ControlGestorPalabras instancia;  // instancia singleton
 
+    /**
+     * Constructor privado que inicializa la conexión con la base de datos
+     * Utiliza el patrón Singleton para obtener la instancia de conexión
+     */
     private ControlGestorPalabras() {
         objConexion = Conexion.getInstance(); 
     }
     
+    /**
+     * Método estático para obtener la instancia única del gestor de cuentos.
+     * Si no existe, la crea
+     * 
+     * @return instancia única de ControlGestorCuentos
+     */
     public static ControlGestorPalabras getInstance() {
         if (instancia == null) {
             instancia = new ControlGestorPalabras();
@@ -35,6 +47,10 @@ public class ControlGestorPalabras implements GestorPalabras {
         return instancia;
     }
 
+    /**
+     * Obtiene una palabra aleatoria de la base de datos "palabras".
+     * @return Palabra obtenida o cadena vacía
+     */
     @Override
     public String obtenerPalabraDesordenada() {
         String palabra = "";
@@ -53,6 +69,11 @@ public class ControlGestorPalabras implements GestorPalabras {
         }
         return palabra;
     }
+    
+    /**
+     * Obtiene tres palabras aleatorias junto con sus respectivas imágenes
+     * @return Lista de palabras, cada uno con su imagen asociada
+     */
     @Override
     public ArrayList<Palabra> obtenerTresPalabrasConImagen(){
         ArrayList<Palabra> palabras = new ArrayList<>();
@@ -88,7 +109,10 @@ public class ControlGestorPalabras implements GestorPalabras {
         return palabras;
     }
 
-
+    /**
+     * Agrega una nueva palabra a la base de datos
+     * @param palabra Objeto Palabra que contiene el texto a insertar
+     */
     @Override
     public void agregarPalabra(Palabra palabra) {
         try {
@@ -106,6 +130,10 @@ public class ControlGestorPalabras implements GestorPalabras {
         }
     }
 
+    /**
+     * Elimina una palabra de la base de datos por su ID
+     * @param id Identificador de la palabra a eliminar
+     */
     @Override
     public void eliminarPalabra(int id)  {
         try {
@@ -123,6 +151,10 @@ public class ControlGestorPalabras implements GestorPalabras {
         }
     }
 
+    /**
+     * Obtiene una palabra aleatoria de la tabla word
+     * @return Palabra aleatoria obtenida 
+     */
     @Override
     public String obtenerWord()  {
          String word = "";
@@ -143,6 +175,10 @@ public class ControlGestorPalabras implements GestorPalabras {
        
     }
 
+    /**
+     * Obtiene una oración y sus tres opciones de respuesta de forma aleatoria
+     * @return Arreglo de Strings [oración, opción1, opción2, opción3, respuesta correcta]
+     */
     @Override
     public String[] obtenerOracionBase() {
         String[] oracionConOpciones = new String[5]; 
@@ -166,7 +202,6 @@ public class ControlGestorPalabras implements GestorPalabras {
             }
         }
         return oracionConOpciones;
-    }
-    
+    }  
    
 }

@@ -5,9 +5,16 @@
 package modelo;
 
 /**
- *
+ * Interfaz que define el contrato para gestionar cuentos y sus respectivas preguntas
+ * 
  * @author juare
  */
 public interface GestorCuentos {
+     /**
+     * Obtiene una instancia de {@link CuentoPregunta}, que representa un cuento
+     * junto con su pregunta relacionada
+     *
+     * @return un objeto {@link CuentoPregunta} que contiene un cuento y su pregunta
+     */
     CuentoPregunta obtenerCuentos();
 }

@@ -16,28 +16,43 @@ import vistas.Menu;
 import vistas.Actividad_5;
 
 /**
- *
+ * Esta actividad permite aprender a identificar las palabras que le hacen falta a las oraciones
+ * 
+ * Hereda de: AbstractSonido para reproducir los audios
+ * Implementa: ActionListener para manejar acciones de botones
+ * 
  * @author almen
  */
 
 public class ControlActividad5 extends AbstractSonido implements ActionListener {
-    private Actividad_5 objActividad5;
-    private ControlGestorPalabras palabrasDAO;
-    private String seleccionUsuario = null;
-    private boolean verificado= false;
+    private Actividad_5 objActividad5;          // referencia al la vista Actividad 5
+    private ControlGestorPalabras palabrasDAO;  // referencia a la gestor palabrasDAO
+    private String seleccionUsuario = null;     // palabra que selecciono el usuario
+    private boolean verificado= false;          // bandera de verificado
     
-    private String[] oracionActual;
-    private String opcionCorrecta; 
+    private String[] oracionActual;             // oracion que se muestra al iniciar
+    private String opcionCorrecta;              // palabra correcta
 
+    /**
+     * Constructo de actividad5
+     * @param objActividad5 
+     */
     public ControlActividad5(Actividad_5 objActividad5) {
         this.objActividad5 = objActividad5;
         this.palabrasDAO = ControlGestorPalabras.getInstance();
         
-      
         this.objActividad5.getjButton1_Salir_act_5().addActionListener(this);
         this.objActividad5.getjButton1_Cambiar_oracion().addActionListener(this);
-      
         
+        //agregar escuchadores de los Jlabels
+        escuchadoresJlabel();
+        cargarNuevaOracion();
+    }
+   
+    /**
+     * Agregar listener para los clicks sobre los Jlabels
+     */
+    private void escuchadoresJlabel(){
         this.objActividad5.getjLabel_opcionUno().addMouseListener(new MouseAdapter(){
             @Override
             public void mouseClicked (MouseEvent e){
@@ -65,11 +80,12 @@ public class ControlActividad5 extends AbstractSonido implements ActionListener 
           }
           
         });
-      
-        cargarNuevaOracion();
     }
-   
     
+    /**
+     * Método para cargar una nueva oración
+     * Se obtienen nuevas palabras y se actualiza la vista
+     */
     private void cargarNuevaOracion() {
         try {
             verificado = false;
@@ -81,11 +97,12 @@ public class ControlActividad5 extends AbstractSonido implements ActionListener 
             objActividad5.getjLabel3_oracion().setForeground(new Color(0, 51, 102)); 
             objActividad5.getjLabel3_oracion().setBorder(javax.swing.BorderFactory.createLineBorder(Color.WHITE, 2));
             
+            // Cargar opciones de respuesta
             objActividad5.getjLabel_opcionUno().setText(oracionActual[1]); // O
             objActividad5.getjLabel_palabraOpcionDos().setText(oracionActual[2]); //2
             objActividad5.getjLabel_palabraOpcionTres().setText(oracionActual[3]); // 3
             
-          
+            // Definir cuál sera la respuesta correcta
             opcionCorrecta = oracionActual[4];
             seleccionUsuario = null;
          
@@ -96,10 +113,11 @@ public class ControlActividad5 extends AbstractSonido implements ActionListener 
         }
     }
 
- 
-   
+    /**
+     * Método privado para verificar si la selección del usuario es correcta
+     */
     private void verificarRespuesta() {
-        if (verificado)return;
+        if (verificado)return; // Si ya se verificó, salir para evitar duplicados
         
         if (seleccionUsuario == null) {
             //JOptionPane.showMessageDialog(objActividad5, "Por favor selecciona una palabra");
@@ -131,7 +149,7 @@ public class ControlActividad5 extends AbstractSonido implements ActionListener 
         } 
          else if (e.getSource() == objActividad5.getjButton1_Cambiar_oracion()) {
             reproducirSonido("/resource/sounds/burbuja.wav");
-            cargarNuevaOracion();
+            cargarNuevaOracion(); // cargar una nueva oración
         } 
     }
 }

@@ -5,6 +5,11 @@
 package modelo;
 
 /**
+ * Clase modelo que representa un cuento
+ * 
+ * Esta clase contiene los atributos básicos de un cuento, incluyendo su 
+ * identificador, título, contenido textual y la ruta al archivo de audio
+ * 
  *
  * @author juare
  */
@@ -14,8 +19,15 @@ public class Cuento {
     private String titulo;
     private String cuento;
     private String rutaAudio;
-
     
+    /**
+     * Constructor que inicializa todos los atributos del cuento
+     * 
+     * @param id Identificador único del cuento
+     * @param titulo Título del cuento
+     * @param cuento Texto completo del cuento
+     * @param rutaAudio Ruta del archivo de audio asociado al cuento
+     */
     public Cuento(int id, String titulo, String cuento, String rutaAudio) {
         this.id = id;
         this.titulo = titulo;

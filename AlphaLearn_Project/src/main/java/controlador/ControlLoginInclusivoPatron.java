@@ -27,24 +27,34 @@ import vistas.Registro;
 import vistas.Registro_patron;
 
 /**
- *
+ * Controlador para el login inclusivo con patrón, Este controlador
+ * permite a los usuarios seleccionar un ícono de perfil 
+ * y dibujar un patrón como contraseña
+ * 
  * @author juare
  */
 
 public class ControlLoginInclusivoPatron extends AbstractSonido implements ActionListener {
+    
     private Login_inclusivo_patron logi;
     private Slide slide;
     private UsuarioDAO objDAOU;
     private Verificador objVerificador;
+    
+    // Listas de botones e íconos usados en el login
     private ArrayList<JButton> iconosPerfilLogin = new ArrayList<>();
     private ArrayList<JButton> PatronSeleccionadasLogin = new ArrayList<>();
     private ArrayList<JButton> botonesSeleccionados = new ArrayList<>();
     private ArrayList<Point> puntos = new ArrayList<>();
     private boolean estaDibujando = false;
-
     private JButton iconoSeleccionadoRegistro = null;
     private JButton iconoSeleccionadoLogin = null;
     private int intentos;
+    
+    /**
+     * Constructor del login
+     * @param logi 
+     */
     public ControlLoginInclusivoPatron(Login_inclusivo_patron logi) {
         this.logi = logi;
         slide = new Slide();
@@ -52,7 +62,9 @@ public class ControlLoginInclusivoPatron extends AbstractSonido implements Actio
         objDAOU = UsuarioDAO.getInstance();
         colocarEscuchadores();
     }
-
+    /**
+     * Asocia los botones e íconos con sus respectivos escuchadores
+     */
     private void colocarEscuchadores() {
         int index = 0;
         int indexr =0;
@@ -66,6 +78,7 @@ public class ControlLoginInclusivoPatron extends AbstractSonido implements Actio
                 bt.setActionCommand("button" + indexr);
                 bt.putClientProperty("index", indexr);
                 
+                // escuchadores para detectar el dibujo del patrón con el mouse
                 bt.addMouseListener(new MouseAdapter() {
                     @Override
                     public void mousePressed(MouseEvent e) {
@@ -114,6 +127,10 @@ public class ControlLoginInclusivoPatron extends AbstractSonido implements Actio
         logi.getjB_iniciar_sesion().addActionListener(this);
         logi.getjB_ir_Registro().addActionListener(this);
     }
+    
+    /**
+     * Agrega visualmente un boton seleccionado al momento de dibujar el patron
+     */
     private void agregarBoton(JButton bt) {
         if (!botonesSeleccionados.contains(bt)) {
             botonesSeleccionados.add(bt);
@@ -130,6 +147,9 @@ public class ControlLoginInclusivoPatron extends AbstractSonido implements Actio
         }
     }
 
+    /**
+     * Reinicia el patrón sin botones seleccionados
+     */
     public void reiniciarPatron() {
         for (JButton boton : botonesSeleccionados) {
             boton.setIcon(new ImageIcon(getClass().getResource("/resource/boton1.png"))); 
@@ -185,6 +205,9 @@ public class ControlLoginInclusivoPatron extends AbstractSonido implements Actio
         }
     }
 
+    /**
+     * Valida los datos ingresados y verifica si el usuario existe
+     */
     private void iniciarSesion() {
         if (iconoSeleccionadoLogin == null) {
              reproducirSonido("/resource/sounds/debeElegir.wav");
@@ -226,12 +249,19 @@ public class ControlLoginInclusivoPatron extends AbstractSonido implements Actio
             }
     }
 
+    /**
+     * Obtiene el identificador del ícono de perfil seleccionado
+     */
     private String obtenerIconoPerfilSeleccionado() {
         if (iconoSeleccionadoLogin != null) {
             return iconoSeleccionadoLogin.getActionCommand();
         }
         return ""; 
     }
+    
+    /**
+     * Devuelve el índice del ícono seleccionado en registro
+     */
     private int obtenerIndiceIcono() {
         if (iconoSeleccionadoRegistro != null) {
             return (int) iconoSeleccionadoRegistro.getClientProperty("index");
@@ -239,6 +269,10 @@ public class ControlLoginInclusivoPatron extends AbstractSonido implements Actio
         return -1;
     }
 
+    /**
+     * Apartir del patron seleccionado devuelve como cadena la contraseña
+     * 
+     */
     private String obtenerPasswordFinal() {
         StringBuilder password = new StringBuilder();
         for (JButton btn : botonesSeleccionados) {

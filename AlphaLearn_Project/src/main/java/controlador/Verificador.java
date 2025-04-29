@@ -16,14 +16,16 @@ import modelo.Usuario;
 
 
 /** 
- *
+ * Esta clase se usa para validar los requermientos para entrar a la hora de iniciar sesion
+ * y registrarse, ya que valida si ya existe ese usuario o no
+ * 
  * @author almengor
  */
 
 public class Verificador {
-    private int id,edad;
-    private String nom;
-    private Conexion objConexion;
+    private int id,edad;  // Variables para almacenar la información del usuario
+    private String nom;   // Nombre del usuario
+    private Conexion objConexion; // Conexión a la base de datos
     private static Verificador instancia;
     
     private Verificador() {
@@ -32,6 +34,12 @@ public class Verificador {
         this.objConexion.getStatement();
         PreparedStatement preparedStatement = null;
     }
+    
+    /**
+     * Método para obtener la instancia única de la clase Verificador
+     * 
+     * @return Instancia única de Verificador
+     */
     public static Verificador getInstancia() {
         if (instancia == null) {
             instancia = new Verificador();
@@ -39,7 +47,12 @@ public class Verificador {
         return instancia;
     }
   
-    
+    /**
+     * Valida si el campo de texto no está vacío
+     * 
+     * @param cajaTexto Campo de texto que se valida
+     * @return true si el campo no está vacío, false en caso contrario
+     */
     public boolean verificaCajaTextoCadena(javax.swing.JTextField cajaTexto){
        if(cajaTexto.getText().isBlank()){
             JOptionPane.showMessageDialog(null,"campo requerido" );
@@ -47,6 +60,13 @@ public class Verificador {
         }
        return true;
     }
+    
+    /**
+     * Valida si el campo de texto no está vacío.
+     * 
+     * @param cajaTexto Campo de texto que se valida
+     * @return true si el campo no está vacío, false en caso contrario
+     */
     public boolean verificaCajaTextoEntero(javax.swing.JTextField cajaTexto){
         if(cajaTexto.getText().isBlank()){
             JOptionPane.showMessageDialog(null, "Campo requerido");
@@ -55,33 +75,37 @@ public class Verificador {
 
         return true;
     }
-
-   /*public boolean existeUsuario(OperacionesBD operacionesBD, String nombre, String contra){
-        Usuario usuario = operacionesBD.buscarUsuario(nombre, contra); 
-        
-       
-        if (usuario != null) {
-            return true;
-        } else {
-            return false;
-        }
-    }*/
+    
+    /**
+     * Verifica si un usuario con el nombre y contraseña proporcionados existe en la base de datos
+     * 
+     * @param usuarioDAO Instancia del DAO de usuario
+     * @param nombre Nombre del usuario
+     * @param password Contraseña del usuario
+     * @return true si el usuario existe, false en caso contrario
+     */
     public boolean existeUsuario1(UsuarioDAO usuarioDAO, String nombre, String password){
-       // Usuario usuario = UsuarioDAO.buscarUsuario(nombre, contra); 
         Usuario usuario = null;
         try {
-            usuario = usuarioDAO.buscarUsuario(nombre, password);
+            usuario = usuarioDAO.buscarUsuario(nombre, password); // Busca el usuario en la base de datos
         } catch (Exception ex) {
             Logger.getLogger(Verificador.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
+        }  
        
         if (usuario != null) {
-            return true;
+            return true; // Si se encuentra el usuario
         } else {
-            return false;
+            return false; // Si no encuentra el usuario
         }
     }
+    
+    /**
+     * Valida si el usuario y la contraseña son correctos
+     * 
+     * @param nombre Nombre del usuario
+     * @param pin Contraseña del usuario
+     * @return true si el usuario y la contraseña son válidos, false en caso contrario
+     */
     public boolean validaUsuario(String nombre, String pin){
         
         try (PreparedStatement preparedStatement = objConexion.getConnection().prepareStatement("SELECT * FROM usuarios WHERE nombre = ? AND password = ?")) {
@@ -90,12 +114,11 @@ public class Verificador {
 
             ResultSet resultado = preparedStatement.executeQuery();
             if (resultado.next() && resultado.getInt(1) > 0) {
-                this.id = resultado.getInt("id_usuario");
-                this.nom=resultado.getString("nombre");
-                return true;
+                this.id = resultado.getInt("id_usuario"); // Recupera el ID del usuario
+                this.nom=resultado.getString("nombre"); // Recupera el nombre del usuario
+                return true; // retorna true, si los datos ingresados son validos
             } else {
-                //JOptionPane.showMessageDialog(null, "Usuario o PIN incorrecto");
-                return false; 
+                return false; // si no encuentra al usuario
             }
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Error");
@@ -104,6 +127,14 @@ public class Verificador {
         }
        
     }
+    
+    /**
+     * Verifica si el usuario ya existe en la base de datos
+     * 
+     * @param nombre Nombre del usuario
+     * @param pin Contraseña del usuario
+     * @return true si el usuario existe, false en caso contrario
+     */
     public boolean validaUsuarioExistente(String nombre, String pin){
         
         try (PreparedStatement preparedStatement = objConexion.getConnection().prepareStatement("SELECT * FROM usuarios WHERE nombre = ? AND password = ?")) {
@@ -126,8 +157,6 @@ public class Verificador {
     public void setId(int id) {
         this.id = id;
     }
-
-    
 
     public String getNom() {
         return nom;

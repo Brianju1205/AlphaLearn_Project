@@ -8,7 +8,9 @@ import java.util.ArrayList;
 
 
 /**
- *
+ * Este gestor puede manejar palabras individuales, palabras con imágenes asociadas 
+ * y oraciones, además de agregar y eliminar palabras
+ * 
  * @author juare
  */
 public interface GestorPalabras {

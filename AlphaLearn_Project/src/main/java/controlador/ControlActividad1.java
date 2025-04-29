@@ -20,8 +20,11 @@ import vistas.Vocal_I;
 import vistas.Vocal_O;
 import vistas.Vocal_U;
 
-/**
- *
+ /**
+ * Controlador de la vista  Actividad_1.
+ * Extiende  AbstractSonido para heredar la funcionalidad de reproducción de audio.
+ * Implementa ActionListener para reaccionar a las acciones del usuario.
+ * 
  * @author juare
  */
 public class ControlActividad1 extends AbstractSonido implements ActionListener {
@@ -37,6 +40,16 @@ public class ControlActividad1 extends AbstractSonido implements ActionListener 
     private int indicador=0;
     private AjustesM ajustes;
     
+    /**
+     * Constructor Actividad 1
+     * @param objActividad objeto actividad
+     * @param objAbc referencia panel Abecedario
+     * @param va panel vocal a
+     * @param ve panel vocal e
+     * @param vi panel vocal i
+     * @param vo panel vocal o
+     * @param vu panel vocal u
+     */
     public ControlActividad1(Actividad_1 objActividad,Abecedario objAbc,Vocal_A va,Vocal_E ve,Vocal_I vi,Vocal_O vo,Vocal_U vu) {
         this.objActividad = objActividad;
         this.objAbc = objAbc;
@@ -46,6 +59,7 @@ public class ControlActividad1 extends AbstractSonido implements ActionListener 
         this.vo=vo;
         this.vu=vu;
         this.paneles = new JPanel[]{objAbc, va, ve, vi, vo, vu};
+        
         v = Verificador.getInstancia();
         ControlGestorTiempo.getInstancia();
         TiempoActivo.getInstancia().iniciarContador();
@@ -57,8 +71,10 @@ public class ControlActividad1 extends AbstractSonido implements ActionListener 
         mostrarInstruccion();
         
     }
-    
-   private void mostrarInstruccion(){
+    /**
+     * Muestra las instrucciones de la actividad si están habilitadas en ajustes.
+     */
+    private void mostrarInstruccion(){
        AjustesM ajustes = ControlGestorAjustes.getInstance().obtenerAjustes(v.getId());
         if(ajustes.isInstruccionesActivas()){
            this.mostrarInstruccion(objActividad.jPanel_Actividad_1, "/resource/imagenes/presentador.png",870,380);
@@ -67,15 +83,23 @@ public class ControlActividad1 extends AbstractSonido implements ActionListener 
         else{
             System.out.println("instrucciones desactivadas");
         }
-   }
-   private void colocarEscuchadores(){
+    }
+    
+    /**
+     * Agrega escuchadores a los botones de la vista principal.
+     */
+    private void colocarEscuchadores(){
        // = this.objActividad.jPanel_Actividad_1.getComponents();
        for(Object obj: this.objActividad.jPanel_Actividad_1.getComponents()){
            if(obj instanceof JButton bt){
                bt.addActionListener(this);
            }
        }
-   }
+    }
+    
+    /**
+     * Agrega escuchadores a los botones de todos los subpaneles.
+     */
     private void colocarEscuchadores2(){
        // = this.objActividad.jPanel_Actividad_1.getComponents();
        for(Object obj: objAbc.getComponents()){
@@ -108,7 +132,7 @@ public class ControlActividad1 extends AbstractSonido implements ActionListener 
                bt.addActionListener(this);
            }
        }
-   }
+    }
     @Override
     public void actionPerformed(ActionEvent e) {
            if (e.getSource() == this.objActividad.getjButton1_Salir_act_1()){
@@ -131,7 +155,7 @@ public class ControlActividad1 extends AbstractSonido implements ActionListener 
 
                 }
             }
-           else if(e.getSource() == this.objActividad.getjButton_REGRESAR()){
+            else if(e.getSource() == this.objActividad.getjButton_REGRESAR()){
                reproducirSonido("/resource/sounds/burbuja.wav");
                if (indicador > 0) {
                 indicador--;
@@ -159,10 +183,19 @@ public class ControlActividad1 extends AbstractSonido implements ActionListener 
            reproducirSonido(ruta);
         
     }
-
+    
+    /**
+     * Inicializa el primer panel que se mostrará en la vista.
+     */
     private void initContent(){
         panel(paneles[indicador]);
     }
+    
+    /**
+     * Cambia el panel visible en la vista principal.
+     * 
+     * @param p indice de Panel a mostrar.
+     */
     private void panel(JPanel p){
         
         p.setSize( 807, 470);

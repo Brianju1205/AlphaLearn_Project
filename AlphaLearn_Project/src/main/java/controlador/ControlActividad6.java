@@ -17,14 +17,24 @@ import vistas.Actividad_6;
 import vistas.Menu;
 
 /**
- *
+ * Esta clase controla la actividad 6 que consiste en mostrar un texto para validar la comprension 
+ * lectora del usuario mediante una pregunta que se le hace al finalizar la lectura del texto
+ * 
+ * Hereda de: AbstractSonido para reproducir los audios
+ * Implementa: ActionListener para manejar acciones de botones
+ * 
  * @author juare
  */
 public class ControlActividad6 extends AbstractSonido implements ActionListener{
-    private Actividad_6 acti6;
-    private CuentoPregunta conCuentos;
-    private String seleccionUsuario;
-    private Verificador v;
+    private Actividad_6 acti6;                  // referencia a la vista actividad 6
+    private CuentoPregunta conCuentos;          // referencia al modelo del cuento 
+    private String seleccionUsuario;            // palabra que selecciono el usuario
+    private Verificador v;                      // referencia a la clase verificador
+    
+    /**
+     * Constructor de la actividad 6
+     * @param acti6 
+     */
     public ControlActividad6(Actividad_6 acti6) {
         this.acti6 = acti6;
         v = Verificador.getInstancia();
@@ -35,6 +45,11 @@ public class ControlActividad6 extends AbstractSonido implements ActionListener{
         mostrarInstruccion();
          
     }
+    
+    /**
+     * Muestra la instrucción de la actividad si está habilitada en los ajustes
+     * De no estar activa, pasa directamente a asignar los cuentos.
+     */
     private void mostrarInstruccion() {
         AjustesM ajustes = ControlGestorAjustes.getInstance().obtenerAjustes(v.getId());
         if (ajustes.isInstruccionesActivas()) {
@@ -85,6 +100,11 @@ public class ControlActividad6 extends AbstractSonido implements ActionListener{
         }
         
     }
+    
+     /**
+     * Asigna un nuevo cuento y sus preguntas a la vista
+     * También reproduce el audio correspondiente al cuento
+     */
     private void asignarCuento() {  
         conCuentos = ControlGestorCuentos.getInstance().obtenerCuentos();
 
@@ -101,6 +121,11 @@ public class ControlActividad6 extends AbstractSonido implements ActionListener{
         
     }
     
+    /**
+     * Verifica si la respuesta seleccionada por el usuario es correcta
+     * Si es correcta, reproduce un sonido de acierto y asigna un nuevo cuento
+     * Si es incorrecta, reproduce un sonido de error
+     */
     private void verificarRespuesta(){
         if(seleccionUsuario == null){
             return;
@@ -116,6 +141,10 @@ public class ControlActividad6 extends AbstractSonido implements ActionListener{
         }
     }
 
+    /**
+     * Asigna escuchadores de clic a los Jlabel de respuestas
+     * Cada vez que el usuario haga clic en una opción, se verifica la respuesta
+     */
     private void escuchadoresLabel(){
         
         this.acti6.getjLabel_respuesta1().addMouseListener(new MouseAdapter(){

@@ -22,12 +22,13 @@ import vistas.Menu;
  * @author juare
  */
 public class ControlActividad3 extends AbstractSonido implements ActionListener {
-    private Actividad_3 vista;
-    private Verificador v;
-    private int poaX, poaY;
-    private Point posicionOriginal;
-    private boolean clicDerechoPresionado = false;
-    private ControlGestorPalabras gestospa;
+    private Actividad_3 vista;                          // referencia de la vista actividad_3
+    private Verificador v;                              // referencia a la clase verificador
+    private int poaX, poaY;                             // posicion del mause
+    private Point posicionOriginal;                     // posicion inicial de los Jlabel
+    private boolean clicDerechoPresionado = false;      // bandera indicador de los clicks
+    private ControlGestorPalabras gestospa;             // referencia del gestor palabrasDAO
+    
     private Point coordenadasPalabra1 = new Point(650, 140);
     private Point coordenadasPalabra2 = new Point(650, 320);
     private Point coordenadasPalabra3 = new Point(650, 500);
@@ -41,6 +42,10 @@ public class ControlActividad3 extends AbstractSonido implements ActionListener 
     private Palabra p;
     private JLabel[] labelsOrigen;
     
+    /**
+     * Controlador Actividad 3
+     * @param vista objeto actividad 3
+     */
     public ControlActividad3(Actividad_3 vista) {
         this.vista = vista;
         
@@ -63,6 +68,10 @@ public class ControlActividad3 extends AbstractSonido implements ActionListener 
         
         
     }
+    
+    /**
+     * Muestra la instrucción inicial si están activadas en los ajustes.
+     */
     private void mostrarInstruccion(){
        AjustesM ajustes = ControlGestorAjustes.getInstance().obtenerAjustes(v.getId());
         if(ajustes.isInstruccionesActivas()){
@@ -73,7 +82,12 @@ public class ControlActividad3 extends AbstractSonido implements ActionListener 
             System.out.println("instrucciones desactivadas");
         }
     }
+    
+    /**
+     * Carga nuevas palabras e imágenes en los Labels.
+     */
     private void cargarPalabrasEnLabels() {
+        //limpia el texto de los labels 
         JLabel[] labelsDestino = {
             vista.getjLabel_destino1(),
             vista.getjLabel_destino2(),
@@ -122,7 +136,7 @@ public class ControlActividad3 extends AbstractSonido implements ActionListener 
             }
         }
 
-        
+        // obtiene las palabras del gestor palabrasDAO
         try {
             ArrayList<Palabra> palabras = gestospa.obtenerTresPalabrasConImagen();
 
@@ -147,7 +161,11 @@ public class ControlActividad3 extends AbstractSonido implements ActionListener 
         vista.getjPanel3_fondo().revalidate();
         vista.getjPanel3_fondo().repaint();
     }
-    
+    /**
+     * Esta metodo compara que todas los Jlabels destino 
+     * tengan el mismo nombre que las imagenes correctamente alineadas
+     * 
+     */
     private void compararPalabras() {
         boolean todasCorrectas = true; 
         resetearComprobacion();
@@ -199,13 +217,18 @@ public class ControlActividad3 extends AbstractSonido implements ActionListener 
             this.cargarPalabrasEnLabels();
         }
     }
-
+   
     private void resetearComprobacion() {
         Comprobar(1, ""); 
         Comprobar(2, ""); 
         Comprobar(3, ""); 
     }
     
+    /**
+     * Asignar la imagen a los label de manera redimensionada al tamaño del Jlabel
+     * @param label Jlabel en el que se mostraran las imagenes
+     * @param rutaImagen ruta de la imagen
+     */
     private void asignarImagen(JLabel label, String rutaImagen) {
         try {
          
@@ -222,6 +245,11 @@ public class ControlActividad3 extends AbstractSonido implements ActionListener 
         }
     }
 
+    /**
+     * Agrega los eventos que permiten agarrar y arrastrar a los Jlabels hacia los Jlabels destino
+     * @param label jLabel a la que se le asigna los listener
+     * @param coordenadasEspecificas coordenadas a las que tiene que regresr en caso de no colocarlas correctamente
+     */
     private void agregarEventosArrastre(JLabel label, Point coordenadasEspecificas) {
         label.addMouseListener(new MouseAdapter() {
             @Override
@@ -270,6 +298,11 @@ public class ControlActividad3 extends AbstractSonido implements ActionListener 
         });
     }
 
+    /**
+     * Este metodo permite pegar el Jlabel que se esta arrastrando a los JLabel destino en donde se tiene que comparar
+     * @param label Jlabel que se agarra y arrastra
+     * @param destino Jlabel en el que se posiciona el nuevo Jlabel 
+     */
     private void pegarEnDestino(JLabel label, JLabel destino) {
         destino.setLayout(new BorderLayout());
         
@@ -285,7 +318,11 @@ public class ControlActividad3 extends AbstractSonido implements ActionListener 
         
     }
 
-         
+    /**
+     * Permite sacar los Jlabel de los Jlabel destino y regresarlo a la posicion original
+     * @param label Jlabel que se desea regresar
+     * @param coordenadasEspecificas Coordenadas a las que regresa automaticamente
+     */     
     private void liberarDelDestino(JLabel label, Point coordenadasEspecificas) {
         JLabel destino1 = vista.getjLabel_destino1();
         JLabel destino2 = vista.getjLabel_destino2();
@@ -350,6 +387,11 @@ public class ControlActividad3 extends AbstractSonido implements ActionListener 
             this.cargarPalabrasEnLabels();
         }
     }
+    
+    /**
+     * Se muestra en la vista una imagen visual si el usuario ordeno correctamente la palabra
+     * @param mensaje ruta de la imagen 
+     */
     private void Comprobar(int num, String mensaje) {
         JLabel labelError = new JLabel(new ImageIcon(getClass().getResource(mensaje)));
         labelError.setSize(180, 180);

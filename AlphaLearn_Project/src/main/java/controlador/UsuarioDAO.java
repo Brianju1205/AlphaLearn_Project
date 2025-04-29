@@ -23,10 +23,19 @@ public class UsuarioDAO implements GestorUsuario{
     private Conexion objConexion;
     private static UsuarioDAO instancia; 
     
+    /**
+     * Constructor privado para implementar Singleton
+     * Inicializa la conexión a la base de datos
+     */
     private UsuarioDAO() {
         this.objConexion = Conexion.getInstance(); 
     }
-
+    
+    /**
+     * Obtiene la instancia única de UsuarioDAO
+     * 
+     * @return instancia única de UsuarioDAO
+     */
     public static UsuarioDAO getInstance() {
         if (instancia == null) {
             instancia = new UsuarioDAO();
@@ -34,6 +43,11 @@ public class UsuarioDAO implements GestorUsuario{
         return instancia;
     }
     
+    /**
+     * Inserta un nuevo usuario en la base de datos usando los datos del objeto Usuario
+     * 
+     * @throws Exception si ocurre un error durante la inserción
+     */
     @Override
     public void crearUsuario() throws Exception {
         try {
@@ -49,6 +63,14 @@ public class UsuarioDAO implements GestorUsuario{
     
     }
 
+    /**
+     * Busca un usuario por nombre y contraseña
+     * 
+     * @param nombre Nombre del usuario
+     * @param password Contraseña del usuario
+     * @return objeto Usuario
+     * @throws Exception si ocurre un error en la consulta
+     */
     @Override
     public Usuario buscarUsuario(String nombre, String password) throws Exception {
         
@@ -73,6 +95,12 @@ public class UsuarioDAO implements GestorUsuario{
     return objUsuario;
     }
 
+    /**
+     * Actualiza los datos de un usuario en la base de datos
+     * 
+     * @param usuario Usuario con datos actualizados
+     * @throws Exception si ocurre un error durante la actualización
+     */
     @Override
     public void actualizarUsuario(Usuario usuario) throws Exception {
         String sql = "UPDATE usuarios SET nombre=?, edad=?, nivel=?, password=? WHERE idUsuario=?";
@@ -90,6 +118,11 @@ public class UsuarioDAO implements GestorUsuario{
         }
     }
 
+    /**
+     * Obtiene todos los usuarios registrados en la base de datos e imprime su información
+     * 
+     * @throws Exception si ocurre un error durante la consulta
+     */
     @Override
     public void eliminarUsuario(String idUsuario) throws Exception {
         String sql = "DELETE FROM usuarios WHERE idUsuario=?";
@@ -120,7 +153,14 @@ public class UsuarioDAO implements GestorUsuario{
         }
     }
    
-
+    /**
+     * Guarda un nuevo registro en el historial del usuario
+     * 
+     * @param usuarioId ID del usuario
+     * @param palabra Palabra utilizada en el ejercicio
+     * @param aciertos Número de aciertos del usuario
+     * @throws Exception si ocurre un error durante la inserción
+     */
     @Override
     public void guardarHistorial(int usuarioId, String palabra, int aciertos) throws Exception {
         String sql = "INSERT INTO historial(id_usuario, palabra, aciertos) VALUES (?, ?, ?)";

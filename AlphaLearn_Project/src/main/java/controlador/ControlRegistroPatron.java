@@ -33,14 +33,18 @@ import vistas.Registro_patron;
  * @author juare
  */
 public class ControlRegistroPatron extends AbstractSonido implements ActionListener {
-    private Registro_patron r;
+    
+    private Registro_patron r;              // Referencia a la vista de registro con patrón
     private Verificador objVerificador; 
     private UsuarioDAO objDAOU;
+    
+    // Listas para manejar botones del patrón y selección de íconos
     private ArrayList<JButton> iconosPerfilRegistro = new ArrayList<>();
     private ArrayList<JButton> PatronSeleccionadasRegistro = new ArrayList<>();
     private JButton iconoSeleccionadoRegistro = null;
     private ArrayList<JButton> botonesSeleccionados = new ArrayList<>();
     private ArrayList<Point> puntos = new ArrayList<>();
+    
     private boolean estaDibujando = false;
     boolean mostrandoInstruccion = false;
     boolean usuarioGuardado = false;
@@ -53,6 +57,9 @@ public class ControlRegistroPatron extends AbstractSonido implements ActionListe
         UtilidadesUI.escalarYAsignar(r.getjButton10_intruccion(), "/resource/informacion.png");
     }
 
+    /**
+     * Coloca los escuchadores a los botones del patrón y de los iconos de perfil
+     */
     private void colocarEscuchadores() {
         int index = 0;
         int indexr = 0;
@@ -65,7 +72,7 @@ public class ControlRegistroPatron extends AbstractSonido implements ActionListe
                 bt.setActionCommand("button" + indexr);
                 bt.putClientProperty("index", indexr);
     
-               
+                // Listeners para detectar el dibujo del patrón con mouse
                 bt.addMouseListener(new MouseAdapter() {
                     @Override
                     public void mousePressed(MouseEvent e) {
@@ -119,6 +126,9 @@ public class ControlRegistroPatron extends AbstractSonido implements ActionListe
         r.getjButton1_Salir1().addActionListener(this);
         r.getjButton1_guardar().addActionListener(this);
     }
+    /**
+     * Agrega un botón al patrón seleccionado
+     */
     private void agregarBoton(JButton bt) {
         if (!botonesSeleccionados.contains(bt)) {
             botonesSeleccionados.add(bt);
@@ -134,6 +144,10 @@ public class ControlRegistroPatron extends AbstractSonido implements ActionListe
             ((PanelPatronConLineas) r.getjPanel_patronR()).agregarPunto(punto);
         }
     }
+    
+    /**
+     * Reinicia la selección del patrón, íconos y líneas dibujadas.
+     */
     public void reiniciarPatron() {
         for (JButton boton : botonesSeleccionados) {
             boton.setIcon(new ImageIcon(getClass().getResource("/resource/boton1.png"))); 
@@ -142,6 +156,7 @@ public class ControlRegistroPatron extends AbstractSonido implements ActionListe
         puntos.clear();
         ((PanelPatronConLineas) r.getjPanel_patronR()).reiniciarLineas(); 
     }
+    
     @Override
     public void actionPerformed(ActionEvent e) {
         int vecesTocadas=0;
@@ -191,6 +206,10 @@ public class ControlRegistroPatron extends AbstractSonido implements ActionListe
 
 
     }
+    
+    /**
+     * Valida y guarda un nuevo usuario en la base de datos
+     */
     private void guardarRegistro(){
                      
              if (iconoSeleccionadoRegistro == null) {
@@ -234,12 +253,20 @@ public class ControlRegistroPatron extends AbstractSonido implements ActionListe
                 r.dispose();
             }
     }
+    
+    /**
+     * Retorna el comando del botón de ícono seleccionado
+     */
     private String obtenerIconoPerfilSeleccionado() {
         if (iconoSeleccionadoRegistro != null) {
             return iconoSeleccionadoRegistro.getActionCommand();
         }
         return ""; 
     }
+    
+    /**
+     * Retorna el índice del ícono seleccionado
+     */
     private int obtenerIndiceIcono() {
         if (iconoSeleccionadoRegistro != null) {
             return (int) iconoSeleccionadoRegistro.getClientProperty("index");
@@ -247,6 +274,9 @@ public class ControlRegistroPatron extends AbstractSonido implements ActionListe
         return -1;
     }
 
+    /**
+     * Genera la contraseña en base a los índices de los botones del patrón seleccionados
+     */
     private String obtenerPasswordFinal() {
         StringBuilder password = new StringBuilder();
         for (JButton btn : botonesSeleccionados) {

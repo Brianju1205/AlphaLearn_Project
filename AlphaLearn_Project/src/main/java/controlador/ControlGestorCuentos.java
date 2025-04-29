@@ -12,16 +12,30 @@ import modelo.GestorCuentos;
 import modelo.Pregunta;
 
 /**
- *
+ * Clase que implementa el gestor de cuentos
+ * Se encarga de interactuar con la base de datos para obtener cuentos y preguntas asociadas
+ * Implementa el patrón Singleton para asegurar una única instancia de esta clase
+ * 
  * @author juare
  */
 public class ControlGestorCuentos implements GestorCuentos {
-    private Conexion conexion;
-    private static ControlGestorCuentos instancia;
+    private Conexion conexion;             // Objeto para manejar la conexión a la base de datos
+    private static ControlGestorCuentos instancia; // Instancia única de la clase siguiendo el patron singleton
 
+    /**
+     * Constructor privado que inicializa la conexión con la base de datos
+     * Utiliza el patrón Singleton para obtener la instancia de conexión
+     */
     public ControlGestorCuentos() {
         this.conexion = Conexion.getInstance();
     }
+    
+    /**
+     * Método estático para obtener la instancia única del gestor de cuentos.
+     * Si no existe, la crea
+     * 
+     * @return instancia única de ControlGestorCuentos
+     */
     public static ControlGestorCuentos getInstance() {
         if (instancia == null) {
             instancia = new ControlGestorCuentos();
@@ -29,6 +43,12 @@ public class ControlGestorCuentos implements GestorCuentos {
         return instancia;
     }
     
+     /**
+     * Método que obtiene un cuento junto con su pregunta asociada de forma aleatoria
+     * Realiza una consulta JOIN entre las tablas Cuentos y Preguntas, y devuelve un solo resultado
+     * 
+     * @return objeto CuentoPregunta que contiene un cuento y una pregunta relacionada, o null si no se encuentra
+     */
     @Override
     public CuentoPregunta obtenerCuentos() {
         String sql = "SELECT " +
@@ -74,7 +94,7 @@ public class ControlGestorCuentos implements GestorCuentos {
                 resultado.getString("rutaAudioPregunta")
             );
         
-           
+            // Asociar cuento y pregunta en un solo objeto
             cuentos = new CuentoPregunta(cuento, pregunta);
         }
     } catch (SQLException e) {

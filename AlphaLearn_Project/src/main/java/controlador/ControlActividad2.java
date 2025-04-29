@@ -22,16 +22,16 @@ import utils.UtilidadesUI;
  * @author almen
  */
 public class ControlActividad2 extends AbstractSonido implements ActionListener {
-    private Clip clip;
-    private int poaX, poaY; 
-    private Actividad_2 objActividad5;
-    private ControlGestorPalabras palabrasDAO;
-    private String palabraActual;
+    private Clip clip;                          // manejo de los sonidos
+    private int poaX, poaY;                     // posicion del mause al presionar una letra
+    private Actividad_2 objActividad5;          // referencia de la vista principal
+    private ControlGestorPalabras palabrasDAO;  // referencua controlador del gestor palabras
+    private String palabraActual;               // palabra que debe de ordenarse
     private int respuestaCorrectas=0;
     private int respuestasMalas=0;
-    private Verificador v;
-    private UsuarioDAO usuarioDAO;
-    private Point posicionOriginal;
+    private Verificador v;                      // referencia del verificador
+    private UsuarioDAO usuarioDAO;              // referencia para manejar el gestor de usuarios
+    private Point posicionOriginal;             //´posicion inicial de las letras
     private Point[] coordenadasEspecificas = {
         new Point(260, 190), 
         new Point(380, 190),
@@ -41,8 +41,12 @@ public class ControlActividad2 extends AbstractSonido implements ActionListener 
         new Point(900, 190)
     };
     
-    private JLabel[] labelsOrigen;
-
+    private JLabel[] labelsOrigen;               // Letras que serán arrastradas
+    
+    /**
+     * Constructor Actividad 2
+     * @param objActividad5 objeto Actividad 2
+     */
     public ControlActividad2(Actividad_2 objActividad5) {
         this.objActividad5 = objActividad5;
         this.v = Verificador.getInstancia();
@@ -62,6 +66,14 @@ public class ControlActividad2 extends AbstractSonido implements ActionListener 
             asignarLetrasAJLabels(palabraActual);
         }
         
+        configuracionInicio();
+        mostrarInstruccion();
+        
+    }
+    /**
+     * Configuracion inicial de la vista 
+     */
+    private void configuracionInicio(){
         objActividad5.getjPanel1().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         this.objActividad5.getjButton1_Salir_act_5().addActionListener(this);
         this.objActividad5.getjButton1_Vericicar_respuesta().addActionListener(this);
@@ -70,10 +82,11 @@ public class ControlActividad2 extends AbstractSonido implements ActionListener 
         this.objActividad5.getjButton1_Repetir_PalabraAudio().addActionListener(this);
         //reproducirSonido("/resource/sounds/intro.wav");
         UtilidadesUI.escalarYAsignar(this.objActividad5.getjButton1_Repetir_PalabraAudio(), "/resource/ltavoz.png");
-        mostrarInstruccion();
-        
     }
     
+    /**
+     * Mostrar instruccion si esta habilitada en ajustes
+     */
     private void mostrarInstruccion(){
        AjustesM ajustes = ControlGestorAjustes.getInstance().obtenerAjustes(v.getId());
         if(ajustes.isInstruccionesActivas()){
@@ -84,6 +97,11 @@ public class ControlActividad2 extends AbstractSonido implements ActionListener 
             System.out.println("instrucciones desactivadas");
         }
     }
+    
+     /**
+     * Asigna las letras desordenadas de la palabra a los labels de origen en la vista
+     * @param palabra palabra original a mostrar desordenada
+     */
     private void asignarLetrasAJLabels(String palabra) {
         palabra = mezclarPalabra(palabra);
         labelsOrigen = new JLabel[]{
@@ -109,7 +127,7 @@ public class ControlActividad2 extends AbstractSonido implements ActionListener 
                     labelsOrigen[i].getWidth(), 
                     labelsOrigen[i].getHeight()
                 );
-                //objActividad5.getjPanel1().add(labelsOrigen[i], constraints); // Esto sirve para agregar los label al panel forzadamente con restricciones
+                //objActividad5.getjPanel1().add(labelsOrigen[i], constraints); // Esto sirve para agregar los label al panel forzadamente 
                 objActividad5.getjPanel1().add(labelsOrigen[i], constraints);
                 objActividad5.getjPanel1().setComponentZOrder(labelsOrigen[i], 0);
                 for (MouseListener listener : labelsOrigen[i].getMouseListeners()) {
@@ -128,6 +146,12 @@ public class ControlActividad2 extends AbstractSonido implements ActionListener 
         objActividad5.getjPanel1().revalidate();
         objActividad5.getjPanel1().repaint();
     }
+    
+    /**
+     * Mezcla las letras de una palabra al azar.
+     * @param palabra palabra a mezclar
+     * @return palabra mezclada
+     */
     private String mezclarPalabra(String palabra) {
         char[] letras = palabra.toCharArray(); //de string a arreglo de caracter
         Random random = new Random();
@@ -143,7 +167,12 @@ public class ControlActividad2 extends AbstractSonido implements ActionListener 
 
         return new String(letras);
     }
-
+ 
+    /**
+     * Agrega eventos de arrastrar y soltar a los labels que contienen las letras
+     * @param label JLabel letra
+     * @param coordenadaEspecifica coordenada inicial
+     */
     private void agregarEventosArrastre(JLabel label, Point coordenadaEspecifica) {
         label.addMouseListener(new MouseAdapter() {
             @Override
@@ -200,6 +229,9 @@ public class ControlActividad2 extends AbstractSonido implements ActionListener 
        
     }
 
+    /**
+     * Pega una letra en los label destino donde ordena las letras
+     */
     private void pegarEnDestino(JLabel label, JLabel destino) {   
         destino.setLayout(new BorderLayout()); 
         destino.setText(""); 
@@ -212,6 +244,10 @@ public class ControlActividad2 extends AbstractSonido implements ActionListener 
         destino.repaint();
     }
 
+    /**
+     * Libera la letra a la posicion original si no se soltó correctamente en los label 
+     * destino
+     */
     private void liberarDelDestino(JLabel label, Point coordenadaEspecifica) {
         if (label.getParent() != null) {
             Container parent = label.getParent();
@@ -274,6 +310,10 @@ public class ControlActividad2 extends AbstractSonido implements ActionListener 
         
     }
 
+    /**
+     * Verifica las letras pegadas en los label destino si correctamente forma la palabra actual
+     * @throws Exception 
+     */
     private void verificarRespuesta() throws Exception {
         JLabel[] labelsDestino = {
             objActividad5.getjLabel_detino1(),
@@ -310,6 +350,10 @@ public class ControlActividad2 extends AbstractSonido implements ActionListener 
         GuardarHistorial();
     }
 
+    /**
+     * Reinicia los labels para otra palabra desordenada
+     * Reinicia los listener de las letras para evitar errores
+     */
     private void reiniciarActividad() {
         JLabel[] labelsDestino = {
             objActividad5.getjLabel_detino1(),
@@ -371,12 +415,19 @@ public class ControlActividad2 extends AbstractSonido implements ActionListener 
         objActividad5.getjPanel1().repaint();
     }
     
+    /**
+     * Reproduce el audio de la palabra actual 
+     * @param palabra ruta del sonido
+     */
     private void reproducirAudioDePalabra(String palabra) {
         String rutaAudio = "/resource/sounds/" + palabra.toLowerCase() + ".wav";
         reproducirSonido(rutaAudio);
     }
     
-    
+    /**
+     * Guardar en la base de datos la informacion
+     * @throws Exception 
+     */
     private void GuardarHistorial() throws Exception {
         if(this.v.getNom()== null){
             System.out.println("no hay usuario");
@@ -402,7 +453,11 @@ public class ControlActividad2 extends AbstractSonido implements ActionListener 
         usuarioDAO.guardarHistorial(usuario_id, palabraActual, respuestaCorrectas);
         }
     }
-
+    
+    /**
+     * Funcion para cambiar a otra palabra desordenada en caso de no entender actual
+     * 
+     */
     private void cambiarPalabra() {
        try{
            palabraActual= palabrasDAO.obtenerPalabraDesordenada();
@@ -416,8 +471,12 @@ public class ControlActividad2 extends AbstractSonido implements ActionListener 
            
        }
     }
-
-   private void Comprobar(String mensaje) {
+    
+    /**
+     * Se muestra en la vista una imagen visual si el usuario ordeno correctamente la palabra
+     * @param mensaje ruta de la imagen 
+     */
+    private void Comprobar(String mensaje) {
         objActividad5.getjPanel1().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         JLabel labelError = new JLabel(new ImageIcon(getClass().getResource(mensaje))); 

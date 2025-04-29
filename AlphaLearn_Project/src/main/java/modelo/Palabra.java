@@ -5,6 +5,7 @@
 package modelo;
 
 /**
+ * Representa una palabra que puede estar asociada a una imagen
  *
  * @author juare
  */
@@ -13,8 +14,17 @@ public class Palabra {
     private String palabra;
     private Imagen imagen;
     
+    /**
+     * Contructor vacio por si se requiere mas tarde
+     */
     public Palabra() {}
 
+     /**
+     * Constructor para crear una nueva instancia de Palabra 
+     * 
+     * @param id el identificador único de la palabra
+     * @param palabra la palabra representada como cadena de texto
+     */
     public Palabra(int id, String palabra) {
         this.id = id;
         this.palabra = palabra;

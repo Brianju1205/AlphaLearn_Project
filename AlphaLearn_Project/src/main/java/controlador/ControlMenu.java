@@ -37,17 +37,30 @@ import vistas.Ajustes;
 import vistas.Perfil;
 
 /**
- *
+ * Controlador del menu principal, aqui se maneja la interaccion entre los diferentes modulos
+ * Tambien los parsmetros de ajustes y de perfil
+ * 
  * @author juare
  */
 public class ControlMenu extends AbstractSonido implements ActionListener,ChangeListener{
+    // Objetos de las vistas principales
     private Ajustes objAjustes;
     private Perfil objPerfil;
-    private Map<String, Integer> datos;
     private Menu objMenu;
     private Menu_Actividades objMenuAc;
-    private Verificador v;
     
+    // Mapa para almacenar tiempos de actividad por fecha
+    private Map<String, Integer> datos;
+   
+    private Verificador v; // referencia a la clase verificador
+    
+    /**
+     * Construcctor menu
+     * @param objMenu objeto del menu
+     * @param objMenuAc objeto del panel de los modulos
+     * @param objAjustes objeto del panel de ajustes
+     * @param objPerfil  objeto del panel de perfil
+     */
     public ControlMenu(Menu objMenu,Menu_Actividades objMenuAc, Ajustes objAjustes,Perfil objPerfil) {
         FlatLightLaf.setup();
         
@@ -59,6 +72,7 @@ public class ControlMenu extends AbstractSonido implements ActionListener,Change
         ControlGestorTiempo.getInstancia();
         TiempoActivo.getInstancia().iniciarContador();
         
+        // asignar todos los listeners de los botones
         this.objMenuAc.getjButton_Actividad1().addActionListener(this);
         this.objMenuAc.getjButton_Actividad2().addActionListener(this);
         this.objMenuAc.getjButton_Actividad3().addActionListener(this);
@@ -81,6 +95,11 @@ public class ControlMenu extends AbstractSonido implements ActionListener,Change
         this.objMenu.getjLabel2_Bienvenida().setText("Bienvenido ");
         
     }
+    
+    /**
+     * Evento que detecta cambios en el JSlider (control de volumen)
+     * Actualiza la etiqueta del volumen en tiempo real
+     */
     @Override
     public void stateChanged(ChangeEvent e) {
         if(e.getSource() == this.objAjustes.getjSlider1_volumen()){
@@ -196,10 +215,17 @@ public class ControlMenu extends AbstractSonido implements ActionListener,Change
 
     }
     
+    /**
+     * Inicializa el contenido principal mostrando el menú de actividades.
+     */
     private void initContent(){
         panel(objMenuAc);
     }
     
+    /**
+     * Muestra un JPanel en el contenedor principal del menú
+     * @param p Panel a mostrar
+     */
     private void panel(JPanel p){
        
         p.setSize( 920, 540);
@@ -210,6 +236,9 @@ public class ControlMenu extends AbstractSonido implements ActionListener,Change
         objMenu.getjPanel_Contenido().repaint();
     }
     
+    /**
+     * Inicializa la sección de perfil con la gráfica de tiempo activo
+     */
     private void initPerfil(){
         objPerfil.getjLabel3_Name().setText("USUARIO: "+v.getId());
        
@@ -229,6 +258,11 @@ public class ControlMenu extends AbstractSonido implements ActionListener,Change
 
         objPerfil.getjPanel1_grafica().add(chartPanel, BorderLayout.CENTER); 
     }
+    
+    /**
+     * Crea un dataset con los tiempos de actividad del usuario organizados por día de la semana
+     * @return Dataset para la gráfica
+     */
     private CategoryDataset crearDataset() {
             DefaultCategoryDataset dataset = new DefaultCategoryDataset();
 
@@ -260,14 +294,21 @@ public class ControlMenu extends AbstractSonido implements ActionListener,Change
             return dataset;
 
     }
-
+    
+    /**
+     * Devuelve el número de día de la semana a partir de una fecha en formato String
+     * @param fecha Cadena de fecha en formato yyyy-MM-dd
+     * @return Número de día de la semana (1 = lunes)
+     */
     private int obtenerDiaSemana(String fecha) {
         LocalDate date = LocalDate.parse(fecha); 
         DayOfWeek dayOfWeek = date.getDayOfWeek();
         return dayOfWeek.getValue(); 
-}
+    }
 
-        
+    /**
+     * Guarda los ajustes de sonido e instrucciones en la base de datos
+     */  
     private void inicializarAjustes() {
         
         AjustesM ajustes = ControlGestorAjustes.getInstance().obtenerAjustes(v.getId());

@@ -11,6 +11,5 @@ package modelo;
 public interface GestorAjustes {
     public void guardarAjustes(AjustesM ajustes);
     public AjustesM obtenerAjustes(int idUsuario);
-    public void cambiarContraseña(int idUsuario, String nuevaContrasenia);
 }
 

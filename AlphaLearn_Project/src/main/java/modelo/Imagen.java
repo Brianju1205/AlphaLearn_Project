@@ -5,7 +5,10 @@
 package modelo;
 
 /**
- *
+ * Representa una imagen asociada a una palabra en el sistema
+ * Cada imagen tiene un identificador único, una ruta del archivo de la imagen,
+ * y un identificador de la palabra relacionada con la imagen
+ * 
  * @author juare
  */
 public class Imagen {
@@ -13,8 +16,18 @@ public class Imagen {
     private String ruta; 
     private int palabraId; 
 
+    /**
+     * Constructor vacio por si se requiere mas tarde
+     */
     public Imagen() {}
 
+    /**
+     * Constructor para crear una nueva instancia de Imagen 
+     * 
+     * @param id el identificador único de la imagen
+     * @param ruta la ruta del archivo de la imagen
+     * @param palabraId el identificador de la palabra relacionada a la imagen
+     */
     public Imagen(int id, String ruta, int palabraId) {
         this.id = id;
         this.ruta = ruta;

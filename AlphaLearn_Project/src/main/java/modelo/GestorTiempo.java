@@ -7,7 +7,10 @@ package modelo;
 import java.util.Map;
 
 /**
- *
+ * Interfaz que define las operaciones relacionadas con la gestión del tiempo de actividad
+ * de los usuarios dentro del sistema
+ * Permite guardar tiempos y consultar reportes semanales
+ * 
  * @author juare
  */
 public interface GestorTiempo {

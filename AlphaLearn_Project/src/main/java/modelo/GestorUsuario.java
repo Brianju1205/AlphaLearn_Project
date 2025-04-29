@@ -5,7 +5,9 @@
 package modelo;
 
 /**
- *
+ * Interfaz que define las operaciones básicas de gestión de usuarios en el sistema
+ * incluyendo creación, búsqueda, actualización, eliminación y manejo del historial de actividades
+ * 
  * @author juare
  */
 public interface GestorUsuario {

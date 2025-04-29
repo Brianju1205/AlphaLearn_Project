@@ -13,18 +13,31 @@ import java.util.Map;
 import modelo.GestorTiempo;
 
 /**
+ * Clase ControlGestorTiempo
+ * Implementa la interfaz GestorTiempo y se encarga de gestionar 
+ * el tiempo de uso de un usuario en el sistema
+ * 
+ * Esta clase sigue el patrón Singleton para asegurar que solo exista una instancia
  *
  * @author juare
  */
 public class ControlGestorTiempo implements GestorTiempo {
 
-    private static ControlGestorTiempo instancia; 
-    private Conexion objConexion;
+    private static ControlGestorTiempo instancia; // instancia unica
+    private Conexion objConexion; // objeto para manejar la conexion a la base de datos
 
+    /**
+     * Constructor privado para evitar la creación directa de instancias
+     * Se inicializa la conexión a la base de datos
+     */
     private ControlGestorTiempo() {
         objConexion = Conexion.getInstance();
     }
 
+    /**
+     * Método para obtener la única instancia de ControlGestorTiempo
+     * @return instancia única de ControlGestorTiempo
+     */
     public static ControlGestorTiempo getInstancia() {
         if (instancia == null) {
             instancia = new ControlGestorTiempo();
@@ -32,6 +45,11 @@ public class ControlGestorTiempo implements GestorTiempo {
         return instancia;
     }
 
+    /**
+     * Guarda en la base de datos el tiempo activo de un usuario para el día actual
+     * @param idUsuario ID del usuario
+     * @param tiempo Tiempo de actividad
+     */
     @Override
     public void guardarTiempo(int idUsuario, int tiempo) {
         String sql = "INSERT INTO tiempo_activo (id_usuario, fecha, tiempo) VALUES (?, ?, ?)";
@@ -46,9 +64,16 @@ public class ControlGestorTiempo implements GestorTiempo {
         }
     }
 
+    /**
+     * Obtiene el tiempo total utilizado por el usuario en los últimos 7 días
+     * Devuelve un mapa con la fecha como clave y el tiempo total como valor
+     * @param idUsuario ID del usuario a consultar
+     * @return Mapa con fechas y tiempos de uso correspondientes a cada día
+     */
     @Override
     public Map<String, Integer> obtenerTiempoPorSemana(int idUsuario) {
         Map<String, Integer> datos = new HashMap<>();
+        // Consulta SQL que selecciona la suma del tiempo por cada fecha de la semana actual
         String sql = "SELECT fecha, SUM(tiempo) AS tiempo \n" +
                      "FROM tiempo_activo \n" +
                      "WHERE id_usuario = ? \n" +
