@@ -484,12 +484,12 @@
             <Component class="javax.swing.JLabel" name="jLabel6">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/resource/librason.png"/>
+                  <Image iconType="3" name="/resource/logo_del_proyecto.png"/>
                 </Property>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="80" y="70" width="280" height="210"/>
+                  <AbsoluteConstraints x="50" y="70" width="360" height="330"/>
                 </Constraint>
               </Constraints>
             </Component>

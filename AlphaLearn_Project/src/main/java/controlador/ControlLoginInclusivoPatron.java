@@ -210,14 +210,8 @@ public class ControlLoginInclusivoPatron extends AbstractSonido implements Actio
         if (iconoSeleccionadoLogin == null) {
              reproducirSonido("/resource/sounds/debeElegir.wav");
              mostrarInstruccion(this.logi.getJpLogin(), "/resource/imagenes/instructoramujer.png", -50, 240);
-           // JOptionPane.showMessageDialog(null, "Debe seleccionar su icono.");
             return;  
         }
-
-        /*if (formasSeleccionadasLogin.size() != 4) {
-           // JOptionPane.showMessageDialog(null, "Debe seleccionar 4 formas para su contraseña.");
-            return;  
-        }*/
         String iconoPerfilSeleccionado = obtenerIconoPerfilSeleccionado();
         String password = obtenerPasswordFinal();
         System.out.println("icono de perfil: " + iconoPerfilSeleccionado);
@@ -228,7 +222,7 @@ public class ControlLoginInclusivoPatron extends AbstractSonido implements Actio
 
             if(intentos == 3){
                 reproducirSonido("/resource/sounds/NoRegistro.wav");
-               // mostrarInstruccion(this.logi.getJpLogin(), "/resource/imagenes/instructoramujer.png",180, 290);
+              
                 mostrarInstruccion(this.logi.getJP_info_regis(), "/resource/flecha.gif",40,250);
             } else {
                 reproducirSonido("/resource/sounds/perfilOpatron.wav");

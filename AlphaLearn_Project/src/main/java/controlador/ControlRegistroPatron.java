@@ -213,18 +213,15 @@ public class ControlRegistroPatron extends AbstractSonido implements ActionListe
              if (iconoSeleccionadoRegistro == null) {
                  reproducirSonido("/resource/sounds/debeElegir.wav");
                  mostrarInstruccion(this.r.getjPanel_panelDerecha(), "/resource/imagenes/instructoramujer.png", -50, 240);
-                //javax.swing.JOptionPane.showMessageDialog(r, "Por favor, selecciona un ícono de perfil antes de continuar.");
                 return;
             }
             if (botonesSeleccionados.size() < 2) {
                  reproducirSonido("/resource/sounds/debeTener.wav");
                  mostrarInstruccion(this.r.getjPanel_panelDerecha(), "/resource/imagenes/instructoramujer.png", -50, 240);
-                //javax.swing.JOptionPane.showMessageDialog(r, "Debes seleccionar al menos 3 botones para tu contraseña.");
                 return;
             }
 
             String iconoPerfilSeleccionado = obtenerIconoPerfilSeleccionado();
-            //int iconoPerfil = obtenerIndiceIcono();
             String password = obtenerPasswordFinal();
 
             System.out.println("icono de perfil registro: " + iconoPerfilSeleccionado);

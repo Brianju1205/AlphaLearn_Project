@@ -101,7 +101,7 @@ public class ControlActividad1 extends AbstractSonido implements ActionListener 
      * Agrega escuchadores a los botones de todos los subpaneles.
      */
     private void colocarEscuchadores2(){
-       // = this.objActividad.jPanel_Actividad_1.getComponents();
+
        for(Object obj: objAbc.getComponents()){
            if(obj instanceof JButton bt){
                bt.addActionListener(this);
