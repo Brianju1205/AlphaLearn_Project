@@ -229,6 +229,7 @@ public class ControlRegistroPatron extends AbstractSonido implements ActionListe
             if(objVerificador.existeUsuario1(objDAOU, iconoPerfilSeleccionado, password)){
                reproducirSonido("/resource/sounds/usuarioExiste.wav");
                mostrarInstruccion(this.r.getjPanel_panelDerecha(), "/resource/imagenes/instructoramujer.png", -50, 240);
+               reiniciarPatron();
                //javax.swing.JOptionPane.showMessageDialog(r, "Usuario y contraseña ya existe ");
             return;
             }

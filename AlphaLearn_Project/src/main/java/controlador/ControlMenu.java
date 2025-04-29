@@ -314,13 +314,12 @@ public class ControlMenu extends AbstractSonido implements ActionListener,Change
         AjustesM ajustes = ControlGestorAjustes.getInstance().obtenerAjustes(v.getId());
 
         if (ajustes != null) {
-            //int volumenPorcentaje = (int) (objAjustes.getjSlider1_volumen().getValue() * 100.0);
+            
             objAjustes.getjSlider1_volumen().setValue((int) ajustes.getVolumen());
             int volumenPorcentaje = (int) ajustes.getVolumen();
-            //float volumenDecimal = volumenPorcentaje / 100f;
+            
             ControlVolumen.setVolumen(volumenPorcentaje);
 
-            
             objAjustes.getjCheckBox1_sonido().setSelected(ajustes.isSonidoActivo());
             objAjustes.getjCheckBox2_instrucciones().setSelected(ajustes.isInstruccionesActivas());
             if(ajustes.isSonidoActivo()==false){
