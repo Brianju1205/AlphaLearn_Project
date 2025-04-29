@@ -39,7 +39,7 @@ public class ControlActividad1 extends AbstractSonido implements ActionListener 
     private JPanel paneles[];
     private int indicador=0;
     private AjustesM ajustes;
-    
+    int toces=0;
     /**
      * Constructor Actividad 1
      * @param objActividad objeto actividad
@@ -164,11 +164,17 @@ public class ControlActividad1 extends AbstractSonido implements ActionListener 
             }
            }else if(e.getSource() == this.objActividad.getjButton_Siguiente()){
                reproducirSonido("/resource/sounds/burbuja.wav");
-               
+                toces++;
                 if (indicador < paneles.length - 1) {         
-                    indicador++;
+                indicador++;
+                panel(paneles[indicador]);
+                } else {
+
+                    indicador = 0;
                     panel(paneles[indicador]);
+                    toces = 0;
                 }
+                
                 if(indicador==1){
                     this.mostrarInstruccion(objActividad.jPanel_Actividad_1, "/resource/imagenes/presentador.png",870,470);
                     reproducirSonido("/resource/sounds/submodulo1_1.wav");
