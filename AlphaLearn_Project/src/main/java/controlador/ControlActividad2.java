@@ -177,7 +177,7 @@ public class ControlActividad2 extends AbstractSonido implements ActionListener 
         label.addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent evt) {
-                /*label.getParent().setComponentZOrder(label, 0);*/
+                
                 poaX = evt.getX();
                 poaY = evt.getY();
                 posicionOriginal = label.getLocation();

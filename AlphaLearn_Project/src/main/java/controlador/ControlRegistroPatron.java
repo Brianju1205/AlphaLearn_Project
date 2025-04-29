@@ -90,7 +90,7 @@ public class ControlRegistroPatron extends AbstractSonido implements ActionListe
                         estaDibujando = false;
                         if(!usuarioGuardado){
                             //guardarRegistro();
-                            reiniciarPatron();
+                            //reiniciarPatron();
                             usuarioGuardado = false;
                         }
                         
