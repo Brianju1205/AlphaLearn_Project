@@ -93,88 +93,89 @@ public class Actividad_6 extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
         jButton1_cambiartexto = new javax.swing.JButton();
         jButton1_Salir_act_5 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jProgressBar1 = new javax.swing.JProgressBar();
+        jLabel11 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(1220, 610));
+        setMinimumSize(new java.awt.Dimension(1203, 671));
         setUndecorated(true);
+        setPreferredSize(new java.awt.Dimension(1203, 671));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1_fondo.setBackground(new java.awt.Color(204, 204, 255));
-        jPanel1_fondo.setMinimumSize(new java.awt.Dimension(1220, 610));
-        jPanel1_fondo.setPreferredSize(new java.awt.Dimension(1220, 610));
+        jPanel1_fondo.setBackground(new java.awt.Color(82, 160, 254));
+        jPanel1_fondo.setMinimumSize(new java.awt.Dimension(1203, 671));
+        jPanel1_fondo.setPreferredSize(new java.awt.Dimension(1203, 671));
         jPanel1_fondo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel_respuesta1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel_respuesta1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel_respuesta1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jPanel1_fondo.add(jLabel_respuesta1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 490, 310, 50));
+        jPanel1_fondo.add(jLabel_respuesta1, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 260, 400, 50));
 
         jLabel_respuesta2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel_respuesta2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel_respuesta2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jPanel1_fondo.add(jLabel_respuesta2, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 490, 310, 50));
+        jPanel1_fondo.add(jLabel_respuesta2, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 350, 400, 50));
 
         jLabel_respuesta3.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel_respuesta3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel_respuesta3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jPanel1_fondo.add(jLabel_respuesta3, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 490, 310, 50));
+        jPanel1_fondo.add(jLabel_respuesta3, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 450, 410, 50));
 
-        jButton_audio_pregunta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/terapia-musical.png"))); // NOI18N
+        jButton_audio_pregunta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/SONIDO.png"))); // NOI18N
         jButton_audio_pregunta.setBorderPainted(false);
         jButton_audio_pregunta.setContentAreaFilled(false);
-        jPanel1_fondo.add(jButton_audio_pregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 380, -1, -1));
+        jButton_audio_pregunta.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/SONIDOPRESSED.png"))); // NOI18N
+        jPanel1_fondo.add(jButton_audio_pregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 150, -1, -1));
 
         jLabelTitulo.setBackground(new java.awt.Color(51, 51, 255));
         jLabelTitulo.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabelTitulo.setForeground(new java.awt.Color(255, 255, 255));
         jLabelTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelTitulo.setOpaque(true);
-        jPanel1_fondo.add(jLabelTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 120, 540, -1));
+        jPanel1_fondo.add(jLabelTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 20, 540, 40));
 
         jLabel_texto.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel_texto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel_texto.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jPanel1_fondo.add(jLabel_texto, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 170, 890, 160));
+        jPanel1_fondo.add(jLabel_texto, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 170, 480, 350));
 
         jLabel_pregunta.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel_pregunta.setForeground(new java.awt.Color(0, 0, 0));
         jLabel_pregunta.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel_pregunta.setToolTipText("");
-        jPanel1_fondo.add(jLabel_pregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 360, 650, 30));
+        jPanel1_fondo.add(jLabel_pregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 150, 440, 70));
 
-        jButton1_repetir_cuento.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/historia.png"))); // NOI18N
-        jButton1_repetir_cuento.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(0, 0, 255), new java.awt.Color(0, 0, 153)));
+        jButton1_repetir_cuento.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/SONIDO.png"))); // NOI18N
+        jButton1_repetir_cuento.setBorder(null);
         jButton1_repetir_cuento.setContentAreaFilled(false);
-        jPanel1_fondo.add(jButton1_repetir_cuento, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 200, -1, -1));
+        jButton1_repetir_cuento.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/SONIDOPRESSED.png"))); // NOI18N
+        jPanel1_fondo.add(jButton1_repetir_cuento, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 140, -1, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/panel de texto.png"))); // NOI18N
-        jPanel1_fondo.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 130, 960, 300));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/PANELTEXT.png"))); // NOI18N
+        jPanel1_fondo.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 580, 450));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/respuesta.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/PANELOPCION3TEXT.png"))); // NOI18N
         jLabel2.setToolTipText("");
-        jPanel1_fondo.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 480, 370, 70));
+        jPanel1_fondo.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 440, 460, 70));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/respuesta.png"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/PANELOPCIONUNOTEXT.png"))); // NOI18N
         jLabel3.setToolTipText("");
-        jPanel1_fondo.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 480, 370, 70));
+        jPanel1_fondo.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 250, 450, 70));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/respuesta.png"))); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/PANELOPCION2TEXT.png"))); // NOI18N
         jLabel4.setToolTipText("");
-        jPanel1_fondo.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 480, 370, 70));
+        jPanel1_fondo.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 340, 470, 70));
 
-        jLabel6.setFont(new java.awt.Font("Gill Sans Ultra Bold", 0, 36)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel6.setText("Leamos una historia");
-        jPanel1_fondo.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 40, 460, 40));
-
-        jButton1_cambiartexto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/botonsalircambiar.png"))); // NOI18N
+        jButton1_cambiartexto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/BOTONNEXT.png"))); // NOI18N
         jButton1_cambiartexto.setBorderPainted(false);
         jButton1_cambiartexto.setContentAreaFilled(false);
-        jPanel1_fondo.add(jButton1_cambiartexto, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 190, 100, 140));
+        jButton1_cambiartexto.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/BOTTONNEXTPRESSED.png"))); // NOI18N
+        jPanel1_fondo.add(jButton1_cambiartexto, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 540, 110, 140));
 
         jButton1_Salir_act_5.setBackground(new java.awt.Color(153, 51, 255));
         jButton1_Salir_act_5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/salirrr.png"))); // NOI18N
@@ -183,12 +184,23 @@ public class Actividad_6 extends javax.swing.JFrame {
         jButton1_Salir_act_5.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButton1_Salir_act_5.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/Frame 106.png"))); // NOI18N
         jButton1_Salir_act_5.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/Frame 104.png"))); // NOI18N
-        jPanel1_fondo.add(jButton1_Salir_act_5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 0, -1, -1));
+        jPanel1_fondo.add(jButton1_Salir_act_5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 0, -1, -1));
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/fondoactividad_6.png"))); // NOI18N
-        jPanel1_fondo.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -40, 1250, 690));
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/PANELTEXTPREGUNTA.png"))); // NOI18N
+        jPanel1_fondo.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 130, -1, 110));
 
-        getContentPane().add(jPanel1_fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1220, 610));
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/PANELOPCIONES.png"))); // NOI18N
+        jPanel1_fondo.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 110, -1, 480));
+
+        jProgressBar1.setBackground(new java.awt.Color(255, 255, 255));
+        jProgressBar1.setForeground(new java.awt.Color(204, 0, 0));
+        jProgressBar1.setValue(10);
+        jPanel1_fondo.add(jProgressBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 30, 180, 30));
+
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/CORAZON.png"))); // NOI18N
+        jPanel1_fondo.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 20, -1, -1));
+
+        getContentPane().add(jPanel1_fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1203, 671));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -234,11 +246,12 @@ public class Actividad_6 extends javax.swing.JFrame {
     private javax.swing.JButton jButton1_repetir_cuento;
     private javax.swing.JButton jButton_audio_pregunta;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabelTitulo;
     private javax.swing.JLabel jLabel_pregunta;
     private javax.swing.JLabel jLabel_respuesta1;
@@ -246,5 +259,6 @@ public class Actividad_6 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel_respuesta3;
     private javax.swing.JLabel jLabel_texto;
     private javax.swing.JPanel jPanel1_fondo;
+    private javax.swing.JProgressBar jProgressBar1;
     // End of variables declaration//GEN-END:variables
 }

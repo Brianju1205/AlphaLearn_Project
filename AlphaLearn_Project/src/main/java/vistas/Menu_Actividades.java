@@ -171,7 +171,7 @@ public class Menu_Actividades extends javax.swing.JPanel {
         jButton_Actividad1.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/button_mause.png"))); // NOI18N
         jPanel_Menu.add(jButton_Actividad1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 240, 190, 60));
 
-        jLabel_Acti1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/modulo1.png"))); // NOI18N
+        jLabel_Acti1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/COMOSEESCUCHA.png"))); // NOI18N
         jLabel_Acti1.setText("jLabel2");
         jPanel_Menu.add(jLabel_Acti1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 290, 280));
 
@@ -184,22 +184,22 @@ public class Menu_Actividades extends javax.swing.JPanel {
         jLabel1.setText("Modulos de aprendizaje");
         jPanel_Menu.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 50));
 
-        jLabel_Acti2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/modulo5.png"))); // NOI18N
+        jLabel_Acti2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/ORACION_1.png"))); // NOI18N
         jPanel_Menu.add(jLabel_Acti2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 40, 290, 280));
 
-        jLabel_Acti3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/modulo3.png"))); // NOI18N
+        jLabel_Acti3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/RELACIONALAPALABRAA.png"))); // NOI18N
         jLabel_Acti3.setText("jLabel4");
         jPanel_Menu.add(jLabel_Acti3, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 40, 290, 270));
 
-        jLabel_Acti4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/modulo4.png"))); // NOI18N
+        jLabel_Acti4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/ESCUCHAYSELECCIONA.png"))); // NOI18N
         jLabel_Acti4.setText("jLabel5");
         jPanel_Menu.add(jLabel_Acti4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 320, 290, 280));
 
-        jLabel_Acti5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/modulo2.png"))); // NOI18N
+        jLabel_Acti5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/ORDENALAPALABRA.png"))); // NOI18N
         jLabel_Acti5.setText("jLabel6");
         jPanel_Menu.add(jLabel_Acti5, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 320, 290, 270));
 
-        jLabel_Acti6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/modulo6.png"))); // NOI18N
+        jLabel_Acti6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/ESCUCHAYPONATENCION.png"))); // NOI18N
         jLabel_Acti6.setText("jLabel7");
         jPanel_Menu.add(jLabel_Acti6, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 320, 290, 270));
 

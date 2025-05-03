@@ -78,13 +78,22 @@ public class ControlActividad6 extends AbstractSonido implements ActionListener{
         if(e.getSource() == acti6.getjButton1_Salir_act_5() ){
             reproducirSonido("/resource/sounds/burbuja.wav");
             
-            Menu m = new Menu();
+           /* Menu m = new Menu();
             m.setVisible(true);
            
             if (acti6 != null) {
                 stopSonido();
                 acti6.dispose(); 
-            }
+            }*/
+            ControlDialogSalir cD = new ControlDialogSalir(acti6);
+            cD.mostrarDialogo(); 
+
+                if (cD.isSalirConfirmado()) {
+                    stopSonido();
+                    acti6.dispose(); 
+                    Menu m = new Menu();
+                    m.setVisible(true);     
+                }
         }
         if(e.getSource() ==acti6.getjButton1_cambiartexto()){
             reproducirSonido("/resource/sounds/burbuja.wav");

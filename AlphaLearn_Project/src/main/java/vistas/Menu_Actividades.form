@@ -245,7 +245,7 @@
         <Component class="javax.swing.JLabel" name="jLabel_Acti1">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/resource/modulo1.png"/>
+              <Image iconType="3" name="/resource/COMOSEESCUCHA.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="jLabel2"/>
           </Properties>
@@ -287,7 +287,7 @@
         <Component class="javax.swing.JLabel" name="jLabel_Acti2">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/resource/modulo5.png"/>
+              <Image iconType="3" name="/resource/ORACION_1.png"/>
             </Property>
           </Properties>
           <Constraints>
@@ -299,7 +299,7 @@
         <Component class="javax.swing.JLabel" name="jLabel_Acti3">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/resource/modulo3.png"/>
+              <Image iconType="3" name="/resource/RELACIONALAPALABRAA.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="jLabel4"/>
           </Properties>
@@ -312,7 +312,7 @@
         <Component class="javax.swing.JLabel" name="jLabel_Acti4">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/resource/modulo4.png"/>
+              <Image iconType="3" name="/resource/ESCUCHAYSELECCIONA.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="jLabel5"/>
           </Properties>
@@ -325,7 +325,7 @@
         <Component class="javax.swing.JLabel" name="jLabel_Acti5">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/resource/modulo2.png"/>
+              <Image iconType="3" name="/resource/ORDENALAPALABRA.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="jLabel6"/>
           </Properties>
@@ -338,7 +338,7 @@
         <Component class="javax.swing.JLabel" name="jLabel_Acti6">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/resource/modulo6.png"/>
+              <Image iconType="3" name="/resource/ESCUCHAYPONATENCION.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="jLabel7"/>
           </Properties>

@@ -70,7 +70,6 @@ public class Actividad_4 extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jButton1_Salir_act_5 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
         jLabel_word1 = new javax.swing.JLabel();
         jLabel_word2 = new javax.swing.JLabel();
         jLabel_word3 = new javax.swing.JLabel();
@@ -80,14 +79,18 @@ public class Actividad_4 extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jProgressBar1 = new javax.swing.JProgressBar();
+        jLabel11 = new javax.swing.JLabel();
 
         jLabel2.setText("jLabel2");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
 
-        jPanel1.setBackground(new java.awt.Color(204, 204, 255));
-        jPanel1.setPreferredSize(new java.awt.Dimension(1280, 690));
+        jPanel1.setBackground(new java.awt.Color(37, 134, 251));
+        jPanel1.setMinimumSize(new java.awt.Dimension(1203, 671));
+        jPanel1.setPreferredSize(new java.awt.Dimension(1203, 671));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton1_Salir_act_5.setBackground(new java.awt.Color(153, 51, 255));
@@ -97,71 +100,75 @@ public class Actividad_4 extends javax.swing.JFrame {
         jButton1_Salir_act_5.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButton1_Salir_act_5.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/Frame 106.png"))); // NOI18N
         jButton1_Salir_act_5.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/Frame 104.png"))); // NOI18N
-        jPanel1.add(jButton1_Salir_act_5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 0, -1, -1));
-
-        jLabel1.setFont(new java.awt.Font("Gill Sans Ultra Bold", 0, 36)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel1.setText("Selecciona lo que escuchas");
-        jLabel1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 40, 620, 30));
+        jPanel1.add(jButton1_Salir_act_5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 0, -1, -1));
 
         jLabel_word1.setBackground(new java.awt.Color(102, 51, 255));
         jLabel_word1.setFont(new java.awt.Font("Segoe UI Black", 0, 36)); // NOI18N
         jLabel_word1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel_word1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel_word1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel1.add(jLabel_word1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 340, 210, 70));
+        jPanel1.add(jLabel_word1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 440, 210, 70));
 
         jLabel_word2.setBackground(new java.awt.Color(102, 51, 255));
         jLabel_word2.setFont(new java.awt.Font("Segoe UI Black", 0, 36)); // NOI18N
         jLabel_word2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel_word2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel_word2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel1.add(jLabel_word2, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 340, 210, 70));
+        jPanel1.add(jLabel_word2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 440, 210, 70));
 
         jLabel_word3.setBackground(new java.awt.Color(102, 51, 255));
         jLabel_word3.setFont(new java.awt.Font("Segoe UI Black", 0, 36)); // NOI18N
         jLabel_word3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel_word3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel_word3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel1.add(jLabel_word3, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 340, 220, 70));
+        jPanel1.add(jLabel_word3, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 440, 220, 70));
 
         jButton1_audio_palabra.setBackground(new java.awt.Color(153, 153, 255));
-        jButton1_audio_palabra.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/terapia-musical.png"))); // NOI18N
-        jButton1_audio_palabra.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(102, 0, 204), new java.awt.Color(51, 0, 204), new java.awt.Color(0, 51, 153), new java.awt.Color(51, 0, 153)));
+        jButton1_audio_palabra.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/BUTTONSONIDOESCUCHA.png"))); // NOI18N
+        jButton1_audio_palabra.setBorder(null);
         jButton1_audio_palabra.setContentAreaFilled(false);
-        jPanel1.add(jButton1_audio_palabra, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 130, 140, 120));
+        jButton1_audio_palabra.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/BUTTONSONIDOESCUCHAPRESSED.png"))); // NOI18N
+        jPanel1.add(jButton1_audio_palabra, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 90, 200, 220));
 
         jButton1_Cambiar_audio_palabra.setBackground(new java.awt.Color(51, 51, 255));
-        jButton1_Cambiar_audio_palabra.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/Cambiar1.png"))); // NOI18N
-        jButton1_Cambiar_audio_palabra.setText("Cambiar Palabra");
+        jButton1_Cambiar_audio_palabra.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/BOTONNEXT.png"))); // NOI18N
         jButton1_Cambiar_audio_palabra.setBorderPainted(false);
         jButton1_Cambiar_audio_palabra.setContentAreaFilled(false);
-        jButton1_Cambiar_audio_palabra.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/Cambiar3.png"))); // NOI18N
-        jButton1_Cambiar_audio_palabra.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/Cambiar2.png"))); // NOI18N
-        jPanel1.add(jButton1_Cambiar_audio_palabra, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 480, 210, 90));
+        jButton1_Cambiar_audio_palabra.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/BOTTONNEXTPRESSED.png"))); // NOI18N
+        jPanel1.add(jButton1_Cambiar_audio_palabra, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 200, 120, 120));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/op.png"))); // NOI18N
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 340, -1, -1));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 440, -1, -1));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/op.png"))); // NOI18N
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 340, -1, -1));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 440, -1, -1));
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/op.png"))); // NOI18N
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 340, -1, -1));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 440, -1, -1));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/fondoo.png"))); // NOI18N
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1220, 620));
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/PANELESCUCHA.png"))); // NOI18N
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 170, -1, -1));
+
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/TITULOESCUCHA.png"))); // NOI18N
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 10, -1, -1));
+
+        jProgressBar1.setBackground(new java.awt.Color(255, 255, 255));
+        jProgressBar1.setForeground(new java.awt.Color(204, 0, 0));
+        jProgressBar1.setValue(10);
+        jPanel1.add(jProgressBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 180, 30));
+
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/CORAZON.png"))); // NOI18N
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 20, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1220, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 611, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 671, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -186,16 +193,18 @@ public class Actividad_4 extends javax.swing.JFrame {
     private javax.swing.JButton jButton1_Cambiar_audio_palabra;
     private javax.swing.JButton jButton1_Salir_act_5;
     private javax.swing.JButton jButton1_audio_palabra;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel_word1;
     private javax.swing.JLabel jLabel_word2;
     private javax.swing.JLabel jLabel_word3;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JProgressBar jProgressBar1;
     // End of variables declaration//GEN-END:variables
 
 }

@@ -15,7 +15,9 @@ import modelo.AjustesM;
 import vistas.Actividad_2;
 import vistas.Menu;
 import org.netbeans.lib.awtextra.AbsoluteConstraints;
+import utils.RotatableRoundedLabel;
 import utils.UtilidadesUI;
+import static utils.UtilidadesUI.escalarYAsignar;
 
 /**
  *
@@ -33,16 +35,15 @@ public class ControlActividad2 extends AbstractSonido implements ActionListener 
     private UsuarioDAO usuarioDAO;              // referencia para manejar el gestor de usuarios
     private Point posicionOriginal;             //´posicion inicial de las letras
     private Point[] coordenadasEspecificas = {
-        new Point(260, 190), 
-        new Point(380, 190),
-        new Point(510, 190),
-        new Point(640, 190), 
-        new Point(770, 190),
-        new Point(900, 190)
+        new Point(560, 160), 
+        new Point(660, 160),
+        new Point(760, 160),
+        new Point(860, 160), 
+        new Point(960, 160),
+        new Point(1060, 160)
     };
     
-    private JLabel[] labelsOrigen;               // Letras que serán arrastradas
-    
+    private JLabel[] labelsOrigen;               // Letras que seran arrastrada  
     /**
      * Constructor Actividad 2
      * @param objActividad5 objeto Actividad 2
@@ -65,7 +66,7 @@ public class ControlActividad2 extends AbstractSonido implements ActionListener 
         if (palabraActual != null && !palabraActual.isEmpty()) {
             asignarLetrasAJLabels(palabraActual);
         }
-        
+        //escalarYAsignar(objActividad5.getjButton1_Cambiar_Palabra(),"/resource/arrows.png");
         configuracionInicio();
         mostrarInstruccion();
         
@@ -81,7 +82,7 @@ public class ControlActividad2 extends AbstractSonido implements ActionListener 
         this.objActividad5.getjButton1_instrucciones().addActionListener(this);
         this.objActividad5.getjButton1_Repetir_PalabraAudio().addActionListener(this);
         //reproducirSonido("/resource/sounds/intro.wav");
-        UtilidadesUI.escalarYAsignar(this.objActividad5.getjButton1_Repetir_PalabraAudio(), "/resource/ltavoz.png");
+        //UtilidadesUI.escalarYAsignar(this.objActividad5.getjButton1_Repetir_PalabraAudio(), "/resource/ltavoz.png");
     }
     
     /**
@@ -113,13 +114,33 @@ public class ControlActividad2 extends AbstractSonido implements ActionListener 
             objActividad5.getjLabel8()
         };
         
-        
-        objActividad5.getjLabel9_fondo1().removeAll();
+        for (Component comp : objActividad5.getjPanel1().getComponents()) {
+            if (comp instanceof RotatableRoundedLabel) {
+                objActividad5.getjPanel1().remove(comp);
+            }
+        }
+        objActividad5.getjPanel1().revalidate();
+        objActividad5.getjPanel1().repaint();
+
+        //objActividad5.getjLabel9_fondo1().removeAll();
         for (int i = 0; i < palabra.length(); i++) {
             if (i < labelsOrigen.length) {
-                labelsOrigen[i].setText(String.valueOf(palabra.charAt(i)));
+                //labelsOrigen[i].setSize(150, 150);
+                labelsOrigen[i].setVisible(false);
+                labelsOrigen[i] = new RotatableRoundedLabel(String.valueOf(palabra.charAt(i)),0, 50);
+                labelsOrigen[i].setOpaque(true);
+                labelsOrigen[i].setSize(90, 120);
+                //labelsOrigen[i] = new RotatableLabel(String.valueOf(palabra.charAt(i)), 45);
+               /* labelsOrigen[i].setBorder(new RoundedBorder(50));
+                labelsOrigen[i].setText(String.valueOf(palabra.charAt(i)));*/
                 labelsOrigen[i].setLocation(coordenadasEspecificas[i]); 
+               /* labelsOrigen[i].setForeground(Color.BLUE);
+                labelsOrigen[i].setOpaque(true);
+                labelsOrigen[i].setBackground(Color.WHITE);*/
 
+                
+                //labelsOrigen[i].setOpaque(true);
+                //labelsOrigen[i].setSize(90,120); 
                 // Usar AbsoluteConstraints al agregar el label al panel
                 AbsoluteConstraints constraints = new AbsoluteConstraints(
                     coordenadasEspecificas[i].x, 
@@ -145,6 +166,7 @@ public class ControlActividad2 extends AbstractSonido implements ActionListener 
        //
         objActividad5.getjPanel1().revalidate();
         objActividad5.getjPanel1().repaint();
+        
     }
     
     /**
@@ -268,17 +290,22 @@ public class ControlActividad2 extends AbstractSonido implements ActionListener 
             objActividad5.getjPanel1().repaint();
         }
     }
+    
 
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == this.objActividad5.getjButton1_Salir_act_5()) {
             reproducirSonido("/resource/sounds/burbuja.wav");
-            Menu m = new Menu();
-            m.setVisible(true);
-            stopSonido();
-            if (objActividad5 != null) {   
-                objActividad5.dispose(); 
-            }
+            
+            ControlDialogSalir cD = new ControlDialogSalir(objActividad5);
+            cD.mostrarDialogo(); 
+
+                if (cD.isSalirConfirmado()) {
+                    stopSonido();
+                    objActividad5.dispose(); 
+                    Menu m = new Menu();
+                    m.setVisible(true);     
+                }
             if(this.v.getNom()== null){
             System.out.println("no hay usuario");
             return;
@@ -373,10 +400,14 @@ public class ControlActividad2 extends AbstractSonido implements ActionListener 
 
         if (labelsOrigen != null) {
         
-        objActividad5.getjLabel9_fondo1().removeAll();
+        //objActividad5.getjLabel9_fondo1().removeAll();
             for (int i = 0; i < labelsOrigen.length; i++) {
                 if (labelsOrigen[i] != null) {
-                    labelsOrigen[i].setText(""); 
+                    labelsOrigen[i].removeAll();
+                    labelsOrigen[i].setText("");
+                    labelsOrigen[i].revalidate();
+                    labelsOrigen[i].repaint();
+                    
                     labelsOrigen[i].setLocation(coordenadasEspecificas[i]); 
 
                     // elimina todos los listeners antiguos

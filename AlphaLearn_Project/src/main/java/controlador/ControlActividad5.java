@@ -97,12 +97,12 @@ public class ControlActividad5 extends AbstractSonido implements ActionListener 
             objActividad5.getjLabel3_oracion().setForeground(new Color(0, 51, 102)); 
             objActividad5.getjLabel3_oracion().setBorder(javax.swing.BorderFactory.createLineBorder(Color.WHITE, 2));
             
-            // Cargar opciones de respuesta
+            
             objActividad5.getjLabel_opcionUno().setText(oracionActual[1]); // O
             objActividad5.getjLabel_palabraOpcionDos().setText(oracionActual[2]); //2
             objActividad5.getjLabel_palabraOpcionTres().setText(oracionActual[3]); // 3
             
-            // Definir cuál sera la respuesta correcta
+            
             opcionCorrecta = oracionActual[4];
             seleccionUsuario = null;
          
@@ -117,7 +117,7 @@ public class ControlActividad5 extends AbstractSonido implements ActionListener 
      * Método privado para verificar si la selección del usuario es correcta
      */
     private void verificarRespuesta() {
-        if (verificado)return; // Si ya se verificó, salir para evitar duplicados
+        if (verificado)return; 
         
         if (seleccionUsuario == null) {
             //JOptionPane.showMessageDialog(objActividad5, "Por favor selecciona una palabra");
@@ -143,9 +143,18 @@ public class ControlActividad5 extends AbstractSonido implements ActionListener 
     public void actionPerformed(ActionEvent e) {
          if (e.getSource() == objActividad5.getjButton1_Salir_act_5()) {
             reproducirSonido("/resource/sounds/burbuja.wav");
-            Menu m = new Menu();
+            /*Menu m = new Menu();
             m.setVisible(true);
-            objActividad5.dispose(); 
+            objActividad5.dispose(); */
+            ControlDialogSalir cD = new ControlDialogSalir(objActividad5);
+            cD.mostrarDialogo(); 
+
+                if (cD.isSalirConfirmado()) {
+                    stopSonido();
+                    objActividad5.dispose(); 
+                    Menu m = new Menu();
+                    m.setVisible(true);     
+                }
         } 
          else if (e.getSource() == objActividad5.getjButton1_Cambiar_oracion()) {
             reproducirSonido("/resource/sounds/burbuja.wav");

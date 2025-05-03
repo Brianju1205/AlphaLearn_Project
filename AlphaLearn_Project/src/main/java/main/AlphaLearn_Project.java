@@ -16,7 +16,7 @@ public class AlphaLearn_Project {
         System.out.println("Hello World!");
         System.out.println("commit");
         Login_inclusivo_patron L = new Login_inclusivo_patron();
-        
+        L.setVisible(true);
     }
    
 }

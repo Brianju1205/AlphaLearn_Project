@@ -14,6 +14,8 @@ import modelo.AjustesM;
 import modelo.Imagen;
 import modelo.Palabra;
 import org.netbeans.lib.awtextra.AbsoluteConstraints;
+import utils.JLabelRedondeado;
+import utils.RotatableRoundedLabel;
 import vistas.Menu;
 
 /**
@@ -29,19 +31,19 @@ public class ControlActividad3 extends AbstractSonido implements ActionListener 
     private boolean clicDerechoPresionado = false;      // bandera indicador de los clicks
     private ControlGestorPalabras gestospa;             // referencia del gestor palabrasDAO
     
-    private Point coordenadasPalabra1 = new Point(650, 140);
-    private Point coordenadasPalabra2 = new Point(650, 320);
-    private Point coordenadasPalabra3 = new Point(650, 500);
+    private Point coordenadasPalabra1 = new Point(140, 450);
+    private Point coordenadasPalabra2 = new Point(440, 450);
+    private Point coordenadasPalabra3 = new Point(740, 450);
     private Point[] coordenadasEspecificas = {
-        new Point(650, 140),
-        new Point(650, 320),
-        new Point(650, 500)
+        new Point(140, 450),
+        new Point(440, 450),
+        new Point(740, 450)
        
     };
     private Imagen imRuta;
     private Palabra p;
     private JLabel[] labelsOrigen;
-    
+    //private JLabelRedondeado[] labelsOrigen;
     /**
      * Controlador Actividad 3
      * @param vista objeto actividad 3
@@ -107,6 +109,8 @@ public class ControlActividad3 extends AbstractSonido implements ActionListener 
             vista.getjLabel2_palabra3(),
             vista.getjLabel3_palabra2()
         };
+        
+         
 
         for (JLabel label : labelsOrigen) {
             for (MouseListener listener : label.getMouseListeners()) {
@@ -141,6 +145,8 @@ public class ControlActividad3 extends AbstractSonido implements ActionListener 
             ArrayList<Palabra> palabras = gestospa.obtenerTresPalabrasConImagen();
 
             if (palabras.size() >= 3) {
+                
+               //vista.getjLabel1_palabra1()= new RotatableRoundedLabel(String.valueOf(palabras.get(0).getPalabra()),0, 50);
                 vista.getjLabel1_palabra1().setText(palabras.get(0).getPalabra());
                 this.asignarImagen(vista.getJlabel_image2(), palabras.get(0).getImagen().getRuta());
                 vista.getJlabel_image2().setText(palabras.get(0).getPalabra());
@@ -365,12 +371,21 @@ public class ControlActividad3 extends AbstractSonido implements ActionListener 
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == this.vista.getjButton1_Salir()) {
             reproducirSonido("/resource/sounds/burbuja.wav");
-            Menu m = new vistas.Menu();
+            /*Menu m = new vistas.Menu();
             m.setVisible(true);
             stopSonido();
             if (vista != null) {
                 vista.dispose();
-            }
+            }*/
+            ControlDialogSalir cD = new ControlDialogSalir(vista);
+            cD.mostrarDialogo(); 
+
+                if (cD.isSalirConfirmado()) {
+                    stopSonido();
+                    vista.dispose(); 
+                    Menu m = new Menu();
+                    m.setVisible(true);     
+                }
             if(this.v.getNom()== null){
             System.out.println("no hay usuario");
             return;
@@ -396,18 +411,18 @@ public class ControlActividad3 extends AbstractSonido implements ActionListener 
         JLabel labelError = new JLabel(new ImageIcon(getClass().getResource(mensaje)));
         labelError.setSize(180, 180);
 
-        int x = 250; 
-        int y = 110; 
+        int x = 170; 
+        int y = 280; 
 
         switch (num) {
             case 1:
-                y = 110;
+                x = 170;
                 break;
             case 2:
-                y = 290;
+                x = 470;
                 break;
             case 3:
-                y = 470;
+                x = 770;
                 break;
         }
 
