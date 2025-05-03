@@ -79,11 +79,20 @@ public class ControlActividad4 extends AbstractSonido implements ActionListener 
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == this.objActividad4.getjButton1_Salir_act_5()) {
             reproducirSonido("/resource/sounds/burbuja.wav");
-            Menu m = new Menu();
+            /*Menu m = new Menu();
             m.setVisible(true);
             if (objActividad4 != null) {
                 objActividad4.dispose();
-            }
+            }*/
+            ControlDialogSalir cD = new ControlDialogSalir(objActividad4);
+            cD.mostrarDialogo(); 
+
+                if (cD.isSalirConfirmado()) {
+                    stopSonido();
+                    objActividad4.dispose(); 
+                    Menu m = new Menu();
+                    m.setVisible(true);     
+                }
             if (this.v.getNom() == null) {
                 System.out.println("no hay usuario");
                 return;
