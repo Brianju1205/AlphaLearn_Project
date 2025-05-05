@@ -30,7 +30,8 @@ public class ControlActividad3 extends AbstractSonido implements ActionListener 
     private Point posicionOriginal;                     // posicion inicial de los Jlabel
     private boolean clicDerechoPresionado = false;      // bandera indicador de los clicks
     private ControlGestorPalabras gestospa;             // referencia del gestor palabrasDAO
-    
+    private int vidas=5;
+    private JLabel[] corazones;
     private Point coordenadasPalabra1 = new Point(140, 450);
     private Point coordenadasPalabra2 = new Point(440, 450);
     private Point coordenadasPalabra3 = new Point(740, 450);
@@ -53,6 +54,17 @@ public class ControlActividad3 extends AbstractSonido implements ActionListener 
         
         this.gestospa = ControlGestorPalabras.getInstance();
         v = Verificador.getInstancia();
+        
+        this.corazones=new JLabel[]{
+            vista.getCorazon1(),
+            vista.getCorazon2(),
+            vista.getCorazon3(),
+            vista.getCorazon4(),
+            vista.getCorazon5(),
+            
+        };
+        rutaimagen();
+        
         ControlGestorTiempo.getInstancia();
         TiempoActivo.getInstancia().iniciarContador();
         vista.getjPanel3_fondo().setLayout(null);
@@ -173,56 +185,70 @@ public class ControlActividad3 extends AbstractSonido implements ActionListener 
      * 
      */
     private void compararPalabras() {
-        boolean todasCorrectas = true; 
-        resetearComprobacion();
+    boolean todasCorrectas = true; 
+    boolean alMenosUnError = false; 
+    
+    resetearComprobacion();
 
-        JLabel[] destinos = {
-            vista.getjLabel_destino1(),
-            vista.getjLabel_destino2(),
-            vista.getjLabel_destino3()
-        };
+    JLabel[] destinos = {
+        vista.getjLabel_destino1(),
+        vista.getjLabel_destino2(),
+        vista.getjLabel_destino3()
+    };
 
-        JLabel[] imagenes = {
-            vista.getJlabel_image1(),
-            vista.getJlabel_image2(),
-            vista.getJlabel_image3()
-        };
+    JLabel[] imagenes = {
+        vista.getJlabel_image1(),
+        vista.getJlabel_image2(),
+        vista.getJlabel_image3()
+    };
 
-        JLabel[] palabras = {
-            vista.getjLabel1_palabra1(),
-            vista.getjLabel3_palabra2(),
-            vista.getjLabel2_palabra3()
-        };
+    JLabel[] palabras = {
+        vista.getjLabel1_palabra1(),
+        vista.getjLabel3_palabra2(),
+        vista.getjLabel2_palabra3()
+    };
 
-        Point[] coordenadas = { 
-            coordenadasPalabra1, 
-            coordenadasPalabra2, 
-            coordenadasPalabra3 
-        };
+    Point[] coordenadas = { 
+        coordenadasPalabra1, 
+        coordenadasPalabra2, 
+        coordenadasPalabra3 
+    };
 
+    
+    for (int i = 0; i < destinos.length; i++) {
+        if (destinos[i].getText().equals(imagenes[i].getText())) {
+            Comprobar(i + 1, "/resource/imagenes/check.png");
+            System.out.println("Correcto: " + destinos[i].getText());
+        } else {
+            Comprobar(i + 1, "/resource/imagenes/close.png");
+            System.out.println("Incorrecto: " + destinos[i].getText());
+            todasCorrectas = false;
+            alMenosUnError = true; 
+        }
+    }
+
+
+    if (alMenosUnError) {
+        vidas--;
+        actualizarCorazones();
+        
+        
         for (int i = 0; i < destinos.length; i++) {
-            if (destinos[i].getText().equals(imagenes[i].getText())) {
-                Comprobar(i + 1, "/resource/imagenes/check.png");
-                System.out.println("Correcto: " + destinos[i].getText());
-            } else {
-                Comprobar(i + 1, "/resource/imagenes/close.png");
-                System.out.println("Incorrecto: " + destinos[i].getText());
-                todasCorrectas = false;
-
-
+            if (!destinos[i].getText().equals(imagenes[i].getText())) {
                 for (int j = 0; j < palabras.length; j++) {
                     if (palabras[j].getText().equals(destinos[i].getText())) {
                         this.liberarDelDestino(palabras[j], coordenadas[j]);
-                        break; 
+                        break;
                     }
                 }
             }
         }
-
-        if (todasCorrectas) {
-            this.cargarPalabrasEnLabels();
-        }
     }
+
+    if (todasCorrectas) {
+        this.cargarPalabrasEnLabels();
+    }
+}
    
     private void resetearComprobacion() {
         Comprobar(1, ""); 
@@ -446,6 +472,51 @@ public class ControlActividad3 extends AbstractSonido implements ActionListener 
             });
             timer.setRepeats(false);
             timer.start();
+    }
+    
+    
+    private void rutaimagen() {
+        for (JLabel corazon : corazones) {
+            corazon.setIcon(new ImageIcon(getClass().getResource("/resource/corazon1.png"))); // Ruta correcta de la imagen
+            corazon.setVisible(true);
+        }
+        vidas = 5; 
+    }
+    
+    
+    private void actualizarCorazones() {
+    if (vidas >= 0 && vidas < corazones.length) {
+        corazones[vidas].setVisible(false); 
+    }
+
+    if (vidas <= 0) {
+        
+        resetearCorazones(); 
+        cargarPalabrasEnLabels();
+        
+        ControlDialogSInIntentos dialogo = new ControlDialogSInIntentos(vista);
+        dialogo.mostrarDialogo();
+      
+       
+       if(dialogo.isReintenar()){
+           cargarPalabrasEnLabels();
+           resetearCorazones(); 
+       }else {
+            stopSonido();
+            vista.dispose();
+            Menu m = new Menu();
+            m.setVisible(true); 
+           // new Menu().setVisible(true); // Volver al menú
+        }
+    }
+}
+
+    private void resetearCorazones() {
+    vidas = 5; 
+         for (JLabel corazon : corazones) {
+             corazon.setIcon(new ImageIcon(getClass().getResource("/resource/corazon1.png"))); 
+             corazon.setVisible(true); 
+         }
     }
 
 }

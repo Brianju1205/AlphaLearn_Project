@@ -118,6 +118,28 @@ public class Actividad_2 extends javax.swing.JFrame {
         return jButton1_Repetir_PalabraAudio;
     }
 
+    public JLabel getCorazon1() {
+        return corazon1;
+    }
+
+    public JLabel getCorazon2() {
+        return corazon2;
+    }
+
+    public JLabel getCorazon3() {
+        return corazon3;
+    }
+
+    public JLabel getCorazon4() {
+        return corazon4;
+    }
+
+    public JLabel getCorazon5() {
+        return corazon5;
+    }
+    
+    
+
   
     
     
@@ -153,9 +175,12 @@ public class Actividad_2 extends javax.swing.JFrame {
         jLabel_IMAGEN = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jProgressBar1 = new javax.swing.JProgressBar();
-        jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
+        corazon1 = new javax.swing.JLabel();
+        corazon2 = new javax.swing.JLabel();
+        corazon3 = new javax.swing.JLabel();
+        corazon4 = new javax.swing.JLabel();
+        corazon5 = new javax.swing.JLabel();
 
         jLabel2.setText("jLabel2");
 
@@ -311,25 +336,31 @@ public class Actividad_2 extends javax.swing.JFrame {
         jPanel1.add(jButton1_Repetir_PalabraAudio, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 470, -1, 70));
 
         jLabel_IMAGEN.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(jLabel_IMAGEN, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 160, 270, 270));
+        jPanel1.add(jLabel_IMAGEN, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 180, 220, 240));
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/PANEL21.png"))); // NOI18N
         jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 100, -1, -1));
 
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/PANEL_IMAGENm1.png"))); // NOI18N
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 110, 410, 400));
-
-        jProgressBar1.setBackground(new java.awt.Color(255, 255, 255));
-        jProgressBar1.setForeground(new java.awt.Color(204, 0, 0));
-        jProgressBar1.setOrientation(1);
-        jProgressBar1.setValue(10);
-        jPanel1.add(jProgressBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 180, 50, 260));
-
-        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/CORAZON.png"))); // NOI18N
-        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 110, -1, -1));
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 110, 380, 380));
 
         jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/TITULO.png"))); // NOI18N
         jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 10, -1, -1));
+
+        corazon1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.add(corazon1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, 50, 40));
+
+        corazon2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.add(corazon2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 70, 50, 40));
+
+        corazon3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.add(corazon3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 70, 50, 40));
+
+        corazon4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.add(corazon4, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 70, 50, 40));
+
+        corazon5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.add(corazon5, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 70, 50, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -361,6 +392,11 @@ public class Actividad_2 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel corazon1;
+    private javax.swing.JLabel corazon2;
+    private javax.swing.JLabel corazon3;
+    private javax.swing.JLabel corazon4;
+    private javax.swing.JLabel corazon5;
     private javax.swing.JButton jButton1_Cambiar_Palabra;
     private javax.swing.JButton jButton1_Repetir_PalabraAudio;
     private javax.swing.JButton jButton1_Salir_act_5;
@@ -368,7 +404,6 @@ public class Actividad_2 extends javax.swing.JFrame {
     private javax.swing.JButton jButton1_instrucciones;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -386,6 +421,5 @@ public class Actividad_2 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel_destino6;
     private javax.swing.JLabel jLabel_detino1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JProgressBar jProgressBar1;
     // End of variables declaration//GEN-END:variables
 }

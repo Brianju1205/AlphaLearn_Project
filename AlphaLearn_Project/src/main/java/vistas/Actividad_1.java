@@ -8,6 +8,7 @@ import com.formdev.flatlaf.FlatLightLaf;
 import controlador.ControlActividad1;
 import javax.swing.JButton;
 import javax.swing.JPanel;
+import javax.swing.JProgressBar;
 
 
 /**
@@ -60,6 +61,15 @@ public class Actividad_1 extends javax.swing.JFrame {
     public JButton getjButton_REGRESAR() {
         return jButton_REGRESAR;
     }
+
+    public JProgressBar getjProgressBar1() {
+        return jProgressBar1;
+    }
+    
+    public void actualizarProgreso(int porcentaje) {
+        jProgressBar1.setValue(porcentaje);
+    }
+
     
     
     

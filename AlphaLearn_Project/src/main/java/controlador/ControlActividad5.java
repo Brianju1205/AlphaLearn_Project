@@ -11,6 +11,8 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import vistas.Menu;
 import vistas.Actividad_5;
@@ -29,7 +31,8 @@ public class ControlActividad5 extends AbstractSonido implements ActionListener 
     private ControlGestorPalabras palabrasDAO;  // referencia a la gestor palabrasDAO
     private String seleccionUsuario = null;     // palabra que selecciono el usuario
     private boolean verificado= false;          // bandera de verificado
-    
+    private int vidas=5;
+    private JLabel[] corazones;
     private String[] oracionActual;             // oracion que se muestra al iniciar
     private String opcionCorrecta;              // palabra correcta
 
@@ -43,6 +46,16 @@ public class ControlActividad5 extends AbstractSonido implements ActionListener 
         
         this.objActividad5.getjButton1_Salir_act_5().addActionListener(this);
         this.objActividad5.getjButton1_Cambiar_oracion().addActionListener(this);
+        
+        this.corazones=new JLabel[]{
+            objActividad5.getCorazon1(),
+            objActividad5.getCorazon2(),
+            objActividad5.getCorazon3(),
+            objActividad5.getCorazon4(),
+            objActividad5.getCorazon5(),
+            
+        };
+        rutaimagen();
         
         //agregar escuchadores de los Jlabels
         escuchadoresJlabel();
@@ -135,6 +148,8 @@ public class ControlActividad5 extends AbstractSonido implements ActionListener 
              reproducirSonido("/resource/sounds/errorr.wav");
              objActividad5.getjLabel3_oracion().setBackground(new Color(255, 204, 204)); // color rojo
             //JOptionPane.showMessageDialog(objActividad5, "Incorrecto. Intenta nuevamente");
+            vidas--;
+            actualizarCorazones();
            
         }
     }
@@ -161,4 +176,45 @@ public class ControlActividad5 extends AbstractSonido implements ActionListener 
             cargarNuevaOracion(); // cargar una nueva oración
         } 
     }
+    
+    
+    
+    private void rutaimagen() {
+        for (JLabel corazon : corazones) {
+            corazon.setIcon(new ImageIcon(getClass().getResource("/resource/corazon1.png"))); // Ruta correcta de la imagen
+            corazon.setVisible(true);
+        }
+        vidas = 5; 
+    }
+    
+    
+    private void actualizarCorazones() {
+    if (vidas >= 0 && vidas < corazones.length) {
+        corazones[vidas].setVisible(false); 
+    }
+
+    if (vidas <= 0) {
+       ControlDialogSInIntentos obj = new  ControlDialogSInIntentos(objActividad5);
+       obj.mostrarDialogo();
+       
+       if(obj.isReintenar()){
+           cargarNuevaOracion();
+           resetearCorazones();
+       }else{
+           objActividad5.dispose();
+           Menu m = new Menu();
+           m.setVisible(true);
+       }
+         
+    }
+}
+
+    private void resetearCorazones() {
+    vidas = 5; 
+         for (JLabel corazon : corazones) {
+             corazon.setIcon(new ImageIcon(getClass().getResource("/resource/corazon1.png"))); 
+             corazon.setVisible(true); 
+         }
+    }
+    
 }

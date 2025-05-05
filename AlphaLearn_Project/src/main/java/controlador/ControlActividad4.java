@@ -8,6 +8,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import vistas.Actividad_4;
@@ -30,6 +31,8 @@ public class ControlActividad4 extends AbstractSonido implements ActionListener 
     private String palabraCorrecta;                 // palabra correcta que el usuario debe de seleccionar
     private boolean audioReproducido = false;       // banderas para indicar si ya se reproducio el audio
     private String seleccionUsuario = null;         // palabra que selecciono el usuario
+    private int vidas=4;
+    private JLabel[] corazones;
     
     /**
      * objeto de la vista actividad 4
@@ -41,6 +44,16 @@ public class ControlActividad4 extends AbstractSonido implements ActionListener 
         this.objActividad4.getjButton1_audio_palabra().addActionListener(this);
         this.objActividad4.getjButton1_Cambiar_audio_palabra().addActionListener(this);
         this.objActividad4.getjButton1_Salir_act_5().addActionListener(this);
+        
+         this.corazones=new JLabel[]{
+            objActividad4.getCorazon1(),
+            objActividad4.getCorazon2(),
+            objActividad4.getCorazon3(),
+            objActividad4.getCorazon4(),
+            
+            
+        };
+        rutaimagen();
 
         // Adaptador de mouse para manejar eventos de pasar el mouse y clic en etiquetas
         MouseAdapter mouseHoverAdapter = new MouseAdapter() {
@@ -181,6 +194,55 @@ public class ControlActividad4 extends AbstractSonido implements ActionListener 
         } else {
             reproducirSonido("/resource/sounds/errorr.wav");
             //JOptionPane.showMessageDialog(null, "Incorrecto. La palabra correcta era: " + palabraCorrecta);
+            vidas--;
+            actualizarCorazones();
         }
+    }
+    
+    
+     private void rutaimagen() {
+        for (JLabel corazon : corazones) {
+            corazon.setIcon(new ImageIcon(getClass().getResource("/resource/corazon1.png"))); // Ruta correcta de la imagen
+            corazon.setVisible(true);
+        }
+        vidas = 4; 
+    }
+    
+    
+    private void actualizarCorazones() {
+    if (vidas >= 0 && vidas < corazones.length) {
+        corazones[vidas].setVisible(false); 
+    }
+
+    if (vidas <= 0) {
+        ControlDialogSInIntentos obj= new  ControlDialogSInIntentos(objActividad4);
+        obj.mostrarDialogo();
+       
+       if(obj.isReintenar()){
+          asignarPalabraAJLabels();
+          resetearCorazones(); 
+       }else{
+           objActividad4.dispose();
+           Menu m = new Menu();
+           m.setVisible(true); 
+       }
+        reiniciarActividadCompleta(); 
+    }
+}
+
+    private void resetearCorazones() {
+    vidas = 5; 
+         for (JLabel corazon : corazones) {
+             corazon.setIcon(new ImageIcon(getClass().getResource("/resource/corazon1.png"))); 
+             corazon.setVisible(true); 
+         }
+    }
+
+    private void reiniciarActividadCompleta() {
+        resetearCorazones();
+        asignarPalabraAJLabels();
+        seleccionarPalabraCorrecta();
+        audioReproducido = false;
+        seleccionUsuario = null;
     }
 }

@@ -202,6 +202,16 @@ public class ControlActividad1 extends AbstractSonido implements ActionListener 
      * 
      * @param p indice de Panel a mostrar.
      */
+    
+    private void actualizarProgreso() {
+    //este es para calcular el proceso por que son 6
+        int totalPaneles = paneles.length;
+        int progreso = (int) ((indicador * 100) / (totalPaneles - 1)); // empieza con el 0
+    
+    //mosgtrar o actualir el progreso
+        objActividad.getjProgressBar1().setValue(progreso);
+    }
+    
     private void panel(JPanel p){
         
         p.setSize( 807, 470);
@@ -210,5 +220,6 @@ public class ControlActividad1 extends AbstractSonido implements ActionListener 
         objActividad.getjPanel1_Abecedario().add(p, BorderLayout.CENTER);
         objActividad.getjPanel1_Abecedario().revalidate();
         objActividad.getjPanel1_Abecedario().repaint();
+        actualizarProgreso();
     }
 }

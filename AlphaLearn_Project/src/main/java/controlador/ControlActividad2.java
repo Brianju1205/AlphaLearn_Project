@@ -6,6 +6,8 @@ package controlador;
 
 import java.awt.*;
 import java.awt.event.*;
+import java.io.File;
+import java.net.URL;
 import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -31,6 +33,8 @@ public class ControlActividad2 extends AbstractSonido implements ActionListener 
     private String palabraActual;               // palabra que debe de ordenarse
     private int respuestaCorrectas=0;
     private int respuestasMalas=0;
+    private int vidas=5;
+    private JLabel[] corazones;
     private Verificador v;                      // referencia del verificador
     private UsuarioDAO usuarioDAO;              // referencia para manejar el gestor de usuarios
     private Point posicionOriginal;             //´posicion inicial de las letras
@@ -51,6 +55,17 @@ public class ControlActividad2 extends AbstractSonido implements ActionListener 
     public ControlActividad2(Actividad_2 objActividad5) {
         this.objActividad5 = objActividad5;
         this.v = Verificador.getInstancia();
+        
+        this.corazones=new JLabel[]{
+            objActividad5.getCorazon1(),
+            objActividad5.getCorazon2(),
+            objActividad5.getCorazon3(),
+            objActividad5.getCorazon4(),
+            objActividad5.getCorazon5(),
+            
+        };
+        rutaimagen();
+        
         System.out.println("El id es: " + v.getId() + ", nombre es: " + v.getNom());
         ControlGestorTiempo.getInstancia();
         TiempoActivo.getInstancia().iniciarContador();
@@ -64,6 +79,7 @@ public class ControlActividad2 extends AbstractSonido implements ActionListener 
         }
         //palabraActual = objOperacionesBD.obtenerPalabraDesordenada();
         if (palabraActual != null && !palabraActual.isEmpty()) {
+            mostrarImagenPalabraActual();
             asignarLetrasAJLabels(palabraActual);
         }
         //escalarYAsignar(objActividad5.getjButton1_Cambiar_Palabra(),"/resource/arrows.png");
@@ -83,6 +99,8 @@ public class ControlActividad2 extends AbstractSonido implements ActionListener 
         this.objActividad5.getjButton1_Repetir_PalabraAudio().addActionListener(this);
         //reproducirSonido("/resource/sounds/intro.wav");
         //UtilidadesUI.escalarYAsignar(this.objActividad5.getjButton1_Repetir_PalabraAudio(), "/resource/ltavoz.png");
+        this.objActividad5.getjLabel_IMAGEN().setPreferredSize(new Dimension(300, 300));
+        this.objActividad5.getjLabel_IMAGEN().setSize(200, 200);
     }
     
     /**
@@ -366,6 +384,7 @@ public class ControlActividad2 extends AbstractSonido implements ActionListener 
             reiniciarActividad();
             Comprobar("/resource/imagenes/bienhecho.png"); 
             respuestaCorrectas++;
+            
         } else {
            //reproducirSonido("/resource/sounds/failed-2.wav");
             reproducirSonido("/resource/sounds/errorr.wav");
@@ -373,6 +392,8 @@ public class ControlActividad2 extends AbstractSonido implements ActionListener 
             //JOptionPane.showMessageDialog(objActividad5, "Respuesta incorrecta. Intenta de nuevo.", "Resultado", JOptionPane.ERROR_MESSAGE);
             
             respuestasMalas++;
+            vidas--;
+            actualizarCorazones();
         }
         GuardarHistorial();
     }
@@ -439,7 +460,9 @@ public class ControlActividad2 extends AbstractSonido implements ActionListener 
 
         if (palabraActual != null && !palabraActual.isEmpty()) {
             asignarLetrasAJLabels(palabraActual);
+            mostrarImagenPalabraActual();
             reproducirAudioDePalabra(palabraActual); 
+            
         }
 
         objActividad5.getjPanel1().revalidate();
@@ -531,5 +554,78 @@ public class ControlActividad2 extends AbstractSonido implements ActionListener 
         timer.setRepeats(false);
         timer.start();
     }
+    
+    
+
+    private void rutaimagen() {
+        for (JLabel corazon : corazones) {
+            corazon.setIcon(new ImageIcon(getClass().getResource("/resource/corazon1.png"))); // Ruta correcta de la imagen
+            corazon.setVisible(true);
+        }
+        vidas = 5; 
+    }
+    
+    
+    private void actualizarCorazones() {
+    if (vidas >= 0 && vidas < corazones.length) {
+        corazones[vidas].setVisible(false); 
+    }
+
+    if (vidas <= 0) {
+       ControlDialogSInIntentos dialogo = new ControlDialogSInIntentos(objActividad5);
+       dialogo.mostrarDialogo();
+       //reiniciarActividad();
+       
+       if(dialogo.isReintenar()){
+           reiniciarActividad();
+           resetearCorazones(); 
+       }else {
+            // Opcional: Si el usuario elige no continuar, cerrar la actividad
+            stopSonido();
+            objActividad5.dispose();
+            new Menu().setVisible(true); // Volver al menú
+        }
+        
+    }
+}
+
+    private void resetearCorazones() {
+    vidas = 5; 
+         for (JLabel corazon : corazones) {
+             corazon.setIcon(new ImageIcon(getClass().getResource("/resource/corazon1.png"))); 
+             corazon.setVisible(true); 
+         }
+    }
+    
+    private void mostrarImagenPalabraActual() {
+        try {
+            String rutaImagen = "/resource1/" + palabraActual.toLowerCase() + ".png";
+            // Cargar la imagen
+            ImageIcon icon = new ImageIcon(getClass().getResource(rutaImagen));
+        
+            if (icon.getImage() != null) {
+                
+               // Escalar y mostrar
+               Image img = icon.getImage().getScaledInstance(
+                objActividad5.getjLabel_IMAGEN().getWidth(),
+                objActividad5.getjLabel_IMAGEN().getHeight(),
+                Image.SCALE_SMOOTH);
+            
+               objActividad5.getjLabel_IMAGEN().setIcon(new ImageIcon(img));
+               objActividad5.getjLabel_IMAGEN().setText(""); // Limpiar texto
+            } else {
+                objActividad5.getjLabel_IMAGEN().setText(palabraActual);
+                System.out.println(" Imagen no encontrada: " + rutaImagen);
+            }
+            
+        } catch (Exception e) {
+           objActividad5.getjLabel_IMAGEN().setText(palabraActual);
+           System.err.println("❌ Error al cargar: " + e.getMessage());
+        }
+    }
+    
+   
+
+
 
 }

@@ -69,8 +69,28 @@ public class Actividad_6 extends javax.swing.JFrame {
     public JPanel getjPanel1_fondo() {
         return jPanel1_fondo;
     }
-    
 
+    public JLabel getCorazon1() {
+        return corazon1;
+    }
+
+    public JLabel getCorazon2() {
+        return corazon2;
+    }
+
+    public JLabel getCorazon3() {
+        return corazon3;
+    }
+
+    public JLabel getCorazon4() {
+        return corazon4;
+    }
+
+    public JLabel getCorazon5() {
+        return corazon5;
+    }
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -97,13 +117,15 @@ public class Actividad_6 extends javax.swing.JFrame {
         jButton1_Salir_act_5 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jProgressBar1 = new javax.swing.JProgressBar();
-        jLabel11 = new javax.swing.JLabel();
+        corazon1 = new javax.swing.JLabel();
+        corazon2 = new javax.swing.JLabel();
+        corazon3 = new javax.swing.JLabel();
+        corazon4 = new javax.swing.JLabel();
+        corazon5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1203, 671));
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(1203, 671));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1_fondo.setBackground(new java.awt.Color(82, 160, 254));
@@ -192,13 +214,20 @@ public class Actividad_6 extends javax.swing.JFrame {
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/PANELOPCIONES.png"))); // NOI18N
         jPanel1_fondo.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 110, -1, 480));
 
-        jProgressBar1.setBackground(new java.awt.Color(255, 255, 255));
-        jProgressBar1.setForeground(new java.awt.Color(204, 0, 0));
-        jProgressBar1.setValue(10);
-        jPanel1_fondo.add(jProgressBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 30, 180, 30));
+        corazon1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1_fondo.add(corazon1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 50, 40));
 
-        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/CORAZON.png"))); // NOI18N
-        jPanel1_fondo.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 20, -1, -1));
+        corazon2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1_fondo.add(corazon2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 30, 50, 40));
+
+        corazon3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1_fondo.add(corazon3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 30, 50, 40));
+
+        corazon4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1_fondo.add(corazon4, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 30, 50, 40));
+
+        corazon5.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        jPanel1_fondo.add(corazon5, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 30, 50, 40));
 
         getContentPane().add(jPanel1_fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1203, 671));
 
@@ -241,12 +270,16 @@ public class Actividad_6 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel corazon1;
+    private javax.swing.JLabel corazon2;
+    private javax.swing.JLabel corazon3;
+    private javax.swing.JLabel corazon4;
+    private javax.swing.JLabel corazon5;
     private javax.swing.JButton jButton1_Salir_act_5;
     private javax.swing.JButton jButton1_cambiartexto;
     private javax.swing.JButton jButton1_repetir_cuento;
     private javax.swing.JButton jButton_audio_pregunta;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -259,6 +292,5 @@ public class Actividad_6 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel_respuesta3;
     private javax.swing.JLabel jLabel_texto;
     private javax.swing.JPanel jPanel1_fondo;
-    private javax.swing.JProgressBar jProgressBar1;
     // End of variables declaration//GEN-END:variables
 }

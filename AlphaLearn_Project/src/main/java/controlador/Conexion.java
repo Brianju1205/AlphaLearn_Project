@@ -29,7 +29,7 @@ public class Conexion {
 
     private static final String URL = "jdbc:postgresql://127.0.0.1/alphalearn";
     private static final String USER = "postgres";
-    private static final String PASSWORD = "1234";
+    private static final String PASSWORD = "2005";
 
     /**
      * Constructor privado para evitar instancias no deseadas

@@ -10,6 +10,9 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import modelo.AjustesM;
 import modelo.CuentoPregunta;
@@ -30,7 +33,8 @@ public class ControlActividad6 extends AbstractSonido implements ActionListener{
     private CuentoPregunta conCuentos;          // referencia al modelo del cuento 
     private String seleccionUsuario;            // palabra que selecciono el usuario
     private Verificador v;                      // referencia a la clase verificador
-    
+    private int vidas=5;
+    private JLabel[] corazones;
     /**
      * Constructor de la actividad 6
      * @param acti6 
@@ -44,7 +48,18 @@ public class ControlActividad6 extends AbstractSonido implements ActionListener{
         acti6.getjButton1_repetir_cuento().addActionListener(this);
         mostrarInstruccion();
          
+         this.corazones=new JLabel[]{
+            acti6.getCorazon1(),
+            acti6.getCorazon2(),
+            acti6.getCorazon3(),
+            acti6.getCorazon4(),
+           acti6.getCorazon5(),
+            
+        };
+        rutaimagen();
     }
+    
+    
     
     /**
      * Muestra la instrucción de la actividad si está habilitada en los ajustes
@@ -147,6 +162,8 @@ public class ControlActividad6 extends AbstractSonido implements ActionListener{
         else{
             reproducirSonido("/resource/sounds/errorr.wav");
             System.out.println("error");
+            vidas--;
+            actualizarCorazones();
         }
     }
 
@@ -184,4 +201,43 @@ public class ControlActividad6 extends AbstractSonido implements ActionListener{
 
         });
     } 
+    
+    private void rutaimagen() {
+        for (JLabel corazon : corazones) {
+            corazon.setIcon(new ImageIcon(getClass().getResource("/resource/corazon1.png"))); // Ruta correcta de la imagen
+            corazon.setVisible(true);
+        }
+        vidas = 5; 
+    }
+    
+    
+    private void actualizarCorazones() {
+    if (vidas >= 0 && vidas < corazones.length) {
+        corazones[vidas].setVisible(false); 
+    }
+
+    if (vidas <= 0) {
+       ControlDialogSInIntentos obj = new  ControlDialogSInIntentos(acti6);
+       obj.mostrarDialogo();
+       
+       if(obj.isReintenar()){
+           asignarCuento();
+           resetearCorazones(); 
+       }else{
+           Menu m = new Menu();
+           m.dispose();
+           m.setVisible(true);
+       }
+       
+        
+    }
+}
+
+    private void resetearCorazones() {
+    vidas = 5; 
+         for (JLabel corazon : corazones) {
+             corazon.setIcon(new ImageIcon(getClass().getResource("/resource/corazon1.png"))); 
+             corazon.setVisible(true); 
+         }
+    }
 }

@@ -58,6 +58,24 @@ public class Actividad_4 extends javax.swing.JFrame {
         return jPanel1;
     }
 
+    public JLabel getCorazon1() {
+        return corazon1;
+    }
+
+    public JLabel getCorazon2() {
+        return corazon2;
+    }
+
+    public JLabel getCorazon3() {
+        return corazon3;
+    }
+
+    public JLabel getCorazon4() {
+        return corazon4;
+    }
+    
+    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -80,8 +98,10 @@ public class Actividad_4 extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jProgressBar1 = new javax.swing.JProgressBar();
-        jLabel11 = new javax.swing.JLabel();
+        corazon1 = new javax.swing.JLabel();
+        corazon2 = new javax.swing.JLabel();
+        corazon3 = new javax.swing.JLabel();
+        corazon4 = new javax.swing.JLabel();
 
         jLabel2.setText("jLabel2");
 
@@ -152,13 +172,17 @@ public class Actividad_4 extends javax.swing.JFrame {
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/TITULOESCUCHA.png"))); // NOI18N
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 10, -1, -1));
 
-        jProgressBar1.setBackground(new java.awt.Color(255, 255, 255));
-        jProgressBar1.setForeground(new java.awt.Color(204, 0, 0));
-        jProgressBar1.setValue(10);
-        jPanel1.add(jProgressBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 180, 30));
+        corazon1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.add(corazon1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 50, 40));
 
-        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/CORAZON.png"))); // NOI18N
-        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 20, -1, -1));
+        corazon2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.add(corazon2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, 50, 40));
+
+        corazon3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.add(corazon3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, 50, 40));
+
+        corazon4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.add(corazon4, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 40, 40, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -190,10 +214,13 @@ public class Actividad_4 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel corazon1;
+    private javax.swing.JLabel corazon2;
+    private javax.swing.JLabel corazon3;
+    private javax.swing.JLabel corazon4;
     private javax.swing.JButton jButton1_Cambiar_audio_palabra;
     private javax.swing.JButton jButton1_Salir_act_5;
     private javax.swing.JButton jButton1_audio_palabra;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -204,7 +231,6 @@ public class Actividad_4 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel_word2;
     private javax.swing.JLabel jLabel_word3;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JProgressBar jProgressBar1;
     // End of variables declaration//GEN-END:variables
 
 }
