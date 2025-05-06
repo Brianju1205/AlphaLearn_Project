@@ -75,9 +75,15 @@ public class ControlActividad6 extends AbstractSonido implements ActionListener{
                 @Override
                 public void actionPerformed(ActionEvent e) {
                     ((javax.swing.Timer) e.getSource()).stop();
-                    escuchadoresLabel();
-                    asignarCuento();
-                }
+                     
+                        if (acti6 == null || !acti6.isDisplayable()) {
+                            System.out.println("vista cerrada");
+                            return; 
+                        }
+                        escuchadoresLabel();
+                        asignarCuento();
+                    
+                }     
             }).start();
 
         } else {

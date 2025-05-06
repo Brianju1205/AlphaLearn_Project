@@ -213,11 +213,11 @@ public class Actividad_6 extends javax.swing.JFrame {
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/PANELOPCIONES.png"))); // NOI18N
         jPanel1_fondo.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 110, -1, 480));
-        jPanel1_fondo.add(corazon1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 30, 50, 40));
-        jPanel1_fondo.add(corazon2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 30, 50, 40));
-        jPanel1_fondo.add(corazon3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 30, 50, 40));
-        jPanel1_fondo.add(corazon4, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 30, 50, 40));
-        jPanel1_fondo.add(corazon5, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 30, 50, 40));
+        jPanel1_fondo.add(corazon1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 30, 50, 40));
+        jPanel1_fondo.add(corazon2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 30, 50, 40));
+        jPanel1_fondo.add(corazon3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 30, 50, 40));
+        jPanel1_fondo.add(corazon4, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 30, 50, 40));
+        jPanel1_fondo.add(corazon5, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 30, 50, 40));
 
         getContentPane().add(jPanel1_fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1203, 671));
 
