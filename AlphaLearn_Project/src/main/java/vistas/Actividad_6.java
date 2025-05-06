@@ -213,21 +213,11 @@ public class Actividad_6 extends javax.swing.JFrame {
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/PANELOPCIONES.png"))); // NOI18N
         jPanel1_fondo.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 110, -1, 480));
-
-        corazon1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel1_fondo.add(corazon1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 50, 40));
-
-        corazon2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel1_fondo.add(corazon2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 30, 50, 40));
-
-        corazon3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel1_fondo.add(corazon3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 30, 50, 40));
-
-        corazon4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel1_fondo.add(corazon4, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 30, 50, 40));
-
-        corazon5.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
-        jPanel1_fondo.add(corazon5, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 30, 50, 40));
+        jPanel1_fondo.add(corazon1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 30, 50, 40));
+        jPanel1_fondo.add(corazon2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 30, 50, 40));
+        jPanel1_fondo.add(corazon3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 30, 50, 40));
+        jPanel1_fondo.add(corazon4, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 30, 50, 40));
+        jPanel1_fondo.add(corazon5, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 30, 50, 40));
 
         getContentPane().add(jPanel1_fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1203, 671));
 

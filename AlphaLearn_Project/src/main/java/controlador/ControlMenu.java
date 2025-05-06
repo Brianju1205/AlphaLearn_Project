@@ -176,6 +176,7 @@ public class ControlMenu extends AbstractSonido implements ActionListener,Change
             else{
                 int tiempoTotal = (int) TiempoActivo.getInstancia().getTiempoActivo();
                 ControlGestorTiempo.getInstancia().guardarTiempo(v.getId(),tiempoTotal);
+                Conexion.getInstance().cerrarConexion();
             }
         }
         if (e.getSource() == this.objMenu.getjButton1_inicio()){

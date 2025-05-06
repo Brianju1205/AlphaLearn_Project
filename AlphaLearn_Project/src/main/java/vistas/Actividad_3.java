@@ -266,20 +266,10 @@ public class Actividad_3 extends javax.swing.JFrame {
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/TITULO.png"))); // NOI18N
         jLabel2.setToolTipText("");
         jPanel3_fondo.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 0, -1, -1));
-
-        corazon1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel3_fondo.add(corazon1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 50, 40));
-
-        corazon2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel3_fondo.add(corazon2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 30, 50, 40));
-
-        corazon3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel3_fondo.add(corazon3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 30, 50, 40));
-
-        corazon4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel3_fondo.add(corazon4, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 30, 50, 40));
-
-        corazon5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel3_fondo.add(corazon5, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 30, 50, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

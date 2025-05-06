@@ -171,18 +171,10 @@ public class Actividad_4 extends javax.swing.JFrame {
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/TITULOESCUCHA.png"))); // NOI18N
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 10, -1, -1));
-
-        corazon1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel1.add(corazon1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 50, 40));
-
-        corazon2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel1.add(corazon2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, 50, 40));
-
-        corazon3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel1.add(corazon3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, 50, 40));
-
-        corazon4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel1.add(corazon4, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 40, 40, 40));
+        jPanel1.add(corazon1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, 50, 40));
+        jPanel1.add(corazon2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 20, 50, 40));
+        jPanel1.add(corazon3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 20, 50, 40));
+        jPanel1.add(corazon4, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 20, 50, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

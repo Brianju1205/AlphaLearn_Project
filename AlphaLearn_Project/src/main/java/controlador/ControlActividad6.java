@@ -204,7 +204,7 @@ public class ControlActividad6 extends AbstractSonido implements ActionListener{
     
     private void rutaimagen() {
         for (JLabel corazon : corazones) {
-            corazon.setIcon(new ImageIcon(getClass().getResource("/resource/corazon1.png"))); // Ruta correcta de la imagen
+            corazon.setIcon(new ImageIcon(getClass().getResource("/resource/CORAZON.png"))); // Ruta correcta de la imagen
             corazon.setVisible(true);
         }
         vidas = 5; 
@@ -236,7 +236,7 @@ public class ControlActividad6 extends AbstractSonido implements ActionListener{
     private void resetearCorazones() {
     vidas = 5; 
          for (JLabel corazon : corazones) {
-             corazon.setIcon(new ImageIcon(getClass().getResource("/resource/corazon1.png"))); 
+             corazon.setIcon(new ImageIcon(getClass().getResource("/resource/CORAZON.png"))); 
              corazon.setVisible(true); 
          }
     }

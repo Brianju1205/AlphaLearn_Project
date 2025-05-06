@@ -79,12 +79,16 @@ public class ControlActividad2 extends AbstractSonido implements ActionListener 
         }
         //palabraActual = objOperacionesBD.obtenerPalabraDesordenada();
         if (palabraActual != null && !palabraActual.isEmpty()) {
-            mostrarImagenPalabraActual();
+            //mostrarImagenPalabraActual();
+            
             asignarLetrasAJLabels(palabraActual);
+            
         }
         //escalarYAsignar(objActividad5.getjButton1_Cambiar_Palabra(),"/resource/arrows.png");
         configuracionInicio();
         mostrarInstruccion();
+        
+
         
     }
     /**
@@ -99,8 +103,8 @@ public class ControlActividad2 extends AbstractSonido implements ActionListener 
         this.objActividad5.getjButton1_Repetir_PalabraAudio().addActionListener(this);
         //reproducirSonido("/resource/sounds/intro.wav");
         //UtilidadesUI.escalarYAsignar(this.objActividad5.getjButton1_Repetir_PalabraAudio(), "/resource/ltavoz.png");
-        this.objActividad5.getjLabel_IMAGEN().setPreferredSize(new Dimension(300, 300));
-        this.objActividad5.getjLabel_IMAGEN().setSize(200, 200);
+        
+        
     }
     
     /**
@@ -182,6 +186,8 @@ public class ControlActividad2 extends AbstractSonido implements ActionListener 
         }
         
        //
+        String rutaImagen = "/resource1/" + palabraActual + ".jpg";
+        asignarImagen(objActividad5.getjLabel_IMAGEN(), rutaImagen);
         objActividad5.getjPanel1().revalidate();
         objActividad5.getjPanel1().repaint();
         
@@ -460,7 +466,9 @@ public class ControlActividad2 extends AbstractSonido implements ActionListener 
 
         if (palabraActual != null && !palabraActual.isEmpty()) {
             asignarLetrasAJLabels(palabraActual);
-            mostrarImagenPalabraActual();
+            //mostrarImagenPalabraActual();
+            String rutaImagen = "/resource1/" + palabraActual + ".jpg";
+            asignarImagen(objActividad5.getjLabel_IMAGEN(), rutaImagen);
             reproducirAudioDePalabra(palabraActual); 
             
         }
@@ -522,7 +530,8 @@ public class ControlActividad2 extends AbstractSonido implements ActionListener 
        if(palabraActual !=null && !palabraActual.isEmpty()){
            reiniciarActividad();
            asignarLetrasAJLabels(palabraActual);
-           
+           String rutaImagen = "/resource1/" + palabraActual + ".jpg";
+           asignarImagen(objActividad5.getjLabel_IMAGEN(), rutaImagen);
        }
     }
     
@@ -559,7 +568,7 @@ public class ControlActividad2 extends AbstractSonido implements ActionListener 
 
     private void rutaimagen() {
         for (JLabel corazon : corazones) {
-            corazon.setIcon(new ImageIcon(getClass().getResource("/resource/corazon1.png"))); // Ruta correcta de la imagen
+            corazon.setIcon(new ImageIcon(getClass().getResource("/resource/CORAZON.png"))); // Ruta correcta de la imagen
             corazon.setVisible(true);
         }
         vidas = 5; 
@@ -567,39 +576,53 @@ public class ControlActividad2 extends AbstractSonido implements ActionListener 
     
     
     private void actualizarCorazones() {
-    if (vidas >= 0 && vidas < corazones.length) {
-        corazones[vidas].setVisible(false); 
-    }
-
-    if (vidas <= 0) {
-       ControlDialogSInIntentos dialogo = new ControlDialogSInIntentos(objActividad5);
-       dialogo.mostrarDialogo();
-       //reiniciarActividad();
-       
-       if(dialogo.isReintenar()){
-           reiniciarActividad();
-           resetearCorazones(); 
-       }else {
-            // Opcional: Si el usuario elige no continuar, cerrar la actividad
-            stopSonido();
-            objActividad5.dispose();
-            new Menu().setVisible(true); // Volver al menú
+        if (vidas >= 0 && vidas < corazones.length) {
+            corazones[vidas].setVisible(false); 
         }
-        
+
+        if (vidas <= 0) {
+           ControlDialogSInIntentos dialogo = new ControlDialogSInIntentos(objActividad5);
+           dialogo.mostrarDialogo();
+           //reiniciarActividad();
+
+           if(dialogo.isReintenar()){
+               reiniciarActividad();
+               resetearCorazones(); 
+           }else {
+                // Opcional: Si el usuario elige no continuar, cerrar la actividad
+                stopSonido();
+                objActividad5.dispose();
+                new Menu().setVisible(true); // Volver al menú
+            }
+
+        }
     }
-}
 
     private void resetearCorazones() {
-    vidas = 5; 
-         for (JLabel corazon : corazones) {
-             corazon.setIcon(new ImageIcon(getClass().getResource("/resource/corazon1.png"))); 
+        vidas = 5; 
+        for (JLabel corazon : corazones) {
+             corazon.setIcon(new ImageIcon(getClass().getResource("/resource/CORAZON.png"))); 
              corazon.setVisible(true); 
-         }
+        }
     }
-    
-    private void mostrarImagenPalabraActual() {
+    private void asignarImagen(JLabel label, String rutaImagen) {
         try {
-            String rutaImagen = "/resource1/" + palabraActual.toLowerCase() + ".png";
+         
+            URL imgURL = getClass().getResource(rutaImagen);
+            if (imgURL != null) {
+                ImageIcon icono = new ImageIcon(imgURL);
+                Image imgEscalada = icono.getImage().getScaledInstance(label.getWidth(), label.getHeight(), Image.SCALE_SMOOTH);
+                label.setIcon(new ImageIcon(imgEscalada));
+            } else {
+                System.out.println("No se encontro la imagen en: " + rutaImagen);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    /*private void mostrarImagenPalabraActual() {
+        try {
+            String rutaImagen = "/resource1/" + palabraActual + ".png";
             // Cargar la imagen
             ImageIcon icon = new ImageIcon(getClass().getResource(rutaImagen));
         
@@ -612,7 +635,7 @@ public class ControlActividad2 extends AbstractSonido implements ActionListener 
                 Image.SCALE_SMOOTH);
             
                objActividad5.getjLabel_IMAGEN().setIcon(new ImageIcon(img));
-               objActividad5.getjLabel_IMAGEN().setText(""); // Limpiar texto
+               objActividad5.getjLabel_IMAGEN().setText(""); 
             } else {
                 objActividad5.getjLabel_IMAGEN().setText(palabraActual);
                 System.out.println(" Imagen no encontrada: " + rutaImagen);
@@ -620,12 +643,9 @@ public class ControlActividad2 extends AbstractSonido implements ActionListener 
             
         } catch (Exception e) {
            objActividad5.getjLabel_IMAGEN().setText(palabraActual);
-           System.err.println("❌ Error al cargar: " + e.getMessage());
+           System.err.println(" Error al cargar: " + e.getMessage());
         }
-    }
+    }*/
     
-   
-
-
 
 }
